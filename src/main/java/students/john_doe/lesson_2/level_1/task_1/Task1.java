@@ -12,6 +12,9 @@ class Task1 {
         int sum = a + b;
         System.out.println("sum = " + sum);
 
+        int sub = a - b;
+        System.out.println("sub = " + sub);
+
         // TODO
     }
 }
