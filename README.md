@@ -29,14 +29,14 @@ A Certificate of Completion will be issued to students upon their successful ful
 ## Homework Submission
 
 Please, follow next steps in order to publish your homework for personal review:
-1. Before you start, make sure you are in the `master` branch. Go to `VCS > Git > Branches... > Remote Branches: origin/master` and select checkout.
+1. Before you start, make sure you are in the `main` branch. Go to `VCS > Git > Branches... > Remote Branches: origin/main` and select checkout.
 2. Update your local master copy with latest changes via `VCS > Update Project` menu option. Select `Merge incoming changes into the current branch` option.
 3. Create a branch where isolated development will occur by `VCS > Git > Branches... > + New Branch` and naming it after your name and assignment, e.g. `st-john-doe-lesson-2-level-3`. It can be viewed as your homework solution draft.
 4. Stage files to be uploaded by right clicking on the single file or package and `Git > + Add`. After that your file(s) name should turn green from red. This step can be ignored in case it is staged automatically and file(s) are green already.
 5. Save your project state by comitting source code via `VCS > Commit`. Select all files to be uploaded and write a meaningful changes description.
 6. Press `Commit and Push` button and confirm it afterwards.
-7. Create [pull request](https://github.com/konstantins-buts/jg-java-1-online-winter-january-wednesday-2021/compare) by selecting your branch name, e.g. `st-john-doe-lesson-2-level-3`, in `compare:` dropdown. Additionally, enable `auto merge` after PR is created.
-8. In case solution is accepted, there is nothing you need to do, it will be merged into `master` branch by your instructor. Otherwise, consider review comments, fix your code and go to step 4.
+7. Create [pull request](https://github.com/konstantins-buts/jg-java-1-online-spring-april-tuesday-2021/compare) by selecting your branch name, e.g. `st-john-doe-lesson-2-level-3`, in `compare:` dropdown. Additionally, enable `auto merge` after PR is created.
+8. In case solution is accepted, there is nothing you need to do, it will be merged into `main` branch by your instructor. Otherwise, consider review comments, fix your code and go to step 4.
 
 ## Lesson History
 
