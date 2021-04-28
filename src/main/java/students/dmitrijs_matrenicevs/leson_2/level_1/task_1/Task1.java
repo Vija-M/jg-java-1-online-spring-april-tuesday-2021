@@ -13,6 +13,7 @@ class Task1 {
         int b = scanner.nextInt();
 
         int sum = a + b;
+
         System.out.println("sum = " + sum);
 
         int c = scanner.nextInt();
