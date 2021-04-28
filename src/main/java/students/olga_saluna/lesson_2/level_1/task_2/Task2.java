@@ -24,5 +24,9 @@ class Task2 {
 
         double div = a / b;
         System.out.println("div = " + div);
+
+
+
+
     }
 }
