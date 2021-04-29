@@ -1,6 +1,6 @@
 package students.ernests_subhankulovs.lesson_2.level_1.task_2;
 
-public class Task2 {
+class Task2 {
     public static void main(String[] args) {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         System.out.println("Enter 1st fractional number (A):");
