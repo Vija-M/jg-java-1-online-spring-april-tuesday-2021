@@ -6,6 +6,6 @@ public class Task8 {
 
         System.out.println("Enter Your name:");
         String name = scanner.nextLine();
-
+        System.out.println("Hello " + name + "!");
     }
 }
