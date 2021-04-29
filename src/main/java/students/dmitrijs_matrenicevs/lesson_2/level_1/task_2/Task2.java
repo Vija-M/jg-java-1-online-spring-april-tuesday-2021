@@ -6,6 +6,7 @@ class Task2 {
 
         java.util.Scanner scanner = new java.util.Scanner(System.in);
 
+        //sum
         double a = scanner.nextDouble();
         double b = scanner.nextDouble();
 
@@ -13,6 +14,7 @@ class Task2 {
 
         System.out.println("sum = " + sum);
 
+        //minus
         double c = scanner.nextDouble();
         double d = scanner.nextDouble();
 
@@ -20,7 +22,21 @@ class Task2 {
 
         System.out.println("sum = " + minus);
 
+        //multiply
+        double e = scanner.nextDouble();
+        double f = scanner.nextDouble();
 
+        double multiply = e * f;
+
+        System.out.println("sum = " + multiply);
+
+        //share
+        double t = scanner.nextDouble();
+        double y = scanner.nextDouble();
+
+        double share = t / y;
+
+        System.out.println("sum = " + share);
 
 
     }
