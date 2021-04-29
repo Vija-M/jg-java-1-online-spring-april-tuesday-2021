@@ -1,4 +1,4 @@
-package students.ernests.subhankulovs.lesson_2.level_2.task_6;
+package students.ernests_subhankulovs.lesson_2.level_2.task_6;
 
 class Turtle {
     public static void main(String[] args) {
