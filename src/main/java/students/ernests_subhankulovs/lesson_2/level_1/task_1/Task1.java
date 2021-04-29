@@ -15,7 +15,7 @@ class Task1 {
         int div = firstNumber / secondNumber;
 
         System.out.println("Addition: A + B = " + sum);
-        System.out.println("Subtraction: A + B = " + sub);
+        System.out.println("Subtraction: A - B = " + sub);
         System.out.println("Multiplication: A * B = " + mul);
         System.out.println("Division: A / B = " + div);
     }
