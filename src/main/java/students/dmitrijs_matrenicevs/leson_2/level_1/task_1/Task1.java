@@ -19,19 +19,19 @@ class Task1 {
         int c = scanner.nextInt();
         int d = scanner.nextInt();
 
-        int result = c - d;
-        System.out.println("sum = " + result);
+        int minus = c - d;
+        System.out.println("sum = " + minus);
 
         int e = scanner.nextInt();
         int r = scanner.nextInt();
 
-        int kit = e * r;
-        System.out.println("sum = " + kit);
+        int multiply = e * r;
+        System.out.println("sum = " + multiply);
 
         int y = scanner.nextInt();
         int i = scanner.nextInt();
 
-        int bb = y / i;
-        System.out.println("sum = " + bb);
+        int share = y / i;
+        System.out.println("sum = " + share);
     }
 }
