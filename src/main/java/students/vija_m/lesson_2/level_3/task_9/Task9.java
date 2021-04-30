@@ -2,7 +2,7 @@ package students.vija_m.lesson_2.level_3.task_9;
 
 class Task9 {
 
-        public static void main(String[] args)
+        public static void main(String[] args){
 java.util.Scanner scanner = new java.util.Scanner(System.in);
         System.out.print("Пожалуйста, с целью получения таблицы умножения введите целое число: ");
         int a = scanner.nextInt();
