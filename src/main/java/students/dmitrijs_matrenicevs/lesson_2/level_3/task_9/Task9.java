@@ -5,9 +5,12 @@ class Task9 {
     public static void main(String[] args) {
 
         java.util.Scanner scanner = new java.util.Scanner(System.in);
-        System.out.print("Enter number 1 or 10:" );
+        System.out.print("Enter any number from 1 to 10: ");
 
-        String number = scanner.nextLine();
+        int enterNumber = scanner.nextInt();
+        int yourNumber = enterNumber * 3;
+        int sumNumber = enterNumber * yourNumber;
+        System.out.println(enterNumber + " * " + yourNumber + " = " + sumNumber);
 
         int a = 8;
         int b = 1;
