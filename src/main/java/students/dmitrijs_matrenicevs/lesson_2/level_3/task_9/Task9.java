@@ -8,56 +8,39 @@ class Task9 {
         System.out.print("Enter any number from 1 to 10: ");
 
         int enterNumber = scanner.nextInt();
-        int yourNumber = 3;
+        int yourNumber = 1;
+        int yourNumber2 = 2;
+        int yourNumber3 = 3;
+        int yourNumber4 = 4;
+        int yourNumber5 = 5;
+        int yourNumber6 = 6;
+        int yourNumber7 = 7;
+        int yourNumber8 = 8;
+        int yourNumber9 = 9;
+        int yourNumber10 = 10;
+
         int sumNumber = enterNumber * yourNumber;
+        int sumNumber2 = enterNumber * yourNumber2;
+        int sumNumber3 = enterNumber * yourNumber3;
+        int sumNumber4 = enterNumber * yourNumber4;
+        int sumNumber5 = enterNumber * yourNumber5;
+        int sumNumber6 = enterNumber * yourNumber6;
+        int sumNumber7 = enterNumber * yourNumber7;
+        int sumNumber8 = enterNumber * yourNumber8;
+        int sumNumber9 = enterNumber * yourNumber9;
+        int sumNumber10 = enterNumber * yourNumber10;
+
         System.out.println(enterNumber + " * " + yourNumber + " = " + sumNumber);
+        System.out.println(enterNumber + " * " + yourNumber2 + " = " + sumNumber2);
+        System.out.println(enterNumber + " * " + yourNumber3 + " = " + sumNumber3);
+        System.out.println(enterNumber + " * " + yourNumber4 + " = " + sumNumber4);
+        System.out.println(enterNumber + " * " + yourNumber5 + " = " + sumNumber5);
+        System.out.println(enterNumber + " * " + yourNumber6 + " = " + sumNumber6);
+        System.out.println(enterNumber + " * " + yourNumber7 + " = " + sumNumber7);
+        System.out.println(enterNumber + " * " + yourNumber8 + " = " + sumNumber8);
+        System.out.println(enterNumber + " * " + yourNumber9 + " = " + sumNumber9);
+        System.out.println(enterNumber + " * " + yourNumber10 + " = " + sumNumber10);
 
-        int a = 8;
-        int b = 1;
-        int c = a * b;
 
-        System.out.println(a + " * " + b + " = " + c);
-
-        int q = 8;
-        int w = 2;
-        int e = a * w;
-
-        System.out.println(q + " * " + w + " = " + e);
-
-        int r = 8;
-        int t = 3;
-        int y = a * t;
-
-        System.out.println(r + " * " + t + " = " + y);
-
-        int u = 8;
-        int i = 4;
-        int o = a * i;
-
-        System.out.println(u + " * " + i + " = " + o);
-
-        int p = 8;
-        int f = 5;
-        int g = p * f;
-
-        System.out.println(p + " * " + f + " = " + g);
-
-        int h = 8;
-        int j = 6;
-        int k = h * j;
-
-        System.out.println(h + " * " + j + " = " + k);
-
-        int l = 8;
-        int z = 7;
-        int x = l * z;
-
-        System.out.println(l + " * " + z + " = " + x);
-
-        int v = 8;
-        int m = 8;
-        int n = v * m;
-
-        System.out.println(v + " * " + m + " = " + n);
     }
 }
