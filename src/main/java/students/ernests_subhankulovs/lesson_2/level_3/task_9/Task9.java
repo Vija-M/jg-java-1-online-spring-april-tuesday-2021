@@ -8,7 +8,7 @@ public class Task9 {
         System.out.println("Input a number: ");
         int number = scanner.nextInt();
 
-        for(int i = 1; i <=10; i++) {
+        for(int i = 1; i <= 10; i++) {
             result = number * i;
             System.out.println(number + " X " + i + " = " + result);
         }
