@@ -8,7 +8,7 @@ class Task9 {
         System.out.print("Enter any number from 1 to 10: ");
 
         int enterNumber = scanner.nextInt();
-        int yourNumber = enterNumber * 3;
+        int yourNumber = 3;
         int sumNumber = enterNumber * yourNumber;
         System.out.println(enterNumber + " * " + yourNumber + " = " + sumNumber);
 
