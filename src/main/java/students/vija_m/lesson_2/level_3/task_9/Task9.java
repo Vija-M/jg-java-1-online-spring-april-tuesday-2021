@@ -6,8 +6,7 @@ class Task9 {
 java.util.Scanner scanner = new java.util.Scanner(System.in);
         System.out.print("Пожалуйста, с целью получения таблицы умножения введите целое число: ");
         int a = scanner.nextInt();
-        System.out.print("Вот запрашиваемая таблица уиножения на" + a + ":");
-        System.out.println(a + " * 4 = " + (a * 4) + ";");
+        System.out.println("Вот запрашиваемая Вами таблица умножения на " + a + ":");
         System.out.println(a + " * 1 = " + (a * 1) + ";");
         System.out.println(a + " * 2 = " + (a * 2) + ";");
         System.out.println(a + " * 3 = " + (a * 3) + ";");
