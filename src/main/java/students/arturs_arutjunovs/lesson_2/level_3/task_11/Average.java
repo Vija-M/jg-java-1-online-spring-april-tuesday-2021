@@ -12,7 +12,7 @@ class Average {
         System.out.print("");
         int number_3 = scanner.nextInt();
 
-        double average = (number_1 + number_2 + number_3) / 3;
+        double average = (number_1 + number_2 + number_3) / 3.;
 
         System.out.println("The average number is: " + average);
     }
