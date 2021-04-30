@@ -1,6 +1,6 @@
 package students.ernests_subhankulovs.lesson_2.level_3.task_9;
 
-public class Task9 {
+class Task9 {
     public static void main(String[] args) {
         int result;
         java.util.Scanner scanner = new java.util.Scanner(System.in);
