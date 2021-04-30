@@ -12,7 +12,7 @@ class Task10 {
         area = Math.PI * Math.pow(radius, 2);
 
         System.out.println("Radius = " + radius);
-        System.out.println("");
+        System.out.println(" ");
         System.out.println("Perimeter is = " + perimeter);
         System.out.println("Area is = " + area);
 
