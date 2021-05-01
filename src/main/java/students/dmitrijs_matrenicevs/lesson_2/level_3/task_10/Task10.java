@@ -17,12 +17,10 @@ class Task10 {
         double P = r * 3.14 * 2;
 
         //Площадь
-        System.out.println(r + " * " + r + " = " + rSQR);
-        System.out.println("Area is = " + rSQR + " * " + 3.14 + " = " + S);
+        System.out.println(/* r + " * " + r + " = " + rSQR */);
+        System.out.println("Area is = " /* + rSQR + " * " + 3.14 + " = " */ + S);
 
         //Периметр
-        System.out.println("Perimeter is = " + r + " * " + 3.14 + " * " + 2 + " = " + P);
-
-
+        System.out.println("Perimeter is = " /* + r + " * " + 3.14 + " * " + 2 + " = " */ + P);
     }
 }
