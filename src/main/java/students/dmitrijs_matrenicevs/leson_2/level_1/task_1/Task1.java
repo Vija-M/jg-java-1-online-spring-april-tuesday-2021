@@ -1,7 +1,5 @@
 package students.dmitrijs_matrenicevs.leson_2.level_1.task_1;
 
-import java.util.concurrent.LinkedBlockingDeque;
-
 class Task1 {
 
     public static void main(String[] args) {
