@@ -22,5 +22,6 @@ class Task10 {
 
         //Периметр
         System.out.println("Perimeter is = " /* + r + " * " + 3.14 + " * " + 2 + " = " */ + P);
+
     }
 }
