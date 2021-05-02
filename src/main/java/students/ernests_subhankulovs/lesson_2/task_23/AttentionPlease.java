@@ -1,4 +1,4 @@
-package students.arturs_arutjunovs.lesson_2.level_6.task_23;
+package students.ernests_subhankulovs.lesson_2.task_23;
 
 class AttentionPlease {
     public static void main(String[] args) {
