@@ -15,12 +15,21 @@ Perimeter is 2 * (5.6 + 8.5) = 28.20
     public static void main(String[] args) {
         double Width = 5.6; //They have a mistake here(not 5.5, but 5.6), because in the Expected Output there are another datas
         double Height = 8.5;
-        System.out.println("Area is " + Width + " * " + Height + " = " + Width * Height);
-        System.out.println("Perimeter is 2 * (" + Width + " + " + Height + ") = " + 2 * (Width + Height));
-/*
-Area is 5.6 * 8.5 = 47.599999999999994
-Perimeter is 2 * (5.6 + 8.5) = 28.2
-В этос примере такой результат. Как выводить результат как функция Round в Excel?
- */
+        double Area = Width * Height;
+        double resultArea = Area * 100;
+        //System.out.println(resultArea);
+        int resultAreaRound = (int)Math.round(resultArea);
+        //System.out.println(resultAreaRound);
+        resultArea = (double) resultAreaRound / 100;
+        System.out.println("Area is " + Width + " * " + Height + " = " + resultArea);
+
+        double Perimeter = 2 * (Width + Height);
+        double resultPerimeter = Perimeter * 100;
+        //System.out.println(resultPerimeter);
+        int resultPerimeterRound = (int)Math.round(resultPerimeter);
+        //System.out.println(resultPerimeterRound);
+        resultPerimeter = (double) resultPerimeterRound / 100;
+        System.out.println("Perimeter is 2 * (" + Width + " + " + Height + ") = " + resultPerimeter);
+
     }
 }
