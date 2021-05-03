@@ -1,4 +1,4 @@
-package students.dmitrijs_matrenicevs.leson_2.level_1.task_1;
+package students.dmitrijs_matrenicevs.lesson_2.level_1.task_1;
 
 class Task1 {
 

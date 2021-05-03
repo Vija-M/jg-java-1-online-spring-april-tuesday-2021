@@ -1,3 +1,5 @@
+package students.olga_t.lesson_2.level_7.task_29;
+
 class CorrectDataTypes {
 
     public static void main(String[] args) {
