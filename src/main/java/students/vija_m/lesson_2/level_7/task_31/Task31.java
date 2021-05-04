@@ -13,7 +13,7 @@ class Task31 {
                 System.out.println("Please, enter integer numbers: ");
         int sum = 0; // так как изначачально цифры не были введены, то их сумма равна 0
         boolean isExit = false; // присваиваем переменной значение false
-        while (!isExit) { //  соответственно пока !isExit - true наш цикл работает
+        while (!isExit) { //  пока это так и !isExit имеет значение true наш цикл работает
             if (scanner.hasNextInt()) {
                 int number = scanner.nextInt();
                 sum = sum + number; // если введённое  численное значение, то оно прибавляется к сумме ранее введённых чисел.
