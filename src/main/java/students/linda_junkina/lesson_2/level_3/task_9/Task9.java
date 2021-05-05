@@ -18,6 +18,7 @@ class Task9 {
         int number7 = enteredNumber * 7;
         int number8 = enteredNumber * 8;
         int number9 = enteredNumber * 9;
+        int number10 = enteredNumber * 10;
 
         System.out.println(" Here are your results: ");
         System.out.println(enteredNumber + " * 1 = " + number1);
@@ -29,5 +30,6 @@ class Task9 {
         System.out.println(enteredNumber + " * 7 = " + number7);
         System.out.println(enteredNumber + " * 8 = " + number8);
         System.out.println(enteredNumber + " * 9 = " + number9);
+        System.out.println(enteredNumber + " * 10 = " + number10);
     }
 }
