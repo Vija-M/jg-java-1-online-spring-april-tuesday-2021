@@ -6,7 +6,7 @@ class Task15 {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
 
 
-        System.out.println("Please, enter your name: ");
+        System.out.print("Please, enter your name: ");
         String name = scanner.nextLine();
     }
 }
