@@ -1,6 +1,6 @@
 package students.antons_korenevskis.lesson_2.level_1.task_1;
 
-public class Task1 {
+class Task1 {
 
     public static void main(String[] args) {
 
