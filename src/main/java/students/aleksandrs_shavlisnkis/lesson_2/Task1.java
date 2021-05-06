@@ -1,4 +1,4 @@
-package students.aleksandrs_shavlisnkis.lesson_2.level_1.task_1;
+package students.aleksandrs_shavlisnkis.lesson_2;
 
 import java.util.Scanner;
 
