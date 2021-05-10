@@ -43,7 +43,7 @@ class task1 {
                 if (result != firstNumber * secondNumber) {
                     int resultDiv = firstNumber - secondNumber * result;//остаток от деления
                     int resultDiv2 = firstNumber % secondNumber;//остаток от деления
-                    System.out.print("By dividing " + firstNumber + " on " + secondNumber + " you get incomplete number " + result + " and remainder of the division is " + resultDiv /*+ " " + resultDiv2*/);
+                    System.out.print("By dividing " + firstNumber + " on " + secondNumber + " you get incomplete number (" + result + ") and remainder of the division is (" + resultDiv + ")"/*+ " " + resultDiv2*/);
                 } else
                     System.out.print(firstNumber + " " + symbolEntered + " " + secondNumber + " = " + result);
             }
