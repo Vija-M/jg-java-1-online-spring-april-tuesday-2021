@@ -1,4 +1,4 @@
-package instructor.lesson_1;
+package instructor.lesson_2;
 
 public class MathOperationDemo {
 
