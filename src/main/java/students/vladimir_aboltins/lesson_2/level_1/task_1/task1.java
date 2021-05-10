@@ -95,7 +95,7 @@ class task1 {
             return userInputA;
         } else {
             printEnteredNumberError();
-            getAFromUser();
+            getAFromUser();// рекурсия
         }
         return userInputA;
     }
@@ -125,7 +125,7 @@ class task1 {
         } else {
             printEnteredNumberError();
             printAskOperation();
-            getOperationSymbolFromUser();
+            getOperationSymbolFromUser();// рекурсия
         }
         return userInputOperation;
     }
