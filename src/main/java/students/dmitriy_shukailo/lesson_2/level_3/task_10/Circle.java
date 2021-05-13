@@ -14,7 +14,6 @@ package students.dmitriy_shukailo.lesson_2.level_3.task_10;
 
         System.out.println("Perimetr of Circle = " + perimetrCircle);
         System.out.println("Area of Circle = " + areaCircle);
-
     }
 
 }
