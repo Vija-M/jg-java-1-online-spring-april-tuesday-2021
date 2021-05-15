@@ -2,7 +2,7 @@ package students.arturs_arutjunovs.lesson_3.level_7.task_27;
 
 import java.util.Scanner;
 
-public class Circle {
+class Circle {
 
     public Circle() {
     }
