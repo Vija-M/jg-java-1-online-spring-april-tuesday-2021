@@ -17,6 +17,7 @@ class Dog {
     }
 
     void changeColor(String newColor) {
+        color = newColor;
         System.out.println("Цвет поменялся на " + newColor);
     }
 
@@ -35,5 +36,6 @@ class DogDemo {
         dog.voice();
         dog.happyBirthday();
         dog.changeColor("рыжий");
+        dog.voice();
     }
 }
