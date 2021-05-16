@@ -1,6 +1,6 @@
 package students.ernests_subhankulovs.lesson_3.level_4.task_14;
 
-public class Phone {
+class Phone {
     String model;
 
     Phone(String newModel) {
