@@ -10,6 +10,8 @@ class Dog {
 
     void voice() {
         System.out.println(this.name);
+        System.out.println(this.name);
+        System.out.println(this.name);
     }
 }
 
@@ -17,8 +19,6 @@ class DogDemo {
     public static void main(String[] args) {
 
         Dog dog = new Dog("Малыш");
-        dog.voice();
-        dog.voice();
         dog.voice();
     }
 }
