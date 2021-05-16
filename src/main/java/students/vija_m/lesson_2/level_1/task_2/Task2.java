@@ -6,10 +6,10 @@ class Task2 {
 
             java.util.Scanner scanner = new java.util.Scanner(System.in);
             System.out.print("Please, enter a number: ");
-            double a = scanner.nextDouble();;
+            double a = scanner.nextDouble();
 
             System.out.print("Now enter a second number: ");
-            double b = scanner.nextDouble();;
+            double b = scanner.nextDouble();
 
             System.out.println("a + b = " + (a + b) + ";");
             System.out.println("a - b = " + (a - b) + ";");
