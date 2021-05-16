@@ -4,22 +4,18 @@ import java.util.Scanner;
 
 class task1 {
 
-
-    private static int userInputA;
-    private static int userInputB;
-
     public static void main(String[] args) {
 
         printGreetings();
 
         printAskFirstNumber();
-        int firstNumber = getAFromUser();//Ввод первого числа
+        int firstNumber = getNumFromUser();//Ввод первого числа
 
         printAskSecondNumber();
-        int secondNumber = getBFromUser();//Ввод второго числа
+        int secondNumber = getNumFromUser();//Ввод второго числа
 
         printAskOperation();
-        int operationSymbol = getOperationSymbolFromUser(); //Ввод символа операции
+        int operationSymbol = getOperationSymbolFromUser();//Ввод символа операции
 
         int result;
         if (operationSymbol == 1) {
@@ -37,13 +33,14 @@ class task1 {
         } else if (operationSymbol == 4) {
             char symbolEntered = '/';
             if (firstNumber < secondNumber) {
-                System.out.print("First number must be greater then second\nFirst number: " + firstNumber + "\nSecond number: " + secondNumber);
+                result = firstNumber / secondNumber;
+                System.out.print("First number: " + firstNumber + "\nSecond number: " + secondNumber + "\nresult:" + result);
             } else {
                 result = firstNumber / secondNumber;
                 if (result != firstNumber * secondNumber) {
                     int resultDiv = firstNumber - secondNumber * result;//остаток от деления
                     int resultDiv2 = firstNumber % secondNumber;//остаток от деления
-                    System.out.print("By dividing " + firstNumber + " on " + secondNumber + " you get incomplete number (" + result + ") and remainder of the division is (" + resultDiv + ")"/*+ " " + resultDiv2*/);
+                    System.out.print("By dividing " + firstNumber + " on " + secondNumber + " you get incomplete number (" + result + ") and remainder of the division is (" + resultDiv + ")");
                 } else
                     System.out.print(firstNumber + " " + symbolEntered + " " + secondNumber + " = " + result);
             }
@@ -53,7 +50,7 @@ class task1 {
     }
 
 
-    //Output
+//Output
 
     //вывод приветсвия
     public static void printGreetings() {
@@ -72,50 +69,35 @@ class task1 {
 
     //вывод запроса операции
     public static void printAskOperation() {
-        System.out.print("For (+) press 1\n For (-) press 2\n For (*) press 3\n For (/) press 4\nEnter number of operation you wish to perform and press enter\n ");
+        System.out.print(
+                        "For (+) press 1\n" +
+                        "For (-) press 2\n" +
+                        "For (*) press 3\n" +
+                        "For (/) press 4\n" +
+                        "Enter number of operation you wish to perform and press enter.\n");
     }
 
     //вывод error
     public static void printEnteredNumberError() {
         System.out.print("Error, please try again");
     }
-//Вывод результата
-/*    public static void printResult() {
 
-        System.out.print(firstNumber + " " + symbolEntered + " " + secondNumber + " = " + result);
-}*/
-
-//Input
-
-    public static int getAFromUser() {
+    //Input
+    public static int getNumFromUser() {
+        if(counter==5)
+            System.exit(0);
 
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextInt()) { // проверяет число на целочисленость
-            userInputA = scanner.nextInt();
-            return userInputA;
+            int userInput = scanner.nextInt();
+            return userInput;
         } else {
             printEnteredNumberError();
-            getAFromUser();// рекурсия
-        }
-        return userInputA;
+            getNumFromUser();// рекурсия
+        }return  0;
+
     }
 
-
-    public static int getBFromUser() {
-
-        Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextInt()) { // проверяет число на целочисленость
-            userInputB = scanner.nextInt();
-            if (userInputB > userInputA) {
-                System.out.print("Second number is smaller, you will not be able to divide\n");
-            }
-            return userInputB;
-        } else {
-            printEnteredNumberError();
-            getBFromUser();// рекурсия
-        }
-        return userInputB;
-    }
 
     public static int getOperationSymbolFromUser() {
         Scanner scanner = new Scanner(System.in);
