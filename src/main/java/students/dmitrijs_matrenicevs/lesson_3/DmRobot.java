@@ -4,7 +4,7 @@ class Robot {
 
 
     public void sayHello() {
-        System.out.println("Hello ");
+        System.out.println("Hello");
     }
 
     public void sayYourName() {
