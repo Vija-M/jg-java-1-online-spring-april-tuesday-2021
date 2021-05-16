@@ -5,7 +5,7 @@ class DogDemo {
 
     public static void main(String[] args) {
 
-        Dog dog2 = new Dog("Бигель", 5);
+        Dog dog2 = new Dog("Бигель", 5, "Коричневый");
 
         dog2.voice();
         dog2.happyBirthday();
