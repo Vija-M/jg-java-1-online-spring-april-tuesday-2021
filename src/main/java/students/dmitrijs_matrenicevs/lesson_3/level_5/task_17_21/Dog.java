@@ -7,7 +7,6 @@ String name;
 public Dog(String name) {
 
     this.name = name;
-    System.out.println(name);
 
 }
 
