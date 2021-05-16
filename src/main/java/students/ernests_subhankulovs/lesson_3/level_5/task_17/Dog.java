@@ -8,6 +8,6 @@ class Dog {
     }
 
     void voice() {
-        System.out.println(name + " " + name + " " + name);
+        System.out.println(this.name + " " + this.name + " " + this.name);
     }
 }
