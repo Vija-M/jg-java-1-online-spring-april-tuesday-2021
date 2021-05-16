@@ -20,30 +20,26 @@ class task1 {
         int secondNumber = getNumFromUser(4);// Ввод второго числа
 
         printAskOperation();
-        char operationSymbol = getOperationSymbolFromUser();// Ввод символа операции
+        char operationSymbol = getOperationSymbolFromUser(4);// Ввод символа операции
 
         switch (operationSymbol) {
-            case '+' : {
+            case '+':
                 result = firstNumber + secondNumber;
                 System.out.print(firstNumber + " " + operationSymbol + " " + secondNumber + " = " + result);
                 break;
-            }
-            case '-' : {
+            case '-':
                 result = firstNumber - secondNumber;
                 System.out.print(firstNumber + " " + operationSymbol + " " + secondNumber + " = " + result);
                 break;
-            }
-            case '*' : {
+            case '*':
                 result = firstNumber * secondNumber;
                 System.out.print(firstNumber + " " + operationSymbol + " " + secondNumber + " = " + result);
                 break;
-            }
-            case '/' : {
+            case '/':
                 result = firstNumber / secondNumber;
                 System.out.print(firstNumber + " " + operationSymbol + " " + secondNumber + " = " + result);
                 break;
-            }
-            case 'a' : {
+            case 'a':
                 result = firstNumber + secondNumber;
                 System.out.println(firstNumber + " + " + secondNumber + " = " + result);
                 result = firstNumber - secondNumber;
@@ -53,10 +49,9 @@ class task1 {
                 result = firstNumber / secondNumber;
                 System.out.println(firstNumber + " / " + secondNumber + " = " + result);
                 break;
-            }
         }
-
     }
+
 
 // Output
 
@@ -84,11 +79,11 @@ class task1 {
 
     // вывод error
     public static void printEnteredNumberError() {
-        System.out.print(ANSI_RED +"ERROR"+ ANSI_RESET +" number you entered is incorrect\n");
+        System.out.print(ANSI_RED + "ERROR" + ANSI_RESET + " number you entered is incorrect\n");
     }
 
     public static void printErrorExit() {
-        System.out.print(ANSI_RED +"ERROR"+ ANSI_RESET +", You have exceeded the maximum attempts. Please restart program\n");
+        System.out.print(ANSI_RED + "ERROR" + ANSI_RESET + ", You have exceeded the maximum attempts. Please restart program\n");
     }
 
     public static void printRemainingAttempts(int counter) {
@@ -103,43 +98,44 @@ class task1 {
 
     // Input
     public static int getNumFromUser(int counter) {
-        if (counter == 0)
+
+        if (counter <= 0)
             System.exit(0);
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextInt()) { // проверяет число на целочисленость
-            return scanner.nextInt();
+           int userInputOperation = scanner.nextInt();
+            return userInputOperation;
         } else if (counter == 1) {
             printErrorExit();
-            getNumFromUser(counter - 1);// рекурсия
+            getNumFromUser(-1);// рекурсия
         } else {
             printEnteredNumberError();
             printRemainingAttempts(counter - 1);
             getNumFromUser(counter - 1);// рекурсия
         }
+
         return 0;
     }
 
-    public static char getOperationSymbolFromUser() {
-
-
-            //printRemainingAttemptsSymbol();
-            Scanner scanner = new Scanner(System.in);
-            char userInputOperation = scanner.next().charAt(0);
-            if (userInputOperation == '+' || userInputOperation == '-' || userInputOperation == '*' || userInputOperation == '/' || userInputOperation == 'a')
-                return userInputOperation;
-
-//            if (counter == 1) {
-//                printErrorExit();
-//                getOperationSymbolFromUser();// рекурсия
-//            }
-//            printEnteredNumberError();
-            getOperationSymbolFromUser();// рекурсия
-
-        System.exit(0);
-        return 0;
+    public static char getOperationSymbolFromUser(int counter) {
+        if (counter == 0)
+            System.exit(0);
+        Scanner scanner = new Scanner(System.in);
+        char userInputOperation2 = scanner.next().charAt(0);
+        if (userInputOperation2 == '+' || userInputOperation2 == '-' || userInputOperation2 == '*' || userInputOperation2 == '/' || userInputOperation2 == 'a') {
+            return userInputOperation2;
+        } else if (counter == 1) {
+            printErrorExit();
+            getOperationSymbolFromUser(counter - 1);// рекурсия
+        } else {
+            printEnteredNumberError();
+            printRemainingAttemptsSymbol(counter - 1);
+            getOperationSymbolFromUser(counter - 1);// рекурсия
         }
+        return userInputOperation2;
+
     }
 
-
+}
 
 
