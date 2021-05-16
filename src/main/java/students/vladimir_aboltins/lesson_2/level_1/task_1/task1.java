@@ -9,10 +9,10 @@ class task1 {
         printGreetings();
 
         printAskFirstNumber();
-        int firstNumber = getNumFromUser();//Ввод первого числа
+        int firstNumber = getNumFromUser(4);//Ввод первого числа
 
         printAskSecondNumber();
-        int secondNumber = getNumFromUser();//Ввод второго числа
+        int secondNumber = getNumFromUser(4);//Ввод второго числа
 
         printAskOperation();
         int operationSymbol = getOperationSymbolFromUser();//Ввод символа операции
@@ -70,7 +70,7 @@ class task1 {
     //вывод запроса операции
     public static void printAskOperation() {
         System.out.print(
-                        "For (+) press 1\n" +
+                "For (+) press 1\n" +
                         "For (-) press 2\n" +
                         "For (*) press 3\n" +
                         "For (/) press 4\n" +
@@ -79,23 +79,35 @@ class task1 {
 
     //вывод error
     public static void printEnteredNumberError() {
-        System.out.print("Error, please try again");
+        System.out.print("'ERROR' number you entered is incorrect\n");
+    }
+
+    public static void printErrorExit() {
+        System.out.print("ERROR, You have exceeded the maximum attempts. Please restart program\n");
+    }
+
+    public static void printRemainingAttempts(int counter) {
+        System.out.print("You have left "+ counter +" attempts before the program closes\n" +
+                "Enter your number: ");
     }
 
     //Input
-    public static int getNumFromUser() {
-        if(counter==5)
+    public static int getNumFromUser(int counter) {
+        if (counter == 0)
             System.exit(0);
-
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextInt()) { // проверяет число на целочисленость
             int userInput = scanner.nextInt();
             return userInput;
+        } else if (counter == 1) {
+            printErrorExit();
+            getNumFromUser(counter - 1);// рекурсия
         } else {
             printEnteredNumberError();
-            getNumFromUser();// рекурсия
-        }return  0;
-
+            printRemainingAttempts(counter-1);
+            getNumFromUser(counter - 1);// рекурсия
+        }
+        return 0;
     }
 
 
