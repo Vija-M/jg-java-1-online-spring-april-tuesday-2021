@@ -11,7 +11,7 @@ public class ArithmeticMean {
         System.out.print("Please, enter a number 2: ");
         int b = scanner.nextInt();
         System.out.print("Please, enter a number 3: ");
-        int c = scanner.nextInt();
+        double c = scanner.nextDouble();
 
         double arithmeticMean = (a + b + c) / 3;
         System.out.print("Arithmetic Mean = " + arithmeticMean);
