@@ -17,8 +17,8 @@ class Dog {
 
     void voice() {
 
-        System.out.println(this.name);
-        System.out.println(this.age);
+        System.out.println("Её имя: " + this.name);
+        System.out.println("Ее возраст: " + this.age + " лет");
 
     }
 
