@@ -1,4 +1,4 @@
-package students.ernests_subhankulovs.lesson_3.level_7;
+package students.ernests_subhankulovs.lesson_3.level_7.task_26;
 
 class Water {
     int freezingTemperature;
