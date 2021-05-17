@@ -7,7 +7,6 @@ class Phone {
      Phone(String phonemodel) {
         this.model = phonemodel;
     }
-
         String getModel() {
             return this.model;
         }
