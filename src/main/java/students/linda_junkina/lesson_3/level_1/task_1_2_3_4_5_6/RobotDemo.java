@@ -25,17 +25,3 @@ class RobotDemo {
     }
 
 }
-/*CreditCard creditCardOne = new CreditCard();
-        creditCardOne.bankName = "The Bank";
-        creditCardOne.cardHolderName = "John Doe";
-        creditCardOne.cardNumber = "1234 5678 8765 4321";
-        creditCardOne.cardExpiration = "12/2022";
-        creditCardOne.cardSecurityCode = 123;
-
-        System.out.println("creditCardOne.bankName = " + creditCardOne.bankName);
-        System.out.println("creditCardOne.cardHolderName = " + creditCardOne.cardHolderName);
-        System.out.println("creditCardOne.cardNumber = " + creditCardOne.cardNumber);
-        System.out.println("creditCardOne.cardExpiration = " + creditCardOne.cardExpiration);
-        System.out.println("creditCardOne.cardSecurityCode = " + creditCardOne.cardSecurityCode);
-        /*
- */
