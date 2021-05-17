@@ -106,7 +106,8 @@ public class task2 {
         do {
             Scanner scanner = new Scanner(System.in);
             if (scanner.hasNextDouble()) { // проверяет число
-                return scanner.nextDouble();
+                double inputNum=scanner.nextDouble();
+                return inputNum;
             }
             if (counter == 0) {
                 System.exit(0);
