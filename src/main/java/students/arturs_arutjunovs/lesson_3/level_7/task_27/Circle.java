@@ -1,25 +1,23 @@
 package students.arturs_arutjunovs.lesson_3.level_7.task_27;
 
-import java.util.Scanner;
-
 class Circle {
 
-    public Circle() {
-    }
-    double calculateArea() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter circle radius: ");
-        double radius = scanner.nextDouble();
+    double radius;
 
-        double circleArea = 3.14 * (radius * radius);
-        return circleArea;
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    double calculateArea() {
+        return 3.14 * (radius * radius);
     }
 }
 
- class CircleDemo {
-     public static void main(String[] args) {
+class CircleDemo {
+    public static void main(String[] args) {
 
-         Circle circle = new Circle();
-         System.out.println(circle.calculateArea());
-     }
- }
+        Circle circle = new Circle(4.3);
+        System.out.println(circle.calculateArea());
+
+    }
+}
