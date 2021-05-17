@@ -27,5 +27,6 @@ class DogDemo {
         Dog dog = new Dog("Малыш", 2);
         dog.voice();
         dog.happyBirthday();
+        dog.voice();
     }
 }
