@@ -6,10 +6,8 @@ class Book {
     Book(String bookTitle) {
         this.title = bookTitle;
     }
-
     String getTitle() {
         return this.title;
     }
-
 }
 
