@@ -4,9 +4,9 @@ class DogDemo {
 
     public static void main(String[] args) {
 
-        Dog dog = new Dog();
+        Dog dog = new Dog("Bobik", 3, "Orange");
         dog.voice();
-        dog.changeColor("Black" );
+        dog.changeColor("Black");
         dog.voice();
     }
 }
