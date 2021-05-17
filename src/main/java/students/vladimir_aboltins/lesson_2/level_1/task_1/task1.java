@@ -15,9 +15,11 @@ class task1 {
 
         printAskFirstNumber();
         int firstNumber = getNumFromUser(4);// Ввод первого числа
+        System.out.print("firstNumber");
 
-        printAskSecondNumber();
+                printAskSecondNumber();
         int secondNumber = getNumFromUser(4);// Ввод второго числа
+        System.out.print("secondNumber");
 
         printAskOperation();
         char operationSymbol = getOperationSymbolFromUser(4);// Ввод символа операции
@@ -50,8 +52,8 @@ class task1 {
                 System.out.println(firstNumber + " / " + secondNumber + " = " + result);
                 break;
         }
-    }
 
+    }
 
 // Output
 
@@ -99,40 +101,44 @@ class task1 {
     // Input
     public static int getNumFromUser(int counter) {
 
-        if (counter <= 0)
-            System.exit(0);
         Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextInt()) { // проверяет число на целочисленость
-           int userInputOperation = scanner.nextInt();
-            return userInputOperation;
-        } else if (counter == 1) {
-            printErrorExit();
-            getNumFromUser(-1);// рекурсия
-        } else {
-            printEnteredNumberError();
-            printRemainingAttempts(counter - 1);
-            getNumFromUser(counter - 1);// рекурсия
-        }
+        int userInput=scanner.nextInt();
 
+        if ((userInput%1)==0) { // проверяет число на целочисленость
+          //  System.out.print("Block A");
+            return  userInput;
+        } if (counter == 0) {
+            //System.out.print("Block B");
+            System.exit(0);
+        } if (counter == 1) {
+           // System.out.print("Block C");
+            printErrorExit();
+            getNumFromUser(counter-1);// рекурсия
+        }
+        // System.out.print("Block D");
+        printEnteredNumberError();
+        printRemainingAttempts(counter-1);
+        getNumFromUser(counter-1);// рекурсия
         return 0;
     }
 
     public static char getOperationSymbolFromUser(int counter) {
+
         if (counter == 0)
             System.exit(0);
         Scanner scanner = new Scanner(System.in);
-        char userInputOperation2 = scanner.next().charAt(0);
-        if (userInputOperation2 == '+' || userInputOperation2 == '-' || userInputOperation2 == '*' || userInputOperation2 == '/' || userInputOperation2 == 'a') {
-            return userInputOperation2;
+        char userInputOperation = scanner.next().charAt(0);
+        if (userInputOperation == '+' || userInputOperation == '-' || userInputOperation == '*' || userInputOperation == '/' || userInputOperation == 'a') {
+            return userInputOperation;
         } else if (counter == 1) {
             printErrorExit();
-            getOperationSymbolFromUser(counter - 1);// рекурсия
+            getOperationSymbolFromUser(counter-1);// рекурсия
         } else {
             printEnteredNumberError();
-            printRemainingAttemptsSymbol(counter - 1);
-            getOperationSymbolFromUser(counter - 1);// рекурсия
+            printRemainingAttemptsSymbol(counter-1);
+            getOperationSymbolFromUser(counter-1);// рекурсия
         }
-        return userInputOperation2;
+        return userInputOperation;
 
     }
 
