@@ -5,26 +5,37 @@ class RobotDemo {
 
         Robot robot1 = new Robot ();
         robot1.sayHello = "Hello Human!";
+        robot1.sayYourName = "ROBO!";
+
         System.out.println(robot1.sayHello);
-        robot1.sayYourName = "My name is ROBO!";
-        System.out.println(robot1.sayYourName);
+        System.out.println("My name is " + robot1.sayYourName);
 
         System.out.println ();
 
         Robot robot2 = new Robot ();
         robot2.sayHello = "Hello Human!";
+        robot2.sayYourName = "ROBO!";
+
         System.out.println(robot2.sayHello);
-        robot2.sayYourName = "My name is WALLE!";
-        System.out.println(robot2.sayYourName);
+        System.out.println("My name is " + robot2.sayYourName);
 
-        System.out.println ();
 
-        Robot robot3 = new Robot ();
-        robot3.sayHello = "Hello Human!";
-        System.out.println(robot3.sayHello);
-        robot3.sayYourName = "My name is EVA!";
-        System.out.println(robot3.sayYourName);
+
 
     }
 
 }
+/*CreditCard creditCardOne = new CreditCard();
+        creditCardOne.bankName = "The Bank";
+        creditCardOne.cardHolderName = "John Doe";
+        creditCardOne.cardNumber = "1234 5678 8765 4321";
+        creditCardOne.cardExpiration = "12/2022";
+        creditCardOne.cardSecurityCode = 123;
+
+        System.out.println("creditCardOne.bankName = " + creditCardOne.bankName);
+        System.out.println("creditCardOne.cardHolderName = " + creditCardOne.cardHolderName);
+        System.out.println("creditCardOne.cardNumber = " + creditCardOne.cardNumber);
+        System.out.println("creditCardOne.cardExpiration = " + creditCardOne.cardExpiration);
+        System.out.println("creditCardOne.cardSecurityCode = " + creditCardOne.cardSecurityCode);
+        /*
+ */
