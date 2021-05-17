@@ -108,11 +108,7 @@ public class task2 {
             if (scanner.hasNextDouble()) { // проверяет число
                 double inputNum=scanner.nextDouble();
                 return inputNum;
-            }
-            if (counter == 0) {
-                System.exit(0);
-            }
-            if (counter == 1) {
+            }if (counter == 1) {
                 printErrorExit();
             } else if (counter > 1) {
                 printEnteredNumberError();
