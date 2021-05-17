@@ -12,6 +12,5 @@ class DogDemo {
         dog.changeColor(newColour);
         dog.voice();
 
-
     }
 }
