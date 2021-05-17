@@ -3,127 +3,146 @@ import java.util.Scanner;
 
 public class task2 {
 
-
-    private static double userInputA;
-    private static double userInputB;
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
 
     public static void main(String[] args) {
+
+        double result;
 
         printGreetings();
 
         printAskFirstNumber();
-        double firstNumber = getAFromUser();//Ввод первого числа
+        double firstNumber = getNumFromUser();// Ввод первого числа
 
         printAskSecondNumber();
-        double secondNumber = getBFromUser();//Ввод второго числа
+        double secondNumber = getNumFromUser();// Ввод второго числа
 
         printAskOperation();
-        int operationSymbol = getOperationSymbolFromUser(); //Ввод символа операции
-        double result;
+        char operationSymbol = getOperationSymbolFromUser();// Ввод символа операции
 
-        if (operationSymbol == 1) {
-            char symbolEntered = '+';
-            result = firstNumber + secondNumber;
-            System.out.print(firstNumber + " " + symbolEntered + " " + secondNumber + " = " + result);
-        } else if (operationSymbol == 2) {
-            char symbolEntered = '-';
-            result = firstNumber - secondNumber;
-            System.out.print(firstNumber + " " + symbolEntered + " " + secondNumber + " = " + result);
-        } else if (operationSymbol == 3) {
-            char symbolEntered = '*';
-            result = firstNumber * secondNumber;
-            System.out.print(firstNumber + " " + symbolEntered + " " + secondNumber + " = " + result);
-        } else if (operationSymbol == 4) {
-            char symbolEntered = '/';
-//            if (firstNumber < secondNumber) {
-//                System.out.print("First number must be greater then second\nFirst number: " + firstNumber + "\nSecond number: " + secondNumber);
-//            } else {
+        switch (operationSymbol) {
+            case '+':
+                result = firstNumber + secondNumber;
+                System.out.print(firstNumber + " " + operationSymbol + " " + secondNumber + " = " + result);
+                break;
+            case '-':
+                result = firstNumber - secondNumber;
+                System.out.print(firstNumber + " " + operationSymbol + " " + secondNumber + " = " + result);
+                break;
+            case '*':
+                result = firstNumber * secondNumber;
+                System.out.print(firstNumber + " " + operationSymbol + " " + secondNumber + " = " + result);
+                break;
+            case '/':
                 result = firstNumber / secondNumber;
-//                if (result != firstNumber * secondNumber) {
-//                    double resultDiv = firstNumber - secondNumber * result;//остаток от деления
-//                    // int resultDiv2 = firstNumber % secondNumber;//остаток от деления
-//                    System.out.print("By dividing " + firstNumber + " on " + secondNumber + " you get incomplete number (" + result + ") and remainder of the division is (" + resultDiv + ")"/*+ " " + resultDiv2*/);
-//                } else
-                    System.out.print(firstNumber + " " + symbolEntered + " " + secondNumber + " = " + result);
-          //  }
-        } else System.out.print("you entered number that not equal to any operation");// printAskOperation();
-
+                System.out.print(firstNumber + " " + operationSymbol + " " + secondNumber + " = " + result);
+                break;
+            case 'a':
+                result = firstNumber + secondNumber;
+                System.out.println(firstNumber + " + " + secondNumber + " = " + result);
+                result = firstNumber - secondNumber;
+                System.out.println(firstNumber + " - " + secondNumber + " = " + result);
+                result = firstNumber * secondNumber;
+                System.out.println(firstNumber + " * " + secondNumber + " = " + result);
+                result = firstNumber / secondNumber;
+                System.out.println(firstNumber + " / " + secondNumber + " = " + result);
+                break;
+        }
 
     }
 
+// Output
 
-    //Output
-
-    //вывод приветсвия
+    // вывод приветсвия
     public static void printGreetings() {
-        System.out.print("Hello, please enter two integer numbers\n");
+        System.out.println("Hello, please enter two numbers");
     }
 
-    //вывод запроса первого числа
+    // вывод запроса первого числа
     public static void printAskFirstNumber() {
         System.out.print("Enter first number: ");
     }
 
-    //вывод запроса второго числа
+    // вывод запроса второго числа
     public static void printAskSecondNumber() {
         System.out.print("Enter second number: ");
     }
 
-    //вывод запроса операции
+    // вывод запроса операции
     public static void printAskOperation() {
-        System.out.print("For (+) press 1\n For (-) press 2\n For (*) press 3\n For (/) press 4\nEnter number of operation you wish to perform and press enter\n ");
+        System.out.print("Enter symbol of operation you wish to perform and press enter.\n" +
+                "Symbols that can be performed: | " + ANSI_RED + "+" + ANSI_RESET + " | " + ANSI_RED + "-" + ANSI_RESET + " | " + ANSI_RED + "*" + ANSI_RESET + " | " + ANSI_RED + "/" + ANSI_RESET + " |\n" +
+                "If you wish to see result of all operations, press | " + ANSI_RED + "a" + ANSI_RESET + " | symbol and press enter: ");
     }
 
-    //вывод error
+    // вывод error: неправильный ввод
     public static void printEnteredNumberError() {
-        System.out.print("Error, please try again");
+        System.out.print(ANSI_RED + "ERROR" + ANSI_RESET + " number you entered is incorrect\n");
     }
 
-//Input
-
-    public static double getAFromUser() {
-
-        Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextDouble()) { // проверяет число
-            userInputA = scanner.nextDouble();
-            return userInputA;
-        } else {
-            printEnteredNumberError();
-            printAskFirstNumber();
-            getAFromUser();// рекурсия
-
-        }
-        return userInputA;
+    // вывод error: достигнут лимит попыток
+    public static void printErrorExit() {
+        System.out.print(ANSI_RED + "ERROR" + ANSI_RESET + " You have exceeded the maximum attempts. Please restart program\n");
     }
 
+    // вывод error: остаток попыток для чисел
+    public static void printRemainingAttempts(int counter) {
+        System.out.print("You have left " + ANSI_RED + counter + ANSI_RESET + " attempts before the program closes\n" +
+                "Enter your number: ");
+    }
 
-    public static double getBFromUser() {
+    // вывод error: остаток попыток для символа
+    public static void printRemainingAttemptsSymbol(int counter) {
+        System.out.print("You have left " + ANSI_RED + counter + ANSI_RESET + " attempts before the program closes\n" +
+                "Enter your symbol: ");
+    }
 
-        Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextDouble()) { // проверяет число
-            userInputB = scanner.nextDouble();
-            if (userInputB > userInputA) {
-                System.out.print("Second number is smaller, you will not be able to divide\n");
+    // Input
+    public static double getNumFromUser() {
+
+        int counter = 4;
+
+        do {
+            Scanner scanner = new Scanner(System.in);
+            if (scanner.hasNextDouble()) { // проверяет число
+                return scanner.nextDouble();
             }
-            return userInputB;
-        } else {
-            printEnteredNumberError();
-            getBFromUser();// рекурсия
-        }
-        return userInputB;
+            if (counter == 0) {
+                System.exit(0);
+            }
+            if (counter == 1) {
+                printErrorExit();
+            } else if (counter > 1) {
+                printEnteredNumberError();
+                printRemainingAttempts(counter - 1);
+            }
+            counter--;
+        } while (counter >= 1);
+        System.exit(0);
+        return 0;
     }
 
+    public static char getOperationSymbolFromUser() {
 
-    public static int getOperationSymbolFromUser() {
-        Scanner scanner = new Scanner(System.in);
-        int userInputOperation = scanner.nextInt();
-        if (userInputOperation == 1 || userInputOperation == 2 || userInputOperation == 3 || userInputOperation == 4) {
-            return userInputOperation;
-        } else {
-            printEnteredNumberError();
-            printAskOperation();
-            getOperationSymbolFromUser();// рекурсия
-        }
-        return userInputOperation;
+        int counter = 4;
+
+        do {
+            if (counter == 0)
+                System.exit(0);
+            Scanner scanner = new Scanner(System.in);
+            char userInputOperation = scanner.next().charAt(0);
+            if (userInputOperation == '+' || userInputOperation == '-' || userInputOperation == '*' || userInputOperation == '/' || userInputOperation == 'a') {
+                return userInputOperation;
+            } else if (counter == 1) {
+                printErrorExit();
+            } else if (counter > 1) {
+                printEnteredNumberError();
+                printRemainingAttemptsSymbol(counter - 1);
+            }
+            counter--;
+        } while (counter >= 1);
+        System.exit(0);
+        return 0;
     }
 }
