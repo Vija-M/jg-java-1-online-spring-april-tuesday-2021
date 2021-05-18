@@ -7,13 +7,12 @@ String name;
 public Dog(String name) {
 
     this.name = name;
-    System.out.println(name);
 
 }
 
     void voice() {
 
-        System.out.println(this.name);
+        System.out.println(this.name + " " + this.name + " " + this.name);
 
     }
 
