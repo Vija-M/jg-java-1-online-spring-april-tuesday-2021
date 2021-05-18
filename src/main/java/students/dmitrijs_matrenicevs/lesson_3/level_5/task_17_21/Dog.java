@@ -12,7 +12,7 @@ public Dog(String name) {
 
     void voice() {
 
-        System.out.println(this.name);
+        System.out.println(this.name + " " + this.name + " " + this.name);
 
     }
 

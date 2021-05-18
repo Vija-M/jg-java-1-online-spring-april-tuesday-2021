@@ -7,8 +7,6 @@ class DogDemo {
         Dog dog1 = new Dog("Бигель");
 
         dog1.voice();
-        dog1.voice();
-        dog1.voice();
 
     }
 
