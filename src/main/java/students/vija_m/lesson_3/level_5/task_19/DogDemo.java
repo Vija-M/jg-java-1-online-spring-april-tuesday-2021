@@ -7,4 +7,5 @@ class DogDemo {
         myDog.voice();
         myDog.happyBirthday();
         myDog.voice();
-    }}
+    }
+}

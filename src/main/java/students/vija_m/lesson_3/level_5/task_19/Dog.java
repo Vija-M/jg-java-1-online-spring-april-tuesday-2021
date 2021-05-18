@@ -17,5 +17,4 @@ class Dog {
         this.age = age+1;
         System.out.println("Happy Birthday, " + name + "!!! ");
     }
-
     }
