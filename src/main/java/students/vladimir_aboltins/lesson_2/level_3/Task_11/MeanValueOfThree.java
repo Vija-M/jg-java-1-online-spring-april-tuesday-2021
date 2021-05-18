@@ -12,11 +12,11 @@ public class MeanValueOfThree {
         greatings();
 
         printAskFirstNumber();
-        int firstNumber = getNumFromUser();// Ввод первого числа
+        float firstNumber = getNumFromUser();// Ввод первого числа
         printAskSecondNumber();
-        int secondNumber = getNumFromUser();// Ввод второго числа
+        float secondNumber = getNumFromUser();// Ввод второго числа
         printAskThirdNumber();
-        int thirdNumber = getNumFromUser();// Ввод третего числа
+        float thirdNumber = getNumFromUser();// Ввод третего числа
         float valueNumber=(firstNumber+secondNumber+thirdNumber)/3;
         System.out.println("Mean value of three is = " + valueNumber);
 
