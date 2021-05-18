@@ -14,7 +14,11 @@ class Dog{
 
     void voice() {
         System.out.println(name + " " + name + " " + name);
-        System.out.println(age);
+
+    }
+
+    void happyBirthday() {
+        System.out.println(age + 1);
     }
 
     public static void main(String[] args) {
