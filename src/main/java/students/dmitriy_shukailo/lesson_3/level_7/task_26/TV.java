@@ -31,10 +31,4 @@ class TV {
         videoTV = newVideoTV;
         priceTV = newPriceTV;
     }
-
-
-
-
-
-
 }
