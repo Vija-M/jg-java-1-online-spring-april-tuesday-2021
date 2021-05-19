@@ -1,4 +1,6 @@
-package students.ernests_subhankulovs.lesson_1.level_4;
+package students.ernests_subhankulovs.lesson_3.level_3;
+
+import students.ernests_subhankulovs.lesson_3.level_3.Robot;
 
 public class RobotDemo {
     public static void main(String[] args) {
