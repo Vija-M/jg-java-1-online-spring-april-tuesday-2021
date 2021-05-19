@@ -9,5 +9,6 @@ class DogDemo {
         myDog.voice();
 myDog.changeColor("green");
         myDog.voice();
+
     }
 }

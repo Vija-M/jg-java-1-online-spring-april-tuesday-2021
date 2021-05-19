@@ -18,5 +18,4 @@ class Dog {
         color = newColor;
         System.out.println("Now " + this.name +" has a new color!!!");
     }
-
 }
