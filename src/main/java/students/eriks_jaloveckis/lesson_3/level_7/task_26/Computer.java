@@ -1,30 +1,29 @@
 package students.eriks_jaloveckis.lesson_3.level_7.task_26;
 
 class Computer {
-        String poweredOn;
+
         double version;
-        String poweredOff;
-        double update;
+        boolean powered;
 
 
-        Computer(double version, String poweredOn){
+
+        Computer(double version, boolean powered){
             this.version = version;
-            this.poweredOn = poweredOn;
+            this.powered = true;
         }
 
         void info(){
             System.out.println("Version - " + version);
-            System.out.println("Powered off or on - " + poweredOn);
+            System.out.println("Powered on");
         }
 
-        void poweredOff(){
-            this.poweredOn = poweredOff;
+        void powerOff(){
+            this.powered = false;
             System.out.println("Shut down!");
         }
 
         void update(){
-            update = 2.13341;
-            this.version = update;
-            System.out.println("New version is - " + update);
+            this.version = 3.3221;
+            System.out.println("New version is - " + version);
         }
 }
