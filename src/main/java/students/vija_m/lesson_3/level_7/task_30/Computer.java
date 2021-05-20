@@ -14,5 +14,6 @@ public class Computer {
 
     String getModel()
     {return this.model;}
+
 }
 

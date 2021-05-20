@@ -9,6 +9,5 @@ class ComputerDemo {
         System.out.println("Computer manufacturer = " + manufacturer);
         System.out.println("Computer model = " + model);
     }
-
 }
 
