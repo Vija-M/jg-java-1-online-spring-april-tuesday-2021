@@ -14,7 +14,6 @@ class BankAccount {
     }
 
     String getMoney() {
-
         return String.valueOf(this.money);
     }
 
