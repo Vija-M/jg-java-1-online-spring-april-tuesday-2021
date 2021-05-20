@@ -7,7 +7,6 @@ class Number {
         System.out.println("Пожалуйста, введите целое число.");
         int a = scanner.nextInt();
         {
-
             if (a > 0) {
                 System.out.println("Число " + a + " положительное");
             } else if (a < 0) {
