@@ -8,7 +8,6 @@ class Lady {
     boolean cooks;
     boolean studying;
 
-
     public Lady(String name, String eyes, String hair, int age, boolean cooks, boolean studying) {
         this.name = name;
         this.eyes = eyes;
@@ -16,7 +15,6 @@ class Lady {
         this.age = age;
         this.cooks = cooks;
         this.studying = studying;
-
     }
 
     void printInfo() {
@@ -32,5 +30,4 @@ class Lady {
         System.out.println("Is she studying? - " + result);
         System.out.println("Is she cooking? - " + result2);
         System.out.println();
-
     }}

@@ -16,17 +16,29 @@ boolean studyingAtTheUniversity;
         boolean cooking = true;
         String result = this.cooking ? "Yes, I am!" : "Not at all!";
 
-
-        boolean studyingAtTheUniversity = true;
-        String result2 = this.studyingAtTheUniversity ? "Yes, I am!" : "Not at all!";
-
         System.out.println(" - Hello, Lady!");
         System.out.println("   What's your name?");
         System.out.println(" - " + nameOfThePerson);
         System.out.println(" - Are You cooking?");
         System.out.println(" - " + result);
-             if (this.cooking = false) {System.out.println(" - You should try!!!");}
+    }
+
+    void answer() {
+        if (cooking) {System.out.print("");}
+        else{System.out.println(" - You should try, it's fun!!!");
+    }}
+
+    void printInfo2() {
+        boolean studyingAtTheUniversity = true;
+        String result2 = this.studyingAtTheUniversity ? "Yes, I am!" : "Not at all!";
+
+        if (this.cooking = false) {System.out.println("");}
         System.out.println(" - Are You studying?");
         System.out.println(" - " + result2);
-        System.out.println();
-}}
+    }
+
+    void answer2() {
+        if (studyingAtTheUniversity) {System.out.print("");}
+        else{System.out.println(" - Try to study JAVA, then!!!");}
+            System.out.println();
+    }}

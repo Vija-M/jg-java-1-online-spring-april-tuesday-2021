@@ -9,5 +9,4 @@ class LadyDemo {
         Rosalinda.printInfo();
 
     }
-
 }

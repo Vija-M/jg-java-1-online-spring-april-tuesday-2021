@@ -10,5 +10,11 @@ class EducationDemo {
     Education Rosalinda = new Education("Rosa", false, true);
 
  Anna.printInfo();
+ Anna.answer();
+ Anna.printInfo2();
+ Anna.answer2();
  Rosalinda.printInfo();
+ Rosalinda.answer();
+ Rosalinda.printInfo2();
+ Rosalinda.answer2();
 }}
