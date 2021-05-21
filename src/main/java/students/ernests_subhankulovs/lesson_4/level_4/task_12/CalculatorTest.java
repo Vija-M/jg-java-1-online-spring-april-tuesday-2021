@@ -7,8 +7,8 @@ class CalculatorTest {
         calculatorTest.subTest();
         calculatorTest.mulTest();
         calculatorTest.divTest();
-        calculatorTest.isEvenTest1();
-        calculatorTest.isEvenTest2();
+        calculatorTest.isEvenTestEven();
+        calculatorTest.isEvenTestOdd();
     }
 
     public void sumTest() {
@@ -63,7 +63,7 @@ class CalculatorTest {
         }
     }
 
-    public void isEvenTest1() {
+    public void isEvenTestEven() {
         int number = 10;
         Calculator calculator = new Calculator();
         boolean realResult = calculator.isEven(number);
@@ -75,7 +75,7 @@ class CalculatorTest {
         }
     }
 
-    public void isEvenTest2() {
+    public void isEvenTestOdd() {
         int number = 5;
         Calculator calculator = new Calculator();
         boolean realResult = calculator.isEven(number);
