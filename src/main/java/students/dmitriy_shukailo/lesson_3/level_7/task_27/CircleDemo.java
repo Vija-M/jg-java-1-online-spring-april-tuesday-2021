@@ -4,10 +4,10 @@ class CircleDemo {
 
     public static void main(String[] args) {
 
-        Circle circle1 = new Circle(2.75);
+        Circle circle1 = new Circle(2.57);
         circle1.printInfo();
 
-        Circle circle2 = new Circle(100.25);
+        Circle circle2 = new Circle(10.22);
         circle2.printInfo();
     }
 }

@@ -9,7 +9,7 @@ class Circle {
     }
 
     double calculateArea() {
-        return 2 * 3.14 * this.radius;
+        return 3.14 * this.radius * this.radius;
     }
 
     void printInfo() {
