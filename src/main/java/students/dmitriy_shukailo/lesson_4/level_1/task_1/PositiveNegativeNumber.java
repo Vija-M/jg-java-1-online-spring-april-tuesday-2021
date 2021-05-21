@@ -11,12 +11,18 @@ class PositiveNegativeNumber {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
 
-        if (number >= 0) {
-
+        if (number > 0) {
             System.out.println("Number = " + number + " and it's positive");
-        } else {
+        }
+
+        else if (number < 0) {
             System.out.println("Number = " + number + " and it's negative");
         }
 
+        else {
+            System.out.println("Number = " + number);
+        }
+
     }
+
 }
