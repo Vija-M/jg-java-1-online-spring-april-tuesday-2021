@@ -69,9 +69,9 @@ class CalculatorTest {
         boolean realResult = calculator.isEven(number);
         boolean expectedResult = true;
         if (realResult == expectedResult) {
-            System.out.println("IsEven test 1 (even) = OK");
+            System.out.println("isEven test 1 (even) = OK");
         } else {
-            System.out.println("IsEven test 1 (even) = FAIL");
+            System.out.println("isEven test 1 (even) = FAIL");
         }
     }
 
@@ -81,9 +81,9 @@ class CalculatorTest {
         boolean realResult = calculator.isEven(number);
         boolean expectedResult = false;
         if (realResult == expectedResult) {
-            System.out.println("IsEven test 2 (odd)  = OK");
+            System.out.println("isEven test 2 (odd)  = OK");
         } else {
-            System.out.println("IsEven test 2 (odd)  = FAIL");
+            System.out.println("isEven test 2 (odd)  = FAIL");
         }
     }
 }
