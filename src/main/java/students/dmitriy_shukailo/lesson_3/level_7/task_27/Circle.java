@@ -15,4 +15,5 @@ class Circle {
     void printInfo() {
         System.out.println("Area = " + this.calculateArea());
     }
+
 }
