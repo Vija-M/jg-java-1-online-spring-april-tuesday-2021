@@ -13,10 +13,10 @@ class Task5 {
         int b = scanner.nextInt();
 
         if (a > b){
-            System.out.print("Число Б: " + b);
+            System.out.print("Наименьшее число: " + b);
         }
         else if (a < b){
-            System.out.print("Число А: " + a);
+            System.out.print("Наименьшее число: " + a);
         }
         else {
             System.out.print("Ошибка, пробуй снова!");
