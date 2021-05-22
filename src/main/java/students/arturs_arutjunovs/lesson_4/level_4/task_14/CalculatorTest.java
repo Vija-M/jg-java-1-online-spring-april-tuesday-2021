@@ -1,6 +1,6 @@
 package students.arturs_arutjunovs.lesson_4.level_4.task_14;
 
-public class CalculatorTest {
+class CalculatorTest {
     public static void main(String[] args) {
 
         CalculatorTest calculatorTest = new CalculatorTest();
