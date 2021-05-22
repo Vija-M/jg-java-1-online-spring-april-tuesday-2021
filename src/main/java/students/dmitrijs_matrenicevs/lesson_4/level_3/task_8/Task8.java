@@ -15,13 +15,13 @@ class Task8 {
         int c = scanner.nextInt();
 
         if (a < b && b < c){
-            System.out.print("Increasing: ");
+            System.out.print("Числа возврастали!");
         }
         else if (a > b && b > c){
-            System.out.print("Decreasing: ");
+            System.out.print("Числа убывали!");
         }
         else {
-            System.out.print("Neither: ");
+            System.out.print("Neither!");
         }
 
     }
