@@ -4,15 +4,16 @@ class DogDemo {
 
     public static void main(String[] args) {
 
-        Dog dog1 = new Dog("Jack");
+        Dog dog1 = new Dog("Jack", "black", 10, "grey");
+
 
         dog1.voice();
+        dog1.happyBirthday();
+        dog1.changeColour();
+        dog1.voiceAgain();
+  //      System.out.println(dog1.age + " years old.");
 
-
-        dog1.age = 10;
-        System.out.println(dog1.age + " years old.");
-
-
+/*
         dog1.happyBirthDay();
         System.out.println("Happy Birthday! You are now " + dog1.newAge);
 
@@ -22,7 +23,7 @@ class DogDemo {
 
         dog1.newColour = "grey";
         System.out.println("But now he is " + dog1.newColour);
-
+*/
 
     }
 }

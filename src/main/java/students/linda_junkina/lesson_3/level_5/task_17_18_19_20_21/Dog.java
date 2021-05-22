@@ -3,47 +3,45 @@ package students.linda_junkina.lesson_3.level_5.task_17_18_19_20_21;
 class Dog {
 
     String name;
-        Dog(String name) {
-        this.name = name;
-    }
-
-
-    String voice;
-
-    String voice() {
-        System.out.println(name + ", " + name + ", " + name + "!");
-        return voice;
-    }
-
-
-    int age;
-
-    int Dog(int age) {
-        this.age = age;
-        return age;
-    }
-
-
-    int newAge;
-
-    void happyBirthDay () {
-        this.newAge = this.age + 1;
-    }
-
     String colour;
-
-    String colour(String colour) {
-        this.colour = colour;
-        return colour;
-    }
-
+    int age;
     String newColour;
 
-        void newColour () {
+
+    Dog(String name, String colour, int age, String newColour) {
+        this.name = name;
+        this.colour = colour;
+        this.age = age;
         this.newColour = newColour;
+
+
+    }
+
+
+    void voice() {
+        System.out.println(name + ", " + name + ", " + name + "!");
+        System.out.println("Jack is " + colour);
+        System.out.println("Jack is " + age + " years old.");
+    }
+
+    void happyBirthday() {
+        this.age = this.age + 1;
+        System.out.println("Happy Birthday, Jack, you are now " + age + " years old!");
+    }
+
+    void changeColour() {
+        this.colour = "grey";
+        System.out.println("Jack is " + colour + " now");
+    }
+
+    void voiceAgain() {
+        System.out.println(name + ", " + name + ", " + name + "!");
+        System.out.println("Jack is " + colour);
+        System.out.println("Jack is " + age + " years old.");
 
     }
 }
+
 
 
 
