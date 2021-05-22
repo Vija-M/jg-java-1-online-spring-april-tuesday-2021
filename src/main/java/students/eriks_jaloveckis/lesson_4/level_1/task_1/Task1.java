@@ -7,6 +7,7 @@ package students.eriks_jaloveckis.lesson_4.level_1.task_1;
             System.out.print("Введите целое число: ");
 
 
+
             int number = scanner.nextInt();
             if (number < 0) {
                 System.out.println("Ваше число отрицательное!");
