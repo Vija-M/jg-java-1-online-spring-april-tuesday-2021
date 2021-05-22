@@ -13,8 +13,15 @@ class Task6 {
         int b = scanner.nextInt();
 
 
+        if (a == b){
 
+            System.out.print("Числа равны: " + a + " = " + b);}
 
+        else {
 
+            System.out.print("Числа не равны: " + a + " и " + b);
+        }
     }
+
 }
+
