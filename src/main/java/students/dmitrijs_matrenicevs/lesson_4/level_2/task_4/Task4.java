@@ -12,7 +12,15 @@ class Task4 {
         System.out.print("Введи второе целое чилсо: ");
         int b = scanner.nextInt();
 
-        
+        if (a > b){
+            System.out.print("Первое число " + a + " больше второго");
+        }
+        else if (a < b){
+            System.out.print("Второе число " + b + " больше первого");
+        }
+        else {
+            System.out.print("Ошибка, пробуй снова!");
+        }
 
 
     }
