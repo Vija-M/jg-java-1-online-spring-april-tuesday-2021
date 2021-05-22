@@ -11,7 +11,18 @@ class Task8 {
         int a = scanner.nextInt();
         System.out.print("Введите второе целое число: ");
         int b = scanner.nextInt();
-        System.out.println();
+        System.out.print("Введите трерье целое число: ");
+        int c = scanner.nextInt();
+
+        if (a < b && b < c){
+            System.out.print("Increasing: ");
+        }
+        else if (a > b && b > c){
+            System.out.print("Decreasing: ");
+        }
+        else {
+            System.out.print("Neither: ");
+        }
 
     }
 
