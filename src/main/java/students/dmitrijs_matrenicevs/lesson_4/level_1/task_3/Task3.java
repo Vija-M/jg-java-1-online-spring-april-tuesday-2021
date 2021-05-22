@@ -13,7 +13,9 @@ class Task3 {
         if (a % 2 == 1){
             System.out.print("Твоё чилсо " + a + " нечётное");
         }
-
+        else{
+            System.out.print("Твоё число " + a + " чётное");
+        }
 
     }
 
