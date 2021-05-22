@@ -11,7 +11,7 @@ class CalculatorTest {
     }
 
 
-    public void sumTest() {
+    void sumTest() {
         int firstNumber = 10;
         int secondNumber = 5;
         int expectedResult = 15;
@@ -24,12 +24,12 @@ class CalculatorTest {
         }
     }
 
-    public void subTest(){
-        int firstNumber = 10;
+    void subTest(){
+        int firstNumber = 20;
         int secondNumber = 5;
         int expectedResult = 15;
         Calculator calculator = new Calculator();
-        int realResult = calculator.sum(firstNumber, secondNumber);
+        int realResult = calculator.sub(firstNumber, secondNumber);
         if (realResult == expectedResult) {
             System.out.println("Sub test = OK");
         } else {
@@ -38,11 +38,11 @@ class CalculatorTest {
     }
 
     void divTest(){
-        int firstNumber = 10;
+        int firstNumber = 25;
         int secondNumber = 5;
-        int expectedResult = 15;
+        int expectedResult = 5;
         Calculator calculator = new Calculator();
-        int realResult = calculator.sum(firstNumber, secondNumber);
+        int realResult = calculator.div(firstNumber, secondNumber);
         if (realResult == expectedResult) {
             System.out.println("Div test = OK");
         } else {
@@ -51,11 +51,11 @@ class CalculatorTest {
     }
 
     void mulTest(){
-        int firstNumber = 5;
-        int secondNumber = 2;
-        int expectedResult = 10;
+        int firstNumber = 10;
+        int secondNumber = 5;
+        int expectedResult = 50;
         Calculator calculator = new Calculator();
-        int realResult = calculator.sum(firstNumber, secondNumber);
+        int realResult = calculator.mul(firstNumber, secondNumber);
         if (realResult == expectedResult) {
             System.out.println("Mul test = OK");
         } else {
