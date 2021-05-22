@@ -12,6 +12,16 @@ class Task5 {
         System.out.print("Ввведите второе целое число: ");
         int b = scanner.nextInt();
 
+        if (a > b){
+            System.out.print("Число Б: " + b);
+        }
+        else if (a < b){
+            System.out.print("Число А: " + a);
+        }
+        else {
+            System.out.print("Ошибка, пробуй снова!");
+        }
+
 
     }
 }
