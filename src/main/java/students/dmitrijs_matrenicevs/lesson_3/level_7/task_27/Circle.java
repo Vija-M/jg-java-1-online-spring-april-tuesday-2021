@@ -16,7 +16,7 @@ class Circle {
     }
 
     void finish (){
-        System.out.print("Радиус круга " + radius + calculateArea());
+        System.out.print("Радиус круга " + radius + " и "  + calculateArea() + " площадь");
     }
 
 
