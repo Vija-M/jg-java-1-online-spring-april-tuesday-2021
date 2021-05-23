@@ -8,6 +8,7 @@ class CalculatorTest {
         calculatorTest.subTest();
         calculatorTest.divTest();
         calculatorTest.mulTest();
+        calculatorTest.isEvenTest();
     }
 
 
@@ -62,5 +63,20 @@ class CalculatorTest {
             System.out.println("Mul test = FAIL");
         }
     }
+
+    void isEvenTest(){
+        int number = 10;
+        boolean yourNumber = true;
+        Calculator calculator = new Calculator();
+        boolean realNumber = calculator.isEven(number);
+        if (yourNumber == realNumber) {
+            System.out.println("isEven test = OK");
+        } else {
+            System.out.println("isEven test = FAIL");
+        }
+    }
+
+
+
 
 }
