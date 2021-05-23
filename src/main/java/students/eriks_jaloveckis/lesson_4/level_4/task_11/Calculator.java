@@ -16,4 +16,5 @@ class Calculator {
     public int mul(int firstNumber, int secondNumber) {
         return firstNumber * secondNumber;
     }
+
 }

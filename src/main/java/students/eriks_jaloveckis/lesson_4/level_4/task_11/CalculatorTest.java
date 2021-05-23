@@ -44,10 +44,10 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         int realNumber = calculator.div(firstNumber, secondNumber);
         if (expectedNumber == realNumber){
-            System.out.println("Sub test = OK");
+            System.out.println("Div test = OK");
         }
         else{
-            System.out.println("Sub test = FAIL");
+            System.out.println("Div test = FAIL");
         }
     }
 
