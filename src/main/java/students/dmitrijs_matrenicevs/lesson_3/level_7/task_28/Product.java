@@ -13,7 +13,7 @@ class Product {
 
     double actualPrice(){
 
-        return this.regularPrice * (this.discount / 100);
+        return this.regularPrice - this.regularPrice * (this.discount / 100);
     }
 
     void printInformation(){
