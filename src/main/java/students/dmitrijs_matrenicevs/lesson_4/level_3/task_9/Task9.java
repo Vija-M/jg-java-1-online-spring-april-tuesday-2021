@@ -15,10 +15,10 @@ class Task9 {
         System.out.print("Введите трерье целое число: ");
         int c = scanner.nextInt();
 
-        if (a > b && a > c) {
+        if (a >= b && a > c) {
             System.out.print("Самое большое число: " + a);
         }
-        else if (b > a && b > c) {
+        else if (b >= a && b > c) {
             System.out.print("Самое большое число: " + b);
         }
         else {
