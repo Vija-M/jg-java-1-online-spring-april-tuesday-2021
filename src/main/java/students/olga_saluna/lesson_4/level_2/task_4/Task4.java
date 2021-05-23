@@ -14,7 +14,7 @@ class Task4 {
     int y = scanner.nextInt();
 
     if (x > y) {System.out.println ("Larger integer is " + x);}
-    if (x < y) {System.out.println ("Larger integer is " + y);}
+    else if (x < y) System.out.println("Larger integer is " + y);
     else {System.out.println ("Numbers are equal " + x);}
 
 }
