@@ -8,7 +8,8 @@ class CalculatorTest {
         calculatorTest.minusTest();
         calculatorTest.multiplyTest();
         calculatorTest.divideTest();
-        calculatorTest.isEvenTest();
+        calculatorTest.isEvenTest1();
+        calculatorTest.isEvenTest2();
         calculatorTest.maxOfTwoNumbersTest1();
         calculatorTest.maxOfTwoNumbersTest2();
         calculatorTest.maxOfTwoNumbersTest3();
@@ -54,9 +55,9 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         int realResult = calculator.multiply(firstNumber, secondNumber);
         if (realResult == expectedResult) {
-            System.out.println("Sum test = OK");
+            System.out.println("Multiply test = OK");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("Multiply test = FAIL");
         }
     }
 
@@ -67,13 +68,13 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         int realResult = calculator.divide(firstNumber, secondNumber);
         if (realResult == expectedResult) {
-            System.out.println("Sum test = OK");
+            System.out.println("Divide test = OK");
         } else {
-            System.out.println("Sum test = FAIL");
+            System.out.println("Divide test = FAIL");
         }
     }
 
-    public void isEvenTest() {
+    public void isEvenTest1() {
         int number = 10;
         boolean expectedResult = true;
         Calculator calculator = new Calculator();
@@ -82,6 +83,18 @@ class CalculatorTest {
             System.out.println("Is even test = OK");
         } else {
             System.out.println("Is even test = FAIL");
+        }
+    }
+
+    public void isEvenTest2() {
+        int number = -10;
+        boolean expectedResult = true;
+        Calculator calculator = new Calculator();
+        boolean realResult = calculator.isEven(number);
+        if (realResult == expectedResult) {
+            System.out.println("Is even test with negative number = OK");
+        } else {
+            System.out.println("Is even test with negative number = FAIL");
         }
     }
 

@@ -25,8 +25,6 @@ class Calculator {
     public int maxOfTwoNumbers(int firstNumber, int secondNumber) {
         if (firstNumber > secondNumber) {
             return (firstNumber);
-        } else if (firstNumber < secondNumber) {
-            return (secondNumber);
         } else {
             return (firstNumber);
         }
