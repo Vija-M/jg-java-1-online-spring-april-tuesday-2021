@@ -9,7 +9,7 @@ class CalculatorTest {
         calculatorTest.divTest();
         calculatorTest.mulTest();
         calculatorTest.isEvenTest();
-        calculatorTest.maxOfTwoNumbers();
+        calculatorTest.maxOfTwoNumbersOne();
         calculatorTest.maxOfTwoNumbersTwo();
         calculatorTest.maxOfTwoNumbersTree();
     }
@@ -79,48 +79,44 @@ class CalculatorTest {
         }
     }
 
-    void maxOfTwoNumbers(){
-        int firstNumber = 10;
-        int secondNumber = 5;
-        int expectedResult = 50;
+    void maxOfTwoNumbersOne(){
+        int firstNumber = 5;
+        int secondNumber = 10;
+        int expectedResult = 10;
         Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        int realResult = calculator.maxOfTwoNumbersOne(firstNumber, secondNumber);
         if (realResult == expectedResult) {
-            System.out.println("maxOfTwoNumbers test > = OK");
+            System.out.println("maxOfTwoNumbersOne test (<) = OK");
         } else {
-            System.out.println("maxOfTwoNumbers test > = FAIL");
+            System.out.println("maxOfTwoNumbersOne test (<) = FAIL");
         }
     }
 
     void maxOfTwoNumbersTwo(){
         int firstNumber = 10;
         int secondNumber = 5;
-        int expectedResult = 50;
+        int expectedResult = 10;
         Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        int realResult = calculator.maxOfTwoNumbersOne(firstNumber, secondNumber);
         if (realResult == expectedResult) {
-            System.out.println("maxOfTwoNumbers test > = OK");
+            System.out.println("maxOfTwoNumbersTwo test (>) = OK");
         } else {
-            System.out.println("maxOfTwoNumbers test > = FAIL");
+            System.out.println("maxOfTwoNumbersTwo test (>) = FAIL");
         }
     }
 
     void maxOfTwoNumbersTree(){
         int firstNumber = 10;
-        int secondNumber = 5;
-        int expectedResult = 50;
+        int secondNumber = 10;
+        int expectedResult = 10;
         Calculator calculator = new Calculator();
-        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        int realResult = calculator.maxOfTwoNumbersOne(firstNumber, secondNumber);
         if (realResult == expectedResult) {
-            System.out.println("maxOfTwoNumbers test > = OK");
+            System.out.println("maxOfTwoNumbersTree test (=) = OK");
         } else {
-            System.out.println("maxOfTwoNumbers test > = FAIL");
+            System.out.println("maxOfTwoNumbersTree test (=) = FAIL");
         }
     }
-
-
-
-
 
 
 }

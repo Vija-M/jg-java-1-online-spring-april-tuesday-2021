@@ -25,7 +25,7 @@ class Calculator {
     public boolean isEven(int number) {
 
        if (number % 2 == 0) {
-           System.out.println();
+
            return true;
 
        } else {
@@ -35,9 +35,10 @@ class Calculator {
 
     }
 
-    public int maxOfTwoNumbers(int firstNumber, int secondNumber) {
+    public int maxOfTwoNumbersOne(int firstNumber, int secondNumber) {
 
         if (firstNumber >= secondNumber) {
+
         return firstNumber;
         } else {
         return secondNumber;
