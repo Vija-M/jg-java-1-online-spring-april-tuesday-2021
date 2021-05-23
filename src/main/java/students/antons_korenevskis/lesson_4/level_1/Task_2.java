@@ -1,4 +1,4 @@
-package students.antons_korenevskis.lesson_4;
+package students.antons_korenevskis.lesson_4.level_1;
 
 import java.util.Scanner;
 
