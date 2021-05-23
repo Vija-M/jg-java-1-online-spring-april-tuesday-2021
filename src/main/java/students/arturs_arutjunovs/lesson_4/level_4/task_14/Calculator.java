@@ -27,24 +27,14 @@ class Calculator {
         }
     }
 
-    public int maxOfTwoNumbers(int firstNumber, int secondNumber) {
 
-        if (firstNumber > secondNumber) {
+    public int max(int firstNumber, int secondNumber) {
+        if (firstNumber > secondNumber)
             return firstNumber;
-        } else {
-            return secondNumber;
-        }
+        else return secondNumber;
     }
 
-
-    public int maxOfThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
-
-        if ((firstNumber >= secondNumber) && (firstNumber > thirdNumber)) {
-            return firstNumber;
-        } else if ((secondNumber > thirdNumber) && (secondNumber > firstNumber)) {
-            return secondNumber;
-        } else {
-            return thirdNumber;
-        }
+    public int max(int firstNumber, int secondNumber, int thirdNumber) {
+        return max(max(firstNumber, secondNumber), thirdNumber);
     }
 }
