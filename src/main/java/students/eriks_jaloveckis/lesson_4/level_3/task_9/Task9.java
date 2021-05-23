@@ -10,10 +10,10 @@ class Task9 {
         System.out.print("Enter third number: ");
         int thirdNumber = scanner.nextInt();
 
-        if (firstNumber > secondNumber && firstNumber > thirdNumber){
+        if (firstNumber > secondNumber || firstNumber >= secondNumber && firstNumber > thirdNumber || firstNumber >= thirdNumber ){
             System.out.println("Наобильшое число: " + firstNumber);
         }
-        else if (secondNumber > firstNumber && secondNumber > thirdNumber){
+        else if (secondNumber > firstNumber || secondNumber >= firstNumber && secondNumber > thirdNumber || secondNumber >= thirdNumber){
             System.out.println("Наибольшое число: " + secondNumber);
         }
         else {
