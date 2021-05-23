@@ -7,4 +7,5 @@ class ProductDemo {
         fruit.discount = 20;
 
         fruit.printInformation();
-    }}
+    }
+}

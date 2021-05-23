@@ -15,6 +15,5 @@ class Product {
 
     void printInformation() {
         System.out.println("Price of this " + name + " after our super Ligo discount " + discount + "% is only " + actualPrice() + " EUR.");
-    }
- }
+    } }
 
