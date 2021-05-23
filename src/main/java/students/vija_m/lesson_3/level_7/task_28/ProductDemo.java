@@ -4,8 +4,7 @@ class ProductDemo {
     public static void main(String[] args) {
         Product fruit = new Product("Apple");
         fruit.regularPrice = 1.21;
-        fruit.discount = 0.11;
+        fruit.discount = 20;
 
         fruit.printInformation();
-    }
-}
+    }}

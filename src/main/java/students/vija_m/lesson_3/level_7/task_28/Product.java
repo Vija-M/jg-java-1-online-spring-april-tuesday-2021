@@ -10,11 +10,11 @@ class Product {
     }
 
     double actualPrice() {
-        return this.regularPrice - this.discount;
+        return this.regularPrice  - this.regularPrice * this.discount / 100 ;
     }
 
     void printInformation() {
-        System.out.println("Price  of this " + name + " after our super Ligo discount is only " + actualPrice() + " EUR.");
+        System.out.println("Price of this " + name + " after our super Ligo discount " + discount + "% is only " + actualPrice() + " EUR.");
     }
  }
 
