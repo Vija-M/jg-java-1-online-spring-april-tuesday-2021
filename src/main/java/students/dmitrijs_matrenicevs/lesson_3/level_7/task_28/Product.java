@@ -6,9 +6,9 @@ class Product {
     double regularPrice;
     double discount;
 
-    Product(String apple){
+    Product(String name){
 
-        this.product = apple;
+        this.product = name;
     }
 
     double actualPrice(){
