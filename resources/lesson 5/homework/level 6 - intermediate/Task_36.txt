@@ -1,0 +1,20 @@
+В классе ArraysTest напишите автоматический тест
+для метода int findMaxNumber(int[] array)
+из предыдущего задания.
+
+class ArraysTest {
+
+    public static void main(String[] args) {
+        ArraysTest test = new ArraysTest();
+        test.shouldCreateArray();
+        test.shouldFindMaxNumber();
+    }
+
+    public void shouldCreateArray() {
+        // Напишите реализацию !!!
+    }
+
+    public void shouldFindMaxNumber() {
+        // Напишите реализацию !!!
+    }
+}

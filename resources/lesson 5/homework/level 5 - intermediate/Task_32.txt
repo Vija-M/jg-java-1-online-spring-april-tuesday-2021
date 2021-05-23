@@ -1,0 +1,17 @@
+Создайте класс ArraysTest.
+В этом классе напишите автоматический тест
+для метода int[] create(int length)
+из предыдущего задания.
+
+class ArraysTest {
+
+    public static void main(String[] args) {
+        ArraysTest test = new ArraysTest();
+        test.shouldCreateArray();
+    }
+
+    public void shouldCreateArray() {
+        // Напишите реализацию !!!
+        // Проверьте, что метод создаёт массив указанной длины
+    }
+}
