@@ -9,6 +9,7 @@ class CalculatorTest {
         calculatorTest.divTest();
         calculatorTest.mulTest();
         calculatorTest.isEvenTest();
+        calculatorTest.maxOfTwoNumbers();
     }
 
 
@@ -73,6 +74,19 @@ class CalculatorTest {
             System.out.println("isEven test = OK");
         } else {
             System.out.println("isEven test = FAIL");
+        }
+    }
+
+    void maxOfTwoNumbers(){
+        int firstNumber = 10;
+        int secondNumber = 5;
+        int expectedResult = 50;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        if (realResult < expectedResult) {
+            System.out.println("Div test = OK");
+        } else {
+            System.out.println("Div test = FAIL");
         }
     }
 
