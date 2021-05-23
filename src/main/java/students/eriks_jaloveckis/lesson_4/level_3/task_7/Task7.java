@@ -13,7 +13,7 @@ class Task7 {
         if (firstNumber == secondNumber && firstNumber == thirdNumber){
             System.out.print("All numbers are equal");
         }
-        else if (firstNumber != secondNumber && firstNumber != thirdNumber){
+        else if (firstNumber != secondNumber && firstNumber != thirdNumber && secondNumber != thirdNumber){
             System.out.print("All numbers are different");
         }
         else {
