@@ -66,10 +66,10 @@ class CalculatorTest {
 
     void isEvenTest(){
         int number = 10;
-        boolean yourNumber = true;
         Calculator calculator = new Calculator();
         boolean realNumber = calculator.isEven(number);
-        if (yourNumber == realNumber) {
+        boolean yourResult = true;
+        if (realNumber == yourResult) {
             System.out.println("isEven test = OK");
         } else {
             System.out.println("isEven test = FAIL");
