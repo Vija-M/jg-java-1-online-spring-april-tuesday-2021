@@ -5,10 +5,10 @@ class Circle {
     Circle (double radius){
         this.radius=radius;
     }
-    double CalculateArea(){
+    double calculateArea(){
         return Math.PI * this.radius*this.radius;
     }
     void circleArea (){
-        System.out.println("Radius is " + this.radius + " and circle area is " + CalculateArea() + ".");
+        System.out.println("Radius is " + this.radius + " and circle area is " + calculateArea() + ".");
     }
 }
