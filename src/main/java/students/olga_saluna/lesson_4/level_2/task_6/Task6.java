@@ -1,9 +1,9 @@
 package students.olga_saluna.lesson_4.level_2.task_6;
-
+import java.util.Scanner;
 class Task6 {
     public static void main(String[] args) {
 
-        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter X integer: ");
 
