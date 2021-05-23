@@ -5,6 +5,14 @@ class ProductDemo {
     public static void main(String[] args) {
 
 
+        Product product = new Product("Вкусные яблочки");
+
+        product.regularPrice = 8.49;
+
+        product.discount = 12;
+
+        product.printInformation();
+
 
     }
 
