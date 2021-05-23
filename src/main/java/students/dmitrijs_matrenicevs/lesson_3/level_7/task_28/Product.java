@@ -13,14 +13,14 @@ class Product {
 
     double actualPrice(){
 
-        return regularPrice * discount / 50;
+        return this.regularPrice * (this.discount / 100);
     }
 
     void printInformation(){
 
-        System.out.println("Продукт который ты купил: " + product);
-        System.out.println("Стандартная цена на продукт: " + regularPrice);
-        System.out.println("Скидка в процентах: " + discount);
+        System.out.println("Продукт который ты купил: " + this.product);
+        System.out.println("Стандартная цена на продукт: " + this.regularPrice);
+        System.out.println("Скидка в процентах: " + this.discount);
         System.out.println("Цена со скидкой: " + actualPrice());
     }
 
