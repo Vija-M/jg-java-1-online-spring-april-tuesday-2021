@@ -2,7 +2,7 @@ package students.antons_korenevskis.lesson_4.level_3;
 
 import java.util.Scanner;
 
-public class Task_7 {
+public class Task_8 {
 
     public static void main(String[] args) {
 
@@ -18,15 +18,15 @@ public class Task_7 {
         Scanner scannerThree = new Scanner(System.in);
         int c = scannerThree.nextInt();
 
-        boolean equal = (a == b)&&(a == c);
-        boolean different = (a != b) && (a != c) && (b != c);
+        boolean incr = (a < b)&&(b < c);
+        boolean decr = (a > b)&&(b > c);
 
-        if (equal) {
-            System.out.println("Numbers are equal");
-        } else if (different ) {
-            System.out.println("All numbers are different");
+        if (incr) {
+            System.out.println("increasing");
+        } else if (decr) {
+            System.out.println("decreasing");
         } else {
-            System.out.println("Neither all are equal or different");
+            System.out.println("neither");
         }
     }
 }
