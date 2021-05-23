@@ -187,7 +187,7 @@ class CalculatorTest {
         int expectedResult = firstNumber;
         Calculator calculator = new Calculator();
         int realResult = calculator.numbersOneTwoTreeMore(firstNumber, secondNumber, treeNumber);
-        if (realResult == expectedResult && firstNumber == secondNumber && treeNumber == secondNumber && firstNumber == treeNumber) {
+        if (realResult == expectedResult && expectedResult == secondNumber && expectedResult == treeNumber) {
             System.out.println("numbersOneTwoTreeMore test (5) = OK");
         } else {
             System.out.println("numbersOneTwoTreeMore test (5) = FAIL");
