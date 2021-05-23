@@ -128,7 +128,7 @@ class CalculatorTest {
         int firstNumber = 15;
         int secondNumber = 5;
         int treeNumber = 7;
-        int expectedResult = firstNumber;
+        int expectedResult = 15;
         Calculator calculator = new Calculator();
         int realResult = calculator.numbersOneTwoTreeMore(firstNumber, secondNumber, treeNumber);
         if (realResult == expectedResult) {
@@ -142,7 +142,7 @@ class CalculatorTest {
         int firstNumber = 2;
         int secondNumber = 15;
         int treeNumber = 3;
-        int expectedResult = secondNumber;
+        int expectedResult = 15;
         Calculator calculator = new Calculator();
         int realResult = calculator.numbersOneTwoTreeMore(firstNumber, secondNumber, treeNumber);
         if (realResult == expectedResult) {
@@ -156,7 +156,7 @@ class CalculatorTest {
         int firstNumber = 4;
         int secondNumber = 15;
         int treeNumber = 17;
-        int expectedResult = treeNumber;
+        int expectedResult = 17;
         Calculator calculator = new Calculator();
         int realResult = calculator.numbersOneTwoTreeMore(firstNumber, secondNumber, treeNumber);
         if (realResult == expectedResult) {
@@ -170,7 +170,7 @@ class CalculatorTest {
         int firstNumber = 14;
         int secondNumber = 14;
         int treeNumber = 5;
-        int expectedResult = firstNumber;
+        int expectedResult = 14;
         Calculator calculator = new Calculator();
         int realResult = calculator.numbersOneTwoTreeMore(firstNumber, secondNumber, treeNumber);
         if (realResult == expectedResult && expectedResult == secondNumber && expectedResult != treeNumber) {
@@ -184,7 +184,7 @@ class CalculatorTest {
         int firstNumber = 14;
         int secondNumber = 14;
         int treeNumber = 14;
-        int expectedResult = firstNumber;
+        int expectedResult = 14;
         Calculator calculator = new Calculator();
         int realResult = calculator.numbersOneTwoTreeMore(firstNumber, secondNumber, treeNumber);
         if (realResult == expectedResult && expectedResult == secondNumber && expectedResult == treeNumber) {
