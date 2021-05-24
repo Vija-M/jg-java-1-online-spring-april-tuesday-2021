@@ -8,6 +8,8 @@ class CalculatorTest { public static void main(String[] args) {
     calculatorTest.divTest();
     calculatorTest.isEven();
     calculatorTest.isNotEven();
+    calculatorTest.maxOfTwoNumbers1();
+    calculatorTest.maxOfTwoNumbers2()
 }
 
     public void sumTest() {

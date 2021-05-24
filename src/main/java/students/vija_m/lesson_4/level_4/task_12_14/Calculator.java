@@ -15,8 +15,18 @@ class Calculator {
                   return true;}
               else {return false;
               }
+    }
+    public int maxOfTwoNumbers(int firstNumber, int secondNumber) {
+        if (firstNumber >= secondNumber) {
+            return firstNumber;}
+        else {return secondNumber;
+        }
 
-    }}
+
+    }
+
+
+}
 
 
 
