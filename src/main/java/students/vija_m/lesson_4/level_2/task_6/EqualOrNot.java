@@ -1,6 +1,6 @@
 package students.vija_m.lesson_4.level_2.task_6;
 import java.util.Scanner;
-public class EqualOrNot {
+class EqualOrNot {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
