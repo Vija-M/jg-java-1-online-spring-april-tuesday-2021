@@ -29,7 +29,7 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
         int realResult = calculator.sum(firstNumber, secondNumber);
-        checkCorrectOutput(expectedResult, realResult, "sumTest");
+        assertThatEqual(expectedResult, realResult, "sumTest");
 
     }
 
@@ -40,7 +40,7 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
         int realResult = calculator.sub(firstNumber, secondNumber);
-        checkCorrectOutput(expectedResult, realResult, "subTest");
+        assertThatEqual(expectedResult, realResult, "subTest");
 
     }
 
@@ -51,7 +51,7 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
         int realResult = calculator.mul(firstNumber, secondNumber);
-        checkCorrectOutput(expectedResult, realResult, "mulTest");
+        assertThatEqual(expectedResult, realResult, "mulTest");
 
     }
 
@@ -62,7 +62,7 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
         int realResult = calculator.div(firstNumber, secondNumber);
-        checkCorrectOutput(expectedResult, realResult, "divTest");
+        assertThatEqual(expectedResult, realResult, "divTest");
 
     }
 
@@ -88,7 +88,7 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
         int realResult = calculator.max(firstNumber, secondNumber);
-        checkCorrectOutput(expectedResult, realResult, "firstNrBiggerThanSecond");
+        assertThatEqual(expectedResult, realResult, "firstNrBiggerThanSecond");
 
     }
 
@@ -100,24 +100,23 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
         int realResult = calculator.max(firstNumber, secondNumber);
-        checkCorrectOutput(expectedResult, realResult, "secondNrBigger");
+        assertThatEqual(expectedResult, realResult, "secondNrBigger");
 
     }
 
     //both numbers are equal test
     void bothNrEqual() {
+        String testName = "bothNrEqual";
         int firstNumber = 7;
         int secondNumber = 7;
         int expectedResult = firstNumber;
 
         Calculator calculator = new Calculator();
         int realResult = calculator.max(firstNumber, secondNumber);
-        if ((realResult == expectedResult) && (expectedResult == secondNumber)) {
 
-            System.out.println("[TEST OK]: bothNrEqual");
-        } else {
-            System.out.println("[TEST FAILED]: bothNrEqual test, Expected " + expectedResult + ", but was " + realResult);
-        }
+        assertThatEqual(expectedResult, realResult, testName + ", realResult == expectedResult");
+        assertThatEqual(expectedResult, secondNumber, testName + ", expectedResult == secondNumber");
+
     }
 
     //first number bigger than second and third
@@ -129,7 +128,7 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
         int realResult = calculator.max(firstNumber, secondNumber, thirdNumber);
-        checkCorrectOutput(expectedResult, realResult, "threeNumbers_Option_1");
+        assertThatEqual(expectedResult, realResult, "threeNumbers_Option_1");
 
     }
 
@@ -142,7 +141,7 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
         int realResult = calculator.max(firstNumber, secondNumber, thirdNumber);
-        checkCorrectOutput(expectedResult, realResult, "threeNumbers_Option_2");
+        assertThatEqual(expectedResult, realResult, "threeNumbers_Option_2");
 
     }
 
@@ -155,11 +154,12 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
         int realResult = calculator.max(firstNumber, secondNumber, thirdNumber);
-        checkCorrectOutput(expectedResult, realResult, "threeNumbers_Option_3");
+        assertThatEqual(expectedResult, realResult, "threeNumbers_Option_3");
     }
 
     //first and second are equal and more than third
     void threeNumbers_Option_4() {
+        String testName = "threeNumbers_Option_4";
         int firstNumber = 7;
         int secondNumber = 7;
         int thirdNumber = 3;
@@ -168,15 +168,15 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         int realResult = calculator.max(firstNumber, secondNumber, thirdNumber);
 
-        if (realResult == expectedResult && expectedResult == secondNumber && thirdNumber != secondNumber) {
-            System.out.println("[TEST OK]: threeNumbers_Option_4");
-        } else {
-            System.out.println("[TEST FAILED]:  threeNumbers_Option_4, Expected " + expectedResult + ", but was " + realResult);
-        }
+        assertThatEqual(expectedResult, realResult, testName + ", realResult == expectedResult");
+        assertThatEqual(expectedResult, secondNumber, testName + ", expectedResult == secondNumber");
+
     }
+
 
     //all three numbers are equal
     void threeNumbers_Option_5() {
+        String testName = "threeNumbers_Option_5";
         int firstNumber = 5;
         int secondNumber = 5;
         int thirdNumber = 5;
@@ -185,15 +185,12 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
         int realResult = calculator.max(firstNumber, secondNumber, thirdNumber);
-        if (realResult == expectedResult && expectedResult == firstNumber) {
-            System.out.println("[TEST OK]: threeNumbers_Option_5");
-        } else {
-            System.out.println("[TEST FAILED]: threeNumbers_Option_5, Expected " + expectedResult + ", but was " + realResult);
-        }
+        assertThatEqual(expectedResult, realResult, testName + ", realResult == expectedResult");
+        assertThatEqual(expectedResult, firstNumber, testName + ", expectedResult == firstNumber");
 
     }
 
-    void checkCorrectOutput(int expectedResult, int realResult, String description) {
+    void assertThatEqual(int expectedResult, int realResult, String description) {
         if (expectedResult == realResult) {
             System.out.println("[TEST OK]: " + description);
         } else {
