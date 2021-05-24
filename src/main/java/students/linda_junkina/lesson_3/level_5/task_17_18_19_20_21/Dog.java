@@ -5,19 +5,12 @@ class Dog {
     String name;
     String colour;
     int age;
-    String newColour;
 
-
-    Dog(String name, String colour, int age, String newColour) {
+    Dog(String name, String colour, int age) {
         this.name = name;
         this.colour = colour;
         this.age = age;
-        this.newColour = newColour;
-
-
     }
-
-
     void voice() {
         System.out.println(name + ", " + name + ", " + name + "!");
         System.out.println("Jack is " + colour);
@@ -29,21 +22,12 @@ class Dog {
         System.out.println("Happy Birthday, Jack, you are now " + age + " years old!");
     }
 
-    void changeColour() {
-        this.colour = "grey";
-        System.out.println("Jack is " + colour + " now");
+    void changeColour(String newColour) {
+        this.colour = newColour;
+        System.out.println("Jack is " + newColour + " now");
     }
 
-    void voiceAgain() {
-        System.out.println(name + ", " + name + ", " + name + "!");
-        System.out.println("Jack is " + colour);
-        System.out.println("Jack is " + age + " years old.");
-
-    }
 }
-
-
-
 
 
 
