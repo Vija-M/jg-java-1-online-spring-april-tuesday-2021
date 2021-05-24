@@ -10,6 +10,4 @@ public class Calculator {
     public int div(int firstNumber, int secondNumber) {
         return firstNumber / secondNumber;}
 
-
-
 }
