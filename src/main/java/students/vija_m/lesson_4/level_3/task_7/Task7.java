@@ -7,12 +7,12 @@ class Task7 {
         int a = scanner.nextInt();
         int b = scanner.nextInt();
         int c = scanner.nextInt();
-        { if (a == b && b == c ) System.out.println("All numbers are equal");
-        else if (a != b && b != c  ) System.out.println("All numbers are different");
+        if (a == b && b == c ) System.out.println("All numbers are equal");
+        else if (a != b && b != c && a !=c ) System.out.println("All numbers are different");
          else {
             System.out.println  ("Neither all are equal or different"); }
-        }
-        }}
+                }
+}
 
 
 
