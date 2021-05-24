@@ -10,8 +10,8 @@ class CompareTwoNumbers {
             if (a > b ) {
                 System.out.println(a);
             } else  {
-                    System.out.println( b );
+                    System.out.println(b);
             }
-
-        }}}
+        }
+    }}
 
