@@ -10,11 +10,11 @@ class Task9Demo {
         int numberB = scanner.nextInt();
         int numberC = scanner.nextInt();
 
-        if (numberA > numberB && numberA > numberC) {
+        if (numberA >= numberB && numberA >= numberC) {
             System.out.println(numberA + " is the biggest number");
-        } else if (numberB > numberA && numberB > numberC){
+        } else if (numberB >= numberA && numberB >= numberC){
             System.out.println(numberB + " is the biggest number");
-        } else if (numberC > numberA && numberC > numberB) {
+        } else {
             System.out.println(numberC + " is the biggest number");
         }
     }
