@@ -4,10 +4,9 @@ class Robot {
 
     String name;
 
-Robot(String robotName){
-
-    this.name = robotName;
-}
+    Robot(String robotName) {
+        this.name = robotName;
+    }
 
     void sayHello() {
         System.out.println("Hello!");
