@@ -1,40 +1,42 @@
 package students.ernests_subhankulovs.lesson_4.level_7.task_20;
 
 class LightColorDetectorTest {
+
+    LightColorDetector lightColorDetector = new LightColorDetector();
+
     public static void main(String[] args) {
-        LightColorDetector lightColorDetector = new LightColorDetector();
         LightColorDetectorTest lightColorDetectorTest = new LightColorDetectorTest();
-        lightColorDetectorTest.testViolet(405, lightColorDetector);
-        lightColorDetectorTest.testBlue(475, lightColorDetector);
-        lightColorDetectorTest.testGreen(505, lightColorDetector);
-        lightColorDetectorTest.testYellow(585, lightColorDetector);
-        lightColorDetectorTest.testOrange(619, lightColorDetector);
-        lightColorDetectorTest.testRed(620, lightColorDetector);
-        lightColorDetectorTest.testInvisible(760, lightColorDetector);
+        lightColorDetectorTest.testViolet();
+        lightColorDetectorTest.testBlue();
+        lightColorDetectorTest.testGreen();
+        lightColorDetectorTest.testYellow();
+        lightColorDetectorTest.testOrange();
+        lightColorDetectorTest.testRed();
+        lightColorDetectorTest.testInvisible();
     }
-    public void testViolet(int waveLength, LightColorDetector lightColorDetector) {
-        lightColorDetectorAssert(lightColorDetector, waveLength, "Violet", "LightColorDetector test - Violet");
+    public void testViolet() {
+        lightColorDetectorAssert(405, "Violet", "LightColorDetector test - Violet");
     }
-    public void testBlue(int waveLength, LightColorDetector lightColorDetector) {
-        lightColorDetectorAssert(lightColorDetector, waveLength, "Blue", "LightColorDetector test - Blue");
+    public void testBlue() {
+        lightColorDetectorAssert(475, "Blue", "LightColorDetector test - Blue");
     }
-    public void testGreen(int waveLength, LightColorDetector lightColorDetector) {
-        lightColorDetectorAssert(lightColorDetector, waveLength, "Green", "LightColorDetector test - Green");
+    public void testGreen() {
+        lightColorDetectorAssert(505, "Green", "LightColorDetector test - Green");
     }
-    public void testYellow(int waveLength, LightColorDetector lightColorDetector) {
-        lightColorDetectorAssert(lightColorDetector, waveLength, "Yellow", "LightColorDetector test - Yellow");
+    public void testYellow() {
+        lightColorDetectorAssert(585, "Yellow", "LightColorDetector test - Yellow");
     }
-    public void testOrange(int waveLength, LightColorDetector lightColorDetector) {
-        lightColorDetectorAssert(lightColorDetector,waveLength, "Orange", "LightColorDetector test - Orange");
+    public void testOrange() {
+        lightColorDetectorAssert(619, "Orange", "LightColorDetector test - Orange");
     }
-    public void testRed(int waveLength, LightColorDetector lightColorDetector) {
-        lightColorDetectorAssert(lightColorDetector,waveLength, "Red", "LightColorDetector test - Red");
+    public void testRed() {
+        lightColorDetectorAssert(620, "Red", "LightColorDetector test - Red");
     }
-    public void testInvisible(int waveLength, LightColorDetector lightColorDetector) {
-        lightColorDetectorAssert(lightColorDetector, waveLength, "Invisible Light", "LightColorDetector test - Invisible Light");
+    public void testInvisible() {
+        lightColorDetectorAssert(760, "Invisible Light", "LightColorDetector test - Invisible Light");
     }
 
-    public void lightColorDetectorAssert(LightColorDetector lightColorDetector, int waveLength, String expectedResult, String testName) {
+    public void lightColorDetectorAssert(int waveLength, String expectedResult, String testName) {
         String realResult = lightColorDetector.detect(waveLength);
         if (realResult.equals(expectedResult)) {
             System.out.println(testName + " = OK");
