@@ -1,4 +1,4 @@
-package students.dmitriy_shukailo.lesson_5.level_1.Task_1;
+package students.dmitriy_shukailo.lesson_5.level_1.task_1;
 
 class ArrayDefinition1 {
 
