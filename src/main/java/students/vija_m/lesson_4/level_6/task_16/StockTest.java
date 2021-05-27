@@ -8,7 +8,7 @@ class StockTest {
 
 
 
-    void test1(){
+    void test1() {
         Stock google = new Stock("GOOG", 10);
         String priceInformation = google.getPriceInformation();
         System.out.println("Start values:");
@@ -22,6 +22,8 @@ class StockTest {
         priceInformation = google.getPriceInformation();
         System.out.println("Current values:");
         System.out.println(priceInformation);
+
+    }
 
 
 

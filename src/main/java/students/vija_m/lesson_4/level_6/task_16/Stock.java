@@ -20,7 +20,6 @@ class Stock {
         else if ( newPrice < currentPrice && newPrice < minPrice) {
             this.minPrice = newPrice;
         }
-
                 this.currentPrice = newPrice;
         }
 
