@@ -7,7 +7,7 @@ class ArrayRandomSum {
         numbers[0] = random.nextInt();
         numbers[1] = random.nextInt();
         numbers[2] = random.nextInt();
-        System.out.println(numbers[0] + " + " + numbers[1] + " + " + numbers[0] + " = " + (numbers[0]+numbers[1]+numbers[2]));
+        System.out.println(numbers[0] + " + " + numbers[1] + " + " + numbers[2] + " = " + (numbers[0]+numbers[1]+numbers[2]));
     }
 
 
