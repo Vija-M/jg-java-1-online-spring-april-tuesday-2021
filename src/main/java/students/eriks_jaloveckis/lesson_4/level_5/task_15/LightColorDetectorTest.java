@@ -20,17 +20,21 @@ class LightColorDetectorTest {
 
     }
 
+    public void assertThatEqual(String expected, String actual, String testName) {
+        LightColorDetector lightColorDetector = new LightColorDetector();
+        if (expected.equals(actual)) {
+            System.out.println("TEST OK" + testName);
+        } else {
+            System.out.println("TEST FAIL" +testName);
+        }
+    }
+
     public void violetColorHighTest(){
         int wavelength = 449;
-        String color = "Violet";
+        String expected = "Violet";
         LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-        if (color == realColor){
-            System.out.println(realColor + " - TEST OK");
-        }
-        else{
-            System.out.println("TEST IS FAIL");
-        }
+        String actual = lightColorDetector.detect(wavelength);
+
 
     }
     public void violetColorLowTest(){
