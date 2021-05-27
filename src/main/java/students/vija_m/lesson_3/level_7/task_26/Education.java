@@ -13,14 +13,11 @@ boolean studyingAtTheUniversity;
     }
     void printInfo() {
 
-        boolean cooking = true;
-        String result = this.cooking ? "Yes, I am!" : "Not at all!";
-
         System.out.println(" - Hello, Lady!");
         System.out.println("   What's your name?");
         System.out.println(" - " + nameOfThePerson);
         System.out.println(" - Are You cooking?");
-        System.out.println(" - " + result);
+        System.out.println(" - " + (this.cooking ? "Yes, I am!" : "Not at all!"));
     }
 
     void answer() {
@@ -29,12 +26,9 @@ boolean studyingAtTheUniversity;
     }}
 
     void printInfo2() {
-        boolean studyingAtTheUniversity = true;
-        String result2 = this.studyingAtTheUniversity ? "Yes, I am!" : "Not at all!";
 
-        if (this.cooking = false) {System.out.println("");}
         System.out.println(" - Are You studying?");
-        System.out.println(" - " + result2);
+        System.out.println(" - " + (this.studyingAtTheUniversity ? "Yes, I am!" : "Not at all!"));
     }
 
     void answer2() {
