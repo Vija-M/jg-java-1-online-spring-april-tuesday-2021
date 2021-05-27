@@ -7,6 +7,5 @@ class ArrayLength3 {
         System.out.println(numbers.length);
 
     }
-
 }
 
