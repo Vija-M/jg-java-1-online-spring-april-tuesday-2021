@@ -1,9 +1,11 @@
 package students.vija_m.lesson_5.level_2.task_12;
+
 import java.util.Random;
+
 class Array3NumbersRandom {
     public static void main(String[] args) {
 
-    int[] numbers = new int[3];
+        int[] numbers = new int[3];
         Random random = new Random();
         numbers[0] = random.nextInt();
         numbers[1] = random.nextInt();
@@ -13,4 +15,5 @@ class Array3NumbersRandom {
         System.out.println("2nd random number = " + numbers[1]);
         System.out.println("3rd random number = " + numbers[2]);
 
-}}
+    }
+}
