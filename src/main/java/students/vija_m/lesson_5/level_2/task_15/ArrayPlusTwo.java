@@ -14,11 +14,11 @@ class ArrayPlusTwo {
         System.out.println("3rd number = " + numbers[2]);
         System.out.println();
 
-        int a = numbers[0] + 2;
-        int b = numbers[1] + 2;
-        int c = numbers[2] + 2;
-        System.out.println(numbers[0] + " + 2 = " + a);
-        System.out.println(numbers[1] + " + 2 = " + b);
-        System.out.println(numbers[2] + " + 2 = " + c);
+        numbers[0] += 2;
+        numbers[1] += 2;
+        numbers[2] += 2;
+        System.out.println("Now 1st number = " + numbers[0]);
+        System.out.println("Now 2nd number = " + numbers[1]);
+        System.out.println("Now 3rd number = " + numbers[2]);
     }
 }
