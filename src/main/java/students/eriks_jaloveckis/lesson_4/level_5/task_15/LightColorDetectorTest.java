@@ -20,179 +20,70 @@ class LightColorDetectorTest {
 
     }
 
-    public void assertThatEqual(String expected, String actual, String testName) {
+    public void assertThatEqual(int wavelength, String expected, String testName) {
         LightColorDetector lightColorDetector = new LightColorDetector();
+        String actual = lightColorDetector.detect(wavelength);
         if (expected.equals(actual)) {
             System.out.println("TEST OK" + testName);
         } else {
-            System.out.println("TEST FAIL" +testName);
+            System.out.println("TEST FAIL" + testName);
         }
     }
 
-    public void violetColorHighTest(){
-        int wavelength = 449;
-        String expected = "Violet";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String actual = lightColorDetector.detect(wavelength);
+
+    public void violetColorLowTest() {
+        assertThatEqual(380, "Violet", "Violet");
+    }
 
 
+    public void violetColorHighTest() {
+        assertThatEqual(449, "Violet", "Violet");
     }
-    public void violetColorLowTest(){
-        int wavelength = 380;
-        String color = "Violet";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-        if (color == realColor){
-            System.out.println(realColor + " - TEST OK");
-        }
-        else{
-            System.out.println("TEST IS FAIL");
-        }
 
+    public void blueColorLowTest() {
+        assertThatEqual(450, "Blue", "Blue");
     }
-public void blueColorLowTest(){
-    int wavelength = 450;
-    String color = "Blue";
-    LightColorDetector lightColorDetector = new LightColorDetector();
-    String realColor = lightColorDetector.detect(wavelength);
-        if (color == realColor){
-        System.out.println(realColor + " - TEST OK");
-    }
-        else{
-        System.out.println("TEST IS FAIL");
-    }
-}
 
-public void blueColorHighTest(){
-        int wavelength = 494;
-        String color = "Blue";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-        if (color == realColor){
-                System.out.println(realColor + " - TEST OK");
-            }
-            else{
-                System.out.println("TEST IS FAIL");
-            }
-}
 
-public void greenColorLowTest(){
-        int wavelength = 495;
-        String color = "Green";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-    if (color == realColor){
-        System.out.println(realColor + " - TEST OK");
+    public void blueColorHighTest() {
+        assertThatEqual(494, "Blue", "Blue");
     }
-    else{
-        System.out.println("TEST IS FAIL");
-    }
-}
 
-public void greenColorHighTest(){
-        int wavelength = 569;
-        String color = "Green";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-    if (color == realColor){
-        System.out.println(realColor + " - TEST OK");
+    public void greenColorLowTest() {
+        assertThatEqual(495, "Green", "Green");
     }
-    else{
-        System.out.println("TEST IS FAIL");
-    }
-}
 
-public void yellowColorLowTest(){
-        int wavelength = 570;
-        String color = "Yellow";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-    if (color == realColor){
-        System.out.println(realColor + " - TEST OK");
+    public void greenColorHighTest() {
+        assertThatEqual(569, "Green", "Green");
     }
-    else{
-        System.out.println("TEST IS FAIL");
-    }
-}
 
-public void yellowColorHighTest(){
-        int wavelength = 589;
-        String color = "Yellow";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-        if (color == realColor){
-        System.out.println(realColor + " - TEST OK");
+    public void yellowColorLowTest() {
+        assertThatEqual(570, "Yellow", "Yellow");
     }
-    else{
-        System.out.println("TEST IS FAIL");
-    }
-}
 
-public void orangeColorLowTest(){
-        int wavelength = 590;
-        String color = "Orange";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-    if (color == realColor){
-        System.out.println(realColor + " - TEST OK");
+    public void yellowColorHighTest() {
+        assertThatEqual(589, "Yellow", "Yellow");
     }
-    else{
-        System.out.println("TEST IS FAIL");
-    }
-}
 
-public void orangeColorHighTest (){
-        int wavelength = 619;
-        String color = "Orange";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-    if (color == realColor){
-        System.out.println(realColor + " - TEST OK");
+    public void orangeColorLowTest() {
+        assertThatEqual(590, "Orange", "Orange");
     }
-    else{
-        System.out.println("TEST IS FAIL");
-    }
-}
 
-public void redColorLowTest(){
-        int wavelength = 620;
-        String color = "Red";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-    if (color == realColor){
-        System.out.println(realColor + " - TEST OK");
+    public void orangeColorHighTest() {
+        assertThatEqual(619, "Orange", "Orange");
     }
-    else{
-        System.out.println("TEST IS FAIL");
-    }
-}
 
-public void redColorHighTest(){
-        int wavelength = 750;
-        String color = "Red";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-    if (color == realColor){
-        System.out.println(realColor + " - TEST OK");
+    public void redColorLowTest() {
+        assertThatEqual(620, "Red", "Red");
     }
-    else{
-        System.out.println("TEST IS FAIL");
-    }
-}
 
-public void invisibleLightColorTest(){
-        int wavelength = 777;
-        String color = "Invisible Light";
-        LightColorDetector lightColorDetector = new LightColorDetector();
-        String realColor = lightColorDetector.detect(wavelength);
-    if (color == realColor){
-        System.out.println(realColor + " - TEST OK");
+    public void redColorHighTest() {
+        assertThatEqual(750, "Red", "Red");
     }
-    else{
-        System.out.println("TEST IS FAIL");
-    }
-}
 
+    public void invisibleLightColorTest() {
+        assertThatEqual(777, "Invisible Light", "Invisible Light");
+    }
 }
 
 
