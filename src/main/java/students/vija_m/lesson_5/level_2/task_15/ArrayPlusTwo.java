@@ -1,5 +1,7 @@
 package students.vija_m.lesson_5.level_2.task_15;
+
 import java.util.Random;
+
 class ArrayPlusTwo {
     public static void main(String[] args) {
         int[] numbers = new int[3];
@@ -16,7 +18,7 @@ class ArrayPlusTwo {
         int b = numbers[1] + 2;
         int c = numbers[2] + 2;
         System.out.println(numbers[0] + " + 2 = " + a);
-        System.out.println(numbers[1] + " + 2 = "  + b);
-        System.out.println(numbers[2] + " + 2 = "  + c);
+        System.out.println(numbers[1] + " + 2 = " + b);
+        System.out.println(numbers[2] + " + 2 = " + c);
     }
 }
