@@ -20,4 +20,5 @@ class Task9 {
             System.out.println("Наибольшое число: " + thirdNumber);
         }
     }
+
 }
