@@ -1,5 +1,7 @@
 package students.eriks_jaloveckis.lesson_4.level_3.task_9;
+
 import java.util.Scanner;
+
 class Task9 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -10,13 +12,11 @@ class Task9 {
         System.out.print("Enter third number: ");
         int thirdNumber = scanner.nextInt();
 
-        if (firstNumber > secondNumber || firstNumber >= secondNumber && firstNumber > thirdNumber || firstNumber >= thirdNumber ){
+        if (firstNumber >= secondNumber && firstNumber >= thirdNumber) {
             System.out.println("Наобильшое число: " + firstNumber);
-        }
-        else if (secondNumber > firstNumber || secondNumber >= firstNumber && secondNumber > thirdNumber || secondNumber >= thirdNumber){
+        } else if (secondNumber >= firstNumber && secondNumber >= thirdNumber) {
             System.out.println("Наибольшое число: " + secondNumber);
-        }
-        else {
+        } else {
             System.out.println("Наибольшое число: " + thirdNumber);
         }
     }
