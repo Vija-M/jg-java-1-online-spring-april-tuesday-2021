@@ -18,7 +18,17 @@ class LightColorDetectorTest {
             return "Green";
         } else if (wavelength >= 570 && wavelength <= 589) {
 
+            return "Yellow";
+        } else if (wavelength >= 590 && wavelength <= 619) {
 
+            return "Orange";
+        } else if (wavelength >= 620 && wavelength <= 750) {
+
+            return "Red";
+        } else {
+
+            return "Invisible Light";
+        }
 
     }
 
