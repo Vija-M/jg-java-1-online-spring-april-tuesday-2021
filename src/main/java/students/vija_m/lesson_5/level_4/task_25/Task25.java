@@ -14,6 +14,6 @@ class Task25 {
         for (int i = 0; i < arrayLength; i++) {
             numbers[i] = scanner.nextInt();
         }
-                    System.out.println("Arrays.toString(numbers) = " + Arrays.toString(numbers));
-           }
+        System.out.println("Arrays.toString(numbers) = " + Arrays.toString(numbers));
+    }
 }
