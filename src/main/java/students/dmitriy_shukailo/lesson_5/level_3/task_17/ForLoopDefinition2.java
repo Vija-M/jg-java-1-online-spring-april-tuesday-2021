@@ -8,4 +8,5 @@ class ForLoopDefinition2 {
             System.out.println(i);
         }
     }
+
 }
