@@ -1,12 +1,14 @@
 package students.dmitriy_shukailo.lesson_5.level_2.task_11;
 
+import java.util.Scanner;
+
 class Array2 {
 
     public static void main(String[] args) {
 
         System.out.println("Please, enter 3 numbers: ");
 
-        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
         int b = scanner.nextInt();
         int c = scanner.nextInt();

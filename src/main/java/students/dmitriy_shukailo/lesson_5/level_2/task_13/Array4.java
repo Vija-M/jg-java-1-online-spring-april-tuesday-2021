@@ -16,7 +16,7 @@ class Array4 {
         }
 
         int sum = 0;
-        for (int number : numbers) sum = sum + number;
+        for (int number : numbers) sum += number;
 
         System.out.println("Sum         : " + sum);
 

@@ -5,7 +5,6 @@ import java.util.Random;
 class Array5 {
 
     public static void main(String[] args) {
-
         Random random = new Random();
 
         int[] numbers = new int[3];
@@ -16,7 +15,7 @@ class Array5 {
         }
 
         int sum = 0;
-        for (int number : numbers) sum = sum + number;
+        for (int number : numbers) sum += number;
 
         double avg = (double) sum / numbers.length;
 

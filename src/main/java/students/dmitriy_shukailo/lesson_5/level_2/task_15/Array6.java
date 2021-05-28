@@ -16,7 +16,7 @@ class Array6 {
         }
 
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = numbers[i] + 2;
+            numbers[i] += 2;
             System.out.println("Numbers [" + i + "] : " + numbers[i]);
         }
 

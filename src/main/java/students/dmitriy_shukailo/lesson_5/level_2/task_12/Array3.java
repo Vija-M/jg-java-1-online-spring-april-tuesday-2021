@@ -6,7 +6,7 @@ class Array3 {
 
     public static void main(String[] args) {
 
-       Random random = new Random();
+        Random random = new Random();
 
         int[] numbers = new int[3];
 
