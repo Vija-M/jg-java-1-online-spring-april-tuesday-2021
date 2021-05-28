@@ -15,19 +15,19 @@ class FizzBuzzTest {
 
 
     void fizzTest(){
-        fizzBuzzTestFinal(3, "Fizz");
+        fizzBuzzTestFinal(1, "Fizz");
     }
 
     void buzzTest(){
-        fizzBuzzTestFinal(7, "Buzz");
+        fizzBuzzTestFinal(2, "Buzz");
     }
 
     void fizzBuzzTest (){
-        fizzBuzzTestFinal(19, "FizzBuss");
+        fizzBuzzTestFinal(3, "FizzBuss");
     }
 
     void testReturn(){
-        fizzBuzzTestFinal(5, "Return test");
+        fizzBuzzTestFinal(4, "Return test");
     }
 
 void fizzBuzzTestFinal (int number, String expectedResult){
