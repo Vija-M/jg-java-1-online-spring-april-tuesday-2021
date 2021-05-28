@@ -1,0 +1,29 @@
+package students.dmitrijs_matrenicevs.lesson_4.level_5.task_15;
+
+class LightColorDetectorTest {
+
+
+    public String detect(int wavelength) {
+
+        if (wavelength >= 380 && wavelength <= 449) {
+
+            return "Violet";
+        }
+
+        if (wavelength >= 450 && wavelength <= 494) {
+
+            return "Blue";
+        } else if (wavelength >= 495 && wavelength <= 569) {
+
+            return "Green";
+        } else if (wavelength >= 570 && wavelength <= 589) {
+
+
+
+    }
+
+
+}
+
+
+}
