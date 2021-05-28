@@ -10,8 +10,21 @@ class FizzBuzzTest {
     }
 
 
-    void fizzBuzzTestOne(){
-        fizzBuzzTestFinal(3, "Fizz")
+    void fizzTest(){
+        fizzBuzzTestFinal(3, "Fizz");
     }
+
+    void buzzTest(){
+        fizzBuzzTestFinal(7, "Buzz");
+    }
+
+    void fizzBuzzTest (){
+        fizzBuzzTestFinal(19, "FizzBuss")
+    }
+
+    void testReturn(){
+        fizzBuzzTestFinal(5, "Return test")
+    }
+
 
 }
