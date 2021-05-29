@@ -1,4 +1,4 @@
-package students.linda_junkina.lsson_5.level_1.task_1;
+package students.linda_junkina.lesson_5.level_1.task_1;
 
 class ArrayDefinition1 {
 
