@@ -51,4 +51,25 @@ public class CalculatorTest {
 
     }
 
+    void calculatorTest (int expectedResult, int realResult){
+
+
+        if (expectedResult == realResult){
+            System.out.println("TEST = " + "OK");
+        }
+        else {
+            System.out.println("TEST = " + "FAIL");
+        }
+    }
+
+    void  calculatorTestTwo (boolean expectedResult, boolean realResult){
+
+        if (expectedResult == realResult){
+            System.out.println("TEST = " + "OK");
+        }
+        else {
+            System.out.println("TEST = " + "FAIL");
+        }
+    }
+
 }
