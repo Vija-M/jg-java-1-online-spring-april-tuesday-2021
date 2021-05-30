@@ -1,4 +1,4 @@
-package students.dmitriy_shukailo.lesson_3.level_7_task_28;
+package students.dmitriy_shukailo.lesson_3.level_7.task_28;
 
 class Product {
 
