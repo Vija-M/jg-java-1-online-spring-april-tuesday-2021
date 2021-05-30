@@ -1,4 +1,4 @@
-package students.ernests_subhankulovs.lesson_5.level_4.task_34;
+package students.ernests_subhankulovs.lesson_5.level_6.task_34;
 
 import java.util.Random;
 
