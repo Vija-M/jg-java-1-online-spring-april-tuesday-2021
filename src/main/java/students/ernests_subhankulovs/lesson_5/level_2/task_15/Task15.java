@@ -13,11 +13,11 @@ class Task15 {
         }
 
         System.out.println();
-        System.out.println("Now, all array elements are multiplied by 2: ");
+        System.out.println("Now, all array elements are increased by 2: ");
         System.out.println();
 
         for (int i = 0; i < integerNumbers.length; i++) {
-            integerNumbers[i] *= 2;
+            integerNumbers[i] += 2;
             System.out.println("i = " + i + "; integerNumbers[i] = " + integerNumbers[i]);
         }
     }
