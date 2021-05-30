@@ -2,6 +2,7 @@ package students.dmitrijs_matrenicevs.lesson_4.level_7.task_20;
 
 class LightColorDetectorTest {
 
+    LightColorDetector lightColorDetector = new LightColorDetector();
 
     public static void main(String[] args) {
 
@@ -123,7 +124,6 @@ class LightColorDetectorTest {
 
 
     void lightColorDetectorColorTest(int wavelength, String expectedResult) {
-        LightColorDetector lightColorDetector = new LightColorDetector();
         String realResult = lightColorDetector.detect(wavelength);
         if (expectedResult.equals(realResult)) {
             System.out.println(wavelength + " " + expectedResult + " = OK");
