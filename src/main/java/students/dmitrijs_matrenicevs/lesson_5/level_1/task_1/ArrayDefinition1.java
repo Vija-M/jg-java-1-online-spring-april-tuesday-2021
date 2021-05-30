@@ -1,4 +1,4 @@
-package students.dmitrijs_matrenicevs.lesson_5.level_1;
+package students.dmitrijs_matrenicevs.lesson_5.level_1.task_1;
 
 class ArrayDefinition1 {
 
