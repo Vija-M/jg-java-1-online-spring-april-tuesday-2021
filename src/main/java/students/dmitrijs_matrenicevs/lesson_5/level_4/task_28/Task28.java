@@ -17,6 +17,7 @@ class Task28 {
 
         int numberSmall = numbers[0];
         for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = random.nextInt(50);
             if (numbers[i] < numberSmall) {
                 numberSmall = numbers[i];
             }
