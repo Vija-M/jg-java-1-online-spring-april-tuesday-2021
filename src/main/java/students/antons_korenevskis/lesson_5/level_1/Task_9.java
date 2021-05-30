@@ -1,4 +1,4 @@
-package students.antons_korenevskis.lesson_5.level_9;
+package students.antons_korenevskis.lesson_5.level_1;
 
 class ArrayLength3 {
 
