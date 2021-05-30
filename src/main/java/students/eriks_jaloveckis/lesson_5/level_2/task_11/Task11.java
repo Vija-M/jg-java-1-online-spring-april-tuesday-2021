@@ -1,6 +1,5 @@
 package students.eriks_jaloveckis.lesson_5.level_2.task_11;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 class Task11 {
