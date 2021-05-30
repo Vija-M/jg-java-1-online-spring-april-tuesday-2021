@@ -1,15 +1,13 @@
 package students.vija_m.lesson_5.level_5.task_31_32;
 
 class Arrays {
-    int getArrayLength;
 
-    public Arrays(int getArrayLength) {
-        this.getArrayLength = getArrayLength;
-    }
+    public static int create(int length) {
 
-    void getArrayLength() {
-        int array[] = new int[getArrayLength];
-        System.out.println(array.length);
+        int[] arrays = new int[length];
+
+        return arrays.length;
+
     }
 }
 
