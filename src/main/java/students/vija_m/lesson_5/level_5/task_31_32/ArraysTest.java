@@ -2,6 +2,8 @@ package students.vija_m.lesson_5.level_5.task_31_32;
 
 
 class ArraysTest {
+    Arrays arrays = new Arrays();
+
     public static void main(String[] args) {
         ArraysTest arraysTest = new ArraysTest();
         arraysTest.test1();
@@ -9,9 +11,9 @@ class ArraysTest {
     }
 
     public void test1() {
-        int length = 25;
+        int[] numbers = arrays.create(25);
         int expected = 25;
-        int actual = Arrays.create(length);
+        int actual = numbers.length;
         if (expected == actual) {
             System.out.println("Test1 = OK");
         } else {
@@ -19,15 +21,15 @@ class ArraysTest {
         }
     }
 
+
     public void test2() {
-        Arrays arrays = new Arrays();
-        int length = 1;
+        int[] numbers = arrays.create(1);
         int expected = 1;
-        int actual = arrays.create(length);
+        int actual = numbers.length;
         if (expected == actual) {
-            System.out.println("Test2 = OK");
+            System.out.println("Test1 = OK");
         } else {
-            System.out.println("Test2 = FAIL");
+            System.out.println("Test1 = FAIL");
         }
     }
 
