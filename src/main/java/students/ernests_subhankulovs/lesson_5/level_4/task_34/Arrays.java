@@ -1,5 +1,6 @@
-Создайте в классе Arrays метод для
-заполнения массива случайными целыми числами.
+package students.ernests_subhankulovs.lesson_5.level_4.task_34;
+
+import java.util.Random;
 
 class Arrays {
 
@@ -13,6 +14,12 @@ class Arrays {
     public void fillRandomly(int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(100);
+        }
+    }
+
+    public void print(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("i = " + i + "; array[i] = " + array[i]);
         }
     }
 
