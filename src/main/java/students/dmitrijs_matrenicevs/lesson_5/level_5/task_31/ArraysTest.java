@@ -29,6 +29,8 @@ class ArraysTest {
 
 
     void testArrays(int expectedResult, String name){
+        /*Помню что (Arrays arrays = new Arrays();) можно сверху поставить, но мне кажется так красивее :3
+        * Но, если так не правильно, то буду ставить сверхну ) */
         Arrays arrays = new Arrays();
         int[] arrayCre = arrays.create(expectedResult);
         int realResult = arrayCre.length;
