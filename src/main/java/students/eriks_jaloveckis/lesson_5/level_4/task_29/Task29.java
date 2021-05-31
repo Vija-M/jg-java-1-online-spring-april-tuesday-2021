@@ -13,7 +13,6 @@ class Task29 {
 
         System.out.println(Arrays.toString(array));
 
-        int equal = array[0];
         for (int i = 1; i < array.length; i++) {
             if (array[i] % 2 == 0) {
                 System.out.println(array[i]);
