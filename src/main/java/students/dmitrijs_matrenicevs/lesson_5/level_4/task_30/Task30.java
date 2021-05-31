@@ -17,15 +17,18 @@ class Task30 {
 
         System.out.println();
 
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = random.nextInt(50);
-            if (numbers[i] % 2 != 0) {
+        System.out.print("Нечётные числа: ");
+        for (int number : numbers) {
+            if (number % 2 != 0) {
 
-                System.out.println("Нечётные числа: " + numbers[i]);
+                System.out.print(number + " ");
 
             }
+
         }
 
+
+        System.out.println();
 
     }
 
