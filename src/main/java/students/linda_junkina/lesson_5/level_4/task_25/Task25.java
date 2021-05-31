@@ -19,7 +19,7 @@ class Task25 {
         System.out.print("Enter array numbers: ");
 
         for (int i = 0; i < arrayLength; i++) {
-            array[i] = (scanner.nextInt());
+            array[i] = scanner.nextInt();
 
         }
         System.out.println("This is your array: " + Arrays.toString(array));
