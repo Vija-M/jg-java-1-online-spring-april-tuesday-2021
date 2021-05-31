@@ -6,8 +6,6 @@ class StockTest {
         stockTest.test1();
     }
 
-
-
     void test1() {
         Stock google = new Stock("GOOG", 10);
         String priceInformation = google.getPriceInformation();
@@ -31,4 +29,4 @@ class StockTest {
 
 
     }
-}
+
