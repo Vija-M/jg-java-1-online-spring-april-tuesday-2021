@@ -11,7 +11,7 @@ class Task15 {
 
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = random.nextInt(50);
-            System.out.println(i + " = " + numbers[i] + " / 2 = " + (numbers[i] / 2));
+            System.out.println((i + 1) + " = " + numbers[i] + " + 2 = " + (numbers[i] += 2));
         }
 
 
