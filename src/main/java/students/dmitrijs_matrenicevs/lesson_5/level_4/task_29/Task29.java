@@ -27,7 +27,7 @@ class Task29 {
             }
         }
 
-
+        System.out.println();
 
     }
 
