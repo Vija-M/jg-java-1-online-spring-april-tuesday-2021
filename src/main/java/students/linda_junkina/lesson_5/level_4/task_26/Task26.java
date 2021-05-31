@@ -16,7 +16,7 @@ class Task26 {
 
         Random random = new Random();
         for (int i = 0; i < arrayLength; i++) {
-            array[i] = (random.nextInt(100));
+            array[i] = random.nextInt(100);
         }
         System.out.println("This array consists of: " + Arrays.toString(array));
     }
