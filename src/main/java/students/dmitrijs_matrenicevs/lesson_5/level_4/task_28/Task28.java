@@ -15,16 +15,15 @@ class Task28 {
         }
 
 
-        int numberSmall = numbers[0];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = random.nextInt(50);
-            if (numbers[i] < numberSmall) {
-                numberSmall = numbers[i];
+        int min = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] < min) {
+                min = numbers[i];
             }
 
         }
         System.out.println();
-        System.out.println("Наименьшее число: " + numberSmall);
+        System.out.println("Наименьшее число: " + min);
 
 
     }
