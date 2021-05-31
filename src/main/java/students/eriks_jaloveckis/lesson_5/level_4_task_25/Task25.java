@@ -5,12 +5,17 @@ import java.util.Scanner;
 class Task25 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите длину массива: ");
+        System.out.println("Введите длину масива: ");
         int x = scanner.nextInt();
-        int[] numbers = new int[arrayLength];
-        for (int i = x; x <= numbers.length; x++) {
-            System.out.println(numbers[x]);
+        int[] numbers = new int[x];
+
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println("Введите элементы массива: ");
+            numbers[i] = scanner.nextInt();
+        }
+        System.out.println();
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
         }
     }
-
 }
