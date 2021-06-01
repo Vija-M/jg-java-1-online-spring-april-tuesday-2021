@@ -37,7 +37,7 @@ class Arrays {
     }
 
     public int findMin(int[] array) {
-       int min = 0;
+       int min = array[0];
        for (int i = 0; i < array.length; i++){
            if (array[i] < min)
                min = array[i];

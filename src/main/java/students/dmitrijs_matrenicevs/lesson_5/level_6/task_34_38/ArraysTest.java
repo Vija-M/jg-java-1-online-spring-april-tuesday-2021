@@ -9,6 +9,7 @@ class ArraysTest {
         ArraysTest test = new ArraysTest();
         test.shouldCreateArray();
         test.shouldFindMaxNumber();
+        test.shouldFindMinNumber();
     }
 
     public void shouldCreateArray() {
@@ -33,8 +34,14 @@ class ArraysTest {
 
 
     void shouldFindMaxNumber() {
-        int[] numbersMax = {1,2,3,4,5};
-        testFindMax(5, numbersMax, "testFndMaxNumber");
+        int[] numberMax = {1,2,3,4,5};
+        testFindMax(5, numberMax, "testFindMaxNumber");
+    }
+
+    public void shouldFindMinNumber() {
+        int[] numberMin = {1,2,3,4,5};
+        int realResult = arrays.findMin(numberMin);
+        testFindMin (realResult, 1,"testFindMinNumber");
     }
 
 
@@ -49,8 +56,19 @@ class ArraysTest {
         }
     }
 
-    void testFindMax (int expectedResult, int[] numbersMax, String name){
-        int realResult = arrays.findMax(numbersMax);
+    void testFindMax (int expectedResult, int[] numberMax, String name){
+        int realResult = arrays.findMax(numberMax);
+        if (realResult == expectedResult) {
+            System.out.println(name + " = " + "OK");
+        }
+        else {
+            System.out.println(name + " = " + "FAIL");
+        }
+
+
+    }
+
+    void testFindMin (int expectedResult, int realResult, String name){
         if (realResult == expectedResult) {
             System.out.println(name + " = " + "OK");
         }
