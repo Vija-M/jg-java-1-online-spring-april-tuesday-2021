@@ -14,7 +14,8 @@ class Arrays {
     public void fillRandomly(int[] array) {
         Random random = new Random();
 
-        for (int i = 0; i < array.length; i++) ; {
+        for (int i = 0; i < array.length; i++) ;
+        {
             array[0] = random.nextInt(50);
         }
     }
