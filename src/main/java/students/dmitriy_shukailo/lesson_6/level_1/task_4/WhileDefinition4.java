@@ -1,6 +1,6 @@
-package students.dmitriy_shukailo.lesson_6.level_1.task_3;
+package students.dmitriy_shukailo.lesson_6.level_1.task_4;
 
-class WhileDefinition3 {
+class WhileDefinition4 {
 
     public static void main(String[] args) {
         int i = 1;
