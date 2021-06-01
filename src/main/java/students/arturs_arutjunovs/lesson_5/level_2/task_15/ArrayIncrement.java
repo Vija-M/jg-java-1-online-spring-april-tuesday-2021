@@ -17,8 +17,8 @@ class ArrayIncrement {
 
         System.out.print("Incremented numbers: ");
         for (int i = 0; i < number.length; i++) {
-            int j = number[i] + 2;
-            System.out.print(j + " ");
+            number[i] += +2;
+            System.out.print(number[i] + " ");
 
         }
     }
