@@ -4,19 +4,17 @@ import java.util.Random;
 
 class Arrays {
 
+    Random random = new Random();
 
     public int[] create(int length) {
         return new int[length];
 
     }
 
-
     public void fillRandomly(int[] array) {
-        Random random = new Random();
 
-        for (int i = 0; i < array.length; i++) ;
-        {
-            array[0] = random.nextInt(50);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(50);
         }
     }
 
