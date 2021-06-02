@@ -4,10 +4,9 @@ import java.util.Random;
 
 class Arrays {
 
-    public int create(int length) {
+    public int[] create(int length) {
 
-        int[] array = new int[length];
-        return length;
+        return new int[length];
     }
 
     public void fillRandomly(int[] array) {
