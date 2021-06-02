@@ -4,9 +4,16 @@ class Product {
     String name;
     double regularPrice;
     double discount;
-    double newPrice;
 
-    double newPrice() {
-        return newPrice = regularPrice * discount;
+    public Product(String name) {
+        this.name = name;
+    }
+
+    double actualPrice() {
+        return this.regularPrice - this.regularPrice * (discount / 100);
+    }
+
+    void printInfo() {
+        System.out.println("Your " + name + " will cost " + actualPrice() + "$");
     }
 }
