@@ -10,21 +10,23 @@ class Task29and30 {
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(50);
         }
-        System.out.println("Array: " + Arrays.toString(array));
+        System.out.print("Array: " + Arrays.toString(array));
 
-        int evenNumbers = array[0];
+        System.out.println();
+
+        System.out.println("Even numbers are: ");
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
-                System.out.println("Even numbers are: " + (array[i]));
+                System.out.print(array[i] + " ");
             }
         }
+        System.out.println();
 
-        int oddNumbers = array[0];
+        System.out.println("Odd numbers are: ");
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 1) {
-                System.out.println("Odd numbers are: " + (array[i]));
+                System.out.print(array[i] + " ");
             }
         }
-
     }
 }
