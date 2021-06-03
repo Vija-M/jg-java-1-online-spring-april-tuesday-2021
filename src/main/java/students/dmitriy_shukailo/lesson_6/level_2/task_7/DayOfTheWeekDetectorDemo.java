@@ -1,4 +1,4 @@
-package students.dmitriy_shukailo.lesson_6.task_7;
+package students.dmitriy_shukailo.lesson_6.level_2.task_7;
 
 class DayOfTheWeekDetectorDemo {
 
