@@ -1,4 +1,5 @@
 package students.vija_m.lesson_6.level_2.task_7;
+
 import java.util.Scanner;
 
 class DayOfTheWeekDetector {
@@ -7,6 +8,6 @@ class DayOfTheWeekDetector {
         System.out.print("Input day number between 1 and 7 : ");
         return scanner.nextInt();
     }
-    }
+}
 
 
