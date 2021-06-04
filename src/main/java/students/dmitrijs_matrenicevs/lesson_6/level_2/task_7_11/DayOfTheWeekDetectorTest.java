@@ -59,7 +59,7 @@ package students.dmitrijs_matrenicevs.lesson_6.level_2.task_7_11;
      public void shouldReturnDefault() {
          DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
          String dayOfTheWeek = detector.findDayOfTheWeek(8);
-         checkTestResult("default".equals(dayOfTheWeek), "Default");
+         checkTestResult("Not correct day number".equals(dayOfTheWeek), "Default");
      }
 
      private void checkTestResult(boolean condition, String name) {
