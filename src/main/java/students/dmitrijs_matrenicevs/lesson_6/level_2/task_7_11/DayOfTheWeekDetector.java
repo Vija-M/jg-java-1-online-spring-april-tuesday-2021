@@ -19,6 +19,8 @@ class DayOfTheWeekDetector {
             case 5 -> "Friday";
             case 6 -> "Saturday";
             case 7 -> "Sunday";
-            default -> "Not correct day number" }
+            default -> "Not correct day number"
+            ;
+        };
     }
 }
