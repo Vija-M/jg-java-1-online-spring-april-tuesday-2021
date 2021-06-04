@@ -1,4 +1,5 @@
 package students.arturs_arutjunovs.lesson_6.level_2.task_7;
+
 import java.util.Scanner;
 
 class DayOfTheWeekDetector {

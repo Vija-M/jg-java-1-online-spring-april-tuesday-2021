@@ -59,8 +59,8 @@ class DayOfTheWeekDetectorTest {
 
     public void shouldReturnDefault() {
         DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
-        String dayOfTheWeek = detector.findDayOfTheWeek(2);
-        checkTestResult("Tuesday".equals(dayOfTheWeek), "Tuesday");
+        String dayOfTheWeek = detector.findDayOfTheWeek(0);
+        checkTestResult("Not correct day number".equals(dayOfTheWeek), "Not correct day number");
     }
 
     private void checkTestResult(boolean condition, String testName) {
