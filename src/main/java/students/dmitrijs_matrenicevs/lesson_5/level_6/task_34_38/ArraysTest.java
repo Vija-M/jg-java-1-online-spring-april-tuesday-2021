@@ -35,13 +35,13 @@ class ArraysTest {
 
     void shouldFindMaxNumber() {
         int[] numberMax = {1,2,3,4,5};
-        testFindMax(5, numberMax, "testFindMaxNumber");
+        testFindMax(numberMax);
     }
 
     public void shouldFindMinNumber() {
         int[] numberMin = {1,2,3,4,5};
         int realResult = arrays.findMin(numberMin);
-        testFindMin (realResult, 1,"testFindMinNumber");
+        testFindMin (realResult);
     }
 
 
@@ -56,24 +56,24 @@ class ArraysTest {
         }
     }
 
-    void testFindMax (int expectedResult, int[] numberMax, String name){
+    void testFindMax(int[] numberMax){
         int realResult = arrays.findMax(numberMax);
-        if (realResult == expectedResult) {
-            System.out.println(name + " = " + "OK");
+        if (realResult == 5) {
+            System.out.println("testFindMaxNumber" + " = " + "OK");
         }
         else {
-            System.out.println(name + " = " + "FAIL");
+            System.out.println("testFindMaxNumber" + " = " + "FAIL");
         }
 
 
     }
 
-    void testFindMin (int expectedResult, int realResult, String name){
-        if (realResult == expectedResult) {
-            System.out.println(name + " = " + "OK");
+    void testFindMin(int expectedResult){
+        if (1 == expectedResult) {
+            System.out.println("testFindMinNumber" + " = " + "OK");
         }
         else {
-            System.out.println(name + " = " + "FAIL");
+            System.out.println("testFindMinNumber" + " = " + "FAIL");
         }
 
 
