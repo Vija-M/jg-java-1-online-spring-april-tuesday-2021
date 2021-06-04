@@ -8,6 +8,5 @@ class DayOfTheWeekDetectorDemo {
 
         System.out.println(dayOfTheWeek);
     }
-
 }
 
