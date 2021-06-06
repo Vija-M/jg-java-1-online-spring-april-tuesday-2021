@@ -37,14 +37,23 @@ class ArrayService {
 
     int replaceAll(int[] arr, int numberToReplace, int newNumber) {
 
+        int res = 0;
+        for (int j : arr) {
+            if (j == numberToReplace) {
+                j = newNumber;
+                {
+                    res++;
+                }
+            }
+            return res;
+        }
+
+        void reverse ( int[] arr){
+
+        }
+
+        void sort ( int[] arr){
+
+        }
+
     }
-
-    void reverse(int[] arr) {
-
-    }
-
-    void sort(int[] arr){
-
-    }
-
-}
