@@ -18,8 +18,13 @@ class ArrayServiceTest {
 
     public void replaceFirstTest1() {
         ArrayService service = new ArrayService();
-        boolean replaceFirst = service.replaceFirst(new int[]{2, 3, 0, 6, 121, -4}, 0, 9);
+        int[] arr = { 2, 3, 0, 6, 121, -4 };
+        int[] expected = { 2, 3, 9, 6, 121, -4 };
+        boolean replaceFirst = service.replaceFirst(arr, 0, 9);
         checkTestResult(replaceFirst == true, "Replaced test");
+        checkTestResult(replaced == true, "Replaced test (should return correct value)");
+// Массив содержит такие элементы, которые мы ожидаем
+        checkTestResult(Arrays.equals(arr, expected), "Replaced test (should modify array)");
     }
 
     public void replaceFirstTest2() {
