@@ -1,6 +1,6 @@
 package students.ernests_subhankulovs.lesson_6.level_3.task_12;
 
-public class ArrayServiceTest {
+class ArrayServiceTest {
     public static void main(String[] args) {
         ArrayServiceTest test = new ArrayServiceTest();
         test.checkForExistingPositiveNumber();
