@@ -7,7 +7,6 @@ class ArrayService {
             if (i == numberToSearch) {
                 return true;
             }
-
         }
         return false;
     }
@@ -21,7 +20,6 @@ class ArrayService {
             }
         }
         return res;
-
     }
 
     boolean replaceFirst(int[] arr, int numberToReplace, int newNumber) {
@@ -29,7 +27,6 @@ class ArrayService {
             if (arr[i] == numberToReplace) {
                 arr[i] = newNumber;
                 return true;
-
             }
         }
         return false;
@@ -40,16 +37,16 @@ class ArrayService {
         int res = 0;
         for (int j : arr) {
             if (j == numberToReplace) {
-                j = newNumber;
-                {
-                    res++;
-                }
+                arr[j] = newNumber;
+                res++;
             }
-            return res;
         }
+        return res;
     }
 
+
     void reverse(int[] arr) {
+
 
     }
 
