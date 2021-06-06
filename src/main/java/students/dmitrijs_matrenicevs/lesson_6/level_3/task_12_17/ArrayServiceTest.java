@@ -1,5 +1,7 @@
 package students.dmitrijs_matrenicevs.lesson_6.level_3.task_12_17;
 
+import java.util.Arrays;
+
 class ArrayServiceTest {
 
     ArrayService arrayService = new ArrayService();
@@ -18,33 +20,35 @@ class ArrayServiceTest {
         arrayServiceTest.countOccurrencesFour();
         arrayServiceTest.replaceOne();
         arrayServiceTest.replaceTwo();
+        arrayServiceTest.replaceAllOne();
+        arrayServiceTest.replaceAllTwo();
+        arrayServiceTest.replaceAllThree();
+
     }
+
+
 
     //TASK12
 
     void arrayServiceTestPositiveOne() {
-        ArrayService arrayService = new ArrayService();
         int[] arrayTest = {1, 2, 3, 4};
         testResult(arrayService.contains(arrayTest, 1), "TestPositiveOne");
 
     }
 
     void arrayServiceTestPositiveTwo() {
-        ArrayService arrayService = new ArrayService();
         int[] arrayTest = {1, 2, 3, 4};
         testResult(arrayService.contains(arrayTest, 2), "TestPositiveTwo");
 
     }
 
     void arrayServiceTestNegativeOne() {
-        ArrayService arrayService = new ArrayService();
         int[] arrayTest = {1, 2, 3, 4};
         testResult(arrayService.contains(arrayTest, 3), "TestNegativeOne");
 
     }
 
     void arrayServiceTestNegativeTwo() {
-        ArrayService arrayService = new ArrayService();
         int[] arrayTest = {1, 2, 3, 4};
         testResult(arrayService.contains(arrayTest, 4), "TestNegativeTwo");
 
@@ -61,28 +65,24 @@ class ArrayServiceTest {
     //TASK13
 
     void countOccurrencesOne() {
-        ArrayService arrayService = new ArrayService();
         int[] arrayTest = {1, 2, 3, 4};
         testCountOccurrences(arrayService.countOccurrences(arrayTest, 1), 1, "TestCountOccurrencesOne");
 
     }
 
     void countOccurrencesTwo() {
-        ArrayService arrayService = new ArrayService();
         int[] arrayTest = {2, 2, 1, 4};
         testCountOccurrences(arrayService.countOccurrences(arrayTest, 2), 2, "TestCountOccurrencesTwo");
 
     }
 
     void countOccurrencesThree() {
-        ArrayService arrayService = new ArrayService();
         int[] arrayTest = {2, 2, 2, 4};
         testCountOccurrences(arrayService.countOccurrences(arrayTest, 2), 3, "TestCountOccurrencesThree");
 
     }
 
     void countOccurrencesFour() {
-        ArrayService arrayService = new ArrayService();
         int[] arrayTest = {3, 3, 3, 3};
         testCountOccurrences(arrayService.countOccurrences(arrayTest, 3), 4, "TestCountOccurrencesFour");
 
@@ -99,14 +99,12 @@ class ArrayServiceTest {
     //TASK14
 
     void replaceOne() {
-        ArrayService arrayService = new ArrayService();
         int[] arrayTest = {2, 2, 2, 2};
         replaceTest(arrayService.replaceFirst(arrayTest, 2, 1), "TestReplaceOne");
 
     }
 
     void replaceTwo() {
-        ArrayService arrayService = new ArrayService();
         int[] arrayTest = {4, 4, 4, 4};
         replaceTest(arrayService.replaceFirst(arrayTest, 4, 2), "TestReplaceTwo");
 
@@ -122,7 +120,42 @@ class ArrayServiceTest {
 
     //TASK15
 
+    void replaceAllOne() {
+        int[] arrayTest = {1, 2, 3, 4};
+        int[] expectedResult = {1, 2, 3, 4};
+        replaceAllOneResultInt(0,arrayService.replaceAll(arrayTest, 5, 0), "TestReplaceAllOne");
+        testReplaceAll(arrayTest, expectedResult, "TestReplaceAllOne");
+    }
+
+    void replaceAllTwo() {
+        int[] arrayTest = {1, 2, 3, 4};
+        int[] expectedResult = {1, 2, 3, 5};
+        replaceAllOneResultInt(1,arrayService.replaceAll(arrayTest, 4, 5), "TestReplaceAllTwo");
+        testReplaceAll(arrayTest, expectedResult, "TestReplaceAllTwo");
+    }
+
+    void replaceAllThree() {
+        int[] arrayTest = {1, 1, 1, 1};
+        int[] expectedResult = {2, 2, 2, 2};
+        replaceAllOneResultInt(4,arrayService.replaceAll(arrayTest, 1, 2), "TestReplaceAllThree");
+        testReplaceAll(arrayTest, expectedResult, "TestReplaceAllThree");
+    }
 
 
+    void replaceAllOneResultInt(int expectedResult, int realResult, String name) {
+        if (expectedResult == realResult) {
+            System.out.println(name + " = OK");
+        } else {
+            System.out.println(name + " = FAIL");
+        }
+    }
+
+    void testReplaceAll(int[] realResult, int[] expectedResult, String name) {
+        if (Arrays.equals(expectedResult, realResult)) {
+            System.out.println(name + " = OK");
+        } else {
+            System.out.println(name + " = FAIL");
+        }
+    }
 
 }

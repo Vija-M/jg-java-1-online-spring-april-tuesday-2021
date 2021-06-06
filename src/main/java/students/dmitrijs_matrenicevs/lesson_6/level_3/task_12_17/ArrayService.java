@@ -35,9 +35,9 @@ class ArrayService {
     int replaceAll(int[] arr, int numberToReplace, int newNumber) {
 
         int res = 0;
-        for (int j : arr) {
-            if (j == numberToReplace) {
-                arr[j] = newNumber;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == numberToReplace) {
+                arr[i] = newNumber;
                 res++;
             }
         }
