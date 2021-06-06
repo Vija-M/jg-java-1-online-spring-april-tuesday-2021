@@ -23,10 +23,9 @@ class ArrayServiceTest {
         arrayServiceTest.replaceAllOne();
         arrayServiceTest.replaceAllTwo();
         arrayServiceTest.replaceAllThree();
+        arrayServiceTest.reverseTest();
 
     }
-
-
 
     //TASK12
 
@@ -141,7 +140,6 @@ class ArrayServiceTest {
         testReplaceAll(arrayTest, expectedResult, "TestReplaceAllThree");
     }
 
-
     void replaceAllOneResultInt(int expectedResult, int realResult, String name) {
         if (expectedResult == realResult) {
             System.out.println(name + " = OK");
@@ -155,6 +153,23 @@ class ArrayServiceTest {
             System.out.println(name + " = OK");
         } else {
             System.out.println(name + " = FAIL");
+        }
+    }
+
+    //TASK16
+
+    void reverseTest() {
+        int[] arrayTest = {1, 1, 1, 1, 5};
+        int[] expectedResult = {2, 2, 2, 2, 6};
+        arrayService.reverse(arrayTest);
+        testReverse(arrayTest, expectedResult);
+    }
+
+    void testReverse(int[] realResult, int[] expectedResult) {
+        if (Arrays.equals(expectedResult, realResult)) {
+            System.out.println("TestReverse" + " = OK");
+        } else {
+            System.out.println("TestReverse" + " = FAIL");
         }
     }
 
