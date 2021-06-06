@@ -10,6 +10,7 @@ public class DayOfTheWeekDetectorTest {
         dayOfTheWeekDetectorTest.fridayTest();
         dayOfTheWeekDetectorTest.saturdayTest();
         dayOfTheWeekDetectorTest.sundayTest();
+        dayOfTheWeekDetectorTest.mistakeTest();
 
     }
 
@@ -49,5 +50,9 @@ public class DayOfTheWeekDetectorTest {
 
     public void sundayTest() {
         assertWeek(7, "Sunday", "Sunday");
+    }
+
+    public void mistakeTest() {
+        assertWeek(0, " :( ", ":(");
     }
 }
