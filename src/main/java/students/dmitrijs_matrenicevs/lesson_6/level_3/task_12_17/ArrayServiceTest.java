@@ -159,8 +159,8 @@ class ArrayServiceTest {
     //TASK16
 
     void reverseTest() {
-        int[] arrayTest = {1, 1, 1, 1, 5};
-        int[] expectedResult = {2, 2, 2, 2, 6};
+        int[] arrayTest = {1, 2, 3, 4, 5};
+        int[] expectedResult = {5, 4, 3, 2, 1};
         arrayService.reverse(arrayTest);
         testReverse(arrayTest, expectedResult);
     }

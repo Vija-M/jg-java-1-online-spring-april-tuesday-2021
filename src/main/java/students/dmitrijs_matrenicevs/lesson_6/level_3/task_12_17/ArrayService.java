@@ -51,11 +51,7 @@ class ArrayService {
             reverseService[m - 1] = k;
             m--;
         }
-        for (int k : arr) {
-            arr[m] = reverseService[m];
-        }
-
-
+        System.arraycopy(reverseService, 0, arr, 0, arr.length);
     }
 
     void sort(int[] arr) {
