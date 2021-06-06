@@ -1,6 +1,7 @@
 package students.vija_m.lesson_6.level_3.task_15;
 
-import java.util.Objects;
+
+import java.util.Arrays;
 
 class ArrayServiceTest {
     public static void main(String[] args) {
@@ -19,20 +20,30 @@ class ArrayServiceTest {
 
     public void replaceAllTest1() {
         ArrayService service = new ArrayService();
-        int replaceAll = service.replaceAll(new int[]{2, 3, 0, 6, 121, -4}, 0, 9);
-        checkTestResult(replaceAll == 1, "Replaced one test");
+        int[] arr = {2, 3, 0, 6, 121, -4};
+        int[] expected = {2, 3, 9, 6, 121, -4};
+        int replaceAll = service.replaceAll(arr, 0, 9);
+        checkTestResult(replaceAll == 1, "Replaced one test (should return correct value)");
+        checkTestResult(Arrays.equals(arr, expected), "Replaced one test (should modify array)");
     }
 
     public void replaceAllTest2() {
         ArrayService service = new ArrayService();
-        int replaceAll = service.replaceAll(new int[]{2, 6, 3, 0, 6, 121, -4}, 6, 9);
-        checkTestResult(replaceAll == 2, "Replaced two test");
+        int[] arr = {2, 6, 3, 0, 6, 121, -4};
+        int[] expected = {2, 9, 3, 0, 9, 121, -4};
+        int replaceAll = service.replaceAll(arr, 6, 9);
+        checkTestResult(replaceAll == 2, "Replaced two test(should return correct value)");
+        checkTestResult(Arrays.equals(arr, expected), "Replaced two test (should modify array)");
+
     }
 
     public void replaceAllTest3() {
         ArrayService service = new ArrayService();
-        int replaceAll = service.replaceAll(new int[]{2, 6, 3, 0, 6, 121, -4}, 1, 9);
-        checkTestResult(replaceAll == 0, "Replaced zero test");
+        int[] arr = {2, 6, 3, 0, 6, 121, -4};
+        int[] expected = {2, 6, 3, 0, 6, 121, -4};
+        int replaceAll = service.replaceAll(arr, 1, 9);
+        checkTestResult(replaceAll == 0, "Replaced zero test(should return correct value)");
+        checkTestResult(Arrays.equals(arr, expected), "Replaced zero test (should modify array)");
     }
 
     public void occurrenceTest1() {
@@ -75,7 +86,7 @@ class ArrayServiceTest {
     public void test4() {
         ArrayService service = new ArrayService();
         boolean contains = service.contains(new int[]{2, 3, 0, 6, 121, -4}, 19);
-        checkTestResult(contains != true, "Doesn't contain a number");
+        checkTestResult(!contains, "Doesn't contain a number");
     }
 
     private void checkTestResult(boolean condition, String testName) {
