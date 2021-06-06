@@ -1,5 +1,7 @@
 package students.ernests_subhankulovs.lesson_6.level_3.task_15;
 
+import java.util.Arrays;
+
 class ArrayServiceTest {
 
     ArrayService arrayService = new ArrayService();
@@ -81,27 +83,37 @@ class ArrayServiceTest {
 
     public void checkForReplacement() {
         int[] arrayToTest = {1, 1, 1, 1};
+        int[] expectedArray = {0, 1, 1, 1};
         checkTestResult(true, arrayService.replaceFirst(arrayToTest, 1, 0), "Test for first replacement that happened");
+        checkArrays(arrayToTest, expectedArray, "Test array match in case of a replacement that happened");
     }
 
     public void checkForNoReplacement() {
-        int[] arrayToTest = {1, 1, 1, 1};
-        checkTestResult(false, arrayService.replaceFirst(arrayToTest, 0, 1), "Test for first replacement that did not happen");
+        int[] arrayToTest = {1, 2, 3, 4};
+        int[] expectedArray = {1, 2, 3, 4};
+        checkTestResult(false, arrayService.replaceFirst(arrayToTest, 0, 5), "Test for first replacement that did not happened");
+        checkArrays(arrayToTest, expectedArray, "Test array match in case of a replacement that did not happened");
     }
 
     public void checkForZeroReplacements() {
         int[] arrayToTest = {1, 2, 3, 4};
+        int[] expectedArray = {1, 2, 3, 4};
         checkNumericTestResult(0,arrayService.replaceAll(arrayToTest, 5, 0),"Test for no replacements");
+        checkArrays(arrayToTest, expectedArray, "Test array match in case of an all-element replacement that did not happened");
     }
 
     public void checkForSingleReplacement() {
         int[] arrayToTest = {1, 2, 3, 4};
-        checkNumericTestResult(1,arrayService.replaceAll(arrayToTest, 4, 5),"Test for a single replacements");
+        int[] expectedArray = {1, 2, 3, 5};
+        checkNumericTestResult(1, arrayService.replaceAll(arrayToTest, 4, 5),"Test for a single replacements");
+        checkArrays(arrayToTest, expectedArray, "Test array match in case of an all-element replacement for a single element");
     }
 
     public void checkForCompleteReplacement() {
         int[] arrayToTest = {1, 1, 1, 1};
-        checkNumericTestResult(4,arrayService.replaceAll(arrayToTest, 1, 2),"Test for all value replacements");
+        int[] expectedArray = {2, 2, 2, 2};
+        checkNumericTestResult(4, arrayService.replaceAll(arrayToTest, 1, 2),"Test for all value replacements");
+        checkArrays(arrayToTest, expectedArray, "Test array match in case of an all-element replacement for all elements");
     }
 
     private void checkTestResult(boolean expectedResult, boolean realResult, String testName) {
@@ -114,6 +126,14 @@ class ArrayServiceTest {
 
     private void checkNumericTestResult(int expectedResult, int realResult, String testName) {
         if (expectedResult == realResult) {
+            System.out.println(testName + " = OK!");
+        } else {
+            System.out.println(testName + " = FAIL!");
+        }
+    }
+
+    private void checkArrays(int[] expectedArray, int[] actualArray, String testName) {
+        if (Arrays.equals(expectedArray, actualArray)) {
             System.out.println(testName + " = OK!");
         } else {
             System.out.println(testName + " = FAIL!");
