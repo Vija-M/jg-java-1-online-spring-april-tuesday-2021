@@ -47,13 +47,14 @@ class ArrayService {
             }
             return res;
         }
+    }
 
-        void reverse ( int[] arr){
-
-        }
-
-        void sort ( int[] arr){
-
-        }
+    void reverse(int[] arr) {
 
     }
+
+    void sort(int[] arr) {
+
+    }
+
+}
