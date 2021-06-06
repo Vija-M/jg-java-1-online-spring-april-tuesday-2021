@@ -44,8 +44,16 @@ class ArrayService {
         return res;
     }
 
-
     void reverse(int[] arr) {
+        int m = arr.length;
+        int[] reverseService = new int[m];
+        for (int k : arr) {
+            reverseService[m - 1] = k;
+            m--;
+        }
+        for (int k : arr) {
+            arr[m] = reverseService[m];
+        }
 
 
     }
