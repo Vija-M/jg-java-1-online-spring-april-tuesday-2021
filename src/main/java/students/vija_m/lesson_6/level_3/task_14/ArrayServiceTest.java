@@ -1,6 +1,6 @@
 package students.vija_m.lesson_6.level_3.task_14;
 
-import java.util.Objects;
+import java.util.Arrays;
 
 class ArrayServiceTest {
     public static void main(String[] args) {
@@ -18,19 +18,21 @@ class ArrayServiceTest {
 
     public void replaceFirstTest1() {
         ArrayService service = new ArrayService();
-        int[] arr = { 2, 3, 0, 6, 121, -4 };
-        int[] expected = { 2, 3, 9, 6, 121, -4 };
+        int[] arr = {2, 3, 0, 6, 121, -4};
+        int[] expected = {2, 3, 9, 6, 121, -4};
         boolean replaceFirst = service.replaceFirst(arr, 0, 9);
-        checkTestResult(replaceFirst == true, "Replaced test");
-        checkTestResult(replaced == true, "Replaced test (should return correct value)");
-// Массив содержит такие элементы, которые мы ожидаем
+        checkTestResult(replaceFirst == true, "Replaced test (should return correct value)");
         checkTestResult(Arrays.equals(arr, expected), "Replaced test (should modify array)");
     }
 
+
     public void replaceFirstTest2() {
         ArrayService service = new ArrayService();
-        boolean replaceFirst = service.replaceFirst(new int[]{2, 3, 0, 6, 121, -4}, 8, 9);
-        checkTestResult(replaceFirst != true, "No number to replace test");
+        int[] arr = {2, 3, 0, 6, 121, -4};
+        int[] expected = {2, 3, 0, 6, 121, -4};
+        boolean replaceFirst = service.replaceFirst(arr, 8, 9);
+        checkTestResult(replaceFirst == false, "No number to replace test (should return correct value)");
+        checkTestResult(Arrays.equals(arr, expected), "No number to replace test (should not modify array)");
     }
 
     public void occurrenceTest1() {
@@ -83,4 +85,5 @@ class ArrayServiceTest {
             System.out.println(testName + " = FAIL!");
         }
     }
+
 }
