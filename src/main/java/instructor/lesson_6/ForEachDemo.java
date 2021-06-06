@@ -3,7 +3,6 @@ package instructor.lesson_6;
 class ForEachDemo {
 
     public static void main(String[] args) {
-
         String[] words = {
                 "foo",
                 "bar",
