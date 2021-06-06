@@ -32,11 +32,11 @@ class ArrayService {
         return false;
     }
 
-    int replaceAll(int[] arr, int numberToReplace, int newNumber) {
+    int changeAll(int[] arr, int changeNumber, int newNumber) {
 
         int res = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == numberToReplace) {
+            if (arr[i] == changeNumber) {
                 arr[i] = newNumber;
                 res++;
             }
@@ -56,6 +56,16 @@ class ArrayService {
 
     void sort(int[] arr) {
 
+        int material;
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int m = 1; m < arr.length - i; m++) {
+                if (arr[m - 1] > arr[m]) {
+                    material = arr[m - 1];
+                    arr[m - 1] = arr[m];
+                    arr[m] = material;
+                }
+            }
+        }
     }
 
 }

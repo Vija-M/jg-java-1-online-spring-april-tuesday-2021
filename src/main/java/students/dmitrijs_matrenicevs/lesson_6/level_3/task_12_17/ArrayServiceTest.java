@@ -24,6 +24,9 @@ class ArrayServiceTest {
         arrayServiceTest.replaceAllTwo();
         arrayServiceTest.replaceAllThree();
         arrayServiceTest.reverseTest();
+        arrayServiceTest.sortTestOne();
+        arrayServiceTest.sortTestTwo();
+        arrayServiceTest.sortTestFinish();
 
     }
 
@@ -122,21 +125,21 @@ class ArrayServiceTest {
     void replaceAllOne() {
         int[] arrayTest = {1, 2, 3, 4};
         int[] expectedResult = {1, 2, 3, 4};
-        replaceAllOneResultInt(0,arrayService.replaceAll(arrayTest, 5, 0), "TestReplaceAllOne");
+        replaceAllOneResultInt(0, arrayService.changeAll(arrayTest, 5, 0), "TestReplaceAllOne");
         testReplaceAll(arrayTest, expectedResult, "TestReplaceAllOne");
     }
 
     void replaceAllTwo() {
         int[] arrayTest = {1, 2, 3, 4};
         int[] expectedResult = {1, 2, 3, 5};
-        replaceAllOneResultInt(1,arrayService.replaceAll(arrayTest, 4, 5), "TestReplaceAllTwo");
+        replaceAllOneResultInt(1, arrayService.changeAll(arrayTest, 4, 5), "TestReplaceAllTwo");
         testReplaceAll(arrayTest, expectedResult, "TestReplaceAllTwo");
     }
 
     void replaceAllThree() {
         int[] arrayTest = {1, 1, 1, 1};
         int[] expectedResult = {2, 2, 2, 2};
-        replaceAllOneResultInt(4,arrayService.replaceAll(arrayTest, 1, 2), "TestReplaceAllThree");
+        replaceAllOneResultInt(4, arrayService.changeAll(arrayTest, 1, 2), "TestReplaceAllThree");
         testReplaceAll(arrayTest, expectedResult, "TestReplaceAllThree");
     }
 
@@ -174,5 +177,36 @@ class ArrayServiceTest {
     }
 
     //TASK17
+
+    void sortTestOne() {
+        int[] arrayTest = {4, 5, 1, 3, 2};
+        int[] expectedResult = {1, 2, 3, 4, 5};
+        arrayService.sort(arrayTest);
+        testSort(arrayTest, expectedResult, "sortTestOne");
+    }
+
+    void sortTestTwo() {
+        int[] arrayTest = {5, 4, 3, 2, 1};
+        int[] expectedResult = {1, 2, 3, 4, 5};
+        arrayService.sort(arrayTest);
+        testSort(arrayTest, expectedResult, "sortTestTwo");
+    }
+
+    void sortTestFinish() {
+        int[] arrayTest = {1, 2, 3, 4, 5};
+        int[] expectedResult = {1, 2, 3, 4, 5};
+        arrayService.sort(arrayTest);
+        testSort(arrayTest, expectedResult, "sortTestFinish");
+    }
+
+    void testSort(int[] realResult, int[] expectedResult, String name) {
+        if (Arrays.equals(expectedResult, realResult)) {
+            System.out.println(name + " = OK");
+        } else {
+            System.out.println(name + " = FAIL");
+        }
+    }
+
+    //задания просто пздц :D
 
 }
