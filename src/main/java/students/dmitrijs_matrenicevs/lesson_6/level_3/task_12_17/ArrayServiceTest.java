@@ -16,6 +16,8 @@ class ArrayServiceTest {
         arrayServiceTest.countOccurrencesTwo();
         arrayServiceTest.countOccurrencesThree();
         arrayServiceTest.countOccurrencesFour();
+        arrayServiceTest.replaceOne();
+        arrayServiceTest.replaceTwo();
     }
 
     //TASK12
@@ -94,6 +96,31 @@ class ArrayServiceTest {
         }
     }
 
+    //TASK14
+
+    void replaceOne() {
+        ArrayService arrayService = new ArrayService();
+        int[] arrayTest = {2, 2, 2, 2};
+        replaceTest(arrayService.replaceFirst(arrayTest, 2, 1), "TestReplaceOne");
+
+    }
+
+    void replaceTwo() {
+        ArrayService arrayService = new ArrayService();
+        int[] arrayTest = {4, 4, 4, 4};
+        replaceTest(arrayService.replaceFirst(arrayTest, 4, 2), "TestReplaceTwo");
+
+    }
+
+    void replaceTest(boolean realResult, String name) {
+        if (realResult) {
+            System.out.println(name + " = OK");
+        } else {
+            System.out.println(name + " = FAIL");
+        }
+    }
+
+    //TASK15
 
 
 
