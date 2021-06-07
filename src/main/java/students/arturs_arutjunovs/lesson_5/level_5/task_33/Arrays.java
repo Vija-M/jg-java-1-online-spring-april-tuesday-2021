@@ -10,10 +10,8 @@ class Arrays {
 
     public void fillRandomly(int[] array) {
         Random random = new Random();
-        array = new int[10];
-
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(50);
+            array[i] = random.nextInt();
         }
     }
 }
