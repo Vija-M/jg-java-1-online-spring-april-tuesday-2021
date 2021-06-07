@@ -5,16 +5,15 @@ import java.util.Random;
 class Arrays {
 
     public int[] create(int length) {
-        int[] arr = new int[length];
-        return arr;
+        return new int[length];
     }
 
     public void fillRandomly(int[] array) {
         Random random = new Random();
-        int[] number = new int[10];
+        array = new int[10];
 
         for (int i = 0; i < array.length; i++) {
-            number[i] = random.nextInt(50);
+            array[i] = random.nextInt(50);
         }
     }
 }
