@@ -1,7 +1,5 @@
 package students.ernests_subhankulovs.lesson_6.level_6.task_28;
 
-import java.util.Arrays;
-
 class TicTacToeTest {
 
     TicTacToe ticTacToe = new TicTacToe();
