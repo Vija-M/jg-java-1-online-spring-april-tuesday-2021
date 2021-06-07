@@ -5,7 +5,7 @@ class TicTacToe {
     public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck) {
         int counter = 0;
         for (int i = 0; i < field.length; i++) {
-            for (int j = 0; j < field.length ; j++) {
+            for (int j = 0; j < field[i].length ; j++) {
                 if (field[i][j] == playerToCheck) {
                     counter++;
                 }
