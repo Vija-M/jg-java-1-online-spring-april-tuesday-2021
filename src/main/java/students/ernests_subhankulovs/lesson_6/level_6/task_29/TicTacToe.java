@@ -1,7 +1,6 @@
 package students.ernests_subhankulovs.lesson_6.level_6.task_29;
 
 import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
 
 class TicTacToe {
