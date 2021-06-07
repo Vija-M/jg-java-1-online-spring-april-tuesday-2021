@@ -8,9 +8,11 @@ class ArrayServiceTest {
 
     public static void main(String[] args) {
         ArrayServiceTest test = new ArrayServiceTest();
-        test.arraySortHaosTest();
+        test.arraySortChaosTest();
         test.arrayReversionTest();
         test.arraySortIsSortedTest();
+        test.arraySortIfEmptyTest();
+        test.arraySortIfZeroTest();
         test.replaceAllTest1();
         test.replaceAllTest2();
         test.replaceAllTest3();
@@ -25,20 +27,34 @@ class ArrayServiceTest {
         test.test4();
     }
 
-    public void arraySortHaosTest() {
+    public void arraySortChaosTest() {
         int[] arr = {2, 3, 5, -4, 6, 121, -4};
         int[] expected = {-4, -4, 2, 3, 5, 6, 121};
         service.sort(arr);
-        checkTestResult(Arrays.equals(arr, expected), "Test array sort if haos");
-        System.out.println(Arrays.toString(arr));
-    }
+        checkTestResult(Arrays.equals(arr, expected), "Test array sort if chaos");
+           }
 
     public void arraySortIsSortedTest() {
         int[] arr = {-9, -4, 2, 3, 5, 6, 121};
         int[] expected = {-9, -4, 2, 3, 5, 6, 121};
         service.sort(arr);
-        checkTestResult(Arrays.equals(arr, expected), "Test array sort if haos");
+        checkTestResult(Arrays.equals(arr, expected), "Test array sort if already sorted");
     }
+
+    public void arraySortIfEmptyTest() {
+        int[] arr = {};
+        int[] expected = {};
+        service.sort(arr);
+        checkTestResult(Arrays.equals(arr, expected), "Test array sort if empty");
+    }
+
+    public void arraySortIfZeroTest() {
+        int[] arr = {0};
+        int[] expected = {0};
+        service.sort(arr);
+        checkTestResult(Arrays.equals(arr, expected), "Test array sort if contains only zero");
+    }
+
 
     public void arrayReversionTest() {
         int[] arr = {2, 3, 5, -4, 6, 121, -4};
@@ -47,13 +63,13 @@ class ArrayServiceTest {
         checkTestResult(Arrays.equals(arr, expected), "Test array reversion");
     }
 
-
     public void replaceAllTest1() {
         int[] arr = {2, 3, 0, 6, 121, -4};
         int[] expected = {2, 3, 9, 6, 121, -4};
         int replaceAll = service.replaceAll(arr, 0, 9);
         checkTestResult(replaceAll == 1, "Replaced one test (should return correct value)");
         checkTestResult(Arrays.equals(arr, expected), "Replaced one test (should modify array)");
+        System.out.println(Arrays.toString(arr));
     }
 
     public void replaceAllTest2() {
