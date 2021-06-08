@@ -2,9 +2,9 @@ package instructor.lesson_6.slot;
 
 class SlotMachine {
 
-    int balance;
-    Carousel carousel;
-    GameControl gameControl;
+    private int balance;
+    private Carousel carousel;
+    private GameControl gameControl;
 
     SlotMachine(int balance, Carousel carousel, GameControl gameControl) {
         this.balance = balance;
@@ -18,9 +18,7 @@ class SlotMachine {
 
         while (true) {
 
-            System.out.println();
-            System.out.println("-= NEXT ROUND =-");
-            System.out.println("Your balance: " + balance + "$");
+            printNextRound();
 
             if (!gameControl.promptPlay()) {
                 System.out.println("See you soon! Thank you for your money! 🤑");
@@ -52,5 +50,11 @@ class SlotMachine {
             }
         }
 
+    }
+
+    private void printNextRound() {
+        System.out.println();
+        System.out.println("-= NEXT ROUND =-");
+        System.out.println("Your balance: " + balance + "$");
     }
 }
