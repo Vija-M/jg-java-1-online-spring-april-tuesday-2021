@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 class TwoDimensionalArray {
-    FillArray fillArray = new FillArray();
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Укажите количество строк нового массива:");
@@ -15,22 +15,21 @@ class TwoDimensionalArray {
         int[][] arrays = new int[x][y];
         TwoDimensionalArray array = new TwoDimensionalArray();
         array.fillArray(arrays);
-    System.out.println("Сумма всех элементов массива равна: " + array.sumArrays(arrays));
+        System.out.println("Сумма всех элементов массива равна: " + array.sumArrays(arrays));
     }
 
 
-
-        public void fillArray(int[][] arrays) {
-            System.out.println("При помощи рандома заполним двухмерный массив:");
-            Random random = new Random();
-            for (int i = 0; i < arrays.length; i++) {
-                for (int j = 0; j < arrays[i].length; j++) {
-                    arrays[i][j] = random.nextInt(100);
-                    System.out.print(arrays[i][j] + "\t");
-                }
-                System.out.println();
+    public void fillArray(int[][] arrays) {
+        System.out.println("При помощи рандома заполним двухмерный массив:");
+        Random random = new Random();
+        for (int i = 0; i < arrays.length; i++) {
+            for (int j = 0; j < arrays[i].length; j++) {
+                arrays[i][j] = random.nextInt(100);
+                System.out.print(arrays[i][j] + "\t");
             }
+            System.out.println();
         }
+    }
 
 
     public int sumArrays(int[][] arrays) {
