@@ -1,4 +1,4 @@
-package student.sergej_pereligin.lesson_5.level_2.task_14;
+package students.sergej_pereligin.lesson_5.level_2.task_14;
 
 
 
