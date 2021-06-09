@@ -1,4 +1,4 @@
-package students.ernests_subhankulovs.lesson_6.level_6.tsask_30;
+package students.ernests_subhankulovs.lesson_6.level_6.task_30;
 
 class Move {
     private int x;
