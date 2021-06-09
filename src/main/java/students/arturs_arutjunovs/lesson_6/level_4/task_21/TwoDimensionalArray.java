@@ -6,29 +6,27 @@ import java.util.Random;
 class TwoDimensionalArray {
     public static void main(String[] args) {
 
-        TwoDimensionalArray twoDimensionalArray = new TwoDimensionalArray();
         int[][] arr = new int[5][4];
-        twoDimensionalArray.fillRandomValues(arr);
-        System.out.println("The sum of two dimensional array values is: " + twoDimensionalArray.sumOfArrayValues(arr));
-
+        fillRandomValues(arr);
+        System.out.println("The sum of two dimensional array values is: " + sumOfArrayValues(arr));
     }
 
-    public void fillRandomValues(int[][] arr) {
+    static void fillRandomValues(int[][] arr) {
         Random random = new Random();
         System.out.println("Random filled numbers is: ");
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[j].length; j++) {
+            for (int j = 0; j < arr[i].length; j++) {
                 arr[i][j] = random.nextInt(50);
             }
             System.out.println(Arrays.toString(arr[i]));
         }
     }
 
-    public int sumOfArrayValues(int[][] arr) {
+    static int sumOfArrayValues(int[][] arr) {
         int sum = 0;
         for (int[] ints : arr) {
-            for (int j = 0; j < arr[j].length; j++) {
-                sum += ints[j];
+            for (int i : ints) {
+                sum += i;
             }
         }
         return sum;
