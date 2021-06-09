@@ -1,6 +1,7 @@
 package students.vija_m.lesson_6.level_5.task_23;
 
 class TicTacToeTest {
+
     TicTacToe ticTacToe = new TicTacToe();
 
     public static void main(String[] args) {
