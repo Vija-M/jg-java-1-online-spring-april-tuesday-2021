@@ -1,6 +1,5 @@
 package students.vija_m.lesson_6.level_5.task_25;
 
-import com.intellij.codeInsight.template.postfix.templates.SoutvPostfixTemplate;
 
 class TicTacToeTest {
     TicTacToe ticTacToe = new TicTacToe();
