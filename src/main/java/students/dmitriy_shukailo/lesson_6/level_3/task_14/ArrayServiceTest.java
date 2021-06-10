@@ -1,6 +1,6 @@
 package students.dmitriy_shukailo.lesson_6.level_3.task_14;
 
-class ArrayServiceTest {
+public class ArrayServiceTest {
 
     ArrayService arrayService = new ArrayService();
 
