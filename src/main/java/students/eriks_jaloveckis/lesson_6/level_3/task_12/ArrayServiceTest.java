@@ -7,39 +7,53 @@ class ArrayServiceTest {
         arrayServiceTest.positiveNumberOut();
         arrayServiceTest.negativeNumberIn();
         arrayServiceTest.negativeNumberOut();
-
+        arrayServiceTest.zeroNumberIn();
+        arrayServiceTest.zeroNumberOut();
     }
-    public void checkTestResult(boolean condition, String testName){
-        if (condition){
+
+    public void checkTestResult(boolean condition, String testName) {
+        if (condition) {
             System.out.println(testName + " OK!");
-        }
-        else {
+        } else {
             System.out.println(testName + " FAIL!");
         }
     }
 
-    public void positiveNumberIn(){
+    public void positiveNumberIn() {
         ArrayService arrayService = new ArrayService();
-        boolean contains = arrayService.contains(new int[]{1,2,3,4,5}, 2);
+        boolean contains = arrayService.contains(new int[]{1, 2, 3, 4, 5}, 2);
         checkTestResult(contains, "Contain positive number");
     }
-    public void positiveNumberOut(){
+
+    public void positiveNumberOut() {
         ArrayService arrayService = new ArrayService();
-        boolean contains = arrayService.contains(new int[]{1,2,3,4,5}, 6);
-        checkTestResult(contains == false, "Does not contain positive number");
+        boolean contains = arrayService.contains(new int[]{1, 2, 3, 4, 5}, 6);
+        checkTestResult(!contains, "Does not contain positive number");
     }
-    public void negativeNumberIn(){
+
+    public void negativeNumberIn() {
         ArrayService arrayService = new ArrayService();
-        boolean contains = arrayService.contains(new int[]{1,2,3,4,-5}, -5);
+        boolean contains = arrayService.contains(new int[]{-1, -2, -3, -4, -5}, -1);
         checkTestResult(contains, "Contain negative number");
     }
-    public void negativeNumberOut(){
-        ArrayService arrayService = new ArrayService();
-        boolean contains = arrayService.contains(new int[]{1,2,3,4,5}, -3);
-        checkTestResult(contains == false, "Does not contain negative number");
 
+    public void negativeNumberOut() {
+        ArrayService arrayService = new ArrayService();
+        boolean contains = arrayService.contains(new int[]{1, 2, 3, 4, 5}, -3);
+        checkTestResult(!contains, "Does not contain negative number");
     }
 
+    public void zeroNumberIn() {
+        ArrayService arrayService = new ArrayService();
+        boolean contains = arrayService.contains(new int[]{0, 1, 2, 3, 4}, 0);
+        checkTestResult(contains, "Contain zero");
+    }
+
+    public void zeroNumberOut() {
+        ArrayService arrayService = new ArrayService();
+        boolean contains = arrayService.contains(new int[]{1, 2, 3, 4, 5}, 0);
+        checkTestResult(contains, "Does not contain zero");
+    }
 }
 
 
