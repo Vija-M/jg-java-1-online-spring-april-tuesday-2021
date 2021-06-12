@@ -5,8 +5,7 @@ class WordService {
     String findMostFrequentWord(String text) {
         String[] findWords = splitWords(text);
         for (int i = 0; i < findWords.length; i++) {
-            int[] frequentWords = new int[0];
-            frequentWords[i] = mostWords(findWords, findWords[i]);
+            findWords[i] = String.valueOf(mostWords(findWords, findWords[i]));
         }
         return findWords[maxWords(findWords)];
     }
