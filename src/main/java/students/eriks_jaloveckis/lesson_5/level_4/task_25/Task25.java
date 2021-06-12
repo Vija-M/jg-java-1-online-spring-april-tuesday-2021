@@ -1,4 +1,4 @@
-package students.eriks_jaloveckis.lesson_5.level_4_task_25;
+package students.eriks_jaloveckis.lesson_5.level_4.task_25;
 
 import java.util.Scanner;
 
