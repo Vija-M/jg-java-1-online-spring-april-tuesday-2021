@@ -12,7 +12,7 @@ class TwoDimensionalArray {
     }
 
 
-    void randomArray(int[][] dimensional) {
+    public void randomArray(int[][] dimensional) {
         Random random = new Random();
         System.out.println("RandomArray: ");
         for (int i = 0; i < dimensional.length; i++) {
