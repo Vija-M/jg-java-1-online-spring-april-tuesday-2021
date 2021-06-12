@@ -12,7 +12,7 @@ class DayOfTheWeekDetector {
 
     public String findDayOfTheWeek(int dayNumber) {
 
-        String dayOfTheWeek = switch (dayNumber) {
+        return switch (dayNumber) {
             case 1 -> "Monday";
             case 2 -> "Tuesday";
             case 3 -> "Wednesday";
@@ -22,7 +22,7 @@ class DayOfTheWeekDetector {
             case 7 -> "Sunday";
             default -> "Not correct day number";
         };
-        return dayOfTheWeek;
+
     }
 
 
