@@ -9,12 +9,12 @@ class Task30 {
         Random random = new Random();
         int[] array = new int[6];
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(200);
+            array[i] = random.nextInt(6);
         }
 
         System.out.println(Arrays.toString(array));
 
-        for (int i = 1; i < array.length; i++) {
+        for (int i : array) {
             if (array[i] % 2 == 1) {
                 System.out.println(array[i]);
 
