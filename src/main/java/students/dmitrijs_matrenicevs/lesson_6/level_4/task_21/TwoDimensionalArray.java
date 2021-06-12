@@ -8,11 +8,11 @@ class TwoDimensionalArray {
     public static void main(String[] args) {
 
         int[][] dimensional = new int[6][5];
+        randomArray(dimensional);
         System.out.println(sumArray(dimensional));
     }
 
-
-    public void randomArray(int[][] dimensional) {
+    static void randomArray(int[][] dimensional) {
         Random random = new Random();
         System.out.println("RandomArray: ");
         for (int i = 0; i < dimensional.length; i++) {
