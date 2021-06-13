@@ -13,7 +13,7 @@ public class ArrayServiceTest {
             if (condition) {
                 System.out.println(testName + "   Test is OK");
             } else {
-                System.out.println(testName + "   Test is OK");
+                System.out.println(testName + "   Test is  not OK");
             } }
 
         public void test1(){
@@ -34,7 +34,7 @@ public class ArrayServiceTest {
     public void test4(){
         ArrayService test=new ArrayService();
         boolean contain=test.contains(new int[]{1,2,3,0},4);
-        checkCondition(contain==true,"Negative test");
+        checkCondition(contain==false,"Negative test");
     }
 
 
