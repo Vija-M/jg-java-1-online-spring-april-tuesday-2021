@@ -48,12 +48,6 @@ class ArrayService {
             arr[i] = arr[arr.length - i - 1];
             arr[arr.length - i - 1] = tmp;
         }
-
-
-
     }
-
-
-
 
 }
