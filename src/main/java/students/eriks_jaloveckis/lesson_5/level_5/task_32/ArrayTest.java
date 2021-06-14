@@ -13,25 +13,26 @@ class ArrayTest {
         testThird();
     }
 
-    public void assertTheTest(int expected, String testName){
+    public void assertTheTest(int expected, String testName) {
         Array array = new Array();
         int[] testArray = array.create(expected);
         int realResult = testArray.length;
-        if (expected == realResult){
+        if (expected == realResult) {
             System.out.println(testName + " IS OK!");
-        }
-        else {
+        } else {
             System.out.println(testName + " FAIL!");
         }
     }
 
-    void testFirst(){
-        assertTheTest(4,"Test 1");
+    void testFirst() {
+        assertTheTest(4, "Test 1");
     }
-    void testSecond(){
+
+    void testSecond() {
         assertTheTest(5, "Test 2");
     }
-    void testThird(){
+
+    void testThird() {
         assertTheTest(6, "Test 3");
     }
 
