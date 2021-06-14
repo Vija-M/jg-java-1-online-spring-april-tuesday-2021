@@ -1,0 +1,16 @@
+Создайте класс ShapesTest
+и напишите тесты для методов:
+
+    double area(Shape[] shapes);
+    double perimeter(Shape[] shapes);
+
+PS: пример создания и заполнения массива
+геометрических фигур:
+
+Shapes shapes = new Shapes();
+Shape[] shapeArray = new Shape[4];
+
+shapeArray[0] = shapes.createRandomCircle();
+shapeArray[1] = shapes.createRandomSquare();
+shapeArray[2] = shapes.createRandomRectangle();
+shapeArray[3] = shapes.createRandomTriangle();

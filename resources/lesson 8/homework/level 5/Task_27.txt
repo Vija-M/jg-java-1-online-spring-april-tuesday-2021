@@ -1,0 +1,20 @@
+В классе Shapes создайте методы:
+
+    double area(Shape shape) {
+        return shape.calculateArea();
+    }
+
+    double perimeter(Shape shape) {
+        return shape.calculatePerimeter();
+    }
+
+Создайте ShapesDemo класс и продемонстрируйте
+расчёт площади и переиметра
+любой геометрической фигуры.
+
+Пример для круга:
+
+Shapes shapes = new Shapes();
+Shape circle = shapes.createRandomCircle();
+double circleArea = shapes.area(circle);
+double circlePerimeter = shapes.perimeter(circle);
