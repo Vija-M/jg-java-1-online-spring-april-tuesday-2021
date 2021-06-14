@@ -13,6 +13,7 @@ class ArrayServiceTest {
         test.scenario6();
         test.scenario7();
         test.scenario8();
+        test.scenario9();
     }
 
     public void scenario1() {
@@ -36,23 +37,34 @@ class ArrayServiceTest {
     public void scenario4() {
         ArrayService arrayService = new ArrayService();
         int counter = arrayService.countOccurrences(new int[]{0, 1, 2, 3, 3}, 3);
-        checkTestResult(counter == 0, "Contains number(3) 2 times");
+        checkTestResult(counter == 2, "Contains number(3) 2 times");
     }
 
     public void scenario5() {
         ArrayService arrayService = new ArrayService();
-        boolean replaceFirst = arrayService.replaceFirst(new int[]{0, 1, 2, 3, 4}, 0, 5);
-        checkTestResult(replaceFirst, "0 replaced with 5");
+        int[] arr = {0, 1, 2, 3, 4};
+        int[] expected = {0, 1, 5, 3, 4};
+        boolean replaceFirst = arrayService.replaceFirst(arr, 2, 5);
+        checkTestResult(Arrays.equals(expected, arr), "0 replaced with 5");
+        checkTestResult(replaceFirst, "Show new array");
     }
 
     public void scenario6() {
+        ArrayService arrayService = new ArrayService();
+        int[] arr = {0, 1, 2, 3, 4};
+        int[] expected = {0, 1, 2, 3, 4};
+        boolean replaceFirst = arrayService.replaceFirst(arr, 7, 5);
+        checkTestResult(Arrays.equals(expected, arr), "numberToReplace is not found");
+        checkTestResult(!replaceFirst, "Show array");
+    }
+
+    public void scenario7() {
         ArrayService arrayService = new ArrayService();
         int replaceAll = arrayService.replaceAll(new int[]{0, 1, 0, 2, 0}, 0, 5);
         checkTestResult(replaceAll == 3, "All 0 replaced with 5");
     }
 
-
-    public void scenario7() {
+    public void scenario8() {
         ArrayService arrayService = new ArrayService();
         int[] arr = {0, 1, 2, 3, 4};
         int[] expected = {4, 3, 2, 1, 0};
@@ -60,7 +72,7 @@ class ArrayServiceTest {
         checkTestResult(Arrays.equals(expected, arr), "Array reversed");
     }
 
-    public void scenario8() {
+    public void scenario9() {
         ArrayService arrayService = new ArrayService();
         int[] arr = {1, -4, 3, 2};
         int[] expected = {-4, 1, 2, 3};

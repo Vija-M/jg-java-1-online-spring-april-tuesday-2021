@@ -4,8 +4,8 @@ package students.linda_junkina.lesson_6.task_12_13_14_15_16_17;
 class ArrayService {
 
     boolean contains(int[] arr, int numberToSearch) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == numberToSearch) {
+        for (int number : arr) {
+            if (number == numberToSearch) {
                 return true;
             }
         }
@@ -15,7 +15,7 @@ class ArrayService {
     int countOccurrences(int[] arr, int numberToSearch) {
         int counter = 0;
         for (int number : arr) {
-            if (counter == numberToSearch) {
+            if (number == numberToSearch) {
                 counter++;
             }
         }
@@ -27,12 +27,11 @@ class ArrayService {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == numberToReplace) {
                 arr[i] = newNumber;
+                return true;
             }
-            return true;
         }
         return false;
     }
-
 
     int replaceAll(int[] arr, int numberToReplace, int newNumber) {
         int counter = 0;
@@ -68,15 +67,3 @@ class ArrayService {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
