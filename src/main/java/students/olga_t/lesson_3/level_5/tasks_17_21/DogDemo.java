@@ -10,5 +10,4 @@ class DogDemo {
     myDog.voice();
     }
 
-
 }

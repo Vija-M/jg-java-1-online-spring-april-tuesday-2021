@@ -11,8 +11,6 @@ class Dog {
         this.name = name;
         this.age = age;
         this.color = color;
-
-
     }
 
     void voice() {
