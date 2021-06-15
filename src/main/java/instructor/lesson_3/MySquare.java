@@ -1,10 +1,10 @@
 package instructor.lesson_3;
 
-class Square {
+class MySquare {
 
     int sideLength;
 
-    Square(int sideLength) {
+    MySquare(int sideLength) {
         this.sideLength = sideLength;
     }
 
