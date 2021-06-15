@@ -1,4 +1,4 @@
-package students.ernests_subhankulovs.lesson_7.level_7.task_13;
+package students.ernests_subhankulovs.lesson_7.level_7.task_14;
 
 import java.util.UUID;
 
@@ -8,8 +8,8 @@ class UserEntity {
     private String lastName;
     private String personalCode;
 
-    public UserEntity(UUID id, String firstName, String lastName, String personalCode) {
-        this.id = id;
+    public UserEntity(String firstName, String lastName, String personalCode) {
+        id = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.personalCode = personalCode;
@@ -29,10 +29,6 @@ class UserEntity {
 
     public String getPersonalCode() {
         return personalCode;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     public void setFirstName(String firstName) {
