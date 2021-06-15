@@ -7,18 +7,18 @@ class WordServiceTest {
     public static void main(String[] args) {
 
         WordServiceTest test = new WordServiceTest();
-        test.EqualWords_Test1();
-        test.EqualWords_Test2();
+        test.equalWords_Test1();
+        test.equalWords_Test2();
         test.notDetectEqualWords();
     }
 
-    public void EqualWords_Test1() {
+    public void equalWords_Test1() {
         String testText = "Intellij Idea is the best Java language IDE. One of most popular programming language \n" +
                 "is Java. Try that most popular language once, and you will love Java.";
         assertCheckResult("Java", wordService.findMostFrequentWord(testText), "Four equal words(Java and language)");
     }
 
-    public void EqualWords_Test2() {
+    public void equalWords_Test2() {
         String testText = "In this program, we need to find the most repeated word present in given text file. \n" +
                 "This can be done by opening a file in read mode using file pointer.";
         assertCheckResult("file", wordService.findMostFrequentWord(testText), "Three equal words(file)");
