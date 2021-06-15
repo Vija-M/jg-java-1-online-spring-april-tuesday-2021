@@ -2,15 +2,11 @@ package students.ernests_subhankulovs.lesson_7.level_7.task_11;
 
 class WordService {
     public String findMostFrequentWord(String text) {
-        int mostFrequentWordNumber;
-        String[] words;
-        int[] wordRepetitions;
-
-        words = splitTextToWords(text);
-        wordRepetitions = new int[words.length];
+        String[] words = splitTextToWords(text);
+        int[] wordRepetitions = new int[words.length];
 
         calculateWordFrequency(words, wordRepetitions);
-        mostFrequentWordNumber = detectMostRepeatedWord(wordRepetitions);
+        int mostFrequentWordNumber = detectMostRepeatedWord(wordRepetitions);
 
         return words[mostFrequentWordNumber];
     }
