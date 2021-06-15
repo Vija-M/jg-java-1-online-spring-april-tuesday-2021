@@ -1,7 +1,6 @@
 package students.eriks_jaloveckis.lesson_5.level_5.task_34;
 
 class ArrayDemo {
-
     public static void main(String[] args) {
         ArrayDemo arrayDemo = new ArrayDemo();
         arrayDemo.createDemoArray();
@@ -15,6 +14,5 @@ class ArrayDemo {
         array.print(demoArray);
 
     }
-
 }
 

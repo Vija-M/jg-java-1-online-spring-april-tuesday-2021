@@ -21,11 +21,21 @@ class Array {
 
     public int findMax(int[] array) {
         int max = 0;
-        for (int i = 0; i < array.length; i++){
-            if (array[i] > max){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
                 max = array[i];
             }
         }
         return max;
+    }
+
+    public int findMin(int[] array) {
+        int min = findMax(array); // как то в голову пришло, надеюсь, что правильно
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        return min;
     }
 }

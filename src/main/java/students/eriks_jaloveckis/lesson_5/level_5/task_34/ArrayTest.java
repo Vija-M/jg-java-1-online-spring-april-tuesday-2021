@@ -5,6 +5,7 @@ class ArrayTest {
         ArrayTest test = new ArrayTest();
         test.shouldCreateArray();
         test.shouldFindMaxNumber();
+        test.testMinFirst();
     }
 
     public void shouldCreateArray() {
@@ -15,6 +16,10 @@ class ArrayTest {
 
     public void shouldFindMaxNumber() {
         testMaxFirst();
+    }
+
+    public void findMin() {
+        testMinFirst();
     }
 
     public void assertTheTest(int expected, String testName) {
@@ -51,8 +56,23 @@ class ArrayTest {
         }
     }
 
-    void testMaxFirst(){
+    void testMaxFirst() {
         assertMaxTest(5, "Test 1 max");
+    }
+
+    public void assertMinTest(int expected, String testName) {
+        Array array = new Array();
+        int[] testMinArray = {3, 2, 1, 4, 5};
+        int realResult = array.findMin(testMinArray);
+        if (expected == realResult) {
+            System.out.println(testName + " IS OK!");
+        } else {
+            System.out.println(testName + " FAIL!");
+        }
+    }
+
+    void testMinFirst() {
+        assertMinTest(1, "Test 1 min");
     }
 
 }
