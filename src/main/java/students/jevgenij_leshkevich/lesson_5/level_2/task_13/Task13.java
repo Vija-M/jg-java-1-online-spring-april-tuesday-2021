@@ -13,7 +13,7 @@ class Task13 {
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = random.nextInt(101);
             System.out.println(numbers[i]);
-            sum = sum + numbers[i];
+            sum += numbers[i];
         }
         System.out.print("Сумма всех ячеек массива: " + sum);
     }
