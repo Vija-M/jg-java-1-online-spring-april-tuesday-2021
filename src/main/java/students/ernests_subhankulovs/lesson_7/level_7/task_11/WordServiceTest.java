@@ -8,6 +8,8 @@ class WordServiceTest {
         WordServiceTest test = new WordServiceTest();
         test.testExample1();
         test.testExample2();
+        test.testExample3();
+        test.testExample4();
     }
 
     public void testExample1() {
@@ -26,6 +28,16 @@ class WordServiceTest {
                             "жен раскрывать свою внутреннюю структуру через методы доступа, потому что" +
                             "внутреннюю структуру следует скрывать.";
         assertTestResult("что", wordService.findMostFrequentWord(sampleText), "Test 2");
+    }
+
+    public void testExample3() {
+        String sampleText = "";
+        assertTestResult("", wordService.findMostFrequentWord(sampleText), "Test 3");
+    }
+
+    public void testExample4() {
+        String sampleText = "word";
+        assertTestResult("word", wordService.findMostFrequentWord(sampleText), "Test 4");
     }
 
     private void assertTestResult(String expectedResult, String realResult, String testName) {
