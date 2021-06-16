@@ -1,4 +1,4 @@
-package students.eriks_jaloveckis.lesson_6.level_3.task_12;
+package students.eriks_jaloveckis.lesson_6.level_3.task_13;
 
 class ArrayServiceTest {
     public static void main(String[] args) {
@@ -9,6 +9,8 @@ class ArrayServiceTest {
         arrayServiceTest.negativeNumberOut();
         arrayServiceTest.zeroNumberIn();
         arrayServiceTest.zeroNumberOut();
+        arrayServiceTest.twoNumbersInCount();
+        arrayServiceTest.noOneNumberInCount();
     }
 
     public void checkTestResult(boolean condition, String testName) {
@@ -55,6 +57,17 @@ class ArrayServiceTest {
         checkTestResult(contains, "Does not contain zero");
     }
 
-}
 
+    public void twoNumbersInCount() {
+        ArrayService arrayService = new ArrayService();
+        int count = arrayService.countOccurrences(new int[]{1, 1, 2, 3, 4}, 1);
+        checkTestResult(count == 2, "Number 1 in array is 2x");
+    }
+
+    public void noOneNumberInCount() {
+        ArrayService arrayService = new ArrayService();
+        int count = arrayService.countOccurrences(new int[]{1, 2, 3, 4, 5}, 6);
+        checkTestResult(count == 0, "No one number is not in array");
+    }
+}
 
