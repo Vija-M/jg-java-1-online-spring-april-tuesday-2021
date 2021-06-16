@@ -6,9 +6,8 @@ class ImplicitDefaultConstructorDemo {
 
         ImplicitDefaultConstructor implicitDefaultConstructor = new ImplicitDefaultConstructor("Dmitry",26, "Riga");
 
-        System.out.println(implicitDefaultConstructor);
+        implicitDefaultConstructor.PrintInfo();
 
     }
-
 
 }
