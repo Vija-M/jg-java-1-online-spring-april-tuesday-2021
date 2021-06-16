@@ -4,75 +4,39 @@ class ArrayTest {
     public static void main(String[] args) {
         ArrayTest test = new ArrayTest();
         test.shouldCreateArray();
-        test.shouldFindMaxNumber();
-        test.testMinFirst();
+        test.findMinMax();
+
     }
 
     public void shouldCreateArray() {
-        testFirst();
-        testSecond();
-        testThird();
+        testCreate();
     }
 
-    public void shouldFindMaxNumber() {
-        testMaxFirst();
+    public void findMinMax() {
+        testMin();
+        testMax();
     }
 
-    public void findMin() {
-        testMinFirst();
-    }
-
-    public void assertTheTest(int expected, String testName) {
+    void testCreate() {
         Array array = new Array();
-        int[] testArray = array.create(expected);
-        int realResult = testArray.length;
-        if (expected == realResult) {
+        assertEqual(array.create(4).length, 4, "test 1");
+    }
+
+    void testMax() {
+        Array array = new Array();
+        assertEqual(array.findMax(new int[]{1, 2, 3, 6, 8}), 8, "max");
+    }
+
+    void testMin() {
+        Array array = new Array();
+        assertEqual(array.findMin(new int[]{-3, -2, -1, 0, 1, 2, 3}), -3, "min");
+    }
+
+    public void assertEqual(int actual, int expected, String testName) {
+        if (actual == expected) {
             System.out.println(testName + " IS OK!");
         } else {
             System.out.println(testName + " FAIL!");
         }
     }
-
-    void testFirst() {
-        assertTheTest(4, "Test 1");
-    }
-
-    void testSecond() {
-        assertTheTest(5, "Test 2");
-    }
-
-    void testThird() {
-        assertTheTest(6, "Test 3");
-    }
-
-    public void assertMaxTest(int expected, String testName) {
-        Array array = new Array();
-        int[] testMaxArray = {1, 2, 3, 4, 5};
-        int realResult = array.findMax(testMaxArray);
-        if (expected == realResult) {
-            System.out.println(testName + " IS OK!");
-        } else {
-            System.out.println(testName + " FAIL!");
-        }
-    }
-
-    void testMaxFirst() {
-        assertMaxTest(5, "Test 1 max");
-    }
-
-    public void assertMinTest(int expected, String testName) {
-        Array array = new Array();
-        int[] testMinArray = {3, 2, 1, 4, 5};
-        int realResult = array.findMin(testMinArray);
-        if (expected == realResult) {
-            System.out.println(testName + " IS OK!");
-        } else {
-            System.out.println(testName + " FAIL!");
-        }
-    }
-
-    void testMinFirst() {
-        assertMinTest(1, "Test 1 min");
-    }
-
 }
