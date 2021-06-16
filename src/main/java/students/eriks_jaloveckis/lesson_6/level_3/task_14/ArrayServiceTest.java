@@ -1,5 +1,7 @@
 package students.eriks_jaloveckis.lesson_6.level_3.task_14;
 
+import java.util.Arrays;
+
 class ArrayServiceTest {
     public static void main(String[] args) {
         ArrayServiceTest arrayServiceTest = new ArrayServiceTest();
@@ -73,7 +75,8 @@ class ArrayServiceTest {
 
     public void replaceFirstNumber() {
         ArrayService arrayService = new ArrayService();
-        arrayService.replaceFirst(new int[]{4, 2, 3, 4, 5}, 1, 6);
-        checkTestResult(true, "First number is replaced to number - 6");
+        int [] arr = {4, 2, 3, 4, 5};
+        int[] expected = {6, 2, 3, 4, 5};
+        boolean 
     }
 }
