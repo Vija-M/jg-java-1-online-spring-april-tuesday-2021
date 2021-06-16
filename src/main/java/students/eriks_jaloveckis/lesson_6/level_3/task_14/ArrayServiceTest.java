@@ -77,6 +77,8 @@ class ArrayServiceTest {
         ArrayService arrayService = new ArrayService();
         int [] arr = {4, 2, 3, 4, 5};
         int[] expected = {6, 2, 3, 4, 5};
-        boolean 
+        boolean replaceFirst = arrayService.replaceFirst(arr, 4, 6);
+        checkTestResult(true, "Should replace");
+        checkTestResult(Arrays.equals(arr, expected), "Is replaced");
     }
 }
