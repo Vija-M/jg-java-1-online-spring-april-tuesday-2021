@@ -13,13 +13,13 @@ WordService wordService = new WordService();
     }
 
     void testWordsOne () {
-        String textTest = "WORDS";
-        resultTestWords("IT WORDS",wordService.findMostFrequentWord(textTest),"WORDS LIKE MANY PEOPLE");
+        String textTest = "Words best Java \n" + "Java. Java love Best Words";
+        resultTestWords("Java",wordService.findMostFrequentWord(textTest),"WORDS LIKE MANY PEOPLE");
     }
 
     void  testWordsTwo () {
-        String textTest = "WORDS BEST";
-        resultTestWords("JAVA WORDS",wordService.findMostFrequentWord(textTest),"WORDS LIKE MANY COUNTRY");
+        String textTest = "Words best Java Words \n" + "Java Words. Java love Java Words. Java Words";
+        resultTestWords("Java Words",wordService.findMostFrequentWord(textTest),"WORDS LIKE MANY COUNTRY");
     }
 
     void testWordsResult () {
@@ -27,8 +27,8 @@ WordService wordService = new WordService();
         resultTestWords("WORDS",wordService.findMostFrequentWord(textTest),"WORDS FAIL");
     }
 
-    void resultTestWords(String expectedResult,String finishResult, String name){
-        if (expectedResult.equals(finishResult)) {
+    void resultTestWords(String expectedResult,String actualResult, String name){
+        if (expectedResult.equals(actualResult)) {
             System.out.println(name + " = OK");
         }
         else {
@@ -37,8 +37,5 @@ WordService wordService = new WordService();
         }
         
     }
-
-
-
 
 }
