@@ -2,40 +2,42 @@ package students.dmitrijs_matrenicevs.lesson_7.level_1.task_1;
 
 class WordService {
 
-    String findMostFrequentWord(String text) {
+    public String findMostFrequentWord(String text) {
         String[] findWords = splitWords(text);
+
+        int[] mostWords = new int[findWords.length];
         for (int i = 0; i < findWords.length; i++) {
-            findWords[i] = String.valueOf(mostWords(findWords, findWords[i]));
+            mostWords[i] = mostWords(findWords, findWords[i]);
         }
-        return findWords[maxWords(findWords)];
+        return findWords[maxWords(mostWords)];
     }
 
     String[] splitWords(String text) {
-        return text.split("A");
+
+        return text.split("\\W+");
+
     }
 
-    int mostWords(String[] words, String findWords) {
-        int sum = 0;
+    private int mostWords(String[] words, String findWords) {
+        int count = 0;
         for (String word : words) {
             if (word.equals(findWords)) {
-                sum++;
+                count++;
             }
-            return sum;
         }
-        return sum;
+        return count;
+
     }
 
-    int maxWords(String[] findWords) {
+    private int maxWords(int[] findWords) {
         int words = 0;
-        String max = findWords[words];
+        int max = findWords[words];
         for (int i = 0; i < findWords.length; i++) {
-            if (!findWords[i].equals(max)) {
+            if (findWords[i] > max) {
                 max = findWords[i];
                 words = i;
-
             }
         }
         return words;
     }
-
 }
