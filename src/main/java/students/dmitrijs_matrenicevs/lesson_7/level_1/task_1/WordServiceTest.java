@@ -18,8 +18,8 @@ WordService wordService = new WordService();
     }
 
     void  testWordsTwo () {
-        String textTest = "Words best Java Words \n" + "Java Words. Java love Java Words. Java Words";
-        resultTestWords("Java Words",wordService.findMostFrequentWord(textTest),"WORDS LIKE MANY COUNTRY");
+        String textTest = "Words Best Java Best. \n" + "Java Words Java Best Java Words Java Best";
+        resultTestWords("Java",wordService.findMostFrequentWord(textTest),"WORDS LIKE MANY COUNTRY");
     }
 
     void testWordsResult () {
