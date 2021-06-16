@@ -7,19 +7,25 @@ class WordService {
     public String findMostFrequentWord(String text) {
         String[] words = text.split("\\W+");
         Arrays.sort(words);
-        String mostFrequentWord = "";
-        int mostFrequentCount = 0;
-        int count = 0;
-        for (int i = 1; i < words.length; i++) {
-            if (words[i].equals(words[i - 1])) {
-                count++;
-                mostFrequentCount += 1;
+        String mostFrequentWord = "", previousWord = "";
+        int maxCount = 0, count = 0;
+
+        for (String word : words) {
+            if (word.equals(previousWord)) {
                 count += 1;
-            } else if (count > mostFrequentCount) {
-                mostFrequentCount = count;
-                mostFrequentWord = words[i - 1];
+            } else {
+                if (count > maxCount) {
+                    mostFrequentWord = previousWord;
+                    maxCount = count;
+                }
+                previousWord = word;
+                count = 1;
             }
         }
+        if (count > maxCount) {
+            mostFrequentWord = previousWord;
+        }
         return mostFrequentWord;
+
     }
 }
