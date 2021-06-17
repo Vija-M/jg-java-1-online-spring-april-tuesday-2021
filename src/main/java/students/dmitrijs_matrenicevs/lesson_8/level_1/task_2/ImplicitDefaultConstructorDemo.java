@@ -4,9 +4,10 @@ class ImplicitDefaultConstructorDemo {
 
     public static void main(String[] args) {
 
-        ImplicitDefaultConstructor implicitDefaultConstructor = new ImplicitDefaultConstructor("Dmitry",26, "Riga");
+        ImplicitDefaultConstructor implicitDefaultConstructor = new ImplicitDefaultConstructor();
 
-        implicitDefaultConstructor.PrintInfo();
+        System.out.println(implicitDefaultConstructor);
+
 
     }
 

@@ -2,19 +2,10 @@ package students.dmitrijs_matrenicevs.lesson_8.level_1.task_2;
 
 class ImplicitDefaultConstructor {
 
-    String name;
-    int age;
-    String city;
+    ImplicitDefaultConstructor() {
 
-    public ImplicitDefaultConstructor(String name, int age, String city) {
-        this.name = name;
-        this.age = age;
-        this.city = city;
     }
 
-    void PrintInfo(){
-        System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-        System.out.println("City: " + city);
-    }
+    //Я думал нужно написать немного кода, но если нет, то значит я просто не правильно понял задание (((
+    //Ну, да ладно
 }
