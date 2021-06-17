@@ -23,12 +23,12 @@ class Customer {
         return isModerator;
     }
 
-    void PrintInfo() {
+    void camelCase() {
         System.out.println(nickname);
         System.out.println(messagesCount);
         System.out.println(isOnline);
         System.out.println(isModerator);
-
     }
+
 
 }

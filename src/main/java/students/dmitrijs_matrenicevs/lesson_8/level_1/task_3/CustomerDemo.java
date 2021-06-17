@@ -6,7 +6,7 @@ class CustomerDemo {
 
         Customer customer = new Customer();
 
-        customer.PrintInfo();
+        customer.camelCase();
 
     }
 
