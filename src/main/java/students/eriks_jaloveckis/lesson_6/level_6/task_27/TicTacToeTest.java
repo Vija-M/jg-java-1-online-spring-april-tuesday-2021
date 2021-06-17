@@ -11,15 +11,14 @@ public class TicTacToeTest {
     public void assertTest(int[][] expected, int[][] realResult, String text) {
         if (Arrays.deepEquals(expected, realResult)) {
             System.out.println(text + " OK!");
-        }
-        else {
+        } else {
             System.out.println(text + " FAIL!");
         }
     }
 
     public void test1() {
         TicTacToe ticTacToe = new TicTacToe();
-        assertTest(new int[][] {{-1,-1,-1}, {-1,-1,-1}, {-1,-1,-1}}, ticTacToe.createField(), "-1");
+        assertTest(new int[][]{{-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}}, ticTacToe.createField(), "-1");
 
     }
 

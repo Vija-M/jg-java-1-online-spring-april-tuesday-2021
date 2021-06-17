@@ -6,7 +6,7 @@ class TicTacToe {
         int[][] field = new int[3][3];
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field.length; j++)
-            field[i][j] = emptyCell;
+                field[i][j] = emptyCell;
         }
         return field;
     }
