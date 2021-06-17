@@ -39,13 +39,9 @@ class TicTacToe {
 
     public boolean isDrawPosition(int[][] field) {
         int x = -1;
-        if (isWinPosition(field, 0) && (isWinPosition(field, 1))) {
-            return false;
-        }
-        for (int i = 0; i < 3; i++) {
-            if (field[i][i] == x) {
+        for (int j = 0; j < 3; j++) {
+            if ((isWinPosition(field, 0) || isWinPosition(field, 1)) && ((field[j][j] == x)))
                 return false;
-            }
         }
         return true;
     }
