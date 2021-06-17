@@ -5,8 +5,8 @@ class CustomerDemo {
         Customer customer = new Customer();
 
         System.out.println("customer.getNickname() = " + customer.getNickname());
-        System.out.println("customer.getNickname() = " + customer.getMessagesCount());
-        System.out.println("customer.getNickname() = " + customer.getOnline());
-        System.out.println("customer.getNickname() = " + customer.getModerator());
+        System.out.println("customer.getMessagesCount() = " + customer.getMessagesCount());
+        System.out.println("customer.getOnline() = " + customer.getOnline());
+        System.out.println("customer.getModerator() = " + customer.getModerator());
     }
 }
