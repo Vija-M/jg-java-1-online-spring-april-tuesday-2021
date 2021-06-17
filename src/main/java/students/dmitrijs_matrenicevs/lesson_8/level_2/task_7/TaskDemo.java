@@ -1,13 +1,10 @@
 package students.dmitrijs_matrenicevs.lesson_8.level_2.task_7;
 
-class TaskDemo {
+class TaskDemo extends Task7 {
 
-    public static void main(String[] args) {
-
-        Task7 task7 = new Task7("Dmitry","Riga");
-
-        System.out.println(task7.name);
-        System.out.println(task7.city);
-
+    public TaskDemo(String name, String city) {
+        super(name, city);
     }
+
+    TaskDemo taskDemo = new TaskDemo("Dmitriy","Riga");
 }
