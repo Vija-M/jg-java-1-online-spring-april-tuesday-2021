@@ -6,8 +6,10 @@ class CustomerDemo {
 
         Customer customer = new Customer();
 
-        customer.camelCase();
-
+        System.out.println(customer.getNickname());
+        System.out.println(customer.getMessagesCount());
+        System.out.println(customer.isOnline());
+        System.out.println(customer.getModerator());
     }
 
 }

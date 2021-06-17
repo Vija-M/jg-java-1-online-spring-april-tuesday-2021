@@ -5,7 +5,7 @@ class Customer {
     private String nickname;
     private int messagesCount;
     private boolean isOnline;
-    private Boolean isModerator;
+    private boolean isModerator;
 
     public String getNickname() {
         return nickname;
@@ -19,16 +19,8 @@ class Customer {
         return isOnline;
     }
 
-    public boolean getModerator() {
+    public Boolean getModerator() {
         return isModerator;
     }
-
-    void camelCase() {
-        System.out.println(nickname);
-        System.out.println(messagesCount);
-        System.out.println(isOnline);
-        System.out.println(isModerator);
-    }
-
 
 }
