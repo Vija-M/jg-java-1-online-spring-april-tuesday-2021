@@ -1,6 +1,6 @@
 package students.linda_junkina.lesson_8.level_2.task_7;
 
-class User extends Account{
+class User extends Account {
 
     public User(String name, String emailAddress) {
         super(name, emailAddress);
