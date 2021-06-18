@@ -2,11 +2,10 @@ package students.arturs_arutjunovs.lesson_8.level_4.task_16;
 
 class Circle extends Shape {
 
-    private double radius;
+    private final double radius = 2.5;
 
     Circle(double radius) {
-        super();
-        this.radius = radius;
+        super("Circle");
     }
 
     @Override

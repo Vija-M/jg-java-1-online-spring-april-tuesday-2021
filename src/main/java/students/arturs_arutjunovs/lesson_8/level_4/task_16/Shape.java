@@ -8,10 +8,6 @@ abstract class Shape {
         this.title = title;
     }
 
-    public Shape() {
-
-    }
-
     abstract double area();
 
     abstract double perimeter();
