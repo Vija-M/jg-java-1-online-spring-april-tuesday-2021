@@ -6,9 +6,6 @@ class ImplicitDefaultConstructorDemo {
 
         ImplicitDefaultConstructor implicitDefaultConstructor = new ImplicitDefaultConstructor();
 
-        System.out.println(implicitDefaultConstructor);
-
-
     }
 
 }
