@@ -5,8 +5,6 @@ class HumanPlayer extends Player {
     HumanPlayer player = new HumanPlayer("Dmitriy");
 
     HumanPlayer(String name) {
-
         super(name);
     }
-
 }
