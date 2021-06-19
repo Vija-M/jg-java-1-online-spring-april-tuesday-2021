@@ -1,7 +1,7 @@
 package students.arturs_arutjunovs.lesson_8.level_4.task_16;
 
 class CircleTest {
-    Circle circle = new Circle(0);
+    Circle circle = new Circle(2.5);
 
     public static void main(String[] args) {
         CircleTest test = new CircleTest();
