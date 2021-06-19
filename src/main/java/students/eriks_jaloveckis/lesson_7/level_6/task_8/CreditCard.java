@@ -52,8 +52,6 @@ class CreditCard {
                 System.out.println("Wrong PIN CODE!");
             }
         }
-
-
     }
 }
 
