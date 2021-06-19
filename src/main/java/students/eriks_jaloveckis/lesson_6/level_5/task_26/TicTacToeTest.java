@@ -158,7 +158,7 @@ class TicTacToeTest {
 
     public void test17() {
         TicTacToe ticTacToe = new TicTacToe();
-        int[][] field = {{0, 1, 0}, {1, -1, 1}, {0, 0, 0}};
+        int[][] field = {{0, 1, 0}, {0, -1, 1}, {0, 0, 0}};
         assertTest(true, ticTacToe.isWinPosition(field, 0), "Win (0) - vertical");
     }
 
