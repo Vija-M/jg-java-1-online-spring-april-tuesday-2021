@@ -14,7 +14,7 @@ class Task9 {
         System.out.println("Введите третье целое число:");
         int number3 = scanner.nextInt();
 
-        if (number3 > number2 && number3 > number1) {
+        if (number3 >= number2 && number3 >= number1) {
             System.out.println("Число " + number3 + " самое большое.");
         } else if (number2 > number1 && number2 > number3) {
             System.out.println("Число " + number2 + " самое большое.");
