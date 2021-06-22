@@ -4,8 +4,8 @@ class Triangle extends Shape {
 
     private double sideLength;
 
-    public Triangle(String title, double sideLength) {
-        super(title);
+    public Triangle(double sideLength) {
+        super("Triangle");
         this.sideLength = sideLength;
     }
 

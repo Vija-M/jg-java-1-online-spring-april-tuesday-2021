@@ -2,7 +2,7 @@ package students.arturs_arutjunovs.lesson_8.level_4.task_19;
 
 class TriangleTest {
 
-    Triangle triangle = new Triangle("Triangle", 2.5);
+    Triangle triangle = new Triangle( 2.5);
 
     public static void main(String[] args) {
 
