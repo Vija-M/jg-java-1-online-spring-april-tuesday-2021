@@ -13,9 +13,9 @@ class UserRepository {
 
     UUID save(UserEntity entity) {
         UUID randomUUID = UUID.randomUUID();
-            entity.setId(randomUUID);
-            users[cursor] = entity;
-            cursor++;
+        entity.setId(randomUUID);
+        users[cursor] = entity;
+        cursor++;
         return randomUUID;
     }
 
