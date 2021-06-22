@@ -1,7 +1,7 @@
 package students.arturs_arutjunovs.lesson_8.level_4.task_17;
 
 class SquareTest {
-    Square square = new Square("Square", 2.5);
+    Square square = new Square(2.5);
 
     public static void main(String[] args) {
 
