@@ -10,6 +10,7 @@ class UserRepositoryTest {
         test.testFindByID();
         test.testFindByPersonalCode();
         test.testFindByFirstName();
+        test.testFindByLastName();
         test.testDelete();
     }
 
@@ -64,6 +65,13 @@ class UserRepositoryTest {
         UserEntity foundUser2 = userRepository.findByFirstName("Jarrett");
         UserEntity foundUser3 = userRepository.findByFirstName("Jair");
         testUsers(foundUser1, foundUser2, foundUser3, "Testing users found by first name:");
+    }
+
+    public void testFindByLastName() {
+        UserEntity foundUser1 = userRepository.findByLastName("Peterson");
+        UserEntity foundUser2 = userRepository.findByLastName("Bates");
+        UserEntity foundUser3 = userRepository.findByLastName("Dudley");
+        testUsers(foundUser1, foundUser2, foundUser3, "Testing users found by last name:");
     }
 
     public void testDelete() {

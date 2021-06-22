@@ -45,6 +45,15 @@ class UserRepository {
         return null;
     }
 
+    UserEntity findByLastName(String lastName) {
+        for (UserEntity entity : users) {
+            if (entity.getLastName().equals(lastName)) {
+                return entity;
+            }
+        }
+        return null;
+    }
+
     UserEntity[] findAll() {
         return users;
     }

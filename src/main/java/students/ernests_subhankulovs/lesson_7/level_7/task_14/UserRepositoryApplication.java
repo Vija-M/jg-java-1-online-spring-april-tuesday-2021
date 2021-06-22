@@ -10,8 +10,6 @@ class UserRepositoryApplication {
         UserRepositoryApplication application = new UserRepositoryApplication();
         application.addNewUsers();
         application.printAllUsers();
-
-
     }
 
     public void addNewUsers() {
