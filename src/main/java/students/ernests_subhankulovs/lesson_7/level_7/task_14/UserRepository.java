@@ -60,7 +60,7 @@ class UserRepository {
 
     void delete(UUID uuid) {
         for (int i = 0; i < users.length; i++) {
-            if (users[i].getId().equals(uuid)) {
+            if (users[i] != null && users[i].getId().equals(uuid)) {
                 users[i] = null;
                 break;
             }
