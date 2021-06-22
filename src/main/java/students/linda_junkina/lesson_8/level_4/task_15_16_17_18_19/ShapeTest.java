@@ -14,56 +14,56 @@ class ShapeTest {
     }
 
     public void circleArea() {
-        Circle circle = new Circle("Circle", 5);
+        Circle circle = new Circle(5);
         double expected = 78.5;
         double calculateArea = circle.calculateArea();
         checkTestResult(calculateArea == expected, "Circle area");
     }
 
     public void circlePerimeter() {
-        Circle circle = new Circle("Circle", 5);
+        Circle circle = new Circle(5);
         double expected = 31.400000000000002;
         double calculatePerimeter = circle.calculatePerimeter();
         checkTestResult(calculatePerimeter == expected, "Circumference");
     }
 
     public void squareArea() {
-        Square square = new Square("Square", 5);
+        Square square = new Square(5);
         double expected = 25;
         double calculateArea = square.calculateArea();
         checkTestResult(calculateArea == expected, "Square area");
     }
 
     public void squarePerimeter() {
-        Square square = new Square("Square", 5);
+        Square square = new Square(5);
         double expected = 20;
         double calculatePerimeter = square.calculatePerimeter();
         checkTestResult(calculatePerimeter == expected, "Square perimeter");
     }
 
     public void rectangleArea() {
-        Rectangle rectangle = new Rectangle("Rectangle", 2, 6);
+        Rectangle rectangle = new Rectangle(2, 6);
         double expected = 12;
         double calculateArea = rectangle.calculateArea();
         checkTestResult(calculateArea == expected, "Rectangle area");
     }
 
     public void rectanglePerimeter() {
-        Rectangle rectangle = new Rectangle("Rectangle", 2, 6);
+        Rectangle rectangle = new Rectangle(2, 6);
         double expected = 16;
         double calculatePerimeter = rectangle.calculatePerimeter();
         checkTestResult(calculatePerimeter == expected, "Rectangle perimeter");
     }
 
     public void triangleArea() {
-        Triangle triangle = new Triangle("Triangle", 15, 9);
+        Triangle triangle = new Triangle(15, 9);
         double expected = 35.07402885326976;
         double calculateArea = triangle.calculateArea();
         checkTestResult(calculateArea == expected, "Triangle area");
     }
 
     public void trianglePerimeter() {
-        Triangle triangle = new Triangle("Triangle", 7, 6);
+        Triangle triangle = new Triangle(7, 6);
         double expected = 18;
         double calculatePerimeter = triangle.calculatePerimeter();
         checkTestResult(calculatePerimeter == expected, "Triangle perimeter");

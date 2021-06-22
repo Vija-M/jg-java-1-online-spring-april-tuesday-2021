@@ -5,7 +5,7 @@ class Circle extends Shape {
     private double radius;
     double pi = 3.14;
 
-    public Circle(String title, double radius) {
+    public Circle(double radius) {
         super("Circle");
         this.radius = radius;
     }

@@ -8,9 +8,8 @@ class Triangle extends Shape {
     int side;
 
 
-    public Triangle(String title, int high, int side) {
+    public Triangle(int high, int side) {
         super("Triangle");
-        this.high = high;
         this.side = side;
 
     }

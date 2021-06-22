@@ -4,7 +4,7 @@ class Rectangle extends Shape {
     int height;
     int width;
 
-    public Rectangle(String title, int height, int width) {
+    public Rectangle(int height, int width) {
         super("Rectangle");
         this.height = height;
         this.width = width;
