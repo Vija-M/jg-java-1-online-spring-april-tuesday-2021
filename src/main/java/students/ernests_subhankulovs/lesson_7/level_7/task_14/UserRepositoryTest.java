@@ -5,7 +5,6 @@ import java.util.UUID;
 class UserRepositoryTest {
     public static void main(String[] args) {
         UserRepositoryTest test = new UserRepositoryTest();
-        test.addNewUsers();
         test.testGetAllUsers();
         test.testFindByID();
         test.testFindByPersonalCode();
@@ -14,13 +13,7 @@ class UserRepositoryTest {
         test.testDelete();
     }
 
-    UserRepository userRepository = new UserRepository();
-
-    UUID user1Id;
-    UUID user2Id;
-    UUID user3Id;
-
-    public void addNewUsers() {
+    public UUID[] addNewUsers(UserRepository userRepository) {
         UserEntity user1 = new UserEntity();
         user1.setFirstName("Zachary");
         user1.setLastName("Peterson");
@@ -36,24 +29,32 @@ class UserRepositoryTest {
         user3.setLastName("Dudley");
         user3.setPersonalCode("72505954901");
 
-        user1Id = userRepository.save(user1);
-        user2Id = userRepository.save(user2);
-        user3Id = userRepository.save(user3);
+        UUID user1Id = userRepository.save(user1);
+        UUID user2Id = userRepository.save(user2);
+        UUID user3Id = userRepository.save(user3);
+
+        return new UUID[] {user1Id, user2Id, user3Id};
     }
 
     public void testGetAllUsers() {
+        UserRepository userRepository = new UserRepository();
+        addNewUsers(userRepository);
         UserEntity[] users = userRepository.findAll();
         testUsers(users[0], users[1], users[2], "Testing all found users:");
     }
 
     public void testFindByID() {
-        UserEntity foundUser1 = userRepository.findById(user1Id);
-        UserEntity foundUser2 = userRepository.findById(user2Id);
-        UserEntity foundUser3 = userRepository.findById(user3Id);
+        UserRepository userRepository = new UserRepository();
+        UUID[] ids = addNewUsers(userRepository);
+        UserEntity foundUser1 = userRepository.findById(ids[0]);
+        UserEntity foundUser2 = userRepository.findById(ids[1]);
+        UserEntity foundUser3 = userRepository.findById(ids[2]);
         testUsers(foundUser1, foundUser2, foundUser3, "Testing users found by ID:");
     }
 
     public void testFindByPersonalCode() {
+        UserRepository userRepository = new UserRepository();
+        addNewUsers(userRepository);
         UserEntity foundUser1 = userRepository.findByPersonalCode("66684565220");
         UserEntity foundUser2 = userRepository.findByPersonalCode("42432651636");
         UserEntity foundUser3 = userRepository.findByPersonalCode("72505954901");
@@ -61,6 +62,8 @@ class UserRepositoryTest {
     }
 
     public void testFindByFirstName() {
+        UserRepository userRepository = new UserRepository();
+        addNewUsers(userRepository);
         UserEntity foundUser1 = userRepository.findByFirstName("Zachary");
         UserEntity foundUser2 = userRepository.findByFirstName("Jarrett");
         UserEntity foundUser3 = userRepository.findByFirstName("Jair");
@@ -68,6 +71,8 @@ class UserRepositoryTest {
     }
 
     public void testFindByLastName() {
+        UserRepository userRepository = new UserRepository();
+        addNewUsers(userRepository);
         UserEntity foundUser1 = userRepository.findByLastName("Peterson");
         UserEntity foundUser2 = userRepository.findByLastName("Bates");
         UserEntity foundUser3 = userRepository.findByLastName("Dudley");
@@ -75,6 +80,14 @@ class UserRepositoryTest {
     }
 
     public void testDelete() {
+        UserRepository userRepository = new UserRepository();
+        UUID[] ids = addNewUsers(userRepository);
+        UserEntity foundUser1 = userRepository.findById(ids[0]);
+        UserEntity foundUser2 = userRepository.findById(ids[1]);
+        UserEntity foundUser3 = userRepository.findById(ids[2]);
+        UUID user3Id = foundUser3.getId();
+        UUID user2Id = foundUser2.getId();
+        UUID user1Id = foundUser1.getId();
         userRepository.delete(user3Id);
         userRepository.delete(user2Id);
         userRepository.delete(user1Id);
