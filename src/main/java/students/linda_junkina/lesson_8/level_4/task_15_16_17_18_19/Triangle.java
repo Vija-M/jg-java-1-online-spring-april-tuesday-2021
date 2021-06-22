@@ -1,27 +1,27 @@
 package students.linda_junkina.lesson_8.level_4.task_15_16_17_18_19;
 
+import static java.lang.Math.*;
+
 class Triangle extends Shape {
 
     double high;
-    int sideA;
-    int sideB;
-    int sideC;
+    int side;
 
-    public Triangle(String title, int high, int sideA, int sideB, int sideC) {
-        super(title);
+
+    public Triangle(String title, int high, int side) {
+        super("Triangle");
         this.high = high;
-        this.sideA = sideA;
-        this.sideB = sideB;
-        this.sideC = sideC;
+        this.side = side;
+
     }
 
     @Override
     double calculateArea() {
-        return (high * sideA) / 2;
+        return (sqrt(3) / 4) * side * side;
     }
 
     @Override
     double calculatePerimeter() {
-        return sideA + sideB + sideC;
+        return side * 3;
     }
 }

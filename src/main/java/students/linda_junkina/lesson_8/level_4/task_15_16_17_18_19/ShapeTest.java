@@ -50,22 +50,21 @@ class ShapeTest {
 
     public void rectanglePerimeter() {
         Rectangle rectangle = new Rectangle("Rectangle", 2, 6);
-        double expected = 24;
+        double expected = 16;
         double calculatePerimeter = rectangle.calculatePerimeter();
         checkTestResult(calculatePerimeter == expected, "Rectangle perimeter");
     }
 
     public void triangleArea() {
-        Triangle triangle = new Triangle("Triangle", 7, 6, 5, 6);
-        double expected = 21;
+        Triangle triangle = new Triangle("Triangle", 15, 9);
+        double expected = 35.07402885326976;
         double calculateArea = triangle.calculateArea();
         checkTestResult(calculateArea == expected, "Triangle area");
-        System.out.println("calculateArea = " + calculateArea);
     }
 
     public void trianglePerimeter() {
-        Triangle triangle = new Triangle("Triangle", 2, 6, 5, 8);
-        double expected = 19;
+        Triangle triangle = new Triangle("Triangle", 7, 6);
+        double expected = 18;
         double calculatePerimeter = triangle.calculatePerimeter();
         checkTestResult(calculatePerimeter == expected, "Triangle perimeter");
     }

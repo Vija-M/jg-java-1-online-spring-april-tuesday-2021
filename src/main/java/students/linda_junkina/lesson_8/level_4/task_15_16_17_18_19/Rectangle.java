@@ -1,22 +1,22 @@
 package students.linda_junkina.lesson_8.level_4.task_15_16_17_18_19;
 
 class Rectangle extends Shape {
-    int length;
+    int height;
     int width;
 
-    public Rectangle(String title, int length, int width) {
-        super(title);
-        this.length = length;
+    public Rectangle(String title, int height, int width) {
+        super("Rectangle");
+        this.height = height;
         this.width = width;
     }
 
     @Override
     double calculateArea() {
-        return length * width;
+        return height * width;
     }
 
     @Override
     double calculatePerimeter() {
-        return 2 * (length * width);
+        return 2 * (height + width);
     }
 }
