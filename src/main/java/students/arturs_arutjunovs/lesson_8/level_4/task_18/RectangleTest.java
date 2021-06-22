@@ -2,7 +2,7 @@ package students.arturs_arutjunovs.lesson_8.level_4.task_18;
 
 class RectangleTest {
 
-    Rectangle rectangle = new Rectangle("Rectangle", 2.5, 3.0);
+    Rectangle rectangle = new Rectangle(2.5, 3.0);
 
     public static void main(String[] args) {
 
