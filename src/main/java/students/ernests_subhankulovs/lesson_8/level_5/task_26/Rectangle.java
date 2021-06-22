@@ -4,10 +4,10 @@ class Rectangle extends Shape {
     private double width;
     private double height;
 
-    Rectangle(double sideA, double sideB) {
+    Rectangle(double width, double height) {
         super("Rectangle");
-        this.width = sideA;
-        this.height = sideB;
+        this.width = width;
+        this.height = height;
     }
 
     @Override
