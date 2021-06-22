@@ -85,12 +85,12 @@ class UserRepositoryTest {
         UserEntity foundUser1 = userRepository.findById(ids[0]);
         UserEntity foundUser2 = userRepository.findById(ids[1]);
         UserEntity foundUser3 = userRepository.findById(ids[2]);
-        UUID user3Id = foundUser3.getId();
-        UUID user2Id = foundUser2.getId();
         UUID user1Id = foundUser1.getId();
-        userRepository.delete(user3Id);
-        userRepository.delete(user2Id);
+        UUID user2Id = foundUser2.getId();
+        UUID user3Id = foundUser3.getId();
         userRepository.delete(user1Id);
+        userRepository.delete(user2Id);
+        userRepository.delete(user3Id);
         UserEntity[] users = userRepository.findAll();
         assertDeletionTestResult(users[0], "First user deleted test: ");
         assertDeletionTestResult(users[1], "Second user deleted test: ");
