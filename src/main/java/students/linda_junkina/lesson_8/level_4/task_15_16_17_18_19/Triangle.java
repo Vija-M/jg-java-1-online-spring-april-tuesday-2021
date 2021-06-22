@@ -4,14 +4,11 @@ import static java.lang.Math.*;
 
 class Triangle extends Shape {
 
-    double high;
     int side;
 
-
-    public Triangle(int high, int side) {
+    public Triangle(int side) {
         super("Triangle");
         this.side = side;
-
     }
 
     @Override

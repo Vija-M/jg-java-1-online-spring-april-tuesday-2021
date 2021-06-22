@@ -56,14 +56,14 @@ class ShapeTest {
     }
 
     public void triangleArea() {
-        Triangle triangle = new Triangle(15, 9);
+        Triangle triangle = new Triangle(9);
         double expected = 35.07402885326976;
         double calculateArea = triangle.calculateArea();
         checkTestResult(calculateArea == expected, "Triangle area");
     }
 
     public void trianglePerimeter() {
-        Triangle triangle = new Triangle(7, 6);
+        Triangle triangle = new Triangle(6);
         double expected = 18;
         double calculatePerimeter = triangle.calculatePerimeter();
         checkTestResult(calculatePerimeter == expected, "Triangle perimeter");
