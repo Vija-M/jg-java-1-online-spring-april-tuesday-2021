@@ -8,7 +8,9 @@ class WordService {
         int index = 0;                          // последний индекс с макс.
         for (int i = 0; i < words.length; i++)
             for (int j = 0; j < words.length; j++)
-                if (words[i].equals(words[j])) numOfEqualWords[i]++; // заполним массив
+                if (words[i].equals(words[j])) {
+                    numOfEqualWords[i]++;
+                } // заполним массив
         for (int i = 0; i < numOfEqualWords.length; i++)
             if (numOfEqualWords[i] > maxCount) {
                 maxCount = numOfEqualWords[i];                  // найдем макс.
@@ -19,7 +21,7 @@ class WordService {
     }
 
     private String[] divideStringToWords(String text) {
-        return text.split("[,.\\s]+");
+        return text.split("\\W+");
     }
 
 
