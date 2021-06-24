@@ -14,14 +14,31 @@ class Safe {
 
     public boolean getMoney() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введи пароль, чтобы получить свой кэш из сейфа: "/*222*/);
-        return scanner.nextLine().equalsIgnoreCase("222");
+        System.out.print("Введите пароль, чтобы забрать деньги из сейфа: ");
+        int getMoney = scanner.nextInt();
+
+        while (getMoney != 222) {
+            System.out.println("Попробуйте снова!");
+            getMoney = scanner.nextInt();
+        }
+        System.out.println("Поздравляю, теперь все деньги твои!");
+        return false;
     }
 
     public boolean putMoney() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введи пароль, чтобы положить свой кэш в сейф: "/*222*/);
-        return scanner.nextLine().equalsIgnoreCase("222");
-    }
+        System.out.println();
+        System.out.print("Введите пароль, чтобы положить деньги в сейф: ");
+        int putMoney = scanner.nextInt();
 
+        while (putMoney != 222) {
+            System.out.println("Попробуйте снова!");
+            putMoney = scanner.nextInt();
+        }
+        System.out.println("Поздравляю, теперь все деньги в сейфе!");
+        return false;
+    }
 }
+
+//Обьясните пожалуйста, как убрать false, чтобы оно не отображалось на выходе.
+//И как сделать так, чтобы когда я ввожу неправильный пароль он мне писал по новой: Введите пароль, чтобы..
