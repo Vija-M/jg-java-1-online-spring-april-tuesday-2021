@@ -8,7 +8,6 @@ class SquareTest {
         SquareTest squareTest = new SquareTest();
         squareTest.partAreaTest();
         squareTest.partPerimeterTest();
-
     }
 
     public void partAreaTest() {
@@ -26,5 +25,4 @@ class SquareTest {
             System.out.println(name + " = FAIL");
         }
     }
-
 }
