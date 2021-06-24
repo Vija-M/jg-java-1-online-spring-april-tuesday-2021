@@ -8,7 +8,6 @@ class CircleTest {
         CircleTest circleTest = new CircleTest();
         circleTest.areaTest();
         circleTest.perimeterTest();
-
     }
 
     public void areaTest() {

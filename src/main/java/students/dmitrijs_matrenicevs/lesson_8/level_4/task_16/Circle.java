@@ -7,7 +7,6 @@ class Circle extends Shape {
     Circle(double radius) {
         super("Circle");
         this.radius = radius;
-
     }
 
     @Override
