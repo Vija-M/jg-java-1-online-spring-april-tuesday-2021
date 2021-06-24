@@ -2,7 +2,7 @@ package students.dmitrijs_matrenicevs.lesson_8.level_4.task_16;
 
 class Circle extends Shape {
 
-    private double radius;
+    private final double radius;
 
     Circle(double radius) {
         super("Circle");
@@ -12,11 +12,11 @@ class Circle extends Shape {
 
     @Override
     double calculateArea() {
-        return 0;
+        return radius * radius * 3.14;
     }
 
     @Override
     double calculatePerimeter() {
-        return 0;
+        return radius * 3.14 * 2;
     }
 }
