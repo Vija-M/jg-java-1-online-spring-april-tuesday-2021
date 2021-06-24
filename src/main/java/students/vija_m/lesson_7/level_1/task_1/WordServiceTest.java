@@ -17,7 +17,7 @@ class WordServiceTest {
     }
 
     public void equalWords2() {
-        String text = "Я люблю море. Я лечу на море. Я умею плавать в море.";
+        String text = "Я очень люблю море. Я лечу на море. Я умею плавать в море.";
         assertTest("Я", wordService.findMostFrequentWord(text), "Two words are repeating twice");
     }
 
