@@ -1,6 +1,6 @@
 package students.dmitriy_shukailo.lesson_2.level_3.task_11;
 
-public class ArithmeticMean {
+class ArithmeticMean {
 
     public static void main(String[] args) {
 
