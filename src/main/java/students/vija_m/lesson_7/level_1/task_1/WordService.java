@@ -17,7 +17,6 @@ class WordService {
                 index = i;                              // найдем индекс с макс.
             }
         return words[index];
-
     }
 
     private String[] divideStringToWords(String text) {
