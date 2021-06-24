@@ -1,4 +1,4 @@
-package students.ernests_subhankulovs.lesson_8.tasl_5;
+package students.ernests_subhankulovs.lesson_8.level_2.task_5;
 
 class Task5 {
     //В языке Java запрещено множественное наследование.
