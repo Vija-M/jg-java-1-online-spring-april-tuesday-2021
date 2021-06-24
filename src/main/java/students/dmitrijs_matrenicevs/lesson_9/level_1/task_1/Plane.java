@@ -2,11 +2,11 @@ package students.dmitrijs_matrenicevs.lesson_9.level_1.task_1;
 
 public class Plane {
 
-    protected Plane(){
+    public Plane(){
 
     }
 
-    //Я думаю больше всего тут подойдет Protected, хотя и Public тоже вполне подходит )
+    //Я думаю больше всего тут подойдет Public )
 
     /*
     *public - публичный, общедоступный класс или член класса.
