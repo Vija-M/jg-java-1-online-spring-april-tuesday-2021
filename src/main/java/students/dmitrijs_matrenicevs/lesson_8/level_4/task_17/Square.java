@@ -5,7 +5,7 @@ class Square extends Shape {
     private final double part;
 
     public Square(double part) {
-        super("part");
+        super("Square");
         this.part = part;
     }
 
