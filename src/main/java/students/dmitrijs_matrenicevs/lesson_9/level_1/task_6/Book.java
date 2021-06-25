@@ -2,11 +2,14 @@ package students.dmitrijs_matrenicevs.lesson_9.level_1.task_6;
 
 class Book {
 
-    public String title;
-    public String author;
+    private String title;
+    private String author;
 
-    public Book(String title, String author) {
-        this.title = title;
-        this.author = author;
+    private String getTitle() {
+        return title;
+    }
+
+    private String getAuthor() {
+        return author;
     }
 }
