@@ -2,20 +2,20 @@ package students.dmitrijs_matrenicevs.lesson_8.level_4.task_19;
 
 class Triangle extends Shape {
 
-    private final double equilateral;
+    private final double side;
 
-    public Triangle(double equilateral) {
+    public Triangle(double side) {
         super("Triangle");
-        this.equilateral = equilateral;
+        this.side = side;
     }
 
     @Override
     double calculateArea() {
-        return (3.0 / 4.0) * equilateral;
+        return (Math.sqrt(3) / 4) * side * side;
     }
 
     @Override
     double calculatePerimeter() {
-        return equilateral * 3;
+        return side * 3;
     }
 }
