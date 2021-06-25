@@ -5,7 +5,7 @@ class PowerCalculator {
 
         int total = 1;
         for (int i = 1; i <= power; i++) {
-            total = total * number;
+            total *= number;
         }
         return total;
     }

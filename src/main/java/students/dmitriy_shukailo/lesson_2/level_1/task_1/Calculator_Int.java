@@ -1,6 +1,6 @@
 package students.dmitriy_shukailo.lesson_2.level_1.task_1;
 
-public class Calculator_Int {
+class Calculator_Int {
 
     public static void main(String[] args) {
 

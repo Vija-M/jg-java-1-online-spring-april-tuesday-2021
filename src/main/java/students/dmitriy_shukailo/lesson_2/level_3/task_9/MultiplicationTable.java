@@ -1,6 +1,6 @@
 package students.dmitriy_shukailo.lesson_2.level_3.task_9;
 
-public class MultiplicationTable {
+class MultiplicationTable {
 
     public static void main(String[] args) {
 
