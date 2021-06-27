@@ -8,7 +8,7 @@ class FraudRule1 extends FraudRule {
 
     public boolean isFraud(Transaction t) {
         Trader trader = t.getTrader();
-        return (trader.getCity().equals("Sydney"));
+        return (trader.getFullName().equals("Pokemon"));
     }
 
 }
