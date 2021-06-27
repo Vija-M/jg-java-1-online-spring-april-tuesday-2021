@@ -1,5 +1,6 @@
 package students.vija_m.lesson_8.level_4.task_15;
 
+
 abstract class Shape {
     private String title;
 
