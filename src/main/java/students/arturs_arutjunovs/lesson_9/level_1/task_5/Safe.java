@@ -23,7 +23,7 @@ class Safe {
     public void getMoney(int money, String password) {
         if (password.equals(this.password)) {
             this.moneyBalance -= money;
-            System.out.println("You took 300$, left on balance: " + getMoneyBalance());
+            System.out.println("You took " + money + ", left on balance: " + getMoneyBalance());
         } else {
             System.out.println("Wrong password to get money");
         }
@@ -32,7 +32,7 @@ class Safe {
     public void putMoney(int money, String password) {
         if (password.equals(this.password)) {
             this.moneyBalance += money;
-            System.out.println("You put 700$, now balance is: " + getMoneyBalance());
+            System.out.println("You put " + money + ", now balance is: " + getMoneyBalance());
         } else {
             System.out.println("Wrong password to put money");
         }
@@ -50,7 +50,9 @@ class safeDemo {
 
         safe.getMoney(300, "gYtR");
         safe.putMoney(700, "gYtR");
-
+        System.out.println("");
+        safe.getMoney(200, "0000");
+        safe.putMoney(500, "0000");
 
     }
 }
