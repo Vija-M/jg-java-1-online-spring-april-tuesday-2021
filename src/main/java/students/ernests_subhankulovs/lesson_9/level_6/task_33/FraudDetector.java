@@ -17,7 +17,7 @@ class FraudDetector {
                 return new FraudDetectionResult(true, rule.getRuleName());
             }
         }
-        return new FraudDetectionResult(false, "Not Fraud");
+        return new FraudDetectionResult(false, null);
     }
 
 }
