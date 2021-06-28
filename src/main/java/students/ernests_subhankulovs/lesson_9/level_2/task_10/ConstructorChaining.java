@@ -10,8 +10,8 @@ class ConstructorChaining {
 
     // допишите решение тут
     public ConstructorChaining(String constructorName, int parameterCount) {
-        ConstructorChaining constructorChaining = new ConstructorChaining(constructorName);
-        constructorChaining.parameterCount = parameterCount;
+        this(constructorName);
+        this.parameterCount = parameterCount;
 
     }
 
