@@ -1,0 +1,42 @@
+Сайт прогноза погоды на данный момент показывает
+температуру в градусах по цельсию.
+
+Для выхода на международный рынок сайту нужно
+уметь конвертировать температуру в кельвины и форенгейты.
+
+Для описания процесса конвертации
+температуры в градусах по цельсию в кельвины и форенгейты
+были созданы следующий интерфейс:
+
+interface TemperatureConverter {
+
+    double convert(double temperature);
+}
+
+и его имплементации:
+
+class CelsiusToKelvinConverter implements TemperatureConverter {
+
+    @Override
+    public double convert(double temperature) {
+        return celsiusTemperature + 273.15;
+    }
+}
+
+class CelsiusToFahrenheitConverter implements TemperatureConverter {
+    @Override
+    public double convert(double temperature) {
+        return 1.8 * celsiusTemperature + 32;
+    }
+}
+
+Ваша задача:
+- придумать и реализовать решение для конвертации температуры
+  из любой шкалы измерения в любую другую;
+- протестировать ваше решение.
+
+Возможное решение: 9 реализаций интерфейса TemperatureConverter
+для конвертации любой шкалы в любую другую + реализация
+паттерна стратегия.
+
+Протестируйте ваше решение!
