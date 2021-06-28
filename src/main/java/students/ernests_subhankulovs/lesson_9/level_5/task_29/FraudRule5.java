@@ -2,8 +2,8 @@ package students.ernests_subhankulovs.lesson_9.level_5.task_29;
 
 class FraudRule5 extends FraudRule {
 
-    public FraudRule5(String ruleName) {
-        super(ruleName);
+    public FraudRule5() {
+        super("Rule 5");
     }
 
     public boolean isFraud(Transaction t) {

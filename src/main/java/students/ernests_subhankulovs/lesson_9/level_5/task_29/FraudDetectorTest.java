@@ -4,11 +4,11 @@ class FraudDetectorTest {
 
     public static void main(String[] args) {
         FraudRule[] fraudRules = new FraudRule[5];
-        fraudRules[0] = new FraudRule1("Rule 1");
-        fraudRules[1] = new FraudRule2("Rule 2");
-        fraudRules[2] = new FraudRule3("Rule 3");
-        fraudRules[3] = new FraudRule4("Rule 4");
-        fraudRules[4] = new FraudRule5("Rule 5");
+        fraudRules[0] = new FraudRule1();
+        fraudRules[1] = new FraudRule2();
+        fraudRules[2] = new FraudRule3();
+        fraudRules[3] = new FraudRule4();
+        fraudRules[4] = new FraudRule5();
         FraudDetector fraudDetector = new FraudDetector(fraudRules);
 
         FraudDetectorTest test = new FraudDetectorTest();
