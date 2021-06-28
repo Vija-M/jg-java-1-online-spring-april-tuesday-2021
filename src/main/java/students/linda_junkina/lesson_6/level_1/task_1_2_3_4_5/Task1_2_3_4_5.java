@@ -1,4 +1,4 @@
-package students.linda_junkina.lesson_6.level_1.task_1_2_3_4_5_6;
+package students.linda_junkina.lesson_6.level_1.task_1_2_3_4_5;
 
 class Task1_2_3_4_5 {
 
