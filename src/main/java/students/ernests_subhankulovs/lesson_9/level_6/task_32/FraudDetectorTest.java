@@ -28,7 +28,6 @@ class FraudDetectorTest {
         Trader trader = new Trader("John Smith", "London", "UK");
         Transaction transaction = new Transaction(trader, 500);
         assertTestResult(false, fraudDetector.isFraud(transaction).getFraud(), "1st rule pass test");
-        assertRuleNameTestResult("Not Fraud", fraudDetector.isFraud(transaction).getRuleName(), "1st rule name pass test");
     }
 
     public void firstRuleFailTest(FraudDetector fraudDetector) {
@@ -42,7 +41,6 @@ class FraudDetectorTest {
         Trader trader = new Trader("John Smith", "London", "UK");
         Transaction transaction = new Transaction(trader, 1000000);
         assertTestResult(false, fraudDetector.isFraud(transaction).getFraud(), "2nd rule pass test");
-        assertRuleNameTestResult("Not Fraud", fraudDetector.isFraud(transaction).getRuleName(), "2nd rule name pass test");
     }
 
     public void secondRuleFailTest(FraudDetector fraudDetector) {
@@ -56,7 +54,6 @@ class FraudDetectorTest {
         Trader trader = new Trader("John Smith", "London", "UK");
         Transaction transaction = new Transaction(trader, 1000);
         assertTestResult(false, fraudDetector.isFraud(transaction).getFraud(), "3rd rule pass test");
-        assertRuleNameTestResult("Not Fraud", fraudDetector.isFraud(transaction).getRuleName(), "3rd rule name pass test");
     }
 
     public void thirdRuleFailTest(FraudDetector fraudDetector) {
@@ -71,7 +68,6 @@ class FraudDetectorTest {
         Trader trader = new Trader("John Smith", "London", "UK");
         Transaction transaction = new Transaction(trader, 1000);
         assertTestResult(false, fraudDetector.isFraud(transaction).getFraud(), "4th rule pass test");
-        assertRuleNameTestResult("Not Fraud", fraudDetector.isFraud(transaction).getRuleName(), "4th rule name pass test");
     }
 
     public void fourthRuleFailTest(FraudDetector fraudDetector) {
@@ -86,7 +82,6 @@ class FraudDetectorTest {
         Trader trader = new Trader("John Smith", "Berlin", "Germany");
         Transaction transaction = new Transaction(trader, 1000);
         assertTestResult(false, fraudDetector.isFraud(transaction).getFraud(), "5th rule pass test");
-        assertRuleNameTestResult("Not Fraud", fraudDetector.isFraud(transaction).getRuleName(), "5th rule name pass test");
 
     }
 
