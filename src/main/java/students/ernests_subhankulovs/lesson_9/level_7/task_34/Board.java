@@ -5,7 +5,7 @@ class Board {
     public static final int rows = 6;
     public static final int columns = 7;
 
-    Piece[][] board = new Piece[rows][columns];
+    private Piece[][] board = new Piece[rows][columns];
 
     public boolean addPiece(int columnToAdd, String color) {
         if (columnToAdd >= 0 && columnToAdd < columns) {
