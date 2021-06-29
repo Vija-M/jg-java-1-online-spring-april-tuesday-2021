@@ -7,13 +7,13 @@ class Board {
 
     Piece[][] board = new Piece[rows][columns];
 
-    public Board() {
-        for (int row = 0; row < rows; row++) {
-            for (int column = 0; column < columns; column++) {
-                board[row][column] = null;
-            }
-        }
-    }
+//    public Board() {
+//        for (int row = 0; row < rows; row++) {
+//            for (int column = 0; column < columns; column++) {
+//                board[row][column] = null;
+//            }
+//        }
+//    }
 
     public boolean addPiece(int columnToAdd, String color) {
         if (columnToAdd >= 0 && columnToAdd < columns) {
