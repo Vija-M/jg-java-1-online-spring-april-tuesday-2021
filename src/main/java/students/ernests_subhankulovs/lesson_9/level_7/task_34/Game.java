@@ -40,8 +40,7 @@ class Game {
         }
     }
 
-    public boolean hasWon(String playerColor) {
-        //String winningColor = isPlayer1Playing ? player1Color : player2Color;
+    private boolean hasWon(String playerColor) {
         return board.checkForWinner(playerColor);
     }
 }
