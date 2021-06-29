@@ -30,7 +30,7 @@ class Game {
             System.out.println("Choose between 1 and " + Board.columns + ":");
             int column = scanner.nextInt() - 1;
             if (board.addPiece(column, color)) {
-                if (checkForWinner(column)) {
+                if (hasWon(color)) {
                     running = false;
                     board.showBoard();
                     System.out.println("Player " + color + " won!");
@@ -40,8 +40,8 @@ class Game {
         }
     }
 
-    public boolean checkForWinner(int column) {
-        String winningColor = isPlayer1Playing ? player1Color : player2Color;
-        return board.checkForWinner(winningColor);
+    public boolean hasWon(String playerColor) {
+        //String winningColor = isPlayer1Playing ? player1Color : player2Color;
+        return board.checkForWinner(playerColor);
     }
 }
