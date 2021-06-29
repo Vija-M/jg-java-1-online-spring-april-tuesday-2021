@@ -2,8 +2,8 @@ package students.ernests_subhankulovs.lesson_9.level_7.task_34;
 
 class Board {
 
-    private final int rows = 6;
-    private final int columns = 7;
+    private static final int rows = 6;
+    private static final int columns = 7;
 
     Piece[][] board = new Piece[rows][columns];
 
