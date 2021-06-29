@@ -20,8 +20,7 @@ class Board {
             if (board[0][columnToAdd] == null) {
                 for (int row = rows - 1; row >= 0; row--) {
                     if (board[row][columnToAdd] == null) {
-                        board[row][columnToAdd] = new Piece();
-                        board[row][columnToAdd].setColor(color);
+                        board[row][columnToAdd] = new Piece(color);
                         return true;
                     }
                 }
