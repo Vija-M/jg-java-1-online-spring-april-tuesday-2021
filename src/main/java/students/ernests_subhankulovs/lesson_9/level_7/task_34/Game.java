@@ -35,7 +35,7 @@ class Game {
             }
 
             System.out.println("Please select the column you want to put your piece in:");
-            System.out.println("Choose between 1 and " + board.getColumns() + ":");
+            System.out.println("Choose between 1 and " + Board.columns + ":");
             int column = scanner.nextInt() - 1;
             boolean success = board.addPiece(column, color);
             if (success) {

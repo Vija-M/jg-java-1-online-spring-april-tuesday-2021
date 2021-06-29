@@ -2,8 +2,8 @@ package students.ernests_subhankulovs.lesson_9.level_7.task_34;
 
 class Board {
 
-    private static final int rows = 6;
-    private static final int columns = 7;
+    public static final int rows = 6;
+    public static final int columns = 7;
 
     Piece[][] board = new Piece[rows][columns];
 
@@ -13,10 +13,6 @@ class Board {
                 board[row][column] = null;
             }
         }
-    }
-
-    public int getColumns() {
-        return columns;
     }
 
     public boolean addPiece(int columnToAdd, String color) {
