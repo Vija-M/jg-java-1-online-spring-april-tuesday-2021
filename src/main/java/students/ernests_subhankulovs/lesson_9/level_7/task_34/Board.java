@@ -69,7 +69,7 @@ class Board {
         return false;
     }
 
-    public boolean checkVertically(int row, int column, String winningColor) {
+    private boolean checkVertically(int row, int column, String winningColor) {
         int winningStreak = 3;
         for (int winRow = row + 1; winRow < rows; winRow++) {
             if (board[winRow][column].getColor().equals(winningColor)) {
@@ -85,7 +85,7 @@ class Board {
         return false;
     }
 
-    public boolean checkHorizontally(int row, int column, String winningColor) {
+    private boolean checkHorizontally(int row, int column, String winningColor) {
         int winningStreak = 4;
         for (int winColumn = column - 3; winColumn <= column + 3; winColumn++) {
             if (winColumn < 0) {
