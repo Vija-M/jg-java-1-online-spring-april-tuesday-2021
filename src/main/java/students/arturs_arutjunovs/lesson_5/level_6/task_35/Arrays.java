@@ -11,7 +11,6 @@ class Arrays {
     public void fillRandomly(int[] array) {
         Random random = new Random();
         array = new int[10];
-
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(50);
         }
@@ -23,7 +22,7 @@ class Arrays {
         }
     }
 
-            public int findMax(int[] array) {
+    public int findMax(int[] array) {
         int maxValue = array[0];
         for (int i = 1; i < array.length; i++) {
             if (array[i] > maxValue) {
