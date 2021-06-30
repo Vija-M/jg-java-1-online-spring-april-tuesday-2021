@@ -19,7 +19,7 @@ class ArraysTest {
 
     public void shouldFindMaxNumber() {
         int[] array = {0, 9, 35, 10, 42};
-        assertArraySizeTest(array, 42, "Max array number");
+        assertFindMaxArrayTest(array, 42, "Max array number");
     }
 
 
@@ -42,7 +42,7 @@ class ArraysTest {
         }
     }
 
-    public void assertArraySizeTest(int[] array, int expectedResult, String testName) {
+    public void assertFindMaxArrayTest(int[] array, int expectedResult, String testName) {
         int actualResult = arrays.findMax(array);
         if (actualResult == expectedResult) {
             System.out.println("[TEST OK]: " + testName + " passed");
