@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Optional;
 
 class InMemoryProductRepository implements ProductRepository {
-    Product[] products = new Product[1];
+    private Product[] products = new Product[1];
 
     @Override
     public void save(Product product) {
