@@ -4,9 +4,9 @@ interface SimpleList<T> {
     //Добавить новый элемент в определённой позиции списка
     void addElement(T[] simpleList, int position);
     //Добавить новый элемент в начале списка
-    void addElementAtBeginning(T[] simpleList, int position);
+    void addElementAtBeginning(T[] simpleList);
     //Добавить новый элемент в конце списка
-    void addElementAtEnd(T[] simpleList, int position);
+    void addElementAtEnd(T[] simpleList);
     //Убрать элемент в определённой позиции списка
     void removeElement(T[] simpleList, int position);
     //Убрать элемент в начале списка

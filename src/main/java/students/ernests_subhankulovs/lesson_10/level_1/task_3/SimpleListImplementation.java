@@ -7,12 +7,12 @@ class SimpleListImplementation<T> implements SimpleList<T> {
     }
 
     @Override
-    public void addElementAtBeginning(T[] simpleList, int position) {
+    public void addElementAtBeginning(T[] simpleList) {
 
     }
 
     @Override
-    public void addElementAtEnd(T[] simpleList, int position) {
+    public void addElementAtEnd(T[] simpleList) {
 
     }
 
