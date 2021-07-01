@@ -2,46 +2,46 @@ package students.ernests_subhankulovs.lesson_10.level_1.task_3;
 
 class SimpleListImplementation<T> implements SimpleList<T> {
     @Override
-    public void addElement(T[] simpleList, int position) {
+    public void addElement(int position, T value) {
 
     }
 
     @Override
-    public void addElementAtBeginning(T[] simpleList) {
+    public void addElementAtBeginning(T value) {
 
     }
 
     @Override
-    public void addElementAtEnd(T[] simpleList) {
+    public void addElementAtEnd(T value) {
 
     }
 
     @Override
-    public void removeElement(T[] simpleList, int position) {
+    public void removeElement(int position,  T value) {
 
     }
     @Override
-    public void removeElementFromBeginning(T[] simpleList) {
-
-    }
-
-    @Override
-    public void removeElementFromEnd(T[] simpleList) {
+    public void removeElementFromBeginning(T value) {
 
     }
 
     @Override
-    public T[] reverseOrder(T[] simpleList) {
-        return simpleList;
-    }
-
-    @Override
-    public void resize(T[] simpleList, int size) {
+    public void removeElementFromEnd(T value) {
 
     }
 
     @Override
-    public T[] extractSublist(T[] simpleList, int fromElement, int toElement) {
+    public T reverseOrder(T value) {
+        return value;
+    }
+
+    @Override
+    public void resize(int size, T simpleList) {
+
+    }
+
+    @Override
+    public T extractSublist(int fromElement, int toElement, T simpleList) {
         return simpleList;
     }
 }
