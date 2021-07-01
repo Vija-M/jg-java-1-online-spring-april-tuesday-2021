@@ -7,7 +7,7 @@ class DayOfTheWeekDetectorDemo {
         Scanner scanner = new Scanner(System.in);
         IfDayOfTheWeekDetector ifDayOfTheWeekDetector = new IfDayOfTheWeekDetector();
 
-        System.out.println("Enter a number 1 - 7: ");
+        System.out.print("Enter a number 1 - 7: ");
         int i = scanner.nextInt();
 
         System.out.print("ifDayOfTheWeekDetector = " + ifDayOfTheWeekDetector.detectDayName(i));
