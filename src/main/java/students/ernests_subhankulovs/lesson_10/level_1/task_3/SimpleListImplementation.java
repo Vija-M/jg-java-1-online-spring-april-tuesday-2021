@@ -2,17 +2,17 @@ package students.ernests_subhankulovs.lesson_10.level_1.task_3;
 
 class SimpleListImplementation<T> implements SimpleList<T> {
     @Override
-    public void addElement(int position, T value) {
+    public void addElement(T simpleList, int position, T value) {
 
     }
 
     @Override
-    public void addElementAtBeginning(T value) {
+    public void addElementAtBeginning(T simpleList, T value) {
 
     }
 
     @Override
-    public void addElementAtEnd(T value) {
+    public void addElementAtEnd(T simpleList, T value) {
 
     }
 
@@ -36,12 +36,12 @@ class SimpleListImplementation<T> implements SimpleList<T> {
     }
 
     @Override
-    public void resize(int size, T simpleList) {
+    public void resize(T simpleList, int size) {
 
     }
 
     @Override
-    public T extractSublist(int fromElement, int toElement, T simpleList) {
+    public T extractSublist(T simpleList, int fromElement, int toElement) {
         return simpleList;
     }
 }
