@@ -21,6 +21,7 @@ class InMemoryProductRepository implements ProductRepository {
 
     @Override
     public Optional<Product> findByTitle(String productTitle) {
-        return Arrays.stream(products).filter(product -> product.getTitle().equals(productTitle)).findFirst();
+        return Arrays.stream(products).filter(product -> product.getTitle().equals(productTitle))
+                                      .findFirst();
     }
 }
