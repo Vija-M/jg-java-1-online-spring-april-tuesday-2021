@@ -4,6 +4,6 @@ class MainClass {
 
     public static void main(String[] args) {
         C c = new C();
-        //Ответ: Class C Constructor
+        //Ответ: Тогда ответ будет A,B,C )
     }
 }
