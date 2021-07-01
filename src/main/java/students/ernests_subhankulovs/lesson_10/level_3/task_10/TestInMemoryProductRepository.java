@@ -39,7 +39,7 @@ public class TestInMemoryProductRepository {
         assertFalse(repositoryEntry.isPresent(), "Test non-existing product search");
     }
 
-    public InMemoryProductRepository createProductRepository() {
+    private InMemoryProductRepository createProductRepository() {
         InMemoryProductRepository productRepository = new InMemoryProductRepository();
         productRepository.save(new Product("Product A"));
         productRepository.save(new Product("Product B"));
@@ -47,12 +47,12 @@ public class TestInMemoryProductRepository {
         return productRepository;
     }
 
-    public String getActualProductTitle(String productTitle) {
+    private String getActualProductTitle(String productTitle) {
         InMemoryProductRepository repository = createProductRepository();
         return repository.findByTitle(productTitle).get().getTitle();
     }
 
-    public boolean checkIfItemExists(String productTitle) {
+    private boolean checkIfItemExists(String productTitle) {
         InMemoryProductRepository repository = createProductRepository();
         return assertTrue(repository.findByTitle(productTitle).isPresent(), "Test if item \"" + productTitle + "\" exists");
     }
