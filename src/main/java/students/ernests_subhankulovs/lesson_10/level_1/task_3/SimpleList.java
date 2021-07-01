@@ -14,7 +14,7 @@ interface SimpleList<T> {
     //Убрать элемент в конце списка
     void removeElementFromEnd(T[] simpleList);
     //Сортировать список в обратном порядке
-    void reverseOrder(T[] simpleList);
+    T[] reverseOrder(T[] simpleList);
     //Изменить размер списка
     void resize(T[] simpleList, int size);
     //Превратить определённый интервал из списка в новый, отдельный список

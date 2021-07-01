@@ -31,8 +31,8 @@ class SimpleListImplementation<T> implements SimpleList<T> {
     }
 
     @Override
-    public void reverseOrder(T[] simpleList) {
-
+    public T[] reverseOrder(T[] simpleList) {
+        return simpleList;
     }
 
     @Override
