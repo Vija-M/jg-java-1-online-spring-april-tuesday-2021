@@ -14,11 +14,10 @@ class BookReaderImplTest {
         boolean realResult = bookReader.addBook(new Book("Design Patterns: Elements of Reusable Object-Oriented Software", "Gang of Four"));
         assertLogicalTestResult(true, realResult, "Successfully added book test");
         if (realResult) {
-            Book book1 = bookReader.electronicLibrary[1];
-            Book book2 = bookReader.electronicLibrary[1];
-            assertTestResult("Gang of Four", book1.getAuthor(),
+            Book book = bookReader.electronicLibrary[1];
+            assertTestResult("Gang of Four", book.getAuthor(),
                     "Added author test");
-            assertTestResult("Design Patterns: Elements of Reusable Object-Oriented Software", book2.getTitle(),
+            assertTestResult("Design Patterns: Elements of Reusable Object-Oriented Software", book.getTitle(),
                     "Added book title test");
         }
     }
