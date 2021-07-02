@@ -6,7 +6,7 @@ class BookReaderImpl implements BookReader {
 
     @Override
     public boolean addBook(Book book) {
-        if (electronicLibrary[0] != null && !isDuplicate(book) && validateTitleAndAuthor(book)) {
+        if (!isDuplicate(book) && validateTitleAndAuthor(book)) {
             Book[] newBooks = new Book[electronicLibrary.length + 1];
             System.arraycopy(electronicLibrary, 0, newBooks, 0, electronicLibrary.length);
             newBooks[newBooks.length - 1] = book;
@@ -14,7 +14,6 @@ class BookReaderImpl implements BookReader {
             return true;
         }
         else {
-            electronicLibrary[0] = book;
             return false;
         }
     }
