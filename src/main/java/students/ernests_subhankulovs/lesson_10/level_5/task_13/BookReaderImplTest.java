@@ -38,6 +38,10 @@ class BookReaderImplTest {
         for (Book book : reader.getElectronicLibrary()) {
             System.out.println("Title: " + book.getTitle() + ", Author: " + book.getAuthor());
         }
+        assertNumericTestResult(3 ,reader.getElectronicLibrary().length, "Number of books in library after duplicate check test");
+        assertTestResult("The C Programming Language", reader.getElectronicLibrary()[0].getTitle(), "1st book after duplicate check test");
+        assertTestResult("The Lord of the Rings", reader.getElectronicLibrary()[0].getTitle(), "2nd book after duplicate check test");
+        assertTestResult("A Game of Thrones", reader.getElectronicLibrary()[0].getTitle(), "3rd book after duplicate check test");
     }
 
     private void assertTestResult(String expectedResult, String realResult, String testName) {
@@ -50,6 +54,15 @@ class BookReaderImplTest {
     }
 
     private void assertLogicalTestResult(boolean expectedResult, boolean realResult, String testName) {
+        if (expectedResult == realResult) {
+            System.out.println(testName + " = OK");
+        }
+        else {
+            System.out.println(testName + " = FAIL");
+        }
+    }
+
+    private void assertNumericTestResult(int expectedResult, int realResult, String testName) {
         if (expectedResult == realResult) {
             System.out.println(testName + " = OK");
         }
