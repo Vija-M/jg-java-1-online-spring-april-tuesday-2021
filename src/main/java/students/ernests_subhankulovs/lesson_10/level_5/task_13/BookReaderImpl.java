@@ -19,6 +19,7 @@ class BookReaderImpl implements BookReader {
         }
     }
 
+    @Override
     public boolean isDuplicate(Book newBook) {
         for (Book savedBook : electronicLibrary) {
             if (savedBook.getAuthor().equals(newBook.getAuthor()) &&
