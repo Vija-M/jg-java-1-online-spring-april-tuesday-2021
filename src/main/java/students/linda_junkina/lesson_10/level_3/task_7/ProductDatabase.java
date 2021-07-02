@@ -5,4 +5,4 @@ interface ProductDatabase {
     void save(Product product);
     Product findByTitle(String productTitle);
 }
-// Интерфейс является функциональным
+// Интерфейс не является функциональным (т.к. 2 метода)
