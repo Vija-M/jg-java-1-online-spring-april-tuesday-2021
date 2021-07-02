@@ -2,7 +2,7 @@ package students.ernests_subhankulovs.lesson_10.level_5.task_14;
 
 class BookReaderImpl implements BookReader {
 
-    Book[] electronicLibrary = new Book[1];
+    Book[] electronicLibrary = new Book[0];
 
     @Override
     public boolean addBook(Book book) {
@@ -33,5 +33,10 @@ class BookReaderImpl implements BookReader {
     @Override
     public boolean validateTitleAndAuthor(Book book) {
         return (!book.getAuthor().trim().equals("") && !book.getTitle().trim().equals(""));
+    }
+
+    @Override
+    public Book[] getElectronicLibrary() {
+        return electronicLibrary;
     }
 }
