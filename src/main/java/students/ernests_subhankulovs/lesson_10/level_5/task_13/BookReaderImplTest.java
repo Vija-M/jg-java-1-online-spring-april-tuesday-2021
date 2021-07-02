@@ -5,6 +5,7 @@ class BookReaderImplTest {
         BookReaderImplTest test = new BookReaderImplTest();
         test.addNewBookTest();
         test.addDuplicateBookTest();
+        test.addDuplicateBookTest2();
     }
 
     public void addNewBookTest() {
@@ -27,17 +28,17 @@ class BookReaderImplTest {
         assertLogicalTestResult(false, realResult, "Unable to add duplicate book test");
     }
 
-//    public void addDuplicateBookTest2() {
-//        BookReader reader = new BookReaderImpl();
-//        reader.addBook(new Book("The C Programming Language", "K&R"));
-//        reader.addBook(new Book("The Lord of the Rings", "John Tolkien"));
-//        reader.addBook(new Book("A Game of Thrones", "George Martin"));
-//        reader.addBook(new Book("The Lord of the Rings", "John Tolkien"));
-//
-//        for (Book book : reader.) {
-//            System.out.println("Title: " + book.getTitle() + ", Author: " + book.getAuthor());
-//        }
-//    }
+    public void addDuplicateBookTest2() {
+        BookReader reader = new BookReaderImpl();
+        reader.addBook(new Book("The C Programming Language", "K&R"));
+        reader.addBook(new Book("The Lord of the Rings", "John Tolkien"));
+        reader.addBook(new Book("A Game of Thrones", "George Martin"));
+        reader.addBook(new Book("The Lord of the Rings", "John Tolkien"));
+
+        for (Book book : reader.getElectronicLibrary()) {
+            System.out.println("Title: " + book.getTitle() + ", Author: " + book.getAuthor());
+        }
+    }
 
     private void assertTestResult(String expectedResult, String realResult, String testName) {
         if (expectedResult.equals(realResult)) {

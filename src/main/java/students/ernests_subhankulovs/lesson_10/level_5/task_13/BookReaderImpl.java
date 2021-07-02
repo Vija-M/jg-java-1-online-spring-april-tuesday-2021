@@ -28,4 +28,9 @@ class BookReaderImpl implements BookReader {
         }
         return false;
     }
+
+    @Override
+    public Book[] getElectronicLibrary() {
+        return electronicLibrary;
+    }
 }
