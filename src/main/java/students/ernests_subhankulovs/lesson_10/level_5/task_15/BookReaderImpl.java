@@ -2,7 +2,7 @@ package students.ernests_subhankulovs.lesson_10.level_5.task_15;
 
 class BookReaderImpl implements BookReader {
 
-    private Book[] electronicLibrary = new Book[1];
+    private Book[] electronicLibrary = new Book[0];
 
     public Book[] getElectronicLibrary() {
         return electronicLibrary;
@@ -10,7 +10,7 @@ class BookReaderImpl implements BookReader {
 
     @Override
     public boolean addBook(Book book) {
-        if (electronicLibrary[0] != null && !isDuplicate(book) && validateTitleAndAuthor(book)) {
+        if (!isDuplicate(book) && validateTitleAndAuthor(book)) {
             Book[] newBooks = new Book[electronicLibrary.length + 1];
             System.arraycopy(electronicLibrary, 0, newBooks, 0, electronicLibrary.length);
             newBooks[newBooks.length - 1] = book;
@@ -18,7 +18,6 @@ class BookReaderImpl implements BookReader {
             return true;
         }
         else {
-            electronicLibrary[0] = book;
             return false;
         }
     }

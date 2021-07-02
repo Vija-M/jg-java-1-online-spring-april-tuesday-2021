@@ -12,17 +12,18 @@ class BookReaderImplTest {
         test.removeNonExistingBookTest();
     }
 
+
     public void addNewBookTest() {
         BookReaderImpl bookReader = new BookReaderImpl();
         bookReader.addBook(new Book("Clean Code: A Handbook of Agile Software Craftsmanship", "Robert C. Martin"));
         boolean realResult = bookReader.addBook(new Book("Design Patterns: Elements of Reusable Object-Oriented Software", "Gang of Four"));
         assertLogicalTestResult(true, realResult, "Successfully added book test");
         if (realResult) {
-            assertTestResult("Gang of Four", bookReader.getElectronicLibrary()[1].getAuthor(),
+            Book book = bookReader.getElectronicLibrary()[1];
+            assertTestResult("Gang of Four", book.getAuthor(),
                     "Added author test");
-            assertTestResult("Design Patterns: Elements of Reusable Object-Oriented Software", bookReader.getElectronicLibrary()[1].getTitle(),
+            assertTestResult("Design Patterns: Elements of Reusable Object-Oriented Software", book.getTitle(),
                     "Added book title test");
-            assertNumericTestResult(2, bookReader.getElectronicLibrary().length, "Size of library increased test");
         }
     }
 
