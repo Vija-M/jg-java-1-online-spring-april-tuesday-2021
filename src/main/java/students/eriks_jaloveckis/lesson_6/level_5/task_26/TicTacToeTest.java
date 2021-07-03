@@ -45,6 +45,7 @@ class TicTacToeTest {
     public void isDrawTest() {
         test20();
         test21();
+        test22();
     }
 
     public void assertTest(boolean expected, boolean realResult, String text) {
@@ -177,13 +178,18 @@ class TicTacToeTest {
 
     public void test20() {
         TicTacToe ticTacToe = new TicTacToe();
-        int[][] field = {{0, 1, 0}, {1, 0, 0}, {0, 1, 1}};
-        assertTest(true, ticTacToe.isDrawPosition(field), "Draw Position");
+        int[][] field = {{0, 1, 1}, {1, 1, 0}, {0, 0, 1}};
+        assertTest(true, ticTacToe.isDrawPosition(field), "Draw position");
     }
 
     public void test21() {
         TicTacToe ticTacToe = new TicTacToe();
-        int[][] field = {{0, 0, 1}, {1, 1, 0}, {1, 1, 0}};
+        int[][] field = {{0, 0, 1}, {1, 1, 0}, {0, 0, 1}};
         assertTest(true, ticTacToe.isDrawPosition(field), "Draw Position x2");
+    }
+    public void test22() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] field = {{0,1,1}, {0,1,1}, {1,1,0}};
+        assertTest(false, ticTacToe.isDrawPosition(field), "Is not draw");
     }
 }
