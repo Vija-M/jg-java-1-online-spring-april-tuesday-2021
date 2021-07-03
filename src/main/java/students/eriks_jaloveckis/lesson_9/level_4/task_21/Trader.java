@@ -1,5 +1,4 @@
 package students.eriks_jaloveckis.lesson_9.level_4.task_21;
-
 class Trader {
 
     private String fullName;
