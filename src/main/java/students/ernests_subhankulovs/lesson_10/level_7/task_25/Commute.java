@@ -11,7 +11,7 @@ class Commute {
         this.vehicle = vehicle;
     }
 
-    String  startTransportation() {
+    String startTransportation() {
         System.out.println("Starting journey.");
         System.out.println(vehicle.start());
         return vehicle.start();
