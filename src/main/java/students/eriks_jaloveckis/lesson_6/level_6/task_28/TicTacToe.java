@@ -82,6 +82,9 @@ class TicTacToe {
     public void play() {
         int[][] field = createField();
         while (true) {
+            System.out.println();
+            System.out.println("First player is /0/");
+            System.out.println("Second player is /1/");
             printFieldToConsole(field);
             Move move0 = getNextMove();
             field[move0.getX()][move0.getY()] = 0;
