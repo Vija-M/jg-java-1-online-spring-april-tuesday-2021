@@ -24,7 +24,7 @@ class StockTest {
         System.out.println("Current values:");
         System.out.println(priceInformation);
 
-        assertTest(27, google.currentPrice, 27, google.maxPrice, 9, google.minPrice, "stock value test of \"Google\"");
+        assertTest(14, google.currentPrice, 15, google.maxPrice, 7, google.minPrice, "stock value test of \"Google\"");
     }
 
     void scenario2() {
