@@ -10,5 +10,6 @@ class JavaStarLoginServiceImpl implements JavaStarLoginService {
                 && password.equals("pass");
     }
 
+
 }
 
