@@ -6,6 +6,8 @@ class Stock {
     int minPrice;
     int maxPrice;
 
+
+    /*
     public Stock(String companyName, int currentPrice) {
         this.companyName = companyName;
         this.currentPrice = currentPrice;
