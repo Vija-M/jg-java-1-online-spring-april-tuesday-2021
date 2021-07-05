@@ -1,7 +1,7 @@
 package students.dmitriy_shukailo.lesson_10.level_2.task_4;
 
-public interface DayOfTheWeekDetector {
+interface DayOfTheWeekDetector {
 
-    String detectDayName (int number);
+    String detectDayName(int number);
 
 }
