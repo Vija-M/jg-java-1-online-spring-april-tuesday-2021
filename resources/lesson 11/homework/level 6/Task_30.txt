@@ -1,0 +1,8 @@
+Разработка UI (User Interface) для интерфейса BookRepository.
+
+Создайте интерфейс UIAction:
+
+interface UIAction {
+
+    void execute();
+}
