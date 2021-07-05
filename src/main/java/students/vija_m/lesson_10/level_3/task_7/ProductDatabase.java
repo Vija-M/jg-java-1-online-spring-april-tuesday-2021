@@ -5,3 +5,4 @@ public interface ProductDatabase {
 
     Product findByTitle(String productTitle);
 }
+
