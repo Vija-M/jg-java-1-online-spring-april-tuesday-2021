@@ -1,6 +1,6 @@
 package students.vija_m.lesson_10.level_2.task_4;
 
-public class SwitchDayOfTheWeekDetector implements DayOfTheWeekDetector {
+class SwitchDayOfTheWeekDetector implements DayOfTheWeekDetector {
     @Override
     public String detectDayName(int number) {
         return switch (number) {
