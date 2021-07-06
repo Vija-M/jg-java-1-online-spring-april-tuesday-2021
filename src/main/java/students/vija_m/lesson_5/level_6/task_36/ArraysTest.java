@@ -24,8 +24,8 @@ class ArraysTest {
     }
 
     void maxValueTestZeroArray(){
-        int[] array = {0, 0, 2, 0, 0, 0};
-        assertMaxValueTest(array, 0, "Zero value test.");
+
+        assertMaxValueTest(new int[]{0, 0, 2, 0, 0, 1}, 0, "Zero value test.");
     }
 
     void maxValueTestNegativeNumbersArray(){
