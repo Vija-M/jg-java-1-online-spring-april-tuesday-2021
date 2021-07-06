@@ -1,4 +1,4 @@
-package students.dmitrijs_matrenicevs.lesson_10.level_2.task_4;
+package students.dmitrijs_matrenicevs.lesson_10.level_2.task_4_5;
 
 class StringDayOfTheWeekDetector implements DayOfTheWeekDetector {
 
