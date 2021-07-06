@@ -27,7 +27,7 @@ class Arrays {
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) ;
             {
-                array[i] = max;
+                max = array[i];
             }
         }
         return max;
