@@ -8,7 +8,7 @@ class ListDemo {
 
     public static void main(String[] args) {
 
-        List <String> listA = new ArrayList<>();
+        List<String> listA = new ArrayList<>();
 
         listA.add("Hello");
         listA.add("World");
@@ -16,7 +16,7 @@ class ListDemo {
 
         System.out.println("ArrayList: " + listA);
 
-        List <String> listL = new LinkedList<>();
+        List<String> listL = new LinkedList<>();
         listL.add("I");
         listL.add("am");
         listL.add("is");
