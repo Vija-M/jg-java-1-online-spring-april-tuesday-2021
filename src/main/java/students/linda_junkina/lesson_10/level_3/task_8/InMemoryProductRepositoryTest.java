@@ -9,16 +9,15 @@ public class InMemoryProductRepositoryTest {
     public void addNewProduct() {
         InMemoryProductRepository inMemoryProductRepository = new InMemoryProductRepository();
         inMemoryProductRepository.save(new Product("ABC"));
-//        checkTestResult("ABC",
-//                inMemoryProductRepository.findByTitle("ABC"),
-//                "Add a new product");
+        checkTestResult(new Product("ABC"),
+                inMemoryProductRepository.findByTitle("ABC"));
     }
 
-    private void checkTestResult(Product expected, Product actual, String testName) {
-        if (expected == actual) {
-            System.out.println(testName + " = OK!");
+    private void checkTestResult(Product expected, Product actual) {
+        if (expected.equals(actual)) {
+            System.out.println("Add new product" + " = OK!");
         } else {
-            System.out.println(testName + " = FAIL!");
+            System.out.println("Add new product" + " = FAIL!");
         }
     }
 }
