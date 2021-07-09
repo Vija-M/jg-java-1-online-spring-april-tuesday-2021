@@ -8,9 +8,8 @@ class InMemoryProductRepository implements ProductRepository {
 
     @Override
     public void save(Product product) {
-        for (int i = 0; i < container.length; i++) {
-            container = Arrays.copyOf(container, container.length + 1);
-        }
+        container = Arrays.copyOf(container, container.length + 1);
+        container[container.length - 1] = product;
     }
 
     @Override
@@ -21,18 +20,5 @@ class InMemoryProductRepository implements ProductRepository {
             }
         }
         return null;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        InMemoryProductRepository that = (InMemoryProductRepository) o;
-        return Arrays.equals(container, that.container);
-    }
-
-    @Override
-    public int hashCode() {
-        return Arrays.hashCode(container);
     }
 }

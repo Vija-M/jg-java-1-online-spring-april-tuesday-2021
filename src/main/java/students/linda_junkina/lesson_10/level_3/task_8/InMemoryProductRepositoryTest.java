@@ -1,6 +1,6 @@
 package students.linda_junkina.lesson_10.level_3.task_8;
 
-public class InMemoryProductRepositoryTest {
+class InMemoryProductRepositoryTest {
     public static void main(String[] args) {
         InMemoryProductRepositoryTest test = new InMemoryProductRepositoryTest();
         test.addNewProduct();
