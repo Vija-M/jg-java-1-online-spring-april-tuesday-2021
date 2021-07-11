@@ -5,7 +5,7 @@ class StringDayOfTheWeekDetector implements DayOfTheWeekDetector {
     @Override
     public String detectDayName(int number) {
         String[] daysWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-        if (number <= 7 && number != 0) {
+        if (number >= 0 && number <= 7) {
             return daysWeek[number - 1];
         } else {
             return "Please input a valid number between 1 and 7";
