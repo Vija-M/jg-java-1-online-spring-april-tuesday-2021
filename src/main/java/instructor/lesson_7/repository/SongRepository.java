@@ -1,5 +1,7 @@
 package instructor.lesson_7.repository;
 
+import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.UUID;
 
 // CRUD
@@ -26,7 +28,17 @@ class SongRepository {
                 return entity;
             }
         }
-        return null;
+//        return null;
+        throw new NoSuchElementException();
+    }
+
+    Optional<SongEntity> findByIdOpt(UUID uuid) {
+        for (SongEntity entity : songs) {
+            if (entity.getId().equals(uuid)) {
+                return Optional.of(entity);
+            }
+        }
+        return Optional.empty();
     }
 
     UUID save(SongEntity entity) {
