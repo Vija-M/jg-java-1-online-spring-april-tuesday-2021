@@ -73,19 +73,28 @@ class TicTacToe {
     }
 
     public void printFieldToConsole(int[][] field) {
-        System.out.println(Arrays.toString(field[0]));
-        System.out.println(Arrays.toString(field[1]));
-        System.out.println(Arrays.toString(field[2]));
         System.out.println();
-        System.out.println("************");
+        System.out.println("*****");
+        for (int[] ints : field) {
+            for (int j = 0; j < ints.length; j++) {
+                char cell = switch (ints[j]) {
+                    case 0 -> 'O';
+                    case 1 -> 'X';
+                    default -> '-';
+                };
+                System.out.print(cell + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("*****");
         System.out.println();
     }
 
     public void play() {
         int[][] field = createField();
         while (true) {
-            printFieldToConsole(field);
             Move move0 = getNextMove();
+            System.out.println("Ситуация на игровом поле:");
             field[move0.getX()][move0.getY()] = 0;
             printFieldToConsole(field);
             if (isWinPosition(field, 0)) {
@@ -97,9 +106,9 @@ class TicTacToe {
                 break;
             }
 
-            printFieldToConsole(field);
             Move move1 = getNextMove();
             field[move1.getX()][move1.getY()] = 1;
+            System.out.println("Ситуация на игровом поле:");
             printFieldToConsole(field);
             if (isWinPosition(field, 1)) {
                 System.out.println("Player 1 WIN!");
