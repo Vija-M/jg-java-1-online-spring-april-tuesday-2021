@@ -10,8 +10,6 @@ public class ArraysSort {
 
         //ArrayUtils.reverse(array);
         System.out.println(Arrays.toString(array));
-=======
-
     }
 }
 // Метод Arrays.sort() позволяет сортировать элементы массива по возрастанию.
