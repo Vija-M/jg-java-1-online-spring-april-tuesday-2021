@@ -62,14 +62,19 @@ class TicTacToe {
         };
     }
 
-    public Move getNextMove() {
+    public Move getNextMove(int[][] field) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Для игры в Крестики-нолики введите, пожалуйста, координаты клетки куда Вы хотите походить.");
         System.out.println("Координата x (число 0, 1 или 2): ");
-        int x = scanner.nextInt();
+        int x;
+        int y;
+        if (( x >= 0 || x <= 2 || y >= 0 || y >= 2 ) || ( field[x][y] = -1 )) {
+            int x = scanner.nextInt();
+        }
         System.out.println("Координата y (число 0, 1 или 2): ");
         int y = scanner.nextInt();
         return new Move(x, y);
+    }else{}
     }
 
     public void printFieldToConsole(int[][] field) {
