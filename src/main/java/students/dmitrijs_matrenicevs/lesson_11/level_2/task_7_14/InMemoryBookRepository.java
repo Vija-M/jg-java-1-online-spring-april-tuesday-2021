@@ -14,4 +14,9 @@ class InMemoryBookRepository implements BookRepository {
         books.add(book);
         return bookID;
     }
+
+    @Override
+    public boolean delete(Long bookId) {
+        return false;
+    }
 }
