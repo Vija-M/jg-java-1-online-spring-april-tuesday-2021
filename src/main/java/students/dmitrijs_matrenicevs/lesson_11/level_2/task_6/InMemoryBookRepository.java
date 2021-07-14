@@ -1,16 +1,16 @@
 package students.dmitrijs_matrenicevs.lesson_11.level_2.task_6;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
 
-class InMemoryBookRepository {
+class InMemoryBookRepository implements BookRepository {
 
-    public static void main(String[] args) {
+    ArrayList<Book> books = new ArrayList<>();
 
-        Set<String> strings = new HashSet<>();
-        strings.add("Book1");
-        strings.add("Book2");
-        strings.add("Book3");
-        System.out.println(strings);
+    @Override
+    public Long save(Book book) {
+        Long bookID = (long) (books.size() + 1);
+        book.setId(bookID);
+        books.add(book);
+        return bookID;
     }
 }
