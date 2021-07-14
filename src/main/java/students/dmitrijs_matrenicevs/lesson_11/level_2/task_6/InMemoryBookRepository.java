@@ -1,10 +1,11 @@
 package students.dmitrijs_matrenicevs.lesson_11.level_2.task_6;
 
 import java.util.ArrayList;
+import java.util.List;
 
 class InMemoryBookRepository implements BookRepository {
 
-    ArrayList<Book> books = new ArrayList<>();
+    List<Book> books = new ArrayList<>();
 
     @Override
     public Long save(Book book) {
