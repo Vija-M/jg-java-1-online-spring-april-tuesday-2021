@@ -23,8 +23,7 @@ class InMemoryBookRepositoryTest {
         InMemoryBookRepository bookRepository = new InMemoryBookRepository();
         bookRepository.save(new Book("A1", "B1"));
         bookRepository.save(new Book("A2", "B2"));
-
-        assertTestResult(true, bookRepository.delete((long) 2), "Book is successfully removed (by index)");
+        assertTestResult(true, bookRepository.delete(1L), "Book is successfully removed (by index)");
     }
 
     public void testBookNotRemoved() {
@@ -32,7 +31,7 @@ class InMemoryBookRepositoryTest {
         bookRepository.save(new Book("A1", "B1"));
         bookRepository.save(new Book("A2", "B2"));
         bookRepository.delete((long) 2);
-        assertTestResult(false, bookRepository.delete((long) 2), "Book is not found and thus not removed (by index)");
+        assertTestResult(false, bookRepository.delete(2L), "Book is not found and thus not removed (by index)");
     }
 
     public void testBookRemovedByValue() {
@@ -54,7 +53,7 @@ class InMemoryBookRepositoryTest {
         InMemoryBookRepository bookRepository = new InMemoryBookRepository();
         bookRepository.save(new Book("A1", "B1"));
         bookRepository.save(new Book("A2", "B2"));
-        Optional<Book> bookFound = bookRepository.findById((long) 1);
+        Optional<Book> bookFound = bookRepository.findById(1L);
         assertTestResult(true, bookFound.isPresent(), "Book is successfully found (by value)");
     }
 
@@ -62,7 +61,7 @@ class InMemoryBookRepositoryTest {
         InMemoryBookRepository bookRepository = new InMemoryBookRepository();
         bookRepository.save(new Book("A1", "B1"));
         bookRepository.save(new Book("A2", "B2"));
-        Optional<Book> bookFound = bookRepository.findById((long) 3);
+        Optional<Book> bookFound = bookRepository.findById(3L);
         assertTestResult(false, bookFound.isPresent(), "Book is not found (by value)");
     }
 
