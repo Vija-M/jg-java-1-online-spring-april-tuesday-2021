@@ -2,7 +2,15 @@ package students.dmitrijs_matrenicevs.lesson_11.level_1.task_5;
 
 import java.util.Objects;
 
-record Book(String author, String title) {
+class Book {
+
+    private final String title;
+    private final String author;
+
+    Book(String author, String title) {
+        this.author = author;
+        this.title = title;
+    }
 
     public String getTitle() {
         return this.title;
