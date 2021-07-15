@@ -1,6 +1,5 @@
 package students.vija_m.lesson_6.level_6.task_30;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 class TicTacToe {
@@ -39,7 +38,7 @@ class TicTacToe {
     }
 
     public boolean isWinPosition(int[][] field, int playerToCheck) {
-        return ( isWinPositionForHorizontals(field, playerToCheck) || isWinPositionForVerticals(field, playerToCheck) || isWinPositionForDiagonals(field, playerToCheck) );
+        return (isWinPositionForHorizontals(field, playerToCheck) || isWinPositionForVerticals(field, playerToCheck) || isWinPositionForDiagonals(field, playerToCheck) );
     }
 
     public boolean isDrawPosition(int[][] field) {
@@ -47,8 +46,10 @@ class TicTacToe {
             return false;
         }
         for (int i = 0; i < 3; i++) {
-            if (field[i][i] == -1) {
-                return false;
+            for (int j = 0; j < 3; j++) {
+                if (field[i][i] == -1) {
+                    return false;
+                }
             }
         }
         return true;
@@ -64,19 +65,23 @@ class TicTacToe {
 
     public Move getNextMove(int[][] field) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Для игры в Крестики-нолики введите, пожалуйста, координаты клетки куда Вы хотите походить.");
-        System.out.println("Координата x (число 0, 1 или 2): ");
         int x;
         int y;
-        if (x >= 0 || x <= 2 || y >= 0 || y >= 2) {
-            int x = scanner.nextInt();
-        } else {
-            System.out.println("Вводимое число должно быть от нуля до двух");
-
+        System.out.println("Для игры в Крестики-нолики введите, пожалуйста, координаты пустой клетки куда Вы хотите походить.");
+        System.out.println("Координата x (число 0, 1 или 2): ");
+        x = scanner.nextInt();
         System.out.println("Координата y (число 0, 1 или 2): ");
-        int y = scanner.nextInt();
+        y = scanner.nextInt();
+        while (( x < 0 || x > 2 || y < 0 || y > 2 ) || ( field[x][y] != -1 )) {
+            System.out.println();
+            System.out.println("Вы ввели неверные данные!");
+            System.out.println("Пожалуйста,повторно введите координаты пустой клетки куда Вы хотите походить.");
+            System.out.println("Координата x (число 0, 1 или 2): ");
+            x = scanner.nextInt();
+            System.out.println("Координата y (число 0, 1 или 2): ");
+            y = scanner.nextInt();
+        }
         return new Move(x, y);
-    }else{}
     }
 
     public void printFieldToConsole(int[][] field) {
@@ -99,8 +104,9 @@ class TicTacToe {
 
     public void play() {
         int[][] field = createField();
+        printFieldToConsole(field);
         while (true) {
-            Move move0 = getNextMove();
+            Move move0 = getNextMove(field);
             System.out.println("Ситуация на игровом поле:");
             field[move0.getX()][move0.getY()] = 0;
             printFieldToConsole(field);
@@ -113,7 +119,7 @@ class TicTacToe {
                 break;
             }
 
-            Move move1 = getNextMove();
+            Move move1 = getNextMove(field);
             field[move1.getX()][move1.getY()] = 1;
             System.out.println("Ситуация на игровом поле:");
             printFieldToConsole(field);
