@@ -3,7 +3,7 @@ package students.vija_m.lesson_11.level_1.task_3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IntegerListDemo {
+class IntegerListDemo {
     public static void main(String[] args) {
 
         List<Integer> numbers = new ArrayList<>();
