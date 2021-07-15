@@ -38,7 +38,7 @@ class TicTacToe {
     }
 
     public boolean isWinPosition(int[][] field, int playerToCheck) {
-        return (isWinPositionForHorizontals(field, playerToCheck) || isWinPositionForVerticals(field, playerToCheck) || isWinPositionForDiagonals(field, playerToCheck) );
+        return ( isWinPositionForHorizontals(field, playerToCheck) || isWinPositionForVerticals(field, playerToCheck) || isWinPositionForDiagonals(field, playerToCheck) );
     }
 
     public boolean isDrawPosition(int[][] field) {
@@ -140,6 +140,7 @@ class TicTacToe {
         game.play();
     }
 }
+
 
 
 

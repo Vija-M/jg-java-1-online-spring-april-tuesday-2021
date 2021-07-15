@@ -328,7 +328,6 @@ class TicTacToeTest {
             System.out.println(testName + ": FAIL");
         }
     }
-
 }
 
 
