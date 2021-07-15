@@ -45,9 +45,10 @@ class TicTacToe {
         if (isWinPosition(field, 0) || isWinPosition(field, 1)) {
             return false;
         }
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (field[i][i] == -1) {
+                if (field[i][j] == -1) {
                     return false;
                 }
             }
