@@ -6,10 +6,11 @@ import java.util.Optional;
 
 class InMemoryBookRepository implements BookRepository {
     ArrayList<Book> bookDataBase = new ArrayList<>();
+    Long id = 0L;
 
     @Override
     public Long save(Book book) {
-        Long newBookId = (long) (bookDataBase.size() + 1);
+        Long newBookId = id++;
         book.setId(newBookId);
         bookDataBase.add(book);
         return newBookId;
