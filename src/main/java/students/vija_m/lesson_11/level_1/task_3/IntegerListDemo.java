@@ -8,8 +8,11 @@ class IntegerListDemo {
 
         List<Integer> numbers = new ArrayList<>();
         numbers.add(1);
-        numbers.add(2);
         numbers.add(8);
+        numbers.add(2);
+        numbers.add(4);
+        numbers.add(8);
+        numbers.add(4);
         numbers.add(3);
         System.out.println(numbers);
 
@@ -20,10 +23,11 @@ class IntegerListDemo {
         System.out.println("ArrayList numbers size is: " + numbers.size());
 
         numbers.remove(2);
+        numbers.remove(Integer.valueOf(4));
         numbers.remove((Integer) 8);
         System.out.println(numbers);
 
-        System.out.println("Is our array emty? : " + numbers.isEmpty());
+        System.out.println("Is our array empty? : " + numbers.isEmpty());
 
         for (Integer i : numbers) {
             System.out.println(i);
