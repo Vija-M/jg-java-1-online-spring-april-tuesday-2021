@@ -68,9 +68,11 @@ class TicTacToe {
         System.out.println("Координата x (число 0, 1 или 2): ");
         int x;
         int y;
-        if (( x >= 0 || x <= 2 || y >= 0 || y >= 2 ) || ( field[x][y] = -1 )) {
+        if (x >= 0 || x <= 2 || y >= 0 || y >= 2) {
             int x = scanner.nextInt();
-        }
+        } else {
+            System.out.println("Вводимое число должно быть от нуля до двух");
+
         System.out.println("Координата y (число 0, 1 или 2): ");
         int y = scanner.nextInt();
         return new Move(x, y);
