@@ -7,10 +7,13 @@ class Task2 {
 
     public static void main(String[] args) {
 
-        List<String> strings = new ArrayList<>();
+        List<Integer> integers = new ArrayList<>();
 
-        strings.add("JAVA");
-        strings.add("GURU");
-        System.out.println(strings);
+        integers.add(1);
+        integers.add(2);
+        integers.add(3);
+        for (Integer integer : integers) {
+            System.out.println(integers.get(integer - 1));
+        }
     }
 }
