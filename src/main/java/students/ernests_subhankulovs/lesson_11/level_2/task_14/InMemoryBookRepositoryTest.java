@@ -1,4 +1,4 @@
-package students.ernests_subhankulovs.lesson_11.level_2.task_13;
+package students.ernests_subhankulovs.lesson_11.level_2.task_14;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,6 @@ class InMemoryBookRepositoryTest {
         test.testBookNotFoundByTitle();
         test.testBookCount();
         test.testBookRemovedByAuthor();
-        test.testBookNotRemovedByAuthor();
     }
 
     public void testBookRemoved() {
@@ -135,21 +134,6 @@ class InMemoryBookRepositoryTest {
         List<Book> booksShouldBeFound = new ArrayList<>();
         booksShouldBeFound.add(new Book("A1", "B1"));
         assertBookTestResult(booksShouldBeFound, bookRepository.getBookDataBase(), "Book is successfully removed (by author)");
-    }
-
-    public void testBookNotRemovedByAuthor() {
-        InMemoryBookRepository bookRepository = new InMemoryBookRepository();
-        bookRepository.save(new Book("A1", "B1"));
-        bookRepository.save(new Book("A2", "B2"));
-        bookRepository.save(new Book("A2", "B3"));
-        bookRepository.save(new Book("A2", "B4"));
-        bookRepository.deleteByAuthor("A3");
-        List<Book> booksShouldBeFound = new ArrayList<>();
-        booksShouldBeFound.add(new Book("A1", "B1"));
-        booksShouldBeFound.add(new Book("A2", "B2"));
-        booksShouldBeFound.add(new Book("A2", "B3"));
-        booksShouldBeFound.add(new Book("A2", "B4"));
-        assertBookTestResult(booksShouldBeFound, bookRepository.getBookDataBase(), "Book is not removed (by author)");
     }
 
     private void assertTestResult(boolean expectedResult, boolean realResult, String testName) {
