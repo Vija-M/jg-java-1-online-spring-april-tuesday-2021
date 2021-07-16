@@ -3,8 +3,8 @@ package students.vija_m.lesson_11.level_1.task_4;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DuplicatesAllowed {
-    static void main(String[] args) {
+class DuplicatesAllowed {
+    public static void main(String[] args) {
 
         List<Integer> numbers = new ArrayList<>();
         numbers.add(1);
