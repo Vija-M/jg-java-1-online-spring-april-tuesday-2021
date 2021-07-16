@@ -119,7 +119,8 @@ class InMemoryBookRepositoryTest {
         int bookCount = bookRepository.count();
         assertNumericTestResult(3, bookCount, "Books counted correctly");
         bookRepository.delete(2L);
-        assertNumericTestResult(3, bookCount, "Books counted correctly (after removal)");
+        bookCount = bookRepository.count();
+        assertNumericTestResult(2, bookCount, "Books counted correctly (after removal)");
     }
 
     private void assertTestResult(boolean expectedResult, boolean realResult, String testName) {
