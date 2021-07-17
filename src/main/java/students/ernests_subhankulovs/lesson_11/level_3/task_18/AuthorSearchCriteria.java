@@ -1,4 +1,4 @@
-package students.ernests_subhankulovs.lesson_11.level_3;
+package students.ernests_subhankulovs.lesson_11.level_3.task_18;
 
 class AuthorSearchCriteria implements SearchCriteria {
     private String authorToSearch;
