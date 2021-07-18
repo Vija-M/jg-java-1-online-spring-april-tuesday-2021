@@ -2,7 +2,7 @@ package students.dmitriy_shukailo.lesson_11.level_2.task_7;
 
 import java.util.Objects;
 
-public class InMemoryBookRepositoryTest {
+class InMemoryBookRepositoryTest {
 
     public static void main(String[] args) {
 
