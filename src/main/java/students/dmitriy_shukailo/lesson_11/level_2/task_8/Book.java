@@ -34,7 +34,7 @@ class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return id.equals(book.id) && title.equals(book.title) && author.equals(book.author);
+        return title.equals(book.title) && author.equals(book.author);
     }
 
     @Override
