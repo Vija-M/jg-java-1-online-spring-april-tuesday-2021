@@ -1,6 +1,7 @@
-package students.ernests_subhankulovs.lesson_11.level_4.task_23;
+package students.ernests_subhankulovs.lesson_11.level_5.task_28;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
@@ -16,4 +17,8 @@ interface BookRepository {
     void deleteByTitle(String title);
     List<Book> find(SearchCriteria searchCriteria);
     Set<String> findUniqueAuthors();
+    Set<String> findUniqueTitles();
+    Set<Book> findUniqueBooks();
+    boolean contains(Book book);
+    Map<String, List<Book>> getAuthorToBooksMap();
 }
