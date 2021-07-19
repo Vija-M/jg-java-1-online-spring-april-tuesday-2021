@@ -13,6 +13,7 @@ class InMemoryBookRepositoryTest {
     }
 
     void removeBook() {
+
         InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("A1", "B1"));
         inMemoryBookRepository.save(new Book("A2", "B2"));
