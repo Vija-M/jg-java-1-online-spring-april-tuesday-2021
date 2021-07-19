@@ -14,8 +14,8 @@ class FindByAuthorUIAction {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter book author:");
         String author = scanner.nextLine();
-        List<Book> booksFoundBYAuthor = repository.findByAuthor(author);
-        for (Book book : booksFoundBYAuthor) {
+        List<Book> booksFoundByAuthor = repository.findByAuthor(author);
+        for (Book book : booksFoundByAuthor) {
             System.out.println("Author: " + book.getAuthor() + " Title:" + book.getTitle());
         }
     }
