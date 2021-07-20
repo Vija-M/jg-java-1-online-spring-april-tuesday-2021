@@ -17,6 +17,12 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public boolean delete(Long bookId) {
+        for (Book book : books) {
+            if (book.getId().equals(bookId)) {
+                books.remove(book);
+                return true;
+            }
+        }
         return false;
     }
 }
