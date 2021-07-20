@@ -1,9 +1,9 @@
 package instructor.lesson_10.dependencyinjection;
 
-class DailyAdviceGeneratorTest {
+class DailyAdviceGeneratorOldTest {
 
     public static void main(String[] args) {
-        DailyAdviceGeneratorTest testRunner = new DailyAdviceGeneratorTest();
+        DailyAdviceGeneratorOldTest testRunner = new DailyAdviceGeneratorOldTest();
         testRunner.should_return_advice_by_john_doe();
         testRunner.should_return_advice_by_bob_marley();
     }
