@@ -40,11 +40,22 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public Optional<Book> findById(Long bookId) {
-        for (Book books : books){
-            if (books.getId().equals(bookId)){
+        for (Book books : books) {
+            if (books.getId().equals(bookId)) {
                 return Optional.of(books);
             }
         }
         return Optional.empty();
+    }
+
+    @Override
+    public List<Book> findByAuthor(String author) {
+        ArrayList<Book> arrayList = new ArrayList<>();
+        for (Book books : books) {
+            if (books.getAuthor().equals(author)) {
+                arrayList.add(books);
+            }
+        }
+        return arrayList;
     }
 }
