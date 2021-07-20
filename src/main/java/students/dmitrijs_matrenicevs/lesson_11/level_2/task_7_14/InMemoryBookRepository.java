@@ -2,6 +2,7 @@ package students.dmitrijs_matrenicevs.lesson_11.level_2.task_7_14;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 class InMemoryBookRepository implements BookRepository {
 
@@ -35,5 +36,15 @@ class InMemoryBookRepository implements BookRepository {
             }
         }
         return false;
+    }
+
+    @Override
+    public Optional<Book> findById(Long bookId) {
+        for (Book books : books){
+            if (books.getId().equals(bookId)){
+                return Optional.of(books);
+            }
+        }
+        return Optional.empty();
     }
 }
