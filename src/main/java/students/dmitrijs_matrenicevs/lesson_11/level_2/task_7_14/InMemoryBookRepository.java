@@ -88,4 +88,9 @@ class InMemoryBookRepository implements BookRepository {
         }
         books = deleteByAuthor;
     }
+
+    @Override
+    public void deleteByTitle(String title) {
+
+    }
 }

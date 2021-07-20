@@ -13,4 +13,5 @@ interface BookRepository {
     List<Book> findByTitle(String title);
     int count();
     void deleteByAuthor(String author);
+    void deleteByTitle(String title);
 }
