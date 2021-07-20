@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 class InMemoryBookRepository implements BookRepository {
 
-    ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Book> books = new ArrayList<>();
+    private Long id = 0L;
 
     @Override
     public Long save(Book book) {
-        Long newBookId = (long) (books.size() + 1);
-        book.setId(newBookId);
+        book.setId(id++);
         books.add(book);
-        return newBookId;
+        return id;
     }
 
 }
