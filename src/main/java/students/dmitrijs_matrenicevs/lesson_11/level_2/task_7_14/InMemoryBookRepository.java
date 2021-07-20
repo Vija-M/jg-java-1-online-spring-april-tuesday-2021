@@ -8,9 +8,10 @@ class InMemoryBookRepository implements BookRepository {
 
     List<Book> books = new ArrayList<>();
 
-    public ArrayList<Book> getBooks(){
+    public ArrayList<Book> getBooks() {
         return (ArrayList<Book>) books;
     }
+
     @Override
     public Long save(Book book) {
         Long bookID = (long) (books.size() + 1);
@@ -82,7 +83,7 @@ class InMemoryBookRepository implements BookRepository {
     public void deleteByAuthor(String author) {
         ArrayList<Book> deleteByAuthor = new ArrayList<>();
         for (Book book : books) {
-            if(!book.getAuthor().equals(author)){
+            if (!book.getAuthor().equals(author)) {
                 deleteByAuthor.add(book);
             }
         }
