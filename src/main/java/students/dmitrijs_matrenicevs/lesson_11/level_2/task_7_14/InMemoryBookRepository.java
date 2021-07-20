@@ -25,4 +25,15 @@ class InMemoryBookRepository implements BookRepository {
         }
         return false;
     }
+
+    @Override
+    public boolean delete(Book book) {
+        for (Book books : books) {
+            if (books.getAuthor().equals(book.getAuthor()) && books.getTitle().equals(book.getTitle())) {
+                books.remove(book);
+                return true;
+            }
+        }
+        return false;
+    }
 }

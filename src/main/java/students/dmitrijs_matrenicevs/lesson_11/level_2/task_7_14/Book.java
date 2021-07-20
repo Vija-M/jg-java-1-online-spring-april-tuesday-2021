@@ -41,4 +41,7 @@ class Book {
     public int hashCode() {
         return Objects.hash(id, title, author);
     }
+
+    public void remove(Book book) {
+    }
 }
