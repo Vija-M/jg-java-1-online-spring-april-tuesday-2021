@@ -91,6 +91,12 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public void deleteByTitle(String title) {
-
+        ArrayList<Book> deleteByTitle = new ArrayList<>();
+        for (Book book : books) {
+            if (!book.getTitle().equals(title)) {
+                deleteByTitle.add(book);
+            }
+        }
+        books = deleteByTitle;
     }
 }

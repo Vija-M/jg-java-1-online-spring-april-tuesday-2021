@@ -158,6 +158,8 @@ class BookRepositoryTest {
         assertResultBookTest(deleteAuthor,inMemoryBookRepository.getBooks(), "Книги не были удалены автором!");
     }
 
+    //TASK14
+
     private void assertResultTest(boolean actualResult, boolean expectedResult, String name) {
         if (actualResult == expectedResult) {
             System.out.println(name + " = TEST TRUE");
