@@ -8,24 +8,23 @@ class InMemoryBookRepositoryTest {
 
         InMemoryBookRepositoryTest test = new InMemoryBookRepositoryTest();
 
-        test.removeBook();
-        test.notRemoveBook();
+        test.shouldDeleteBooksById();
     }
 
-    void removeBook() {
+    public void shouldDeleteBooksById() {
 
-        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
-        inMemoryBookRepository.save(new Book("A1", "B1"));
-        inMemoryBookRepository.save(new Book("A2", "B2"));
-        checkTest(true, inMemoryBookRepository.delete(new Book("A2", "B2")), "The book has been founded and deleted");
-    }
+        var subject = new InMemoryBookRepository();
+        subject.save(new Book("A1", "B1"));
+        subject.save(new Book("A2", "B2"));
+        subject.save(new Book("A3", "B3"));
 
-    void notRemoveBook() {
+        checkTest(true, subject.delete(0L), "shouldDeleteBooksById (#0)");
+        checkTest(true, subject.delete(1L), "shouldDeleteBooksById (#1)");
+        checkTest(true, subject.delete(2L), "shouldDeleteBooksById (#2)");
 
-        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
-        inMemoryBookRepository.save(new Book("A1", "B1"));
-        inMemoryBookRepository.save(new Book("A2", "B2"));
-        checkTest(false, inMemoryBookRepository.delete(new Book("A3", "B3")), "The book has not been founded and deleted");
+        checkTest(false, subject.delete(0L), "shouldDeleteBooksById (#3)");
+        checkTest(false, subject.delete(1L), "shouldDeleteBooksById (#4)");
+        checkTest(false, subject.delete(2L), "shouldDeleteBooksById (#5)");
     }
 
     private void checkTest(boolean expected, boolean actual, String test) {
