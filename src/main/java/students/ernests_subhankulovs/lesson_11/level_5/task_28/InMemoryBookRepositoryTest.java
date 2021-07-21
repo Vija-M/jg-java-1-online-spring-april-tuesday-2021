@@ -1,4 +1,4 @@
-package students.ernests_subhankulovs.lesson_11.level_4.task_23;
+package students.ernests_subhankulovs.lesson_11.level_5.task_28;
 
 import java.util.*;
 
@@ -25,6 +25,11 @@ class InMemoryBookRepositoryTest {
         test.testBookNotRemovedByTitle();
         test.testFind();
         test.testFindUniqueAuthors();
+        test.testFindUniqueTitles();
+        test.testFindUniqueBooks();
+        test.testContains();
+        test.testContainsNot();
+        test.testGetAuthorToBooksMap();
     }
 
     public void testBookRemoved() {
@@ -223,5 +228,74 @@ class InMemoryBookRepositoryTest {
         uniqueAuthorsToBeFound.add("A1");
         uniqueAuthorsToBeFound.add("A2");
         assertions.assertSetTestResult(uniqueAuthorsToBeFound, uniqueAuthors, "Unique authors found correctly");
+    }
+
+    public void testFindUniqueTitles() {
+        InMemoryBookRepository bookRepository = new InMemoryBookRepository();
+        bookRepository.save(new Book("A1", "B1"));
+        bookRepository.save(new Book("A2", "B2"));
+        bookRepository.save(new Book("A3", "B2"));
+        bookRepository.save(new Book("A4", "B3"));
+        Set<String> uniqueTitles = bookRepository.findUniqueTitles();
+        Set<String> uniqueTitlesToBeFound = new HashSet<>();
+        uniqueTitlesToBeFound.add("B1");
+        uniqueTitlesToBeFound.add("B2");
+        uniqueTitlesToBeFound.add("B3");
+        assertions.assertSetTestResult( uniqueTitlesToBeFound, uniqueTitles, "Unique titles found correctly");
+    }
+
+    public void testFindUniqueBooks() {
+        InMemoryBookRepository bookRepository = new InMemoryBookRepository();
+        bookRepository.save(new Book("A1", "B1"));
+        bookRepository.save(new Book("A2", "B2"));
+        bookRepository.save(new Book("A3", "B2"));
+        bookRepository.save(new Book("A4", "B3"));
+        bookRepository.save(new Book("A4", "B3"));
+        Set<Book> uniqueBooks = bookRepository.findUniqueBooks();
+        Set<Book> uniqueBooksToBeFound = new HashSet<>();
+        uniqueBooksToBeFound.add(new Book("A1", "B1"));
+        uniqueBooksToBeFound.add(new Book("A2", "B2"));
+        uniqueBooksToBeFound.add(new Book("A3", "B2"));
+        uniqueBooksToBeFound.add(new Book("A4", "B3"));
+        assertions.assertBookSetTestResult(uniqueBooksToBeFound, uniqueBooks, "Unique books found correctly");
+    }
+
+    public void testContains() {
+        InMemoryBookRepository bookRepository = new InMemoryBookRepository();
+        bookRepository.save(new Book("A1", "B1"));
+        bookRepository.save(new Book("A2", "B2"));
+        bookRepository.save(new Book("A3", "B3"));
+        Book bookToBeFound = new Book("A1", "B1");
+        assertions.assertTestResult(true, bookRepository.contains(bookToBeFound), "Book is found");
+    }
+
+    public void testContainsNot() {
+        InMemoryBookRepository bookRepository = new InMemoryBookRepository();
+        bookRepository.save(new Book("A1", "B1"));
+        bookRepository.save(new Book("A2", "B2"));
+        bookRepository.save(new Book("A3", "B3"));
+        Book bookToBeFound = new Book("A4", "B4");
+        assertions.assertTestResult(false, bookRepository.contains(bookToBeFound), "Book is not found");
+    }
+
+    public void testGetAuthorToBooksMap() {
+        InMemoryBookRepository bookRepository = new InMemoryBookRepository();
+        bookRepository.save(new Book("A1", "B1"));
+        bookRepository.save(new Book("A1", "B2"));
+        bookRepository.save(new Book("A2", "B2"));
+        bookRepository.save(new Book("A2", "B3"));
+        bookRepository.save(new Book("A2", "B4"));
+        Map<String, List<Book>> authorToBooksRealMap = bookRepository.getAuthorToBooksMap();
+        Map<String, List<Book>> authorToBooksExpectedMap = new HashMap<>();
+        ArrayList<Book> booksFoundByFirstAuthor = new ArrayList<>();
+        booksFoundByFirstAuthor.add(new Book("A1", "B1"));
+        booksFoundByFirstAuthor.add(new Book("A1", "B2"));
+        ArrayList<Book> booksFoundBySecondAuthor = new ArrayList<>();
+        booksFoundBySecondAuthor.add(new Book("A2", "B2"));
+        booksFoundBySecondAuthor.add(new Book("A2", "B3"));
+        booksFoundBySecondAuthor.add(new Book("A2", "B4"));
+        authorToBooksExpectedMap.put("A1", booksFoundByFirstAuthor);
+        authorToBooksExpectedMap.put("A2", booksFoundBySecondAuthor);
+        assertions.assertMapTestResult(authorToBooksRealMap, authorToBooksRealMap, "Books are correctly mapped to author");
     }
 }

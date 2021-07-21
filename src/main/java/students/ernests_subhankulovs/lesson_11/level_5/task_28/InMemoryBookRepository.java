@@ -1,4 +1,4 @@
-package students.ernests_subhankulovs.lesson_11.level_4.task_23;
+package students.ernests_subhankulovs.lesson_11.level_5.task_28;
 
 import java.util.*;
 
@@ -117,5 +117,43 @@ class InMemoryBookRepository implements BookRepository {
             uniqueAuthors.add(book.getAuthor());
         }
         return uniqueAuthors;
+    }
+
+    @Override
+    public Set<String> findUniqueTitles() {
+        Set<String> uniqueTitles = new HashSet<>();
+        for (Book book : bookDataBase) {
+            uniqueTitles.add(book.getTitle());
+        }
+        return uniqueTitles;
+    }
+
+    @Override
+    public Set<Book> findUniqueBooks() {
+        Set<Book> uniqueBooks = new HashSet<>();
+        for (Book book : bookDataBase) {
+            Book tempBook = new Book(book.getAuthor(), book.getTitle());
+            uniqueBooks.add(tempBook);
+        }
+        return uniqueBooks;
+    }
+
+    @Override
+    public boolean contains(Book book) {
+        for (Book savedBook : bookDataBase) {
+            if (savedBook.getAuthor().equals(book.getAuthor()) && savedBook.getTitle().equals(book.getTitle())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public Map<String, List<Book>> getAuthorToBooksMap() {
+        Map<String, List<Book>> authorToBooksMap = new HashMap<>();
+        for (Book book : bookDataBase) {
+            authorToBooksMap.put(book.getAuthor(), findByAuthor(book.getAuthor()));
+        }
+        return authorToBooksMap;
     }
 }

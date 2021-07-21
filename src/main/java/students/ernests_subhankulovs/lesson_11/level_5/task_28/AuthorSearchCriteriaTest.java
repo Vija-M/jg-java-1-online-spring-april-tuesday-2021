@@ -1,4 +1,4 @@
-package students.ernests_subhankulovs.lesson_11.level_4.task_23;
+package students.ernests_subhankulovs.lesson_11.level_5.task_28;
 
 class AuthorSearchCriteriaTest {
     Assertions assertions = new Assertions();
