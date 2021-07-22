@@ -1,31 +1,55 @@
 package students.dmitriy_shukailo.lesson_11.level_2.task_8;
 
-import static students.dmitriy_shukailo.lesson_11.level_2.task_8.Assertions.assertFalse;
-import static students.dmitriy_shukailo.lesson_11.level_2.task_8.Assertions.assertTrue;
-
 class InMemoryBookRepositoryTest {
+
+    Book book1 = new Book("A1", "B1");
+    Book book2 = new Book("A2", "B2");
+    Book book3 = new Book("A3", "B3");
 
     public static void main(String[] args) {
 
         InMemoryBookRepositoryTest test = new InMemoryBookRepositoryTest();
 
         test.shouldDeleteBooksById();
+        test.shouldDeleteBooks();
     }
 
     public void shouldDeleteBooksById() {
 
         var subject = new InMemoryBookRepository();
-        subject.save(new Book("A1", "B1"));
-        subject.save(new Book("A2", "B2"));
-        subject.save(new Book("A3", "B3"));
 
-        assertTrue(subject.delete(0L), "shouldDeleteBooksById (#0)");
-        assertTrue(subject.delete(1L), "shouldDeleteBooksById (#1)");
-        assertTrue(subject.delete(2L), "shouldDeleteBooksById (#2)");
+        subject.save(book1);
+        Assertions.assertTrue(subject.delete(0L), "shouldDeleteBooksById (#0)");
+        subject.save(book2);
+        Assertions.assertTrue(subject.delete(1L), "shouldDeleteBooksById (#1)");
+        subject.save(book3);
+        Assertions.assertTrue(subject.delete(2L), "shouldDeleteBooksById (#2)");
 
-        assertFalse(subject.delete(0L), "shouldDeleteBooksById (#3)");
-        assertFalse(subject.delete(1L), "shouldDeleteBooksById (#4)");
-        assertFalse(subject.delete(2L), "shouldDeleteBooksById (#5)");
+        Assertions.assertFalse(subject.delete(0L), "shouldDeleteBooksById (#3)");
+        Assertions.assertFalse(subject.delete(1L), "shouldDeleteBooksById (#4)");
+        Assertions.assertFalse(subject.delete(2L), "shouldDeleteBooksById (#5)");
+        System.out.println();
+    }
+
+    public void shouldDeleteBooks() {
+
+        var subject = new InMemoryBookRepository();
+
+        subject.save(book1);
+        book1.setId(0L);
+        Assertions.assertTrue(subject.delete(book1), "shouldDeleteBooks (#0)");
+        subject.save(book2);
+        book2.setId(1L);
+        Assertions.assertTrue(subject.delete(book2), "shouldDeleteBooks (#1)");
+        subject.save(book3);
+        book3.setId(2L);
+        Assertions.assertTrue(subject.delete(book3), "shouldDeleteBooks (#2)");
+
+        Assertions.assertFalse(subject.delete(book1), "shouldDeleteBooks (#3)");
+        Assertions.assertFalse(subject.delete(book2), "shouldDeleteBooks (#4)");
+        Assertions.assertFalse(subject.delete(book3), "shouldDeleteBooks (#5)");
+
+        System.out.println();
     }
 
 }
