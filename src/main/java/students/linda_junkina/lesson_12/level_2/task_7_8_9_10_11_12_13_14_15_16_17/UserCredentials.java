@@ -12,4 +12,9 @@ class UserCredentials {
     public List<Role> getRoles() {
         return roles;
     }
+
+    // Task15
+    public boolean roleProvided(Role role) {
+        return roles.contains(role);
+    }
 }

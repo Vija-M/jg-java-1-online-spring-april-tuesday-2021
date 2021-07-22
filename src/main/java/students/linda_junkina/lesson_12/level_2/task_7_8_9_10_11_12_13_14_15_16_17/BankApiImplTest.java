@@ -2,6 +2,7 @@ package students.linda_junkina.lesson_12.level_2.task_7_8_9_10_11_12_13_14_15_16
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 class BankApiImplTest {
     public static void main(String[] args) {
@@ -10,7 +11,7 @@ class BankApiImplTest {
         test.shouldThrowExceptionWhenCredentialsNotHaveAppropriateRole();
     }
 
-    public void findByUid(){
+    public void findByUid() {
         BankClient client1 = new BankClient("1", "John Doe");
         BankClient client2 = new BankClient("2", "Sarah Doe");
 
@@ -18,8 +19,19 @@ class BankApiImplTest {
         clients.add(client1);
         clients.add(client2);
 
+        List<Role> roles = new ArrayList<>();
+        UserCredentials credentials = new UserCredentials(roles);
+        roles.add(Role.CAN_SEARCH_CLIENTS);
+
         BankApi api = new BankApiImpl(clients);
-//        checkTestResult("John Doe", api.findByUid(credentials, "1"));
+
+        try {
+            Optional<BankClient> client = api.findByUid(credentials, "1");
+            checkTestResult(client1, client);
+
+        } catch (AccessDeniedException e) {
+            System.out.println("TEST FAILED - exception thrown");
+        }
     }
 
     public void shouldThrowExceptionWhenCredentialsNotHaveAppropriateRole() {
@@ -30,21 +42,18 @@ class BankApiImplTest {
         UserCredentials credentials = new UserCredentials(roles);
 
         try {
-            api.findByUid(credentials, "1234");
-            System.out.println("TEST FAIL"); // потому что если мы дошли до этой строки,
-            // значит что метод findByUid() не кинул ошибку, а он был должен сделать это
-            // так как в credentials нет нужной роли
-        } catch(AccessDeniedException e) {
-            System.out.println("TEST OK");
+            api.findByUid(credentials, "2");
+            System.out.println("TEST FAILED - access provided");
+        } catch (AccessDeniedException e) {
+            System.out.println("TEST OK - exception thrown");
         }
     }
 
-    private void checkTestResult(BankClient expected,  BankClient actual) {
+    private void checkTestResult(BankClient expected, Optional<BankClient> actual) {
         if (expected.equals(actual)) {
-            System.out.println("Find bank client - OK!");
+            System.out.println("TEST OK - client found");
         } else {
-            System.out.println("Find bank client - FAIL!");
+            System.out.println("TEST FAILED - client not found");
         }
     }
-
 }
