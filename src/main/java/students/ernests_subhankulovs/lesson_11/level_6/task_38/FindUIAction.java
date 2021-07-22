@@ -106,6 +106,4 @@ class FindUIAction implements UIAction {
             }
         }
     }
-
-
 }

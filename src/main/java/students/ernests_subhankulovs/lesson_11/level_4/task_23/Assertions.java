@@ -1,5 +1,6 @@
 package students.ernests_subhankulovs.lesson_11.level_4.task_23;
 
+
 import java.util.List;
 import java.util.Set;
 
@@ -24,7 +25,7 @@ class Assertions {
         }
     }
 
-    public void assertBookTestResult(List<Book> expectedResult, List<Book> realResult, String testName) {
+    public void assertSetTestResult(Set<String> expectedResult, Set<String> realResult, String testName) {
         if (expectedResult.equals(realResult)) {
             System.out.println(testName + " = OK");
         }
@@ -34,7 +35,7 @@ class Assertions {
         }
     }
 
-    public void assertSetTestResult(Set<String> expectedResult, Set<String> realResult, String testName) {
+    public void assertBookTestResult(List<Book> expectedResult, List<Book> realResult, String testName) {
         if (expectedResult.equals(realResult)) {
             System.out.println(testName + " = OK");
         }
