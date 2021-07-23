@@ -20,7 +20,13 @@ class BookLibrary {
         menuNumberToActionMap.put(7, new CountUIAction(bookDatabase));
         menuNumberToActionMap.put(8, new DeleteByAuthorUIAction(bookDatabase));
         menuNumberToActionMap.put(9, new DeleteByTitleUIAction(bookDatabase));
-
+        menuNumberToActionMap.put(10, new FindUIAction(bookDatabase));
+        menuNumberToActionMap.put(11, new FindUniqueAuthorsUIActions(bookDatabase));
+        menuNumberToActionMap.put(12, new FindUniqueTitlesUIAction(bookDatabase));
+        menuNumberToActionMap.put(13, new FindUniqueBooksUIAction(bookDatabase));
+        menuNumberToActionMap.put(14, new ContainsUIAction(bookDatabase));
+        menuNumberToActionMap.put(15, new GetAuthorToBooksMapUIAction(bookDatabase));
+        menuNumberToActionMap.put(16, new GetEachAuthorBookCountUIAction(bookDatabase));
     }
 
     public void run() {
@@ -36,6 +42,13 @@ class BookLibrary {
             System.out.println("7) Count books in the repository");
             System.out.println("8) Delete book by author");
             System.out.println("9) Delete book by title");
+            System.out.println("10) Find book by complex criteria");
+            System.out.println("11) Find unique authors");
+            System.out.println("12) Find unique titles");
+            System.out.println("13) Find unique books");
+            System.out.println("14) Check if the library contains a book");
+            System.out.println("15) Show all books by author");
+            System.out.println("16) Count all books by author");
             System.out.println("0) Exit program");
             System.out.println("Please enter menu number: ");
             System.out.println();

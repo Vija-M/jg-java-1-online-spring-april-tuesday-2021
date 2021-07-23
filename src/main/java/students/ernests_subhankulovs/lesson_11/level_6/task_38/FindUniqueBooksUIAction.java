@@ -1,21 +1,18 @@
 package students.ernests_subhankulovs.lesson_11.level_6.task_38;
 
-import java.util.List;
-import java.util.Scanner;
+import java.util.Set;
 
-class FindByTitleUIAction implements UIAction {
+class FindUniqueBooksUIAction implements UIAction {
     private BookRepository repository;
 
-    public FindByTitleUIAction(BookRepository repository) {
+    public FindUniqueBooksUIAction(BookRepository repository) {
         this.repository = repository;
     }
 
     public void execute() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter book title:");
-        String title = scanner.nextLine();
-        List<Book> booksFoundByTitle = repository.findByTitle(title);
-        for (Book book : booksFoundByTitle) {
+        System.out.println("Found books:");
+        Set<Book> uniqueBooks = repository.findUniqueBooks();
+        for (Book book : uniqueBooks) {
             if (book.getYearOfIssue().matches("\\d{4}")) {
                 System.out.println("Author: " + book.getAuthor() + " Title: " + book.getTitle() + " Year: " + book.getYearOfIssue());
             }
