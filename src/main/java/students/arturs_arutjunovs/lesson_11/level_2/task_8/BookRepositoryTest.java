@@ -5,8 +5,7 @@ class BookRepositoryTest {
         BookRepositoryTest test = new BookRepositoryTest();
         test.bookRemovedTestById();
         test.bookNotRemovedTestById();
-        test.bookRemovedTestByParam();
-        test.bookNotRemovedTestByParam();
+        test.shouldDeleteBooks();
     }
 
     public void bookRemovedTestById() {
@@ -14,7 +13,7 @@ class BookRepositoryTest {
         bookRep.save(new Book("AUTHOR1", "TITLE1"));
         bookRep.save(new Book("AUTHOR2", "TITLE2"));
         bookRep.save(new Book("AUTHOR3", "TITLE3"));
-        assertTestResult(bookRep.delete((long) 3), true, "Book was found and removed");
+        assertTestResult(bookRep.delete(3L), true, "Book was found and removed (by id)");
 
     }
 
@@ -23,27 +22,47 @@ class BookRepositoryTest {
         bookRep.save(new Book("AUTHOR1", "TITLE1"));
         bookRep.save(new Book("AUTHOR2", "TITLE2"));
         bookRep.save(new Book("AUTHOR3", "TITLE3"));
-        bookRep.delete((long) 2);
-        assertTestResult(bookRep.delete((long) 2), false, "Book was`t found and not removed");
+        bookRep.delete( 2L);
+        assertTestResult(bookRep.delete(2L), false, "Book was`t found and not removed (by id)");
     }
 
-    public void bookRemovedTestByParam() {
-        InMemoryBookRepository bookRep = new InMemoryBookRepository();
-        bookRep.save(new Book("AUTHOR1", "TITLE1"));
-        bookRep.save(new Book("AUTHOR2", "TITLE2"));
-        bookRep.save(new Book("AUTHOR3", "TITLE3"));
-        assertTestResult(bookRep.delete(new Book("AUTHOR1", "TITLE1")), true, "Book was found and removed");
+    public void shouldDeleteBooks() {
+        var subject = new InMemoryBookRepository();
+        subject.save(new Book("AUTHOR1", "TITLE1"));
+        subject.save(new Book("AUTHOR2", "TITLE2"));
+        subject.save(new Book("AUTHOR3", "TITLE3"));
 
+        var b0 = new Book("AUTHOR1", "TITLE1");
+        b0.setId(1L);
+        var b1 = new Book("AUTHOR2", "TITLE2");
+        b1.setId(2L);
+        var b2 = new Book("AUTHOR3", "TITLE3");
+        b2.setId(3L);
+        var b3 = new Book("AUTHOR1", "TITLE1");
+        assertTrue(subject.delete(b0), "shouldDeleteBooks (#0)");
+        assertTrue(subject.delete(b1), "shouldDeleteBooks (#1)");
+        assertTrue(subject.delete(b2), "shouldDeleteBooks (#2)");
+
+        assertFalse(subject.delete(b0), "shouldDeleteBooks (#3)");
+        assertFalse(subject.delete(b1), "shouldDeleteBooks (#4)");
+        assertFalse(subject.delete(b2), "shouldDeleteBooks (#5)");
+
+        assertFalse(subject.delete(b3), "shouldDeleteBooks (#6)");
     }
 
-    public void bookNotRemovedTestByParam() {
-        InMemoryBookRepository bookRep = new InMemoryBookRepository();
-        bookRep.save(new Book("AUTHOR1", "TITLE1"));
-        bookRep.save(new Book("AUTHOR2", "TITLE2"));
-        bookRep.save(new Book("AUTHOR3", "TITLE3"));
-        bookRep.delete(new Book("AUTHOR1", "TITLE1"));
-        assertTestResult(bookRep.delete(new Book("AUTHOR1", "TITLE1")), false, "Book was`t found and not removed");
-
+    private void assertTrue(boolean actualResult,String testName) {
+        if (actualResult) {
+            System.out.println("[TEST OK]: " + testName);
+        } else {
+            System.out.println("[TEST FAIL]: " + testName);
+        }
+    }
+    private void assertFalse(boolean actualResult,String testName) {
+        if (!actualResult) {
+            System.out.println("[TEST OK]: " + testName);
+        } else {
+            System.out.println("[TEST FAIL]: " + testName);
+        }
     }
 
     private void assertTestResult(boolean actualResult, boolean expectedResult, String testName) {
