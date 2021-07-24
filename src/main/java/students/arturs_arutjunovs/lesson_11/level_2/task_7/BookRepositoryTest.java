@@ -12,7 +12,7 @@ class BookRepositoryTest {
         bookRep.save(new Book("AUTHOR1", "TITLE1"));
         bookRep.save(new Book("AUTHOR2", "TITLE2"));
         bookRep.save(new Book("AUTHOR3", "TITLE3"));
-        assertTestResult(bookRep.delete((long) 3), true, "Book was found and removed");
+        assertTestResult(bookRep.delete(3L), true, "Book was found and removed (by id");
 
     }
 
@@ -21,9 +21,8 @@ class BookRepositoryTest {
         bookRep.save(new Book("AUTHOR1", "TITLE1"));
         bookRep.save(new Book("AUTHOR2", "TITLE2"));
         bookRep.save(new Book("AUTHOR3", "TITLE3"));
-        bookRep.delete((long) 2);
-       // System.out.println(bookRep.bookList.size());
-        assertTestResult(bookRep.delete((long) 2), false, "Book was`t found and not removed");
+        bookRep.delete(2L);
+        assertTestResult(bookRep.delete(2L), false, "Book was`t found and not removed (by id");
     }
 
     private void assertTestResult(boolean actualResult, boolean expectedResult, String testName) {
