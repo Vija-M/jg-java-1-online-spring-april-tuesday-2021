@@ -5,36 +5,24 @@ import java.util.List;
 import java.util.Optional;
 
 class InMemoryBookRepository implements BookRepository {
-    ArrayList<Book> bookList = new ArrayList<>();
+    private ArrayList<Book> bookList = new ArrayList<>();
+    private Long newId = 1L;
 
     @Override
     public Long save(Book book) {
-        Long newId = (long) (bookList.size() + 1);
         bookList.add(book);
-        book.setId(newId);
+        book.setId(newId++);
         return newId;
     }
 
     @Override
     public boolean delete(Long bookId) {
-        for (Book book : bookList) {
-            if (book.getId().equals(bookId)) {
-                bookList.remove(book);
-                return true;
-            }
-        }
-        return false;
+        return bookList.removeIf(book -> book.getId().equals(bookId));
     }
 
     @Override
     public boolean delete(Book book) {
-        for (Book books : bookList) {
-            if (books.getAuthor().equals(book.getAuthor()) && (books.getTitle().equals(book.getTitle()))) {
-                bookList.remove(book);
-                return true;
-            }
-        }
-        return false;
+        return book.getId() != null && bookList.remove(book);
     }
 
     @Override
@@ -46,6 +34,7 @@ class InMemoryBookRepository implements BookRepository {
         }
         return Optional.empty();
     }
+
 
     @Override
     public List<Book> findByAuthor(String author) {
