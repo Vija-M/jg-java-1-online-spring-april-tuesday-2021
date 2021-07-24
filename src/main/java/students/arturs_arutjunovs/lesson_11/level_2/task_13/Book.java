@@ -38,9 +38,9 @@ class Book {
             return false;
         }
         Book book = (Book) o;
-        if (id!=null){
+        if (id != null) {
             return id.equals(book.id) && author.equals(book.author) && title.equals(book.title);
-        }else{
+        } else {
             return author.equals(book.author) && title.equals(book.title);
         }
     }
