@@ -6,8 +6,6 @@ import java.util.Optional;
 
 class BookRepositoryTest {
 
-    InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
-
     public static void main(String[] args) {
         BookRepositoryTest bookRepositoryTest = new BookRepositoryTest();
         bookRepositoryTest.deleteBookTestID();
@@ -30,22 +28,28 @@ class BookRepositoryTest {
     //TASK7
 
     public void deleteBookTestID() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        assertResultTest(inMemoryBookRepository.delete((long) 1), true, "Книга найдена и удалена (ID)!");
+        assertResultTest(inMemoryBookRepository.delete(1L), true, "Книга найдена и удалена (ID)!");
     }
 
     public void notDeleteBookTestID() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        assertResultTest(inMemoryBookRepository.delete((long) 1), false, "Книга не найдена и не удалена (ID)!");
+        assertResultTest(inMemoryBookRepository.delete(1L), false, "Книга не найдена и не удалена (ID)!");
     }
 
     //TASK8
 
+
+
+
     public void deleteBookTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
@@ -53,6 +57,7 @@ class BookRepositoryTest {
     }
 
     public void notDeleteBookTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
@@ -63,24 +68,27 @@ class BookRepositoryTest {
     //TASK9
 
     public void searchBookTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        Optional<Book> searchBook = inMemoryBookRepository.findById((long) 3);
+        Optional<Book> searchBook = inMemoryBookRepository.findById(3L);
         assertResultTest(true, searchBook.isPresent(), "Книга найдена!");
     }
 
     public void searchNotBookTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        Optional<Book> searchBook = inMemoryBookRepository.findById((long) 1);
+        Optional<Book> searchBook = inMemoryBookRepository.findById(1L);
         assertResultTest(false, searchBook.isPresent(), "Книга не найдена!");
     }
 
     //TASK10
 
     public void searchFindByAuthorTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
@@ -91,6 +99,7 @@ class BookRepositoryTest {
     }
 
     public void notSearchFindByAuthorTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
@@ -102,6 +111,7 @@ class BookRepositoryTest {
     //TASK11
 
     public void searchFindByTitleTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
@@ -113,6 +123,7 @@ class BookRepositoryTest {
     }
 
     public void notSearchFindByTitleTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
@@ -124,6 +135,7 @@ class BookRepositoryTest {
     //TASK12
 
     public void countBooksSizeTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
@@ -137,6 +149,7 @@ class BookRepositoryTest {
     //TASK13
 
     public void deleteByAuthorTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD3"));
@@ -148,6 +161,7 @@ class BookRepositoryTest {
     }
 
     public void deleteByNotAuthorTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD3"));
@@ -164,6 +178,7 @@ class BookRepositoryTest {
     //TASK14
 
     public void deleteByTitleTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD1"));
@@ -176,6 +191,7 @@ class BookRepositoryTest {
     }
 
     public void deleteByNotTitleTest() {
+        InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));

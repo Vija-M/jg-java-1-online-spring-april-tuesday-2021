@@ -31,17 +31,23 @@ class Book {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Book book = (Book) o;
-        return id.equals(book.id) && title.equals(book.title) && author.equals(book.author);
+        if (id != null) {
+            return id.equals(book.id) && title.equals(book.title) && author.equals(book.author);
+        } else {
+            return title.equals(book.title) && author.equals(book.author);
+        }
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, title, author);
-    }
-
-    public void remove(Book book) {
     }
 }

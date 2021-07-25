@@ -6,18 +6,19 @@ import java.util.Optional;
 
 class InMemoryBookRepository implements BookRepository {
 
-    List<Book> books = new ArrayList<>();
+    private final ArrayList<Book> books = new ArrayList<>();
+    private Long id = 0L;
 
     public ArrayList<Book> getBooks() {
-        return (ArrayList<Book>) books;
+        return books;
     }
 
     @Override
     public Long save(Book book) {
-        Long bookID = (long) (books.size() + 1);
-        book.setId(bookID);
+        Long bookId = id++;
+        book.setId(bookId);
         books.add(book);
-        return bookID;
+        return bookId;
     }
 
     @Override
@@ -33,9 +34,8 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public boolean delete(Book book) {
-        for (Book books : books) {
-            if (books.getAuthor().equals(book.getAuthor()) && books.getTitle().equals(book.getTitle())) {
-                books.remove(book);
+        for (Book saveBook : books) {
+            if (saveBook.getAuthor().equals(book.getAuthor()) && saveBook.getTitle().equals(book.getTitle())){
                 return true;
             }
         }
@@ -44,9 +44,9 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public Optional<Book> findById(Long bookId) {
-        for (Book books : books) {
-            if (books.getId().equals(bookId)) {
-                return Optional.of(books);
+        for (Book book : books) {
+            if (book.getId().equals(bookId)) {
+                return Optional.of(book);
             }
         }
         return Optional.empty();
@@ -81,23 +81,11 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public void deleteByAuthor(String author) {
-        ArrayList<Book> deleteByAuthor = new ArrayList<>();
-        for (Book book : books) {
-            if (!book.getAuthor().equals(author)) {
-                deleteByAuthor.add(book);
-            }
-        }
-        books = deleteByAuthor;
+        books.removeIf(book -> book.getAuthor().equals(author));
     }
 
     @Override
     public void deleteByTitle(String title) {
-        ArrayList<Book> deleteByTitle = new ArrayList<>();
-        for (Book book : books) {
-            if (!book.getTitle().equals(title)) {
-                deleteByTitle.add(book);
-            }
-        }
-        books = deleteByTitle;
+        books.removeIf(book -> book.getTitle().equals(title));
     }
 }
