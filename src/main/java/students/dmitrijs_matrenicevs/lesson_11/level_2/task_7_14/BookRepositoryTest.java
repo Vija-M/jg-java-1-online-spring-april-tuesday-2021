@@ -115,12 +115,12 @@ class BookRepositoryTest {
     public void searchFindByTitleTest() {
         InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
-        inMemoryBookRepository.save(new Book("JAVA2", "WORLD1"));
-        inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        List<Book> findByTitle = inMemoryBookRepository.findByTitle("JAVA1");
+        inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
+        inMemoryBookRepository.save(new Book("JAVA3", "WORLD2"));
+        List<Book> findByTitle = inMemoryBookRepository.findByTitle("WORLD2");
         List<Book> list = new ArrayList<>();
-        list.add(new Book("JAVA1", "WORLD1"));
-        list.add(new Book("JAVA2", "WORLD1"));
+        list.add(new Book("JAVA2", "WORLD2"));
+        list.add(new Book("JAVA3", "WORLD2"));
         assertResultBookTest(list, findByTitle, "Книга найдена по названию!");
     }
 
