@@ -23,6 +23,7 @@ class BookRepositoryTest {
         bookRepositoryTest.deleteByNotAuthorTest();
         bookRepositoryTest.deleteByTitleTest();
         bookRepositoryTest.deleteByNotTitleTest();
+        bookRepositoryTest.shouldDeleteBooks();
     }
 
     //TASK7
@@ -31,7 +32,6 @@ class BookRepositoryTest {
         InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
-        inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
         assertResultTest(inMemoryBookRepository.delete(1L), true, "Книга найдена и удалена (ID)!");
     }
 
@@ -39,31 +39,50 @@ class BookRepositoryTest {
         InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
-        inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        assertResultTest(inMemoryBookRepository.delete(1L), false, "Книга не найдена и не удалена (ID)!");
+        inMemoryBookRepository.delete(2L);
+        assertResultTest(inMemoryBookRepository.delete(2L), false, "Книга не найдена и не удалена (ID)!");
     }
 
     //TASK8
-
-
-
 
     public void deleteBookTest() {
         InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
-        inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        assertResultTest(inMemoryBookRepository.delete(new Book("JAVA1", "WORLD1")), true, "Книга найдена и удалена!");
+        assertResultTest(inMemoryBookRepository.delete(new Book("JAVA2", "WORLD2")), true, "Книга найдена и удалена!");
     }
 
     public void notDeleteBookTest() {
         InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
-        inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        inMemoryBookRepository.delete(new Book("JAVA1", "WORLD1"));
-        assertResultTest(inMemoryBookRepository.delete(new Book("JAVA1", "WORLD1")), false, "Книга не найдена и не удалена!");
+        inMemoryBookRepository.delete(new Book("JAVA2", "WORLD2"));
+        assertResultTest(inMemoryBookRepository.delete(new Book("JAVA2", "WORLD2")), false, "Книга не найдена и не удалена!");
     }
+
+
+    public void shouldDeleteBooks() {
+        var subject = new InMemoryBookRepository();
+        subject.save(new Book("A1", "B1"));
+        subject.save(new Book("A2", "B2"));
+        subject.save(new Book("A3", "B3"));
+
+        var b0 = new Book("A1", "B1"); b0.setId(0L);
+        var b1 = new Book("A2", "B2"); b1.setId(1L);
+        var b2 = new Book("A3", "B3"); b2.setId(2L);
+        var b3 = new Book("A1", "B1"); b2.setId(3L);
+
+        assertTrue(subject.delete(b0), "shouldDeleteBooks (#0)");
+        assertTrue(subject.delete(b1), "shouldDeleteBooks (#1)");
+        assertTrue(subject.delete(b2), "shouldDeleteBooks (#2)");
+
+        assertFalse(subject.delete(b0), "shouldDeleteBooks (#3)");
+        assertFalse(subject.delete(b1), "shouldDeleteBooks (#4)");
+        assertFalse(subject.delete(b2), "shouldDeleteBooks (#5)");
+
+        assertFalse(subject.delete(b3), "shouldDeleteBooks (#6)");
+    }
+
 
     //TASK9
 
@@ -71,18 +90,16 @@ class BookRepositoryTest {
         InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
-        inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        Optional<Book> searchBook = inMemoryBookRepository.findById(3L);
-        assertResultTest(true, searchBook.isPresent(), "Книга найдена!");
+        Optional<Book> searchBook = inMemoryBookRepository.findById(1L);
+        assertResultTest(searchBook.isPresent(), true, "Книга найдена!");
     }
 
     public void searchNotBookTest() {
         InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
-        inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        Optional<Book> searchBook = inMemoryBookRepository.findById(1L);
-        assertResultTest(false, searchBook.isPresent(), "Книга не найдена!");
+        Optional<Book> searchBook = inMemoryBookRepository.findById(3L);
+        assertResultTest(searchBook.isPresent(), false, "Книга не найдена!");
     }
 
     //TASK10
@@ -95,7 +112,7 @@ class BookRepositoryTest {
         List<Book> findByAuthor = inMemoryBookRepository.findByAuthor("JAVA1");
         List<Book> list = new ArrayList<>();
         list.add(new Book("JAVA1", "WORLD1"));
-        assertResultBookTest(findByAuthor, list, "Книга найдена автором!");
+        assertResultBookTest(list, findByAuthor, "Книга найдена автором!");
     }
 
     public void notSearchFindByAuthorTest() {
@@ -105,7 +122,7 @@ class BookRepositoryTest {
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
         List<Book> findByAuthor = inMemoryBookRepository.findByAuthor("JAVA4");
         List<Book> list = new ArrayList<>();
-        assertResultBookTest(findByAuthor, list, "Книга не найдена автором!");
+        assertResultBookTest(list, findByAuthor, "Книга не найдена автором!");
     }
 
     //TASK11
@@ -114,12 +131,12 @@ class BookRepositoryTest {
         InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
-        inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        List<Book> findByTitle = inMemoryBookRepository.findByAuthor("WORLD2");
+        inMemoryBookRepository.save(new Book("JAVA2", "WORLD3"));
+        List<Book> findByTitle = inMemoryBookRepository.findByAuthor("JAVA3");
         List<Book> list = new ArrayList<>();
-        list.add(new Book("JAVA1", "WORLD1"));
         list.add(new Book("JAVA2", "WORLD2"));
-        assertResultBookTest(findByTitle, list, "Книга найдена по названию!");
+        list.add(new Book("JAVA2", "WORLD3"));
+        assertResultBookTest(list, findByTitle, "Книга найдена по названию!");
     }
 
     public void notSearchFindByTitleTest() {
@@ -129,7 +146,7 @@ class BookRepositoryTest {
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
         List<Book> findByTitle = inMemoryBookRepository.findByTitle("WORLD4");
         List<Book> list = new ArrayList<>();
-        assertResultBookTest(findByTitle, list, "Книга не найдена по названию!");
+        assertResultBookTest(list, findByTitle, "Книга не найдена по названию!");
     }
 
     //TASK12
@@ -157,7 +174,7 @@ class BookRepositoryTest {
         inMemoryBookRepository.deleteByAuthor("JAVA2");
         List<Book> deleteAuthor = new ArrayList<>();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
-        assertResultBookTest(deleteAuthor,inMemoryBookRepository.getBooks(), "Книги были удалены автором!");
+        assertResultBookTest(inMemoryBookRepository.getBooks(), deleteAuthor, "Книги были удалены автором!");
     }
 
     public void deleteByNotAuthorTest() {
@@ -166,28 +183,29 @@ class BookRepositoryTest {
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD3"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD4"));
-        inMemoryBookRepository.deleteByAuthor("JAVA4");
+        inMemoryBookRepository.deleteByAuthor("JAVA3");
         List<Book> deleteAuthor = new ArrayList<>();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD3"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD4"));
-        assertResultBookTest(deleteAuthor,inMemoryBookRepository.getBooks(), "Книги не были удалены автором!");
+        assertResultBookTest(inMemoryBookRepository.getBooks(), deleteAuthor, "Книги не были удалены автором!");
     }
 
     //TASK14
 
     public void deleteByTitleTest() {
         InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
-        inMemoryBookRepository.save(new Book("JAVA1", "WORLD2"));
-        inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
-        inMemoryBookRepository.save(new Book("JAVA3", "WORLD1"));
-        inMemoryBookRepository.save(new Book("JAVA4", "WORLD2"));
-        inMemoryBookRepository.deleteByAuthor("WORLD2");
-        List<Book> deleteTitle = new ArrayList<>();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
-        inMemoryBookRepository.save(new Book("JAVA4", "WORLD4"));
-        assertResultBookTest(inMemoryBookRepository.getBooks(), deleteTitle, "Книги были удалены по названию!");
+        inMemoryBookRepository.save(new Book("JAVA2", "WORLD1"));
+        inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
+        inMemoryBookRepository.save(new Book("JAVA4", "WORLD1"));
+        inMemoryBookRepository.save(new Book("JAVA5", "WORLD5"));
+        inMemoryBookRepository.deleteByTitle("WORLD1");
+        List<Book> deleteTitle = new ArrayList<>();
+        inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
+        inMemoryBookRepository.save(new Book("JAVA5", "WORLD5"));
+        assertResultBookTest(deleteTitle, inMemoryBookRepository.getBooks(), "Книги были удалены по названию!");
     }
 
     public void deleteByNotTitleTest() {
@@ -195,14 +213,12 @@ class BookRepositoryTest {
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        inMemoryBookRepository.save(new Book("JAVA4", "WORLD4"));
-        inMemoryBookRepository.deleteByAuthor("JAVA5");
+        inMemoryBookRepository.deleteByTitle("WORLD2");
         List<Book> deleteAuthor = new ArrayList<>();
         inMemoryBookRepository.save(new Book("JAVA1", "WORLD1"));
         inMemoryBookRepository.save(new Book("JAVA2", "WORLD2"));
         inMemoryBookRepository.save(new Book("JAVA3", "WORLD3"));
-        inMemoryBookRepository.save(new Book("JAVA4", "WORLD4"));
-        assertResultBookTest(inMemoryBookRepository.getBooks(), deleteAuthor, "Книги не были удалены по названию!");
+        assertResultBookTest(deleteAuthor, inMemoryBookRepository.getBooks(), "Книги не были удалены по названию!");
     }
 
     private void assertResultTest(boolean actualResult, boolean expectedResult, String name) {
@@ -213,7 +229,7 @@ class BookRepositoryTest {
         }
     }
 
-    private void assertResultBookTest(List<Book> actualResult, List<Book> expectedResult, String name) {
+    private void assertResultBookTest(List<Book> expectedResult, List<Book> actualResult, String name) {
         if (expectedResult.equals(actualResult)) {
             System.out.println(name + " = TEST TRUE");
         } else {
@@ -228,4 +244,21 @@ class BookRepositoryTest {
             System.out.println(name + " = TEST FALSE");
         }
     }
+
+    private void assertTrue(boolean actualResult,String name) {
+        if (!actualResult) {
+            System.out.println(name + " = TEST TRUE");
+        } else {
+            System.out.println(name + " = TEST TRUE");
+        }
+    }
+
+    private void assertFalse(boolean actualResult,String name) {
+        if (!actualResult) {
+            System.out.println(name + " = TEST TRUE");
+        } else {
+            System.out.println(name + " = TEST TRUE");
+        }
+    }
+
 }

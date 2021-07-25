@@ -15,31 +15,19 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public Long save(Book book) {
-        Long bookId = id++;
-        book.setId(bookId);
         books.add(book);
-        return bookId;
+        book.setId(id++);
+        return id;
     }
 
     @Override
     public boolean delete(Long bookId) {
-        for (Book book : books) {
-            if (book.getId().equals(bookId)) {
-                books.remove(book);
-                return true;
-            }
-        }
-        return false;
+        return books.removeIf(book -> book.getId().equals(bookId));
     }
 
     @Override
     public boolean delete(Book book) {
-        for (Book saveBook : books) {
-            if (saveBook.getAuthor().equals(book.getAuthor()) && saveBook.getTitle().equals(book.getTitle())){
-                return true;
-            }
-        }
-        return false;
+        return book.getId() != null && books.remove(book);
     }
 
     @Override
@@ -80,12 +68,12 @@ class InMemoryBookRepository implements BookRepository {
     }
 
     @Override
-    public void deleteByAuthor(String author) {
-        books.removeIf(book -> book.getAuthor().equals(author));
+    public void deleteByAuthor(String bookAuthor) {
+        books.removeIf(book -> book.getAuthor().equals(bookAuthor));
     }
 
     @Override
-    public void deleteByTitle(String title) {
-        books.removeIf(book -> book.getTitle().equals(title));
+    public void deleteByTitle(String bookTitle) {
+        books.removeIf(book -> book.getTitle().equals(bookTitle));
     }
 }
