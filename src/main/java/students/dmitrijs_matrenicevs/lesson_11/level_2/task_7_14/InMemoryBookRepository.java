@@ -6,7 +6,7 @@ import java.util.Optional;
 
 class InMemoryBookRepository implements BookRepository {
 
-    private final ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Book> books = new ArrayList<>();
     private Long id = 0L;
 
     public ArrayList<Book> getBooks() {
