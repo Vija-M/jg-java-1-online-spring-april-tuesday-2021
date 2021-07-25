@@ -90,17 +90,11 @@ class TicTacToe {
         Random random = new Random();
         int x;
         int y;
-        for (int i = 0; i < 3; i++){
-        if (field[i][0] == 0 && field[i][1] == 0 ) { x = i; y = 2;}
-          if (field[i][0] == 0 && field[i][2] == 0) { x = i; y = 1;}
-            if (field[i][1] == 0 && field[i][2] == 0) { x = i; y = 0;}
-            if (field[0][i] == 0 && field[1][i] == 0 ) { x = 2; y = i;}
-
-        do {        x = random.nextInt(3);
+        do {
+            x = random.nextInt(3);
             y = random.nextInt(3);
-                    }
+        }
         while (field[x][y] != -1);
-
         return new Move(x, y);
     }
 
