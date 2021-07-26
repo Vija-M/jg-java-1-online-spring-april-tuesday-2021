@@ -1,6 +1,6 @@
 package students.dmitriy_shukailo.lesson_2.level_3.task_10;
 
- public class Circle{
+class Circle{
 
     public static void main(String[] args) {
 

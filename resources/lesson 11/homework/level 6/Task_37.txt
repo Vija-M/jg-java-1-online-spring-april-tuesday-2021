@@ -1,0 +1,17 @@
+Разработка UI (User Interface) для интерфейса BookRepository.
+
+Создайте класс BookLibraryApplication.
+
+class BookLibraryApplication {
+
+    public static void main(String[] args) {
+        BookRepository repository = InMemoryBookRepository();
+        BookLibrary bookLibrary = new BookLibrary(repository);
+        bookLibrary.run();
+    }
+}
+
+Запустите приложение и потестируйте работу его методов.
+
+Поздравляем вас, мы создали и реализовали интерфейс для базы данных,
+а так же UI к этому интерфейсу.

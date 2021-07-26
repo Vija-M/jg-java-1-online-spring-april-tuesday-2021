@@ -1,0 +1,4 @@
+Разработка UI (User Interface) для интерфейса BookRepository.
+
+Реализуйте UIAction классы для каждого метода из интерфейса BookRepository.
+Подключите каждый UIAction в классе BookLibrary.

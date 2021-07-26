@@ -49,6 +49,11 @@ Please, follow next steps in order to publish your homework for personal review:
 * [Lesson 6](https://www.youtube.com/watch?v=Lv6PBkkYfWU)
 * [Lesson 7](https://www.youtube.com/watch?v=MoWFaIAn9X8)
 * [Lesson 8](https://www.youtube.com/watch?v=LWANt3i8U30)
+* [Lesson 9](https://www.youtube.com/watch?v=Zd-jMJn-8XE)
+* [Lesson 10](https://www.youtube.com/watch?v=c7J5iRbt7jg)
+* [Lesson 11](https://www.youtube.com/watch?v=ZZ1KE7KJWIY)
+* [Lesson 12](https://www.youtube.com/watch?v=8-7OpkGpCf0)
+* [Lesson 13](https://www.youtube.com/watch?v=gv0ILcYRXEQ)
 
 ## Books
 
