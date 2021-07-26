@@ -4,7 +4,7 @@ import static java.lang.Math.sqrt;
 
 class Triangle extends Shape {
 
-    int side;
+    private int side;
 
     public Triangle(int side) {
         super("Triangle");

@@ -12,9 +12,8 @@ class ShapesTest {
         test.rectanglePerimeter();
         test.triangleArea();
         test.trianglePerimeter();
-        test.area();
-        test.perimeter();
-
+//        test.area();
+//        test.perimeter();
     }
 
     public void circleArea() {
@@ -71,6 +70,10 @@ class ShapesTest {
         double expected = 18;
         double calculatePerimeter = triangle.calculatePerimeter();
         checkTestResult(calculatePerimeter == expected, "Triangle perimeter");
+    }
+
+    public void createShape() {
+
     }
 
     public void area() {

@@ -18,4 +18,5 @@ class ShapesDemo {
     Shape rectangle = shapes.createRandomRectangle();
     double rectangleArea = shapes.area(rectangle);
     double rectanglePerimeter = shapes.perimeter(rectangle);
+
 }

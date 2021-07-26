@@ -27,18 +27,13 @@ class Shapes {
     Shape createRandomShape() {
         Random rnd = new Random();
         int randomNumber = rnd.nextInt(4);
-        if (randomNumber == 0) {
-            return createRandomCircle();
-        } else if (randomNumber == 1) {
-            return createRandomSquare();
-        } else if (randomNumber == 2) {
-            return createRandomRectangle();
-        } else {
-            return createRandomTriangle();
-        }
+        return switch (randomNumber) {
+            case 0 -> createRandomCircle();
+            case 1 -> createRandomSquare();
+            case 2 -> createRandomRectangle();
+            default -> createRandomTriangle();
+        };
     }
-
-
 
     Circle createCircle() {
         return new Circle(5);
@@ -58,20 +53,16 @@ class Shapes {
 
     double area(Shape[] shapes) {
         double area = 0;
-        int count = 1;
         for (Shape shape : shapes) {
             area += shape.calculateArea();
-            count++;
         }
         return area;
     }
 
     double perimeter(Shape[] shapes) {
         double perimeter = 0;
-        int count = 1;
         for (Shape shape : shapes) {
             perimeter += shape.calculatePerimeter();
-            count++;
         }
         return perimeter;
     }
