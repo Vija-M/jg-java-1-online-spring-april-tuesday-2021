@@ -3,13 +3,26 @@ package students.linda_junkina.lesson_10.level_1.task_4_5;
 import java.util.Scanner;
 
 class DayOfTheWeekDetectorDemo {
-    public static void main(String[] args) {
+    private DayOfTheWeekDetector detector;
+
+    public DayOfTheWeekDetectorDemo(DayOfTheWeekDetector detector) {
+        this.detector = detector;
+    }
+
+    public void run() {
         Scanner scanner = new Scanner(System.in);
-        IfDayOfTheWeekDetector ifDayOfTheWeekDetector = new IfDayOfTheWeekDetector();
-
         System.out.print("Enter a number 1 - 7: ");
-        int i = scanner.nextInt();
+        int number = scanner.nextInt();
+        System.out.println(detector.detectDayName(number));
+    }
 
-        System.out.print("ifDayOfTheWeekDetector = " + ifDayOfTheWeekDetector.detectDayName(i));
+    public static void main(String[] args) {
+        DayOfTheWeekDetectorDemo ifDemo = new DayOfTheWeekDetectorDemo(new IfDayOfTheWeekDetector());
+        ifDemo.run();
+        DayOfTheWeekDetectorDemo switchDemo = new DayOfTheWeekDetectorDemo(new SwitchDayOfTheWeekDetector());
+        switchDemo.run();
+        DayOfTheWeekDetectorDemo arrayDemo = new DayOfTheWeekDetectorDemo(new ArrayDayOfTheWeekDetector());
+        arrayDemo.run();
     }
 }
+
