@@ -1,0 +1,18 @@
+Разработка UI (User Interface) для интерфейса BookRepository.
+
+Создайте и реализуйте класс FindByIdUIAction:
+
+class FindByIdUIAction implements UIAction {
+
+    private BookRepository repository;
+
+    public FindByIdUIAction(BookRepository repository) {
+        this.repository = repository;
+    }
+
+    public void execute() {
+        // запросите id книги с консоли у пользолвателя
+        // поиск книги в базе данных: Optional<Book> bookOpt = repository.findById(id);
+        // вывелите на консоль результаты поиска
+    }
+}
