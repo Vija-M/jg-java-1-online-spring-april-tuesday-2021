@@ -15,19 +15,17 @@ class BankApiImplTest {
         BankClient client1 = new BankClient("1", "John Doe");
         BankClient client2 = new BankClient("2", "Sarah Doe");
 
-        List<BankClient> clients = new ArrayList<>();
-        clients.add(client1);
-        clients.add(client2);
+        List<BankClient> clients = List.of(client1,client2);
 
-        List<Role> roles = new ArrayList<>();
+        List<Role> roles = List.of(Role.CAN_SEARCH_CLIENTS);
         UserCredentials credentials = new UserCredentials(roles);
-        roles.add(Role.CAN_SEARCH_CLIENTS);
 
         BankApi api = new BankApiImpl(clients);
 
         try {
-            Optional<BankClient> client = api.findByUid(credentials, "1");
-            checkTestResult(client1, client);
+            Optional<BankClient> expected = Optional.of(client1);
+            Optional<BankClient> actual = api.findByUid(credentials, "1");
+            checkTestResult(expected, actual);
 
         } catch (AccessDeniedException e) {
             System.out.println("TEST FAILED - exception thrown");
@@ -49,7 +47,7 @@ class BankApiImplTest {
         }
     }
 
-    private void checkTestResult(BankClient expected, Optional<BankClient> actual) {
+    private void checkTestResult(Optional<BankClient> expected, Optional<BankClient> actual) {
         if (expected.equals(actual)) {
             System.out.println("TEST OK - client found");
         } else {
