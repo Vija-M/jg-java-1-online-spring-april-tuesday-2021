@@ -15,9 +15,9 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public Long save(Book book) {
-        books.add(book);
         book.setId(id++);
-        return id;
+        books.add(book);
+        return book.getId();
     }
 
     @Override

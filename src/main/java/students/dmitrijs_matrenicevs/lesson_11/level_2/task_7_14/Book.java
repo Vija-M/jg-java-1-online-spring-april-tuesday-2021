@@ -40,7 +40,9 @@ class Book {
         }
         Book book = (Book) o;
         if (id != null) {
-            return id.equals(book.id) && title.equals(book.title) && author.equals(book.author);
+            return Objects.equals(id, book.id)
+                    && Objects.equals(title, book.title)
+                    && Objects.equals(author, book.author);
         } else {
             return title.equals(book.title) && author.equals(book.author);
         }
