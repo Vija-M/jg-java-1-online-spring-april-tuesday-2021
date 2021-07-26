@@ -21,9 +21,9 @@ class BankApiImplTest {
 
         try {
             api.findByUid(credentials, "1234");
-            System.out.println("TEST OK");
-        } catch (AccessDeniedException e) {
             System.out.println("TEST FAIL");
+        } catch (AccessDeniedException e) {
+            System.out.println("TEST OK");
         }
     }
 
@@ -32,7 +32,7 @@ class BankApiImplTest {
         BankClient bankClient1 = new BankClient("RICA", "MICA");
         BankClient bankClient2 = new BankClient("NIKA", "PIKA");
 
-        List<BankClient> clients = List.of(bankClient,bankClient1,bankClient2);
+        List<BankClient> clients = List.of(bankClient, bankClient1, bankClient2);
         List<Role> roles = List.of(Role.CAN_SEARCH_CLIENTS);
         UserCredentials credentials = new UserCredentials(roles);
 
@@ -40,7 +40,17 @@ class BankApiImplTest {
 
         try {
             Optional<BankClient> realResult = Optional.of(bankClient);
-            Optional<BankClient> expectedResult = bankApi.findByUid(credentials,"1");
+            Optional<BankClient> expectedResult = bankApi.findByUid(credentials, "MAKS");
+            assertResultTest(expectedResult, realResult);
+        } catch (AccessDeniedException ignored) {
+        }
+    }
+
+    public void assertResultTest(Optional<BankClient> expectedResult, Optional<BankClient> realResult) {
+        if (expectedResult.equals(realResult)) {
+            System.out.println("TEST OK");
+        } else {
+            System.out.println("TEST FAIL");
         }
     }
 }
