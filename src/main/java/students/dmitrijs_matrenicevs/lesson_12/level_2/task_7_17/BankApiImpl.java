@@ -3,7 +3,7 @@ package students.dmitrijs_matrenicevs.lesson_12.level_2.task_7_17;
 import java.util.List;
 import java.util.Optional;
 
-class BankApiImpl {
+class BankApiImpl implements BankApi {
 
     private List<BankClient> clients;
 
@@ -13,7 +13,7 @@ class BankApiImpl {
 
     public Optional<BankClient> findByUid(UserCredentials credentials, String uid) throws AccessDeniedException {
 
-        if (credentials.getRoles().contains(Role.CAN_SEARCH_CLIENTS)) {
+        if (credentials.hasRole(Role.CAN_SEARCH_CLIENTS)) {
             throw new AccessDeniedException();
         }
         for (BankClient client : clients) {
