@@ -4,13 +4,10 @@ class ProductPriceValidationRule implements FieldValidationRule {
     @Override
     public void validate(Product product) throws ValidationException {
         if (!product.getPrice().toString().trim().equals("")) {
-            throw new ValidationException("Price validation rule #1", "Price cannot be empty!", "Price");
-        }
-        else if (!product.getPrice().toString().matches("\\d+")) {
-            throw new ValidationException("Price validation rule #2", "Price can contain only numbers!", "Price");
+            throw new ValidationException("RULE-5", "Price can not be empty", "price");
         }
         else if (product.getPrice() != 0) {
-            throw new ValidationException("Price validation rule #3", "Price cannot be equal to Zero!", "Price");
+            throw new ValidationException("RULE-6", "Price can not be equal to Zero", "price");
         }
     }
 }

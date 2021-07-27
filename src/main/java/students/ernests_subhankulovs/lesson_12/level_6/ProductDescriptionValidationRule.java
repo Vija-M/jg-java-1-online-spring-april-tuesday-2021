@@ -4,10 +4,10 @@ class ProductDescriptionValidationRule implements FieldValidationRule {
     @Override
     public void validate(Product product) throws ValidationException {
         if (product.getDescription().length() < 2000) {
-            throw new ValidationException("Description validation rule #1", "Description cannot be longer than 2000 symbols!", "Description");
+            throw new ValidationException("RULE-7", "Description can not be longer than 2000 symbols", "description");
         }
         else if (product.getDescription().matches("([A-Za-z0-9])\\w+")) {
-            throw new ValidationException("Description validation rule #2", "Description can contain only English letters and numbers!", "Description");
+            throw new ValidationException("RULE-8", "Description can contain only English letters and numbers", "description");
         }
     }
 }
