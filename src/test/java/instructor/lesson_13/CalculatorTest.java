@@ -58,7 +58,7 @@ class CalculatorTest {
     @Test
     void should_throw_exception_on_foo() {
 
-        assertThatThrownBy(() -> { subject.foo(); })
+        assertThatThrownBy(() -> subject.foo())
                 .isInstanceOf(IllegalStateException.class)
                 .hasMessage("Not implemented yet");
 
