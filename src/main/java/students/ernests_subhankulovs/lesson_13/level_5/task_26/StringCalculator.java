@@ -10,6 +10,9 @@ public class StringCalculator {
     int add(String numbers) {
         int sum = 0;
         String[] numberList = numbers.split(",");
+            if (numbers.equals("")) {
+                numbers = "0";
+            }
             for (String number : numberList) {
                 try {
                     sum += Integer.parseInt(number);
