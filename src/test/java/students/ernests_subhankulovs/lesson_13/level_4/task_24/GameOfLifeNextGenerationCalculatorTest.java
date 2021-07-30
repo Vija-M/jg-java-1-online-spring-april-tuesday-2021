@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class GameOfLifeNextGenerationCalculatorTest {
 
     boolean[][] grid = {{ true,  true,  true},
-            {false,  true,  true},
-            { true, false,  true}};
+                        {false,  true,  true},
+                        { true, false,  true}};
 
     @Test
     void cell1x1lives() {
@@ -29,9 +29,9 @@ class GameOfLifeNextGenerationCalculatorTest {
     }
 
     @Test
-    void cell2x1isDead() {
+    void cell2x1lives() {
         GameOfLifeNextGenerationCalculator calculator = new GameOfLifeNextGenerationCalculator();
-        assertFalse(calculator.calculate(grid)[1][0]);
+        assertTrue(calculator.calculate(grid)[1][0]);
     }
 
     @Test
@@ -53,9 +53,9 @@ class GameOfLifeNextGenerationCalculatorTest {
     }
 
     @Test
-    void cell3x2isDead() {
+    void cell3x2lives() {
         GameOfLifeNextGenerationCalculator calculator = new GameOfLifeNextGenerationCalculator();
-        assertFalse(calculator.calculate(grid)[2][1]);
+        assertTrue(calculator.calculate(grid)[2][1]);
     }
 
     @Test
