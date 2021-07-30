@@ -17,8 +17,33 @@ class FruitStorage {
         return apples;
     }
 
-//    public List <Apple> getGreenApples(List<Apple>inventory){
-//
-//
-//    }
+    public List<Apple> filterApplesByColor(List<Apple> inventory, String color) {
+        List<Apple> filteredApples = new ArrayList<>();
+        for (Apple apple : inventory) {
+            if (apple.getColor().equals(color)) {
+                filteredApples.add(apple);
+            }
+        }
+        return filteredApples;
+    }
+
+    public List<Apple> filterHeavyApples(List<Apple> inventory, int weight) {
+        List<Apple> filteredApples = new ArrayList<>();
+        for (Apple apple : inventory) {
+            if (apple.getWeight() >= (weight)) {
+                filteredApples.add(apple);
+            }
+        }
+        return filteredApples;
+    }
+
+    public List<Apple> filterLightApples(List<Apple> inventory, int weight) {
+        List<Apple> filteredApples = new ArrayList<>();
+        for (Apple apple : inventory) {
+            if (apple.getWeight() <= (weight)) {
+                filteredApples.add(apple);
+            }
+        }
+        return filteredApples;
+    }
 }

@@ -1,5 +1,8 @@
 package students.linda_junkina.lesson_14.level_1.task_1_2_3_4_5_6;
 
+import java.util.List;
+import java.util.Objects;
+
 class Apple {
     private String color;
     private int weight;
@@ -15,5 +18,18 @@ class Apple {
 
     public int getWeight() {
         return weight;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Apple apple = (Apple) o;
+        return weight == apple.weight && Objects.equals(color, apple.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(color, weight);
     }
 }
