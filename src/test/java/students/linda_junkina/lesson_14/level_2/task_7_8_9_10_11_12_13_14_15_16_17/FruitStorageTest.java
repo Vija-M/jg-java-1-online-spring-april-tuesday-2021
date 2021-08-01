@@ -59,4 +59,32 @@ class FruitStorageTest {
         expected.add(new Apple("green", 200));
         assertEquals(expected, fruitStorage.findApples(inventory, (new AppleGreenAndHeavyPredicate())));
     }
+
+    @Test
+    void filterGreenApples() {
+        List<Apple> inventory = fruitStorage.getAllApples();
+        List<Apple> redApples = fruitStorage.findApples(inventory,
+                (Apple apple) -> "green".equals(apple.getColor()));
+    }
+
+    @Test
+    void filterRedApples() {
+        List<Apple> inventory = fruitStorage.getAllApples();
+        List<Apple> redApples = fruitStorage.findApples(inventory,
+                (Apple apple) -> "red".equals(apple.getColor()));
+    }
+
+    @Test
+    void filterHeavyApples() {
+        List<Apple> inventory = fruitStorage.getAllApples();
+        List<Apple> redApples = fruitStorage.findApples(inventory,
+                (Apple apple) -> apple.getWeight() >= 150);
+    }
+
+    @Test
+    void filterLightApples() {
+        List<Apple> inventory = fruitStorage.getAllApples();
+        List<Apple> redApples = fruitStorage.findApples(inventory,
+                (Apple apple) -> apple.getWeight() <= 150);
+    }
 }

@@ -17,13 +17,14 @@ class FruitStorage {
         return apples;
     }
 
-    public List<Apple> findApples(List<Apple> inventory, ApplePredicate p) {
+    public List<Apple> findApples(List<Apple> inventory, ApplePredicate applePredicate) {
         List<Apple> result = new ArrayList<>();
-        for(Apple apple : inventory) {
-            if(p.test(apple)) {
+        for (Apple apple : inventory) {
+            if (applePredicate.test(apple)) {
                 result.add(apple);
             }
         }
         return result;
     }
 }
+
