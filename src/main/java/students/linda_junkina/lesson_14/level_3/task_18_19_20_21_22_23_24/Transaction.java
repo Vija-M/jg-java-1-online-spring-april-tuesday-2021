@@ -28,4 +28,5 @@ class Transaction {
                 "year: "+this.year+", " +
                 "value:" + this.value +"}";
     }
+
 }
