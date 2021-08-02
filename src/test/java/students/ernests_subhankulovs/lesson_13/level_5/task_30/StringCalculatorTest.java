@@ -47,4 +47,9 @@ class StringCalculatorTest {
         assertEquals(9, calculator.add("2,3\n4"));
     }
 
+    @Test
+    public void shouldReturnThreeNumberSumWithCustomDelimiter() {
+        assertEquals(9, calculator.add("//[;]\n2;3,4"));
+    }
+
 }
