@@ -6,6 +6,7 @@ class Apple {
 
     private final String color;
     private final int weight;
+    public String getColor;
 
     public Apple(String color, int weight) {
         this.color = color;
