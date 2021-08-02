@@ -20,8 +20,8 @@ class FruitStorage {
 
     public List<Apple> findColorApples(List<Apple> inventory, String color) {
         List<Apple> result = new ArrayList<>();
-        for(Apple apple : inventory) {
-            if(apple.getColor().equals(color)) {
+        for (Apple apple : inventory) {
+            if (apple.getColor().equals(color)) {
                 result.add(apple);
             }
         }
@@ -30,8 +30,8 @@ class FruitStorage {
 
     public List<Apple> findApplesByWeight(List<Apple> inventory, int weight) {
         List<Apple> result = new ArrayList<>();
-        for(Apple apple : inventory) {
-            if(apple.getWeight() > weight) {
+        for (Apple apple : inventory) {
+            if (apple.getWeight() > weight) {
                 result.add(apple);
             }
         }
@@ -40,8 +40,8 @@ class FruitStorage {
 
     public List<Apple> findFilterApples(List<Apple> inventory, int weight) {
         List<Apple> result = new ArrayList<>();
-        for(Apple apple : inventory) {
-            if(apple.getWeight() <= weight) {
+        for (Apple apple : inventory) {
+            if (apple.getWeight() <= weight) {
                 result.add(apple);
             }
         }
