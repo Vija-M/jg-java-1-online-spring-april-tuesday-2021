@@ -1,6 +1,5 @@
 package students.dmitriy_shukailo.lesson_11.level_2.task_10;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -101,33 +100,38 @@ class InMemoryBookRepositoryTest {
         var subject = new InMemoryBookRepository();
 
         Book book1 = new Book("A1", "B1");
-        Book book2 = new Book("A2", "B2");
-        Book book3 = new Book("A3", "B3");
+        Book book2 = new Book("A1", "B2");
+        Book book3 = new Book("A2", "B3");
 
         subject.save(book1);
         subject.save(book2);
         subject.save(book3);
 
-        List<Book> bookFoundByAuthor0 = subject.findByAuthor("A1");
-        List<Book> bookFoundByAuthor1 = subject.findByAuthor("A2");
-        List<Book> bookFoundByAuthor2 = subject.findByAuthor("A3");
+        List<Book> expectedBooksByAuthor1 = List.of(book1, book2);
+        List<Book> expectedBooksByAuthor2 = List.of(book3);
 
-        List<Book> list = new ArrayList<>();
-        list.add(book1);
-        list.add(book2);
-        list.add(book3);
+        List<Book> actualBooksByAuthor1 = subject.findByAuthor("A1");
+        List<Book> actualBooksByAuthor2 = subject.findByAuthor("A2");
 
-        Assertions.assertEquals(bookFoundByAuthor0, list);
-        Assertions.assertEquals(bookFoundByAuthor1, list);
-        Assertions.assertEquals(bookFoundByAuthor2, list);
+        Assertions.assertEquals(expectedBooksByAuthor1, actualBooksByAuthor1, "shouldFoundBooksByAuthor (#0)");
+        Assertions.assertEquals(expectedBooksByAuthor2, actualBooksByAuthor2, "shouldFoundBooksByAuthor (#1)");
 
-        List<Book> bookFoundByAuthor3 = subject.findByAuthor("A4");
-        List<Book> bookFoundByAuthor4 = subject.findByAuthor("A5");
-        List<Book> bookFoundByAuthor5 = subject.findByAuthor("A6");
+        // --- первый вариант ---
+        List<Book> expectedBooksByAuthor3 = List.of();
+        List<Book> actualBooksByAuthor3 = subject.findByAuthor("A4");
 
-        Assertions.assertNotEquals(bookFoundByAuthor3, list);
-        Assertions.assertNotEquals(bookFoundByAuthor4, list);
-        Assertions.assertNotEquals(bookFoundByAuthor5, list);
+        Assertions.assertEquals(expectedBooksByAuthor3, actualBooksByAuthor3, "shouldFoundBooksByAuthor (#2)");
+
+        // --- второй вариант ---
+        List<Book> actualBooksByAuthor4 = subject.findByAuthor("A4");
+
+        Assertions.assertTrue(actualBooksByAuthor4.isEmpty(), "shouldFoundBooksByAuthor (#3)");
+
+        // --- третий вариант ---
+        List<Book> expectedBooksByAuthor5 = List.of();
+        List<Book> actualBooksByAuthor5 = subject.findByAuthor("A1");
+
+        Assertions.assertNotEquals(expectedBooksByAuthor5, actualBooksByAuthor5, "shouldFoundBooksByAuthor (#5)");
 
         System.out.println();
     }
