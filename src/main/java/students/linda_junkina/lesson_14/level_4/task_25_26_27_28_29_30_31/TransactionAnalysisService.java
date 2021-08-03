@@ -35,10 +35,10 @@ class TransactionAnalysisService {
 
     public List<String> findAllTradersInCity(List<Transaction> transactions, String cityToFind) {
         return transactions.stream()
-                .map(transaction -> transaction.getTrader().getCity())
-                .filter(city -> city.equals(cityToFind))
+                .map(transaction -> transaction.getTrader())
+                .filter(trader -> trader.getCity().equals(cityToFind))
+                .map(trader -> trader.getName())
                 .distinct()
                 .collect(toList());
     }
-
 }

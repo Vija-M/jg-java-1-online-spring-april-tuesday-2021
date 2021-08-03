@@ -1,8 +1,6 @@
 package students.linda_junkina.lesson_14.level_4.task_25_26_27_28_29_30_31;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
