@@ -17,10 +17,7 @@ class CreditCard {
     double getBalance() {
         return balance;
     }
-
-    public double getCardDebt() {
-        return cardDebt;
-    }
+    double getCardDebt() { return cardDebt; }
 
     void deposit(int eneteredPin, double depositAmount) {
         if (eneteredPin != cardPin) {
@@ -51,17 +48,5 @@ class CreditCard {
             }
         }
     }
-
-            /*
-        balance++
-    }
-
-    ;
-
-    void withdraw() {
-        balance--
-    }*/
-
-
 }
 

@@ -5,6 +5,7 @@ class CreditCardMyDemo {
         CreditCard creditCard = new CreditCard(123456789, 5678);
         creditCard.deposit(5678, 150.00);
         System.out.println("creditCard = " + creditCard.getBalance());
-        System.out.println("creditCard debt= " +   creditCard.getCardDebt());
-}}
+        System.out.println("creditCard debt= " + creditCard.getCardDebt());
+    }
+}
 
