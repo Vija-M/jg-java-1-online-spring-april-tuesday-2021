@@ -1,4 +1,4 @@
-package students.dmitriy_shukailo.lesson_11.level_2.task_10;
+package students.dmitriy_shukailo.lesson_11.level_2.task_11;
 
 class Assertions {
 
