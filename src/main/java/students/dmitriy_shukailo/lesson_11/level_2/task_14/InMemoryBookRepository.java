@@ -1,4 +1,4 @@
-package students.dmitriy_shukailo.lesson_11.level_2.task_13;
+package students.dmitriy_shukailo.lesson_11.level_2.task_14;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,13 +65,24 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public void deleteByAuthor(String author) {
-        ArrayList<Book> booksDeleteByAuthor = new ArrayList<>();
+       ArrayList<Book> booksDeleteByAuthor = new ArrayList<>();
         for (Book book : books) {
             if (!book.getAuthor().equals(author)) {
                 booksDeleteByAuthor.add(book);
             }
         }
-        books = booksDeleteByAuthor;
+       books = booksDeleteByAuthor;
+    }
+
+    @Override
+    public void deleteByTitle(String title) {
+        ArrayList<Book> booksDeleteByTitle = new ArrayList<>();
+        for (Book book : books) {
+            if (!book.getTitle().equals(title)) {
+                booksDeleteByTitle.add(book);
+            }
+        }
+        books = booksDeleteByTitle;
     }
 
 }

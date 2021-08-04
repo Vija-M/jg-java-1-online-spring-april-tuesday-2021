@@ -1,4 +1,4 @@
-package students.dmitriy_shukailo.lesson_11.level_2.task_13;
+package students.dmitriy_shukailo.lesson_11.level_2.task_14;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,5 +20,7 @@ interface BookRepository {
     int count();
 
     void deleteByAuthor(String author);
+
+    void deleteByTitle(String title);
 
 }
