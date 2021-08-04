@@ -10,17 +10,25 @@ class PalindromeTest {
     @Test
     void isPalindrome1() {
         assertTrue(subject.isPalindrome("racecar"));
-           }
+    }
+
     @Test
     void isPalindrome2() {
         assertTrue(subject.isPalindrome("level"));
     }
+
     @Test
     void isPalindrome3() {
         assertTrue(subject.isPalindrome("sum summus mus"));
     }
+
     @Test
     void isPalindrome4() {
         assertTrue(subject.isPalindrome("А роза упала на лапу Азора"));
+    }
+
+    @Test
+    void isNotPalindrome() {
+        assertFalse(subject.isPalindrome("Маша любит кашу"));
     }
 }
