@@ -11,17 +11,23 @@ class CreditCard {
     public CreditCard(int cardNumber, int cardPin) {
         this.cardNumber = cardNumber;
         this.cardPin = cardPin;
-        cardDebt = 100.00;
     }
 
     double getBalance() {
         return balance;
     }
-    double getCardDebt() { return cardDebt; }
+
+    double getCardDebt() {
+        return cardDebt;
+    }
+
+    public void setCreditLimit(double creditLimit) {
+        this.creditLimit = creditLimit;
+    }
 
     void deposit(int eneteredPin, double depositAmount) {
         if (eneteredPin != cardPin) {
-            System.out.println("Wrong PIN code!");
+            System.out.println("You entered wrong PIN code, please try again.");
         } else {
             if (cardDebt == 0.00) {
                 balance += depositAmount;
@@ -36,15 +42,17 @@ class CreditCard {
 
     void withdraw(int eneteredPin, double withdrawAmount) {
         if (eneteredPin != cardPin) {
-            System.out.println("Wrong PIN code!");
+            System.out.println("You entered wrong PIN code, please try again.");
         } else {
-            if (cardDebt == 0.00) {
-                balance += withdrawAmount;
-            } else if (cardDebt >= withdrawAmount) {
-                cardDebt -= withdrawAmount;
+            if (balance >= withdrawAmount) {
+                balance -= withdrawAmount;
             } else {
-                balance += withdrawAmount - cardDebt;
-                cardDebt = 0;
+                if (balance + creditLimit >= withdrawAmount + cardDebt) {
+                    cardDebt += withdrawAmount - balance;
+                    balance = 0;
+                } else {
+                    System.out.println("You card credit limit is not enough large, please try another sum.");
+                }
             }
         }
     }
