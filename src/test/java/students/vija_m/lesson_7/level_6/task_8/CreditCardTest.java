@@ -79,7 +79,7 @@ class CreditCardTest {
         subject.setCreditLimit(1000.00);
         subject.withdraw(9999, 600.99);
         subject.deposit(9999, 800.79);
-        assertEquals(199.80, subject.getBalance());
+        assertEquals(199.80, subject.getBalance(), 0.001);
         assertEquals(0, subject.getCardDebt());
     }
 }
