@@ -4,18 +4,17 @@ class ArrayCopy {
 
     int[] copyInRange(int[] in, int numberFrom, int numberTo) {
         int outLength = 0;
-
-        for (int i = 0; i < in.length; i++) {
-            if (in[i] >= numberFrom && in[i] <= numberTo) {
+        for (int i : in) {
+            if (i >= numberFrom && i <= numberTo) {
                 outLength++;
             }
         }
 
         int[] out = new int[outLength];
         int j = 0;
-        for (int i = 0; i < in.length; i++) {
-            if (in[i] >= numberFrom && in[i] <= numberTo) {
-                out[j] = in[i];
+        for (int i : in) {
+            if (i >= numberFrom && i <= numberTo) {
+                out[j] = i;
                 j++;
             }
         }
