@@ -1,4 +1,4 @@
-package students.dmitriy_shukailo.lesson_11.level_2.task_12;
+package students.dmitriy_shukailo.lesson_11.level_2.task_13;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +15,7 @@ class InMemoryBookRepositoryTest {
         test.shouldFoundBooksByAuthor();
         test.shouldFoundBooksByTitle();
         test.shouldCountBooks();
+        test.shouldDeleteBooksByAuthor();
     }
 
     public void shouldDeleteBooksById() {
@@ -205,7 +206,37 @@ class InMemoryBookRepositoryTest {
 
         subject.delete(book2);
         int countBooks4 = subject.count();
-        Assertions.assertEquals(countBooks4, 0, "shouldCountBooks (#4)");
+        Assertions.assertEquals(countBooks4, 0, "shouldCountBooks (#3)");
+
+        System.out.println();
+    }
+
+    public void shouldDeleteBooksByAuthor() {
+
+        var subject = new InMemoryBookRepository();
+
+        Book book1 = new Book("A1", "B1");
+        Book book2 = new Book("A1", "B2");
+        Book book3 = new Book("A2", "B3");
+
+        subject.save(book1);
+        subject.save(book2);
+        subject.save(book3);
+
+        subject.deleteByAuthor("A1");
+        List<Book> expectedBooksByAuthor1 = List.of(book3);
+        List<Book> actualBooksByAuthor1 = subject.findByAuthor("A1");
+        Assertions.assertNotEquals(expectedBooksByAuthor1, actualBooksByAuthor1, "shouldDeleteBooksByAuthor (#0)");
+
+        subject.deleteByAuthor("A2");
+        List<Book> expectedBooksByAuthor2 = List.of(book1, book2);
+        List<Book> actualBooksByAuthor2 = subject.findByAuthor("A2");
+        Assertions.assertNotEquals(expectedBooksByAuthor2, actualBooksByAuthor2, "shouldDeleteBooksByAuthor (#1)");
+
+        subject.deleteByAuthor("A3");
+        List<Book> expectedBooksByAuthor3 = List.of(book1, book2, book3);
+        List<Book> actualBooksByAuthor3 = subject.findByAuthor("A3");
+        Assertions.assertNotEquals(expectedBooksByAuthor3, actualBooksByAuthor3, "shouldDeleteBooksByAuthor (#2)");
 
         System.out.println();
     }
