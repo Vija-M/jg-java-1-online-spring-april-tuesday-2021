@@ -1,0 +1,24 @@
+package students.vija_m.lesson_7.level_7.task_12;
+
+class Encapsulation {
+    private int age;
+    private String name;
+
+     Encapsulation(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+}
+/*Инкапсуляция - это возможность объединять свойства и логику (методы) в одном в самодостаточном классе.
+Благодаря этому мы можем частично изолировать эту логику, контролировать доступ к видимости элементов и область видимости.
+Как следствие - контроль сохранения данных.
+ */
