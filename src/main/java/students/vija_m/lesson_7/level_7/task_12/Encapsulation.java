@@ -9,11 +9,11 @@ class Encapsulation {
         this.name = name;
     }
 
-    public int getAge() {
+    int getAge() {
         return age;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
