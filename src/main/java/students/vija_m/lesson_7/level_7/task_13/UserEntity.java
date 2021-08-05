@@ -2,9 +2,9 @@ package students.vija_m.lesson_7.level_7.task_13;
 
 class UserEntity {
 
-private int id;
-private String name;
-private String familyName;
+    private int id;
+    private String name;
+    private String familyName;
     private String personalCode;
 
     UserEntity(int id, String name, String familyName, String personalCode) {
@@ -14,35 +14,35 @@ private String familyName;
         this.personalCode = personalCode;
     }
 
-    public int getId() {
+    int getId() {
         return id;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public String getFamilyName() {
+    String getFamilyName() {
         return familyName;
     }
 
-    public String getPersonalCode() {
+    String getPersonalCode() {
         return personalCode;
     }
 
-    public void setId(int id) {
+    void setId(int id) {
         this.id = id;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public void setFamilyName(String familyName) {
+    void setFamilyName(String familyName) {
         this.familyName = familyName;
     }
 
-    public void setPersonalCode(String personalCode) {
+    void setPersonalCode(String personalCode) {
         this.personalCode = personalCode;
     }
 }
