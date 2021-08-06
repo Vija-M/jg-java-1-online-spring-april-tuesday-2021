@@ -2,12 +2,13 @@ package students.vija_m.lesson_7.level_7.task_14;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.Scanner;
 import java.util.UUID;
 
 class UserRepository {
     private UserEntity[] users;
     private int cursor = 0;
-
+    Scanner scanner = new Scanner(System.in);
     public UserRepository() {
         users = new UserEntity[100];
     }
@@ -45,9 +46,13 @@ class UserRepository {
     UserEntity updateUser(UUID uuid) {
         for (UserEntity entity : users) {
             if (entity.getId().equals(uuid)) {
-                entity.setName(entity.getName());
-                entity.setFamilyName(entity.getFamilyName());
-                entity.setPersonalCode(entity.getPersonalCode());
+                System.out.println("Enter new personal code of user "+ entity.getId()+ " :");
+                entity.setPersonalCode(scanner.nextLine());
+                System.out.println("Enter new name of user "+ entity.getId()+ " :");
+                entity.setName(scanner.nextLine());
+                System.out.println("Enter new family name of user "+ entity.getId()+ " :");
+                entity.setFamilyName(scanner.nextLine());
+
             }
             {
                 return entity;

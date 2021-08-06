@@ -50,6 +50,7 @@ class UserRepositoryApplication {
         UserEntity foundUser4 = repository.findByID(user4Id);
         UserEntity foundUser5 = repository.findByID(user5Id);
 
+
         System.out.println("User1 ID is: " + foundUser1.getId());
         System.out.println("User1 personal code is: " + foundUser1.getPersonalCode());
         System.out.println("User1 name is: " + foundUser1.getName());
@@ -63,17 +64,30 @@ class UserRepositoryApplication {
         System.out.println("User3 ID is: " + foundUser3.getId());
         System.out.println("User3 personal code is: " + foundUser3.getPersonalCode());
         System.out.println("User3 name is: " + foundUser3.getName());
-        System.out.println("User3 family name " + foundUser3.getFamilyName());
+        System.out.println("User3 family name is: " + foundUser3.getFamilyName());
         System.out.println("***");
         System.out.println("User4 ID is: " + foundUser4.getId());
         System.out.println("User4 personal code is: " + foundUser4.getPersonalCode());
         System.out.println("User4 name is: " + foundUser4.getName());
-        System.out.println("User4 family name " + foundUser4.getFamilyName());
+        System.out.println("User4 family name is: " + foundUser4.getFamilyName());
         System.out.println("***");
         System.out.println("User5 ID is: " + foundUser5.getId());
         System.out.println("User5 personal code is: " + foundUser5.getPersonalCode());
         System.out.println("User5 name is: " + foundUser5.getName());
-        System.out.println("User5 family name " + foundUser5.getFamilyName());
+        System.out.println("User5 family name is: " + foundUser5.getFamilyName());
+        System.out.println("***");
+
+        UserEntity findAlan = repository.findByName("Alan");
+        System.out.println("ID of Alan is: " + findAlan.getId());
+        System.out.println("Personal code of Alan is: " + findAlan.getPersonalCode());
+        System.out.println("Family name of Alan is: " + findAlan.getFamilyName());
+        System.out.println("***");
+
+        UserEntity updateUser1 = repository.updateUser(user1Id);
+        System.out.println("User1 ID is: " + updateUser1.getId());
+        System.out.println("User1 personal code is: " + updateUser1.getPersonalCode());
+        System.out.println("User1 name is: " + updateUser1.getName());
+        System.out.println("User1 family name is: " + updateUser1.getFamilyName());
         System.out.println("***");
 
         repository.delete(user2Id);
