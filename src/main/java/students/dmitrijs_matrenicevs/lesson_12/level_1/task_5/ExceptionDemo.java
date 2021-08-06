@@ -17,6 +17,7 @@ class ExceptionDemo {
         switch (selection) {
             case 1 -> throw three;
             case 2 -> throw four;
+            default -> throw new IllegalStateException("Unexpected value: " + selection);
         }
     }
 }
