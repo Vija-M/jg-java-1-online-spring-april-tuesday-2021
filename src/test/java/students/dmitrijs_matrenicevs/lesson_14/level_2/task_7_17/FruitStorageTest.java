@@ -60,7 +60,7 @@ class FruitStorageTest {
         expected.add(new Apple("green", 200));
         assertEquals(expected, fruitStorage.findApples(inventory, (new AppleGreenColorPredicate.AppleGreenAndHeavyWeightPredicate())));
     }
-    
+
     @Test
     void redColorPredicateTest() {
         List<Apple> inventory = fruitStorage.getAllApples();

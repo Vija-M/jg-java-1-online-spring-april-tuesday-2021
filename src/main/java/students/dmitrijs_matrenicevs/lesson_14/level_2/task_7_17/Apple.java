@@ -23,12 +23,18 @@ class Apple {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null || getClass() != obj.getClass())
-            return false;
-        Apple apple = (Apple) obj;
-        return weight == apple.weight && Objects.equals(color, apple.color);
+        boolean result;
+        if (this == obj) {
+            result = true;
+        } else {
+            if (obj == null || getClass() != obj.getClass()) {
+                result = false;
+            } else {
+                var apple = (Apple) obj;
+                result = (weight == apple.weight) && Objects.equals(color, apple.color);
+            }
+        }
+        return result;
     }
 
     @Override
