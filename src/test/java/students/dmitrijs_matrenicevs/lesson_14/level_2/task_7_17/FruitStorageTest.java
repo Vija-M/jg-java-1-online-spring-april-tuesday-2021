@@ -53,4 +53,32 @@ class FruitStorageTest {
         assertEquals(expected, fruitStorage.findFilterApples(inventory, 150));
     }
 
+    @Test
+    void appleGreenAndHeavyTest() {
+        List<Apple> inventory = fruitStorage.getAllApples();
+        List<Apple> expected = new ArrayList<>();
+        expected.add(new Apple("green", 200));
+        assertEquals(expected, fruitStorage.findApples(inventory, (new AppleGreenColorPredicate.AppleGreenAndHeavyWeightPredicate())));
+    }
+    
+    @Test
+    void redColorPredicateTest() {
+        List<Apple> inventory = fruitStorage.getAllApples();
+        List<Apple> expected = fruitStorage.findApples(inventory, (new AppleGreenColorPredicate.AppleRedColorPredicate()));
+        expected.add(new Apple("red", 100));
+    }
+
+    @Test
+    void appleHeavyWeightPredicateTest() {
+        List<Apple> inventory = fruitStorage.getAllApples();
+        List<Apple> expected = fruitStorage.findApples(inventory, (new AppleGreenColorPredicate.AppleHeavyWeightPredicate()));
+        expected.add(new Apple("heavy", 150));
+    }
+
+    @Test
+    void appleLightWeightPredicateTest() {
+        List<Apple> inventory = fruitStorage.getAllApples();
+        List<Apple> expected = fruitStorage.findApples(inventory, (new AppleGreenColorPredicate.AppleLightWeightPredicate()));
+        expected.add(new Apple("light", 150));
+    }
 }

@@ -19,42 +19,30 @@ class FruitStorage {
     }
 
     public List<Apple> findColorApples(List<Apple> inventory, String color) {
-        List<Apple> result = new ArrayList<>();
-        for (Apple apple : inventory) {
-            if (apple.getColor().equals(color)) {
-                result.add(apple);
-            }
-        }
+        List<Apple> result;
+        result = new ArrayList<>();
+        inventory.stream().filter(apple -> apple.getColor().equals(color)).forEach(result::add);
         return result;
     }
 
     public List<Apple> findApplesByWeight(List<Apple> inventory, int weight) {
-        List<Apple> result = new ArrayList<>();
-        for (Apple apple : inventory) {
-            if (apple.getWeight() > weight) {
-                result.add(apple);
-            }
-        }
+        List<Apple> result;
+        result = new ArrayList<>();
+        inventory.stream().filter(apple -> apple.getWeight() > weight).forEach(result::add);
         return result;
     }
 
     public List<Apple> findFilterApples(List<Apple> inventory, int weight) {
-        List<Apple> result = new ArrayList<>();
-        for (Apple apple : inventory) {
-            if (apple.getWeight() <= weight) {
-                result.add(apple);
-            }
-        }
+        List<Apple> result;
+        result = new ArrayList<>();
+        inventory.stream().filter(apple -> apple.getWeight() <= weight).forEach(result::add);
         return result;
     }
 
     public List<Apple> findApples(List<Apple> inventory, ApplePredicate p) {
-        List<Apple> result = new ArrayList<>();
-        for(Apple apple : inventory) {
-            if(p.test(apple)) {
-                result.add(apple);
-            }
-        }
+        List<Apple> result;
+        result = new ArrayList<>();
+        inventory.stream().filter(p::test).forEach(result::add);
         return result;
     }
 }

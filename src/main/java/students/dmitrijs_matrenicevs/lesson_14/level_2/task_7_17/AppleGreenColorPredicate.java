@@ -3,7 +3,7 @@ package students.dmitrijs_matrenicevs.lesson_14.level_2.task_7_17;
 class AppleGreenColorPredicate implements ApplePredicate {
     @Override
     public boolean test(Apple apple) {
-        return "green".equals(apple.getColor);
+        return "green".equals(apple.getColor());
     }
 
     static class AppleGreenAndHeavyWeightPredicate implements ApplePredicate {
