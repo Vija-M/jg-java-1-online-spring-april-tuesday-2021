@@ -21,8 +21,12 @@ class TestInMemoryBookRepository {
     public void shouldDeleteById() {
         InMemoryBookRepository inMemoryBookRepository = new InMemoryBookRepository();
         Book book1 = new Book("Foo1", "Bar1");
+        Book book2 = new Book("Foo2", "Bar2");
+        List<Book> expected = List.of(book1);
         inMemoryBookRepository.save(book1);
-        checkTestResultBool(true, inMemoryBookRepository.delete(0L), "Book is removed by ID");
+        inMemoryBookRepository.save(book2);
+        checkTestResultBool(true, inMemoryBookRepository.delete(1L), "Book deleted by ID (#1)");
+        checkTestResultList(expected, inMemoryBookRepository.getBooksDataBase(), "Book deleted by ID (#2)");
     }
 
     public void shouldDeleteByAuthorAndName() {

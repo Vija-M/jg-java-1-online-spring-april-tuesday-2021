@@ -22,10 +22,7 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public boolean delete(Long bookId) {
-        for (Book book : booksDataBase) {
-            return booksDataBase.removeIf(b -> book.getId().equals(bookId));
-        }
-        return false;
+            return booksDataBase.removeIf(book -> book.getId().equals(bookId));
     }
 
     @Override
@@ -72,25 +69,11 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public void deleteByAuthor(String author) {
-        List<Book> filtered = new ArrayList<>();
-        for (Book book : booksDataBase) {
-            if (book.getAuthor().equals(author)) {
-                continue;
-            }
-            filtered.add(book);
-        }
-        booksDataBase = filtered;
+        booksDataBase.removeIf(book -> book.getAuthor().equals(author));
     }
 
     @Override
     public void deleteByTitle(String title) {
-        List<Book> filtered = new ArrayList<>();
-        for (Book book : booksDataBase) {
-            if (book.getTitle().equals(title)) {
-                continue;
-            }
-            filtered.add(book);
-        }
-        booksDataBase = filtered;
+        booksDataBase.removeIf(book -> book.getTitle().equals(title));
     }
 }
