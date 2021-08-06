@@ -1,6 +1,5 @@
 package students.vija_m.lesson_7.level_7.task_14;
 
-import java.time.Duration;
 import java.util.Arrays;
 import java.util.UUID;
 
@@ -17,27 +16,35 @@ class UserRepositoryApplication {
         user1.setFamilyName("Doe");
         user1.setPersonalCode("000000-00000");
 
+        UserEntity user2 = new UserEntity();
+        user1.setName("John");
+        user1.setFamilyName("Smith");
+        user1.setPersonalCode("000001-00000");
 
-        SongEntity song2 = new SongEntity();
-        song2.setTitle("Thriller");
-        song2.setArtist("Michael Jackson");
-        song2.setGenre("Pop");
-        song2.setDuration(Duration.ofSeconds(240));
+        UserEntity user3 = new UserEntity();
+        user1.setName("Mary");
+        user1.setFamilyName("Green");
+        user1.setPersonalCode("000002-00000");
 
-        SongEntity song3 = new SongEntity();
-        song3.setTitle("Little Less Conversation");
-        song3.setArtist("Elvis Presley");
-        song3.setGenre("Rock'n'Roll");
-        song3.setDuration(Duration.ofSeconds(160));
+        UserEntity user4 = new UserEntity();
+        user1.setName("Alan");
+        user1.setFamilyName("Po");
+        user1.setPersonalCode("000003-00000");
 
+        UserEntity user5 = new UserEntity();
+        user1.setName("John");
+        user1.setFamilyName("Chaney");
+        user1.setPersonalCode("000003-00000");
 
-        UUID song1Id = repository.save(song1);
-        UUID song2Id = repository.save(song2);
-        UUID song3Id = repository.save(song3);
+        UUID user1Id = repository.save(user1);
+        UUID user2Id = repository.save(user2);
+        UUID user3Id = repository.save(user3);
+        UUID user4Id = repository.save(user4);
+        UUID user5Id = repository.save(user5);
 
         System.out.println("repository.findAll() = " + Arrays.toString(repository.findAll()));
 
-        SongEntity foundSong1 = repository.findById(song1Id);
+        /*SongEntity foundSong1 = repository.findById(song1Id);
         SongEntity foundSong2 = repository.findById(song2Id);
         SongEntity foundSong3 = repository.findById(song3Id);
 
@@ -51,5 +58,5 @@ class UserRepositoryApplication {
 
         System.out.println("repository.findAll() = " + Arrays.toString(repository.findAll()));
 
-    }
-}
+    }*/
+}}
