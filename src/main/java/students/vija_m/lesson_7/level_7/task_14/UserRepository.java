@@ -12,9 +12,15 @@ class UserRepository {
         users = new UserEntity[100];
     }
 
-    UserEntity[] findAll(){return users;}
+    UUID save(UserEntity entity) {
+        UUID randomUUID = UUID.randomUUID();
+        entity.setId(randomUUID);
+        users[cursor] = entity;
+        cursor++;
+        return randomUUID;
+    }
 
-    UserEntity findByID(UUID uuid){
+    UserEntity findByID(UUID uuid) {
         for (UserEntity entity : users) {
             if (entity.getId().equals(uuid)) {
                 return entity;
@@ -23,7 +29,7 @@ class UserRepository {
         throw new NoSuchElementException();
     }
 
-    UserEntity findByName(String name){
+    UserEntity findByName(String name) {
         for (UserEntity entity : users) {
             if (entity.getName().equals(name)) {
                 return entity;
@@ -32,12 +38,22 @@ class UserRepository {
         return null;
     }
 
-    UUID save(UserEntity entity) {
-        UUID randomUUID = UUID.randomUUID();
-        entity.setId(randomUUID);
-        users[cursor] = entity;
-        cursor++;
-        return randomUUID;
+    UserEntity[] findAll() {
+        return users;
+    }
+
+    UserEntity updateUser(UUID uuid) {
+        for (UserEntity entity : users) {
+            if (entity.getId().equals(uuid)) {
+                entity.setName(entity.getName());
+                entity.setFamilyName(entity.getFamilyName());
+                entity.setPersonalCode(entity.getPersonalCode());
+            }
+            {
+                return entity;
+            }
+        }
+        return null;
     }
 
     void delete(UUID uuid) {

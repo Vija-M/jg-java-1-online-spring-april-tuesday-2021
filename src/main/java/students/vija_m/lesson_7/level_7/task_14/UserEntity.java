@@ -8,8 +8,8 @@ class UserEntity {
     private String familyName;
     private String personalCode;
 
-    public UserEntity(UUID id) {
-            }
+    public UserEntity() {
+    }
 
     UserEntity(UUID id, String name, String familyName, String personalCode) {
         this.id = id;
@@ -38,7 +38,7 @@ class UserEntity {
         this.id = id;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -49,4 +49,6 @@ class UserEntity {
     void setPersonalCode(String personalCode) {
         this.personalCode = personalCode;
     }
+
+
 }
