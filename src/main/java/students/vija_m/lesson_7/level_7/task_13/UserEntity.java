@@ -1,20 +1,22 @@
 package students.vija_m.lesson_7.level_7.task_13;
 
+import java.util.UUID;
+
 class UserEntity {
 
-    private int id;
+    private UUID id;
     private String name;
     private String familyName;
     private String personalCode;
 
-    UserEntity(int id, String name, String familyName, String personalCode) {
+    UserEntity(UUID id, String name, String familyName, String personalCode) {
         this.id = id;
         this.name = name;
         this.familyName = familyName;
         this.personalCode = personalCode;
     }
 
-    int getId() {
+    UUID getId() {
         return id;
     }
 
@@ -30,7 +32,7 @@ class UserEntity {
         return personalCode;
     }
 
-    void setId(int id) {
+    void setId(UUID id) {
         this.id = id;
     }
 
