@@ -38,7 +38,7 @@ class UserEntity {
         this.id = id;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 

@@ -9,7 +9,8 @@ class UserRepository {
     private UserEntity[] users;
     private int cursor = 0;
     Scanner scanner = new Scanner(System.in);
-    public UserRepository() {
+
+     UserRepository() {
         users = new UserEntity[100];
     }
 
@@ -46,11 +47,11 @@ class UserRepository {
     UserEntity updateUser(UUID uuid) {
         for (UserEntity entity : users) {
             if (entity.getId().equals(uuid)) {
-                System.out.println("Enter new personal code of user "+ entity.getId()+ " :");
+                System.out.println("Enter new personal code of user " + entity.getId() + " :");
                 entity.setPersonalCode(scanner.nextLine());
-                System.out.println("Enter new name of user "+ entity.getId()+ " :");
+                System.out.println("Enter new name of user " + entity.getId() + " :");
                 entity.setName(scanner.nextLine());
-                System.out.println("Enter new family name of user "+ entity.getId()+ " :");
+                System.out.println("Enter new family name of user " + entity.getId() + " :");
                 entity.setFamilyName(scanner.nextLine());
 
             }

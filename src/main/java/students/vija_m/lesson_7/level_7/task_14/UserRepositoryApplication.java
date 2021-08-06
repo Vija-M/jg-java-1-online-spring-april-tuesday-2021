@@ -76,12 +76,14 @@ class UserRepositoryApplication {
         System.out.println("User5 name is: " + foundUser5.getName());
         System.out.println("User5 family name is: " + foundUser5.getFamilyName());
         System.out.println("***");
+        System.out.println("");
 
         UserEntity findAlan = repository.findByName("Alan");
         System.out.println("ID of Alan is: " + findAlan.getId());
         System.out.println("Personal code of Alan is: " + findAlan.getPersonalCode());
         System.out.println("Family name of Alan is: " + findAlan.getFamilyName());
         System.out.println("***");
+        System.out.println("");
 
         UserEntity updateUser1 = repository.updateUser(user1Id);
         System.out.println("User1 ID is: " + updateUser1.getId());
@@ -93,4 +95,5 @@ class UserRepositoryApplication {
         repository.delete(user2Id);
         System.out.println("repository.findAll() = " + Arrays.toString(repository.findAll()));
 
-    }}
+    }
+}
