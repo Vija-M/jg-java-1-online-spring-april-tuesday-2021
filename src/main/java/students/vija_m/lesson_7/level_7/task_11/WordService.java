@@ -7,7 +7,7 @@ class WordService {
         String[] textArray = splitStringToWords(text);
         int[] wordCountArray = new int[textArray.length];
         wordFrequency(textArray, wordCountArray);
-        int max = mostFrequenWord(wordCountArray);
+        int max = mostFrequentWord(wordCountArray);
         return textArray[max];
     }
 
@@ -16,21 +16,22 @@ class WordService {
     }
 
     private void wordFrequency(String[] textArray, int[] wordCountArray) {
-        int wordCounter = 0;
-        for (int wordCount = 0; wordCount < textArray.length; wordCount++) {
-            for (String s : textArray) {
-                if (textArray[wordCount].equals(s)) {
+
+
+        for ( int wordCount = 0; wordCount < textArray.length; wordCount++ ) {
+            int wordCounter = 0;
+            for ( String i : textArray ) {
+                if (textArray[wordCount].equals(i)) {
                     wordCounter++;
                 }
             }
             wordCountArray[wordCount] = wordCounter;
-            wordCounter = 0;
         }
     }
 
-    private int mostFrequenWord(int[] wordCountArray) {
+    private int mostFrequentWord(int[] wordCountArray) {
         int max = 0;
-        for (int count = 0; count < wordCountArray.length; count++) {
+        for ( int count = 0; count < wordCountArray.length; count++ ) {
             if (wordCountArray[count] > max) {
                 max = count;
             }
