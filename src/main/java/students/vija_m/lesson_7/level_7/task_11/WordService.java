@@ -30,12 +30,15 @@ class WordService {
     }
 
     private int mostFrequentWord(int[] wordCountArray) {
-        int max = 0;
-        for ( int count = 0; count < wordCountArray.length; count++ ) {
-            if (wordCountArray[count] > max) {
-                max = count;
+        int maxValue = wordCountArray[0];
+        int maxIndex = 0;
+        for ( int i = 0; i < wordCountArray.length; i++ ) {
+            if (wordCountArray[i] > maxValue) {
+                maxValue = wordCountArray[i];
+                maxIndex = i;
             }
         }
-        return max;
+        return maxIndex;
     }
 }
+
