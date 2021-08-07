@@ -50,7 +50,6 @@ class UserRepositoryApplication {
         UserEntity foundUser4 = repository.findByID(user4Id);
         UserEntity foundUser5 = repository.findByID(user5Id);
 
-
         System.out.println("User1 ID is: " + foundUser1.getId());
         System.out.println("User1 personal code is: " + foundUser1.getPersonalCode());
         System.out.println("User1 name is: " + foundUser1.getName());
@@ -82,6 +81,11 @@ class UserRepositoryApplication {
         System.out.println("ID of Alan is: " + findAlan.getId());
         System.out.println("Personal code of Alan is: " + findAlan.getPersonalCode());
         System.out.println("Family name of Alan is: " + findAlan.getFamilyName());
+        System.out.println("***");
+        UserEntity findMary = repository.findByName("Mary");
+        System.out.println("ID of Mary is: " + findMary.getId());
+        System.out.println("Personal code of Mary is: " + findMary.getPersonalCode());
+        System.out.println("Family name of Mary is: " + findMary.getFamilyName());
         System.out.println("***");
         System.out.println("");
 
