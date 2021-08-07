@@ -9,6 +9,16 @@ class QuadraticEqTest {
 
     @Test
     void discriminantGreaterThan0() {
-//        quadraticEq.calc(1, 5, 3);
+        assertEquals("x1 = -1.0, x2 = 5.0", quadraticEq.calc(1, -4, -5));
+    }
+
+    @Test
+    void discriminantEquals0() {
+        assertEquals("x = -3.0", quadraticEq.calc(1, 6, 9));
+    }
+
+    @Test
+    void discriminantLessThan0() {
+        assertEquals("Equation has no roots", quadraticEq.calc(1, 2, 5));
     }
 }
