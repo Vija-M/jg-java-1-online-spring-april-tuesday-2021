@@ -7,7 +7,7 @@ class UserRepository {
     private int cursor = 0;
     Scanner scanner = new Scanner(System.in);
 
-     UserRepository() {
+    UserRepository() {
         users = new UserEntity[0];
     }
 
@@ -21,7 +21,7 @@ class UserRepository {
     }
 
     UserEntity findByID(UUID uuid) {
-        for (UserEntity entity : users) {
+        for ( UserEntity entity : users ) {
             if (entity.getId().equals(uuid)) {
                 return entity;
             }
@@ -30,7 +30,7 @@ class UserRepository {
     }
 
     UserEntity findByName(String name) {
-        for (UserEntity entity : users) {
+        for ( UserEntity entity : users ) {
             if (entity.getName().equals(name)) {
                 return entity;
             }
@@ -43,7 +43,7 @@ class UserRepository {
     }
 
     UserEntity updateUser(UUID uuid) {
-        for (UserEntity entity : users) {
+        for ( UserEntity entity : users ) {
             if (entity.getId().equals(uuid)) {
                 System.out.println("Enter new personal code of user " + entity.getId() + " :");
                 entity.setPersonalCode(scanner.nextLine());
@@ -61,7 +61,7 @@ class UserRepository {
     }
 
     void delete(UUID uuid) {
-        for (int i = 0; i < users.length; i++) {
+        for ( int i = 0; i < users.length; i++ ) {
             if (users[i].getId().equals(uuid)) {
                 users[i] = null;
                 break;
