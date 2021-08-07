@@ -22,16 +22,16 @@ class UserRepository {
 
     UserEntity findByID(UUID uuid) {
         for ( UserEntity entity : users ) {
-            if (entity.getId().equals(uuid)) {
+            if (entity != null && entity.getId().equals(uuid)) {
                 return entity;
             }
         }
-        throw new NoSuchElementException();
+        return null;
     }
 
     UserEntity findByName(String name) {
         for ( UserEntity entity : users ) {
-            if (entity.getName().equals(name)) {
+            if (entity != null && entity.getName().equals(name)) {
                 return entity;
             }
         }
@@ -60,13 +60,14 @@ class UserRepository {
         return null;
     }
 
-    void delete(UUID uuid) {
+    Object delete(UUID uuid) {
         for ( int i = 0; i < users.length; i++ ) {
-            if (users[i].getId().equals(uuid)) {
+            if (users[i] != null && users[i].getId().equals(uuid)) {
                 users[i] = null;
                 break;
             }
         }
+        return null;
     }
 
 }
