@@ -11,8 +11,7 @@ class UserEntity {
     public UserEntity() {
     }
 
-    UserEntity(UUID id, String name, String familyName, String personalCode) {
-        this.id = id;
+    UserEntity(String name, String familyName, String personalCode) {
         this.name = name;
         this.familyName = familyName;
         this.personalCode = personalCode;
