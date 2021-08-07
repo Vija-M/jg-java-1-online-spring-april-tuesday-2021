@@ -1,9 +1,6 @@
 package students.vija_m.lesson_7.level_7.task_14;
 
-import java.util.NoSuchElementException;
-import java.util.Optional;
-import java.util.Scanner;
-import java.util.UUID;
+import java.util.*;
 
 class UserRepository {
     private UserEntity[] users;
@@ -11,10 +8,11 @@ class UserRepository {
     Scanner scanner = new Scanner(System.in);
 
      UserRepository() {
-        users = new UserEntity[100];
+        users = new UserEntity[0];
     }
 
     UUID save(UserEntity entity) {
+        users = Arrays.copyOf(users, users.length + 1);
         UUID randomUUID = UUID.randomUUID();
         entity.setId(randomUUID);
         users[cursor] = entity;
