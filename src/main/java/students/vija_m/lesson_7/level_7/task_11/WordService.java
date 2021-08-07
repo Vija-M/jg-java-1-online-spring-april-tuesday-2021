@@ -12,7 +12,7 @@ class WordService {
     }
 
     private String[] splitStringToWords(String text) {
-        return text.split("([^A-Za-zА-ЯЁа-яё])+");
+        return text.trim().split("([^A-Za-zА-ЯЁа-яё])+");
     }
 
     private void wordFrequency(String[] textArray, int[] wordCountArray) {
