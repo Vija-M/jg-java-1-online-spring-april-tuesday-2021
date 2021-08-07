@@ -16,8 +16,6 @@ class WordService {
     }
 
     private void wordFrequency(String[] textArray, int[] wordCountArray) {
-
-
         for ( int wordCount = 0; wordCount < textArray.length; wordCount++ ) {
             int wordCounter = 0;
             for ( String i : textArray ) {
