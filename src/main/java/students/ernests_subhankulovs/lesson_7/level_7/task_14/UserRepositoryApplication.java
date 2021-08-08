@@ -1,6 +1,5 @@
 package students.ernests_subhankulovs.lesson_7.level_7.task_14;
 
-
 import java.util.UUID;
 
 class UserRepositoryApplication {
