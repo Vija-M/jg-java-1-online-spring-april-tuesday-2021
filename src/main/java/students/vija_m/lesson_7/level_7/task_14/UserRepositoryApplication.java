@@ -89,12 +89,12 @@ class UserRepositoryApplication {
         System.out.println("***");
         System.out.println("");
 
-        UserEntity updateUser1 = repository.updateUser(user1Id);
+       /* UserEntity updateUser1 = repository.updateUser(user1Id);
         System.out.println("User1 ID is: " + updateUser1.getId());
         System.out.println("User1 personal code is: " + updateUser1.getPersonalCode());
         System.out.println("User1 name is: " + updateUser1.getName());
         System.out.println("User1 family name is: " + updateUser1.getFamilyName());
-        System.out.println("***");
+        System.out.println("***");*/
 
         repository.delete(user2Id);
         System.out.println("repository.findAll() = " + Arrays.toString(repository.findAll()));
