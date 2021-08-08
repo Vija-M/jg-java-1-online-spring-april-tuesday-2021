@@ -14,7 +14,7 @@ class Apple {
         return color;
     }
 
-    public /*String*/ int getWeight() {
+    public int getWeight() {
         return weight;
     }
 
