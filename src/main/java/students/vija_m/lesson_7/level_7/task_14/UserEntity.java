@@ -4,16 +4,16 @@ import java.util.UUID;
 
 class UserEntity {
     private UUID id;
-    private String name;
-    private String familyName;
+    private String firstName;
+    private String lastName;
     private String personalCode;
 
     public UserEntity() {
     }
 
-    UserEntity(String name, String familyName, String personalCode) {
-        this.name = name;
-        this.familyName = familyName;
+    UserEntity(String firstName, String lastName, String personalCode) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.personalCode = personalCode;
     }
 
@@ -21,12 +21,12 @@ class UserEntity {
         return id;
     }
 
-    String getName() {
-        return name;
+    String getFirstName() {
+        return firstName;
     }
 
-    String getFamilyName() {
-        return familyName;
+    String getLastName() {
+        return lastName;
     }
 
     String getPersonalCode() {
@@ -38,11 +38,11 @@ class UserEntity {
     }
 
     void setName(String name) {
-        this.name = name;
+        this.firstName = name;
     }
 
     void setFamilyName(String familyName) {
-        this.familyName = familyName;
+        this.lastName = familyName;
     }
 
     void setPersonalCode(String personalCode) {
