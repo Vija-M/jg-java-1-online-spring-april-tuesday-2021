@@ -4,7 +4,7 @@ class Trader {
     private String name;
     private String city;
 
-    private Trader(String name, String city) {
+    Trader(String name, String city) {
         this.name = name;
         this.city = city;
     }
