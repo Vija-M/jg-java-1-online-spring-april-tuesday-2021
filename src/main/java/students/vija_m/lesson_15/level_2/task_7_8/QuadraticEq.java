@@ -1,15 +1,16 @@
 package students.vija_m.lesson_15.level_2.task_7_8;
 
-class QuadraticEq { String calc(double a, double b, double c) {
-    double discriminant = b * b - 4 * a * c;
-    if (discriminant > 0) {
-        return discriminantGreaterThanZero(a, b, discriminant);
-    } else if (discriminant == 0) {
-        return discriminantEqualsZero(a, b);
-    } else {
-        return discriminantLessThanZero();
+class QuadraticEq {
+    String calc(double a, double b, double c) {
+        double discriminant = b * b - 4 * a * c;
+        if (discriminant > 0) {
+            return discriminantGreaterThanZero(a, b, discriminant);
+        } else if (discriminant == 0) {
+            return discriminantEqualsZero(a, b);
+        } else {
+            return discriminantLessThanZero();
+        }
     }
-}
 
     private String discriminantGreaterThanZero(double a, double b, double discriminant) {
         double x1 = ( -b - Math.sqrt(discriminant) ) / ( 2 * a );
