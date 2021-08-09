@@ -14,7 +14,7 @@ class UserRepository {
     }
 
     UserEntity findByID(UUID uuid) {
-        for (UserEntity entity : users) {
+        for ( UserEntity entity : users ) {
             if (entity != null && entity.getId().equals(uuid)) {
                 return entity;
             }
@@ -23,7 +23,7 @@ class UserRepository {
     }
 
     UserEntity findByName(String firstName) {
-        for (UserEntity entity : users) {
+        for ( UserEntity entity : users ) {
             if (entity != null && entity.getFirstName().equals(firstName)) {
                 return entity;
             }
@@ -36,7 +36,7 @@ class UserRepository {
     }
 
     UserEntity updateUser(UUID uuid, String newPersonalCode, String newFirstName, String newLastName) {
-        for (UserEntity entity : users) {
+        for ( UserEntity entity : users ) {
             if (entity.getId().equals(uuid)) {
                 entity.setPersonalCode(newPersonalCode);
                 entity.setName(newFirstName);
@@ -48,7 +48,7 @@ class UserRepository {
     }
 
     Object delete(UUID uuid) {
-        for (int i = 0; i < users.length; i++) {
+        for ( int i = 0; i < users.length; i++ ) {
             if (users[i] != null && users[i].getId().equals(uuid)) {
                 UserEntity user = users[i];
                 users[i] = null;
@@ -57,7 +57,6 @@ class UserRepository {
         }
         return null;
     }
-
 
 
 }

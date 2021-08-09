@@ -13,8 +13,8 @@ class UserRepositoryApplication {
 
         UserEntity user1 = new UserEntity("John", "Doe", "000000-00000");
         UserEntity user2 = new UserEntity("John", "Smith", "000001-00000");
-        UserEntity user3 = new UserEntity("Mary", "Green","000002-00000" );
-        UserEntity user4 = new UserEntity("Alan","Po", "000003-00000");
+        UserEntity user3 = new UserEntity("Mary", "Green", "000002-00000");
+        UserEntity user4 = new UserEntity("Alan", "Po", "000003-00000");
         UserEntity user5 = new UserEntity("John", "Chaney", "000004-00000");
 
         UUID user1Id = repository.save(user1);
@@ -70,12 +70,12 @@ class UserRepositoryApplication {
         System.out.println("***");
         System.out.println("");
 
-       /* UserEntity updateUser1 = repository.updateUser(user1Id);
+        UserEntity updateUser1 = repository.updateUser(user1Id, "111111-11111", "Catrin", "Stark");
         System.out.println("User1 ID is: " + updateUser1.getId());
         System.out.println("User1 personal code is: " + updateUser1.getPersonalCode());
-        System.out.println("User1 name is: " + updateUser1.getName());
-        System.out.println("User1 family name is: " + updateUser1.getFamilyName());
-        System.out.println("***");*/
+        System.out.println("User1 name is: " + updateUser1.getFirstName());
+        System.out.println("User1 family name is: " + updateUser1.getLastName());
+        System.out.println("***");
 
         repository.delete(user2Id);
         System.out.println("repository.findAll() = " + Arrays.toString(repository.findAll()));
