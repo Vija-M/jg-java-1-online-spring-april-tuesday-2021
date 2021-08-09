@@ -7,174 +7,52 @@ import java.util.Arrays;
 import java.util.List;
 
 class TransactionAnalysisServiceTest {
+
     @Test
-    void testFindTransactionsIn2011Size() {
+    void shouldFindTransactionsFrom2011() {
+        TransactionAnalysisService service = new TransactionAnalysisService();
+        TransactionTestData testData = new TransactionTestData();
+
         Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader brian = new Trader("Brian","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
+        Trader brian = new Trader("Brian", "Cambridge");
+        List<Transaction> expected = Arrays.asList(
                 new Transaction(brian, 2011, 300),
                 new Transaction(raoul, 2011, 400)
         );
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        TransactionTestData testData = new TransactionTestData();
-        Assertions.assertEquals(transactions.size(), service.findTransactionsByYear(testData.getTransactions(), 2011).size());
+
+        List<Transaction> actual = service.findTransactionsByYear(testData.getTransactions(), 2011);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testFindTransactionsIn2011Year() {
-        Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader brian = new Trader("Brian","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
-                new Transaction(brian, 2011, 300),
-                new Transaction(raoul, 2011, 400)
-        );
+    void shouldFindTransactionsFrom2012() {
         TransactionAnalysisService service = new TransactionAnalysisService();
         TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < transactions.size(); i++) {
-            Assertions.assertEquals(transactions.get(i).getYear(), service.findTransactionsByYear(testData.getTransactions(), 2011).get(i).getYear());
-        }
-    }
 
-    @Test
-    void testFindTransactionsIn2011Value() {
         Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader brian = new Trader("Brian","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
-                new Transaction(brian, 2011, 300),
-                new Transaction(raoul, 2011, 400)
-        );
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < transactions.size(); i++) {
-            Assertions.assertEquals(transactions.get(i).getValue(), service.findTransactionsByYear(testData.getTransactions(), 2011).get(i).getValue());
-        }
-    }
-
-    @Test
-    void testFindTransactionsIn2011TraderName() {
-        Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader brian = new Trader("Brian","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
-                new Transaction(brian, 2011, 300),
-                new Transaction(raoul, 2011, 400)
-        );
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < transactions.size(); i++) {
-            Assertions.assertEquals(transactions.get(i).getTrader().getName(), service.findTransactionsByYear(testData.getTransactions(), 2011).get(i).getTrader().getName());
-        }
-    }
-
-    @Test
-    void testFindTransactionsIn2011TraderCity() {
-        Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader brian = new Trader("Brian","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
-                new Transaction(brian, 2011, 300),
-                new Transaction(raoul, 2011, 400)
-        );
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < transactions.size(); i++) {
-            Assertions.assertEquals(transactions.get(i).getTrader().getCity(), service.findTransactionsByYear(testData.getTransactions(), 2011).get(i).getTrader().getCity());
-        }
-    }
-
-    @Test
-    void testFindTransactionsIn2012Size() {
-        Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader mario = new Trader("Mario","Milan");
-        Trader alan = new Trader("Alan","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
+        Trader mario = new Trader("Mario", "Milan");
+        Trader alan = new Trader("Alan", "Cambridge");
+        List<Transaction> expected = Arrays.asList(
                 new Transaction(raoul, 2012, 1000),
                 new Transaction(mario, 2012, 710),
                 new Transaction(mario, 2012, 700),
                 new Transaction(alan, 2012, 950)
         );
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        TransactionTestData testData = new TransactionTestData();
-        Assertions.assertEquals(transactions.size(), service.findTransactionsByYear(testData.getTransactions(), 2012).size());
+
+        List<Transaction> actual = service.findTransactionsByYear(testData.getTransactions(), 2012);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testFindTransactionsIn2012Year() {
-        Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader mario = new Trader("Mario","Milan");
-        Trader alan = new Trader("Alan","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
-                new Transaction(raoul, 2012, 1000),
-                new Transaction(mario, 2012, 710),
-                new Transaction(mario, 2012, 700),
-                new Transaction(alan, 2012, 950)
-        );
+    void shouldSortTransactionsByValue() {
         TransactionAnalysisService service = new TransactionAnalysisService();
         TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < transactions.size(); i++) {
-            Assertions.assertEquals(transactions.get(i).getYear(), service.findTransactionsByYear(testData.getTransactions(), 2012).get(i).getYear());
-        }
-    }
 
-    @Test
-    void testFindTransactionsIn2012Value() {
         Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader mario = new Trader("Mario","Milan");
-        Trader alan = new Trader("Alan","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
-                new Transaction(raoul, 2012, 1000),
-                new Transaction(mario, 2012, 710),
-                new Transaction(mario, 2012, 700),
-                new Transaction(alan, 2012, 950)
-        );
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < transactions.size(); i++) {
-            Assertions.assertEquals(transactions.get(i).getValue(), service.findTransactionsByYear(testData.getTransactions(), 2012).get(i).getValue());
-        }
-    }
-
-    @Test
-    void testFindTransactionsIn2012Name() {
-        Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader mario = new Trader("Mario","Milan");
-        Trader alan = new Trader("Alan","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
-                new Transaction(raoul, 2012, 1000),
-                new Transaction(mario, 2012, 710),
-                new Transaction(mario, 2012, 700),
-                new Transaction(alan, 2012, 950)
-        );
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < transactions.size(); i++) {
-            Assertions.assertEquals(transactions.get(i).getTrader().getName(), service.findTransactionsByYear(testData.getTransactions(), 2012).get(i).getTrader().getName());
-        }
-    }
-
-    @Test
-    void testFindTransactionsIn2012City() {
-        Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader mario = new Trader("Mario","Milan");
-        Trader alan = new Trader("Alan","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
-                new Transaction(raoul, 2012, 1000),
-                new Transaction(mario, 2012, 710),
-                new Transaction(mario, 2012, 700),
-                new Transaction(alan, 2012, 950)
-        );
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < transactions.size(); i++) {
-            Assertions.assertEquals(transactions.get(i).getTrader().getCity(), service.findTransactionsByYear(testData.getTransactions(), 2012).get(i).getTrader().getCity());
-        }
-    }
-
-    @Test
-    void testSortTransactionsByValue() {
-        Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader mario = new Trader("Mario","Milan");
-        Trader alan = new Trader("Alan","Cambridge");
-        Trader brian = new Trader("Brian","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
+        Trader mario = new Trader("Mario", "Milan");
+        Trader alan = new Trader("Alan", "Cambridge");
+        Trader brian = new Trader("Brian", "Cambridge");
+        List<Transaction> expected = Arrays.asList(
                 new Transaction(brian, 2011, 300),
                 new Transaction(raoul, 2011, 400),
                 new Transaction(mario, 2012, 700),
@@ -182,20 +60,21 @@ class TransactionAnalysisServiceTest {
                 new Transaction(alan, 2012, 950),
                 new Transaction(raoul, 2012, 1000)
         );
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < transactions.size(); i++) {
-            Assertions.assertEquals(transactions.get(i).getValue(), service.sortTransactionsByValue(testData.getTransactions()).get(i).getValue());
-        }
+
+        List<Transaction> actual = service.sortTransactionsByValue(testData.getTransactions());
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testSortTransactionsByValueReversed() {
+    void shouldSortTransactionsByValueReversed() {
+        TransactionAnalysisService service = new TransactionAnalysisService();
+        TransactionTestData testData = new TransactionTestData();
+
         Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader mario = new Trader("Mario","Milan");
-        Trader alan = new Trader("Alan","Cambridge");
-        Trader brian = new Trader("Brian","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
+        Trader mario = new Trader("Mario", "Milan");
+        Trader alan = new Trader("Alan", "Cambridge");
+        Trader brian = new Trader("Brian", "Cambridge");
+        List<Transaction> expected = Arrays.asList(
                 new Transaction(raoul, 2012, 1000),
                 new Transaction(alan, 2012, 950),
                 new Transaction(mario, 2012, 710),
@@ -203,35 +82,33 @@ class TransactionAnalysisServiceTest {
                 new Transaction(raoul, 2011, 400),
                 new Transaction(brian, 2011, 300)
         );
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < transactions.size(); i++) {
-            Assertions.assertEquals(transactions.get(i).getValue(), service.sortTransactionsByValueReversed(testData.getTransactions()).get(i).getValue());
-        }
+
+        List<Transaction> actual = service.sortTransactionsByValueReversed(testData.getTransactions());
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testFindTransactionsByYearAndSortByValueReversed() {
+    void shouldFindTransactionsByYearAndSortByValueReversed() {
+        TransactionAnalysisService service = new TransactionAnalysisService();
+        TransactionTestData testData = new TransactionTestData();
+
         Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader brian = new Trader("Brian","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
+        Trader brian = new Trader("Brian", "Cambridge");
+        List<Transaction> expected = Arrays.asList(
                 new Transaction(brian, 2011, 300),
                 new Transaction(raoul, 2011, 400)
         );
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < transactions.size(); i++) {
-            Assertions.assertEquals(transactions.get(i).getValue(), service.findTransactionsByYearAndByValue(testData.getTransactions(), 2011).get(i).getValue());
-        }
+
+        List<Transaction> actual = service.findTransactionsByYearAndByValue(testData.getTransactions(), 2011);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void testFindTransactionYears() {
-        List<Integer> years = Arrays.asList(2011, 2012);
+    void shouldFindTransactionYears() {
         TransactionAnalysisService service = new TransactionAnalysisService();
         TransactionTestData testData = new TransactionTestData();
-        for (int i = 0; i < years.size(); i++) {
-            Assertions.assertEquals(years.get(i), service.findTransactionYears(testData.getTransactions()).get(i));
-        }
+        List<Integer> expected = Arrays.asList(2011, 2012, 2011, 2012, 2012, 2012);
+        List<Integer> actual = service.findTransactionYears(testData.getTransactions());
+        Assertions.assertEquals(expected, actual);
     }
 }
