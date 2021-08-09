@@ -15,5 +15,18 @@ class GildedRoseDemo {
 
         GildedRose gildedRose = new GildedRose();
         gildedRose.updateQuality(items);
+        /*int days = 10;
+        if(args.length > 0){
+            days = Integer.parseInt(args[0])+1;
+        }
+        for(int i = 0; i < days; i++){
+            System.out.println("-------- day " + i + "--------");
+            System.out.println("name, selling, quality");
+            for (Item item : items) {
+                System.out.println(item);
+            }
+            System.out.println();
+            gildedRose.updateQuality(items);
+        }*/
     }
 }
