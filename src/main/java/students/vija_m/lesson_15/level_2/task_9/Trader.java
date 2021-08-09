@@ -9,7 +9,7 @@ class Trader {
         this.city = city;
     }
 
-    public String getFullName() {
+    public String getName() {
         return name;
     }
 
