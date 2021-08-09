@@ -6,12 +6,6 @@ import java.util.stream.Collectors;
 
 class TransactionAnalysisService {
 
-    public static void main(String[] args) {
-        TransactionTestData data = new TransactionTestData();
-        TransactionAnalysisService service = new TransactionAnalysisService();
-        service.sortTransactionsByValue(data.getTransactions());
-    }
-
     public List<Transaction> findTransactionsByYear(List<Transaction> transactions, int year) {
         return transactions.stream()
                 .filter(t -> t.getYear() == year)
