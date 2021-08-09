@@ -29,12 +29,22 @@ class UserRepositoryTest {
     }
 
     @Test
+    void shouldUpdateUser() {
+        UserRepository victim = new UserRepository();
+        UserEntity user1 = new UserEntity("Alan", "Po", "000011-00000");
+        UUID uuid1 = victim.save(user1);
+        victim.updateUser(uuid1, "111111-11111", "Catrin", "Stark");
+        assertEquals("Catrin", victim.findByID(uuid1).getFirstName(), "Updated first name");
+        assertEquals("Stark", victim.findByID(uuid1).getLastName(), "Updated last name");
+        assertEquals("111111-11111", victim.findByID(uuid1).getPersonalCode(), "Updated personal code");
+    }
+
+    @Test
     void deletedUser() {
         UserRepository victim = new UserRepository();
         UserEntity user1 = new UserEntity("Alan", "Po", "000011-00000");
         UUID uuid1 = victim.save(user1);
 
         assertEquals(user1, victim.delete(uuid1));
-
     }
 }
