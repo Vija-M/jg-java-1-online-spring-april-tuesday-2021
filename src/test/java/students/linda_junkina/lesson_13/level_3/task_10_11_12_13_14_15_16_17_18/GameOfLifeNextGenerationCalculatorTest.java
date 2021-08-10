@@ -5,10 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameOfLifeNextGenerationCalculatorTest {
+    GameOfLifeNextGenerationCalculator nextGenerationCalculator = new GameOfLifeNextGenerationCalculator();
+    boolean[][] field =
+                    {{false, true, true, true},
+                    {true, false, true, true},
+                    {false, true, true, false},
+                    {true, true, false, true}};
 
-    private GameOfLifeNextGenerationCalculator gameOfLife;
     @Test
     void shouldDieIfLessThan2Neighbours() {
+        assertFalse(nextGenerationCalculator.calculate(field)[3][3]);
+    }
+
+    @Test
+    void shouldLiveIf2Neighbours() {
+        assertTrue(nextGenerationCalculator.calculate(field)[0][3]);
 
     }
 }
