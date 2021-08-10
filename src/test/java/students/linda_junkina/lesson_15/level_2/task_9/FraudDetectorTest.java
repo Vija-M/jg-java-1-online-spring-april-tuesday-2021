@@ -10,13 +10,13 @@ class FraudDetectorTest {
 
     @Test
     void allMatch() {
-        Trader trader = new Trader("Pockemon", "Sidney");
+        Trader trader = new Trader("Pokemon", "Sidney");
         assertTrue(fraudDetector.isFraud(trader));
     }
 
     @Test
     void nameMatch() {
-        Trader trader = new Trader("Pockemon", "London");
+        Trader trader = new Trader("Pokemon", "London");
         assertTrue(fraudDetector.isFraud(trader));
     }
 

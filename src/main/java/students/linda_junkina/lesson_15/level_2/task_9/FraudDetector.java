@@ -4,18 +4,14 @@ class FraudDetector {
     public boolean isFraud(Trader trader) {
         return compareTraderNameWithScammerName(trader)
                 ||
-                (compareTraderCityWithScammerCity(trader));
+                compareTraderCityWithScammerCity(trader);
     }
 
     private boolean compareTraderNameWithScammerName(Trader trader) {
-        String traderName = trader.getFullName();
-        String scammerName = trader.getNameOfTheScammer();
-        return traderName.equals(scammerName);
+        return trader.getFullName().equals("Pokemon");
     }
 
     private boolean compareTraderCityWithScammerCity(Trader trader) {
-        String cityName = trader.getCity();
-        String scammerCity = trader.getCityOfTheScammer();
-        return cityName.equals(scammerCity);
+        return trader.getCity().equals("Sidney");
     }
 }
