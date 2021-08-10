@@ -1,33 +1,21 @@
 package students.linda_junkina.lesson_15.level_2.task_9;
 
 class FraudDetector {
-    boolean isFraud(Trader trader) {
-        if (compareTraderName(trader)
+    public boolean isFraud(Trader trader) {
+        return compareTraderNameWithScammerName(trader)
                 ||
-                (compareCity(trader))
-        ) {
-            return true;
-        } else {
-            return false;
-        }
+                (compareTraderCityWithScammerCity(trader));
     }
 
-    boolean compareTraderName (Trader trader) {
+    private boolean compareTraderNameWithScammerName(Trader trader) {
         String traderName = trader.getFullName();
         String scammerName = trader.getNameOfTheScammer();
-        if (traderName.equals(scammerName)) {
-        }
-        return true;
+        return traderName.equals(scammerName);
     }
 
-    boolean compareCity(Trader trader) {
+    private boolean compareTraderCityWithScammerCity(Trader trader) {
         String cityName = trader.getCity();
         String scammerCity = trader.getCityOfTheScammer();
-        if (cityName.equals(scammerCity)) {
-            return true;
-        } else {
-            return false;
-        }
+        return cityName.equals(scammerCity);
     }
-
 }

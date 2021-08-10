@@ -3,8 +3,14 @@ package students.linda_junkina.lesson_15.level_2.task_9;
 class Trader {
     String fullName;
     String city;
-    String nameOfTheScammer;
-    String cityOfTheScammer;
+    String nameOfTheScammer = "Pockemon";
+    String cityOfTheScammer = "Sidney";
+
+    public Trader(String fullName, String city) {
+        this.fullName = fullName;
+        this.city = city;
+    }
+
 
     public String getFullName() {
         return fullName;
@@ -22,3 +28,4 @@ class Trader {
         return cityOfTheScammer;
     }
 }
+
