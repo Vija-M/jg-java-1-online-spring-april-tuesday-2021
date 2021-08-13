@@ -19,9 +19,26 @@ class FruitStorage {
         return apples;
     }
 
-    public List<Apple> getApplesByColor(String color) {
-        return getAllApples().stream()
-                .filter(s -> s.getColor().equals(color))
-                .collect(toList());
+
+    public List<Apple> findGreenApples(List<Apple> inventory) {
+        List<Apple> result = new ArrayList<>();
+        for ( Apple apple : inventory ) {
+            if ("green".equals(apple.getColor())) {
+                result.add(apple);
+            }
+        }
+        return result;
     }
+
+    public List<Apple> findRedApples(List<Apple> inventory) {
+        List<Apple> result = new ArrayList<>();
+        for ( Apple apple : inventory ) {
+            if ("red".equals(apple.getColor())) {
+                result.add(apple);
+            }
+        }
+        return result;
+    }
+
+
 }
