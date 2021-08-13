@@ -2,6 +2,7 @@ package students.vija_m.lesson_14.level_1.task_1;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import static java.util.stream.Collectors.*;
 
 class FruitStorage {
