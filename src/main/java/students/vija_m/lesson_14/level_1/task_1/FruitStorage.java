@@ -2,8 +2,6 @@ package students.vija_m.lesson_14.level_1.task_1;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import static java.util.stream.Collectors.*;
 
 class FruitStorage {
@@ -20,10 +18,20 @@ class FruitStorage {
         return apples;
     }
 
-    public List<Apple> getAllGreenApples() {
+    public List<Apple> findGreenApples() {
         return getAllApples().stream()
                 .filter(s -> s.getColor().equals("green"))
                 .collect(toList());
     }
+
+    /*     public List<Apple> findGreenApples(List<Apple> inventory) {
+        List<Apple> result = new ArrayList<>();
+        for ( Apple apple : inventory ) {
+            if ("green".equals(apple.getColor())) {
+                result.add(apple);
+            }
+        }
+        return result;
+    }     */
 }
 
