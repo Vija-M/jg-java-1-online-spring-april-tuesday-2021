@@ -2,21 +2,16 @@ package students.dmitrijs_matrenicevs.lesson_15.level_2.task_9;
 
 class FraudDetector {
 
-    boolean isFraud(Trader trader) {
-        return compareTraderName(trader) || compareCity(trader);
+    public boolean isFraud(Trader trader) {
+        return isNameBanned(trader) || isCityBanned(trader);
     }
 
-    boolean compareTraderName(Trader trader) {
-        String traderName = trader.getName();
-        switch (traderName) {
-            case "Pokemon":
-                break;
-        }
-        return true;
+    private boolean isNameBanned(Trader trader) {
+        return trader.getName().equals("Pokemon");
     }
 
-    boolean compareCity(Trader trader) {
-        var cityName = trader.getCity();
-        return cityName.equals("Sidney");
+    private boolean isCityBanned(Trader trader) {
+        var isCityBanned = trader.getCity();
+        return isCityBanned.equals("Sydney");
     }
 }

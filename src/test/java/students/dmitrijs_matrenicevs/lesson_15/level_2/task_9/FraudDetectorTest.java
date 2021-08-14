@@ -9,18 +9,22 @@ class FraudDetectorTest {
     FraudDetector fraudDetector = new FraudDetector();
 
     @Test
-    void compareTraderName() {
-        assertTrue(fraudDetector.compareTraderName(new Trader("Pokemon", "Sidney")));
-        assertTrue(fraudDetector.compareTraderName(new Trader("Pika", "Sidney")));
+    void isFraudWhenNameIsBanned() {
+        assertTrue(fraudDetector.isFraud(new Trader("Pokemon", "Riga")));
     }
 
     @Test
-    void compareCity() {
-        assertTrue(fraudDetector.compareCity(new Trader("Pokemon", "Sidney")));
+    void isFraudWhenCityIsBanned() {
+        assertTrue(fraudDetector.isFraud(new Trader("Pika", "Sydney")));
     }
 
     @Test
-    void isFraud() {
-        assertTrue(fraudDetector.isFraud(new Trader("Brok", "Sweden ")));
+    void isFraudWhenNameAndCityAreBanned() {
+        assertTrue(fraudDetector.isFraud(new Trader("Pokemon", "Sydney")));
+    }
+
+    @Test
+    void isNotFraud() {
+        assertFalse(fraudDetector.isFraud(new Trader("Jeff", "Sweden")));
     }
 }
