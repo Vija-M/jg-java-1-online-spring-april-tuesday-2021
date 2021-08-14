@@ -46,4 +46,12 @@ class TransactionAnalysisService {
                 .distinct()
                 .collect(Collectors.toList());
     }
+
+    public List<String> findDistinctTraderCities(List<Transaction> transactions) {
+        return transactions.stream()
+                .map(Transaction::getTrader)
+                .map(Trader::getCity)
+                .distinct()
+                .collect(Collectors.toList());
+    }
 }

@@ -258,4 +258,22 @@ class TransactionAnalysisServiceTest {
             Assertions.assertEquals(years.get(i), service.findDistinctTransactionYears(testData.getTransactions()).get(i));
         }
     }
+
+    @Test
+    void testFindDistinctTraderCitiesSize() {
+        List<String> cities = Arrays.asList("Cambridge", "Milan");
+        TransactionAnalysisService service = new TransactionAnalysisService();
+        TransactionTestData testData = new TransactionTestData();
+        Assertions.assertEquals(cities.size(), service.findDistinctTraderCities(testData.getTransactions()).size());
+    }
+
+    @Test
+    void testFindDistinctTraderCities() {
+        List<String> cities = Arrays.asList("Cambridge", "Milan");
+        TransactionAnalysisService service = new TransactionAnalysisService();
+        TransactionTestData testData = new TransactionTestData();
+        for (int i = 0; i < cities.size(); i++) {
+            Assertions.assertEquals(cities.get(i), service.findDistinctTraderCities(testData.getTransactions()).get(i));
+        }
+    }
 }
