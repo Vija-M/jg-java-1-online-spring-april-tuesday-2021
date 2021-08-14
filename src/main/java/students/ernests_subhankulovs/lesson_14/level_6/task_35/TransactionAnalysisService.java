@@ -82,7 +82,8 @@ class TransactionAnalysisService {
     }
 
     public Optional<Integer> getLargestValue(List<Transaction> transactions) {
-        Integer largestValue = transactions.stream()
+        Integer largestValue;
+        largestValue = transactions.stream()
                 .map(Transaction::getValue)
                 .max(Integer::compare)
                 .get();
