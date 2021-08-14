@@ -144,4 +144,13 @@ class TransactionAnalysisServiceTest {
         List<String> actual = service.findDistinctTraderNames(testData.getTransactions());
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    void testFindTraderNamesFromCambridge() {
+        TransactionAnalysisService service = new TransactionAnalysisService();
+        TransactionTestData testData = new TransactionTestData();
+        List<String> expected = Arrays.asList("Brian", "Raoul", "Alan");
+        List<String> actual = service.findTraderNamesFromCambridge(testData.getTransactions());
+        Assertions.assertEquals(expected, actual);
+    }
 }
