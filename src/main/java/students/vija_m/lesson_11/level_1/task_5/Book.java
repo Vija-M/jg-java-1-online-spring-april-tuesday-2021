@@ -2,7 +2,7 @@ package students.vija_m.lesson_11.level_1.task_5;
 
 import java.util.Objects;
 
-public class Book {
+class Book {
     private String title;
     private String author;
 
@@ -24,7 +24,7 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return Objects.equals(title, book.title) && Objects.equals(author, book.author);
+        return title.equals(book.title) && author.equals(book.author);
     }
     @Override
     public int hashCode() {return Objects.hash(title, author);};
