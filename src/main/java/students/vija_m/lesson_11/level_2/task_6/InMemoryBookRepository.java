@@ -7,7 +7,7 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public Long save(Book book) {
-        Long newID = (long) (bookDataBase.size() + 1);
+        Long newID = (long) ( bookDataBase.size() + 1 );
         book.setId(newID);
         bookDataBase.add(book);
         return newID;
