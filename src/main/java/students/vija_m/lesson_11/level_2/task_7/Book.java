@@ -4,8 +4,8 @@ import java.util.Objects;
 
 class Book {
     private Long id;
-    private String title;
-    private String author;
+    private final String title;
+    private final String author;
 
     Book(String author, String title) {
         this.author = author;

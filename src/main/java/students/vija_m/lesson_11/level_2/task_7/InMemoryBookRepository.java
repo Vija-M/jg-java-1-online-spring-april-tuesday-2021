@@ -2,7 +2,7 @@ package students.vija_m.lesson_11.level_2.task_7;
 
 import java.util.ArrayList;
 
-class InMemoryBookRepository implements BookRepository{
+class InMemoryBookRepository implements BookRepository {
     ArrayList<Book> bookDataBase = new ArrayList<>();
 
     @Override
@@ -18,13 +18,3 @@ class InMemoryBookRepository implements BookRepository{
         return bookDataBase.removeIf(book -> book.getId().equals(bookId));
     }
 }
-/*      @Override
-    public boolean delete(Long bookId) {
-        for (Book book : bookDataBase) {
-            if (book.getId().equals(bookId)) {
-                bookDataBase.remove(book);
-                return true;
-            }
-        }
-        return false;
-    }*/
