@@ -1,6 +1,6 @@
 package students.arturs_arutjunovs.lesson_9.level_5.task_29;
 
-public class FraudRule3 extends FraudRule {
+class FraudRule3 extends FraudRule {
 
     public FraudRule3() {
         super("Rule #3");
