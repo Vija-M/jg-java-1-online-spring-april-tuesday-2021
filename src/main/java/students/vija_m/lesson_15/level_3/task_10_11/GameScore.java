@@ -13,12 +13,24 @@ class GameScore implements TennisGame {
 
     @Override
     public void wonPoint(String playerName) {
-
+        if (playerName.equals("player1")) {
+            firstPlayerScore++;
+        } else {
+            secondPlayerScore++;
+        }
     }
 
     @Override
     public String score() {
-        return null;
+        if (deuce()) {
+            return "Deuce!";
+        } else if (advantageFirstPlayer()) {
+            return "Advantage player1";
+        } else if (advantageSecondPlayer()) {
+            return "Advantage player2";
+        } else {
+            return gameScore(firstPlayerScore) + " - " + gameScore(secondPlayerScore);
+        }
     }
 
     private boolean deuce() {
@@ -33,13 +45,13 @@ class GameScore implements TennisGame {
         return firstPlayerScore >= 3 && secondPlayerScore == firstPlayerScore + 1;
     }
 
-    private String scores(int score) {
+    private String gameScore(int score) {
         return switch (score) {
             case 0 -> "Love";
             case 1 -> "Fifteen";
             case 2 -> "Thirty";
             case 3 -> "Forty";
-            default -> "Invalid score";
+            default -> "Wrong score";
         };
     }
 
