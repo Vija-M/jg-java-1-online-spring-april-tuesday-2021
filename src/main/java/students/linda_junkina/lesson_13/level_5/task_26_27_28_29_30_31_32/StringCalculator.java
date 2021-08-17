@@ -7,9 +7,8 @@ import java.util.stream.Collectors;
 
 class StringCalculator {
 
-    String delimiter = "[,|\n]";
-
     int add(String input) {
+        String delimiter = "[,|\n]";
         String[] integers = input.split(delimiter);
         if (emptyString(input)) {
             return 0;
@@ -18,9 +17,9 @@ class StringCalculator {
             return stringToInt(input);
 
         } else {
+
             return calculateSum(integers);
         }
-
     }
 
     public boolean emptyString(String numbers) {
@@ -38,5 +37,4 @@ class StringCalculator {
         }
         return sum;
     }
-
 }

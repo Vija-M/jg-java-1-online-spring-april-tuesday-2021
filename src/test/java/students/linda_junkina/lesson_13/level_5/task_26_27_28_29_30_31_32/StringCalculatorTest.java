@@ -31,8 +31,9 @@ class StringCalculatorTest {
     void ifIntegersAreDividedWithLine() {
         assertEquals(10, calculator.add("1\n2,3,4"));
     }
-//    @Test
-//    void otherDelimiters() {
-//        assertEquals(3, calculator.add("//[;]\n1;2"));
-//    }
+
+    @Test
+    void otherDelimiters() {
+        assertEquals(3, calculator.add("//[;]\n1;2"));
+    }
 }
