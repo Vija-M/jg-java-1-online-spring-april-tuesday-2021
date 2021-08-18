@@ -1,6 +1,7 @@
 package students.linda_junkina.lesson_10.level_2.task_4_5;
 
 class ArrayDayOfTheWeekDetector implements DayOfTheWeekDetector {
+
     @Override
     public String detectDayName(int number) {
         String[] dayOfTheWeek = {

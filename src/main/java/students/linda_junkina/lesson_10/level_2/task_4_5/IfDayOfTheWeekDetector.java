@@ -3,7 +3,6 @@ package students.linda_junkina.lesson_10.level_2.task_4_5;
 class IfDayOfTheWeekDetector implements DayOfTheWeekDetector {
 
     public String detectDayName(int number) {
-
         if (number == 1) {
             return "Monday";
         } else if (number == 2) {
