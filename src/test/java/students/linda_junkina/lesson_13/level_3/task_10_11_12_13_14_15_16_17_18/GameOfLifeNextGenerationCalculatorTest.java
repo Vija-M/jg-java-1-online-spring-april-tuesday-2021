@@ -19,7 +19,6 @@ class GameOfLifeNextGenerationCalculatorTest {
 
     @Test
     void shouldLiveIf2Neighbours() {
-        assertTrue(nextGenerationCalculator.calculate(field)[0][3]);
-
+        assertFalse(nextGenerationCalculator.calculate(field)[1][3]);
     }
 }
