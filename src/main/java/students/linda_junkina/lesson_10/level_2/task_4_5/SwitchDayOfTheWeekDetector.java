@@ -1,4 +1,4 @@
-package students.linda_junkina.lesson_10.level_1.task_4_5;
+package students.linda_junkina.lesson_10.level_2.task_4_5;
 
 class SwitchDayOfTheWeekDetector implements DayOfTheWeekDetector {
     @Override

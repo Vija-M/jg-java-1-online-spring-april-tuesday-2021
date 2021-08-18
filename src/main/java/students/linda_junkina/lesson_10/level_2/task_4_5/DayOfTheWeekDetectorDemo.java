@@ -1,9 +1,9 @@
-package students.linda_junkina.lesson_10.level_1.task_4_5;
+package students.linda_junkina.lesson_10.level_2.task_4_5;
 
 import java.util.Scanner;
 
 class DayOfTheWeekDetectorDemo {
-    private DayOfTheWeekDetector detector;
+    private final DayOfTheWeekDetector detector;
 
     public DayOfTheWeekDetectorDemo(DayOfTheWeekDetector detector) {
         this.detector = detector;
@@ -25,4 +25,3 @@ class DayOfTheWeekDetectorDemo {
         arrayDemo.run();
     }
 }
-
