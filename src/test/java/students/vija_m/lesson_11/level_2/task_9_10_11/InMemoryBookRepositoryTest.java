@@ -1,4 +1,4 @@
-package students.vija_m.lesson_12.level_2.task_12_13_14;
+package students.vija_m.lesson_11.level_2.task_9_10_11;
 
 import org.junit.jupiter.api.Test;
 
@@ -106,53 +106,8 @@ class InMemoryBookRepositoryTest {
         List<Book> expected = List.of();
         assertEquals(expected, victim.findByTitle("B3"));
     }
-
-    @Test
-    void countBooks() {
-        InMemoryBookRepository victim = new InMemoryBookRepository();
-        victim.save(new Book("A1", "B1"));
-        victim.save(new Book("A2", "B2"));
-        victim.save(new Book("A2", "B3"));
-        assertEquals(3, victim.count());
-    }
-
-    @Test
-    void countBooksIfZero() {
-        InMemoryBookRepository victim = new InMemoryBookRepository();
-        assertEquals(0, victim.count());
-    }
-
-    @Test
-    void booksRemovedByAuthor() {
-        InMemoryBookRepository victim = new InMemoryBookRepository();
-        Book book1 = ( new Book("A1", "B1") );
-        Book book2 = ( new Book("A2", "B2") );
-        Book book3 = ( new Book("A3", "B3") );
-        Book book4 = ( new Book("A2", "B4") );
-        victim.save(book1);
-        victim.save(book2);
-        victim.save(book3);
-        victim.save(book4);
-        victim.deleteByAuthor("A2");
-        List<Book> expected = List.of(book1, book3);
-        assertEquals(expected, victim.getBooksDataBase());
-    }
-
-    @Test
-    void booksRemovedByTitle() {
-        InMemoryBookRepository victim = new InMemoryBookRepository();
-        Book book1 = ( new Book("A1", "B1") );
-        Book book2 = ( new Book("A2", "B2") );
-        Book book3 = ( new Book("A3", "B2") );
-        Book book4 = ( new Book("A2", "B4") );
-        victim.save(book1);
-        victim.save(book2);
-        victim.save(book3);
-        victim.save(book4);
-        victim.deleteByTitle("B2");
-        List<Book> expected = List.of(book1, book4);
-        assertEquals(expected, victim.getBooksDataBase());
-    }
-
-
 }
+
+
+
+

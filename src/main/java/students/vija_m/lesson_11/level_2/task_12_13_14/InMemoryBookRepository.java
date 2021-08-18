@@ -1,4 +1,4 @@
-package students.vija_m.lesson_12.level_2.task_9_10_11;
+package students.vija_m.lesson_11.level_2.task_12_13_14;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +50,6 @@ class InMemoryBookRepository implements BookRepository {
         return booksFoundByAuthor;
     }
 
-
     @Override
     public List<Book> findByTitle(String title) {
         ArrayList<Book> booksFoundByTitle = new ArrayList<>();
@@ -60,5 +59,20 @@ class InMemoryBookRepository implements BookRepository {
             }
         }
         return booksFoundByTitle;
+    }
+
+    @Override
+    public int count() {
+        return bookDataBase.size();
+    }
+
+    @Override
+    public void deleteByAuthor(String author) {
+        bookDataBase.removeIf(book -> book.getAuthor().equals(author));
+    }
+
+    @Override
+    public void deleteByTitle(String title) {
+        bookDataBase.removeIf(book -> book.getTitle().equals(title));
     }
 }

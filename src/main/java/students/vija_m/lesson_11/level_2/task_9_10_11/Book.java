@@ -1,4 +1,4 @@
-package students.vija_m.lesson_12.level_2.task_9_10_11;
+package students.vija_m.lesson_11.level_2.task_9_10_11;
 
 import java.util.Objects;
 
