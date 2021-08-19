@@ -5,29 +5,29 @@ class QuadraticEq {
     public void calc(double a, double b, double c) {
         double discriminant = b * b - 4 * a * c;
         if (discriminant > 0) {
-            discriminantGreaterThanZero(a, b, discriminant);
+            System.out.println(discriminantGreaterThanZero(a, b, discriminant));
         }
         else if (discriminant == 0) {
-            discriminantEqualsZero(a, b);
+            System.out.println("x = " + discriminantEqualsZero(a, b));
         }
         else {
-            discriminantLessThanZero();
+            System.out.println(discriminantLessThanZero());
         }
     }
 
-    public void discriminantGreaterThanZero(double a, double b, double discriminant) {
+    public String discriminantGreaterThanZero(double a, double b, double discriminant) {
         double x1 = (-b - Math.sqrt(discriminant)) / (2 * a);
         double x2 = (-b + Math.sqrt(discriminant)) / (2 * a);
         System.out.println("x1 = " + x1 + ", x2 = " + x2);
+        return "x1 = " + x1 + ", x2 = " + x2;
     }
 
-    public void discriminantEqualsZero(double a, double b) {
-        double x = -b / (2 * a);
-        System.out.println("x = " + x);
+    public double discriminantEqualsZero(double a, double b) {
+        return -b / (2 * a);
     }
 
-    public void discriminantLessThanZero() {
-        System.out.println("Equation has no roots");
+    public String discriminantLessThanZero() {
+        return "Equation has no roots";
     }
 
 }
