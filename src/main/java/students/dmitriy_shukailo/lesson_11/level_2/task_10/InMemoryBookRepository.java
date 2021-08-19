@@ -38,7 +38,7 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public List<Book> findByAuthor(String author) {
-        List booksByAuthor = new ArrayList<>();
+        List<Book> booksByAuthor = new ArrayList<>();
         for (Book book : books) {
             if (book.getAuthor().equals(author)) {
                 booksByAuthor.add(book);
