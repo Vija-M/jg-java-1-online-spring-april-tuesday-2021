@@ -7,18 +7,28 @@ import static org.junit.jupiter.api.Assertions.*;
 class GameOfLifeNextGenerationCalculatorTest {
     GameOfLifeNextGenerationCalculator nextGenerationCalculator = new GameOfLifeNextGenerationCalculator();
     boolean[][] field =
-                    {{false, true, true, true},
-                    {true, false, true, true},
-                    {false, true, true, false},
-                    {true, true, false, true}};
+                     {{false, true, false},
+                    {false, true, false},
+                    {false, true, false}};
+
 
     @Test
-    void shouldDieIfLessThan2Neighbours() {
-        assertFalse(nextGenerationCalculator.calculate(field)[3][3]);
+    void shouldDieIfLessThan2NeighboursAlive() {
+        assertFalse(nextGenerationCalculator.calculate(field)[1][2]);
     }
 
     @Test
-    void shouldLiveIf2Neighbours() {
-        assertFalse(nextGenerationCalculator.calculate(field)[1][3]);
+    void shouldLiveIf2NeighboursAlive() {
+        assertTrue(nextGenerationCalculator.calculate(field)[1][1]);
+    }
+
+    @Test
+    void shouldStayAliveIf2NeighboursAlive() {
+        assertTrue(nextGenerationCalculator.calculate(field)[1][1]);
+    }
+
+    @Test
+    void shouldBecomeAliveIf3NeighboursAlive() {
+        assertTrue(nextGenerationCalculator.calculate(field)[0][1]);
     }
 }

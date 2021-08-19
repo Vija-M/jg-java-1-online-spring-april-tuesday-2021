@@ -6,8 +6,8 @@ class GameOfLifeNextGenerationCalculator {
         boolean[][] nextGeneration = new boolean[currentGeneration.length][currentGeneration.length];
 
         int numberOfNeighbors = 0;
-        for (int i = 0; i < currentGeneration.length; i++) {
-            for (int j = 0; j < currentGeneration.length; j++) {
+        for (int i = 0; i < currentGeneration.length - 1; i++) {
+            for (int j = 0; j < currentGeneration.length - 1; j++) {
                 if (j > 0) {
                     if (currentGeneration[i][j - 1]) {
                         numberOfNeighbors++;
@@ -52,12 +52,12 @@ class GameOfLifeNextGenerationCalculator {
                     nextGeneration[i][j] = false;
                 }
                 if (numberOfNeighbors == 3 || numberOfNeighbors == 2) {
-                    if (currentGeneration[i][j] = true) {
+                    if (currentGeneration[i][j]) {
                         nextGeneration[i][j] = true;
                     }
                 }
                 if (numberOfNeighbors == 3) {
-                    if (currentGeneration[i][j] = false) {
+                    if (!currentGeneration[i][j]) {
                         nextGeneration[i][j] = true;
                     }
                 }
