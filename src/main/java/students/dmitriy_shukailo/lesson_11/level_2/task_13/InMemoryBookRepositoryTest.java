@@ -223,20 +223,17 @@ class InMemoryBookRepositoryTest {
         subject.save(book2);
         subject.save(book3);
 
-        subject.deleteByAuthor("A1");
-        List<Book> expectedBooksByAuthor1 = List.of(book3);
-        List<Book> actualBooksByAuthor1 = subject.findByAuthor("A1");
-        Assertions.assertNotEquals(expectedBooksByAuthor1, actualBooksByAuthor1, "shouldDeleteBooksByAuthor (#0)");
-
-        subject.deleteByAuthor("A2");
-        List<Book> expectedBooksByAuthor2 = List.of(book1, book2);
-        List<Book> actualBooksByAuthor2 = subject.findByAuthor("A2");
-        Assertions.assertNotEquals(expectedBooksByAuthor2, actualBooksByAuthor2, "shouldDeleteBooksByAuthor (#1)");
-
         subject.deleteByAuthor("A3");
         List<Book> expectedBooksByAuthor3 = List.of(book1, book2, book3);
-        List<Book> actualBooksByAuthor3 = subject.findByAuthor("A3");
-        Assertions.assertNotEquals(expectedBooksByAuthor3, actualBooksByAuthor3, "shouldDeleteBooksByAuthor (#2)");
+        Assertions.assertEquals(expectedBooksByAuthor3, subject.getBooks(), "shouldDeleteBooksByAuthor (#2)");
+
+        subject.deleteByAuthor("A1");
+        List<Book> expectedBooksByAuthor1 = List.of(book3);
+        Assertions.assertEquals(expectedBooksByAuthor1, subject.getBooks(), "shouldDeleteBooksByAuthor (#0)");
+
+        subject.deleteByAuthor("A2");
+        List<Book> expectedBooksByAuthor2 = List.of();
+        Assertions.assertEquals(expectedBooksByAuthor2, subject.getBooks(), "shouldDeleteBooksByAuthor (#1)");
 
         System.out.println();
     }

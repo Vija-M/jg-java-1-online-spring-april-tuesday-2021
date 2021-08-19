@@ -224,20 +224,17 @@ class InMemoryBookRepositoryTest {
         subject.save(book2);
         subject.save(book3);
 
-        subject.deleteByAuthor("A1");
-        List<Book> expectedBooksByAuthor1 = List.of(book3);
-        List<Book> actualBooksByAuthor1 = subject.findByAuthor("A1");
-        Assertions.assertNotEquals(expectedBooksByAuthor1, actualBooksByAuthor1, "shouldDeleteBooksByAuthor (#0)");
-
-        subject.deleteByAuthor("A2");
-        List<Book> expectedBooksByAuthor2 = List.of(book1, book2);
-        List<Book> actualBooksByAuthor2 = subject.findByAuthor("A2");
-        Assertions.assertNotEquals(expectedBooksByAuthor2, actualBooksByAuthor2, "shouldDeleteBooksByAuthor (#1)");
-
         subject.deleteByAuthor("A3");
         List<Book> expectedBooksByAuthor3 = List.of(book1, book2, book3);
-        List<Book> actualBooksByAuthor3 = subject.findByAuthor("A3");
-        Assertions.assertNotEquals(expectedBooksByAuthor3, actualBooksByAuthor3, "shouldDeleteBooksByAuthor (#2)");
+        Assertions.assertEquals(expectedBooksByAuthor3, subject.getBooks(), "shouldDeleteBooksByAuthor (#0)");
+
+        subject.deleteByAuthor("A1");
+        List<Book> expectedBooksByAuthor1 = List.of(book3);
+        Assertions.assertEquals(expectedBooksByAuthor1, subject.getBooks(), "shouldDeleteBooksByAuthor (#1)");
+
+        subject.deleteByAuthor("A2");
+        List<Book> expectedBooksByAuthor2 = List.of();
+        Assertions.assertEquals(expectedBooksByAuthor2, subject.getBooks(), "shouldDeleteBooksByAuthor (#2)");
 
         System.out.println();
     }
@@ -248,26 +245,23 @@ class InMemoryBookRepositoryTest {
 
         Book book1 = new Book("A1", "B1");
         Book book2 = new Book("A2", "B1");
-        Book book3 = new Book("A3", "B3");
+        Book book3 = new Book("A3", "B2");
 
         subject.save(book1);
         subject.save(book2);
         subject.save(book3);
 
+        subject.deleteByTitle("B3");
+        List<Book> expectedBooksByTitle3 = List.of(book1, book2, book3);
+        Assertions.assertEquals(expectedBooksByTitle3, subject.getBooks(), "shouldDeleteBooksByTitle (#0)");
+
         subject.deleteByTitle("B1");
         List<Book> expectedBooksByTitle1 = List.of(book3);
-        List<Book> actualBooksByTitle1 = subject.findByTitle("A1");
-        Assertions.assertNotEquals(expectedBooksByTitle1, actualBooksByTitle1, "shouldDeleteBooksByTitle (#0)");
+        Assertions.assertEquals(expectedBooksByTitle1, subject.getBooks(), "shouldDeleteBooksByTitle (#1)");
 
         subject.deleteByTitle("B2");
-        List<Book> expectedBooksByTitle2 = List.of(book1, book2);
-        List<Book> actualBooksByTitle2 = subject.findByTitle("A2");
-        Assertions.assertNotEquals(expectedBooksByTitle2, actualBooksByTitle2, "shouldDeleteBooksByTitle (#1)");
-
-        subject.deleteByTitle("A3");
-        List<Book> expectedBooksByTitle3 = List.of(book1, book2, book3);
-        List<Book> actualBooksByTitle3 = subject.findByTitle("A3");
-        Assertions.assertNotEquals(expectedBooksByTitle3, actualBooksByTitle3, "shouldDeleteBooksByTitle (#2)");
+        List<Book> expectedBooksByTitle2 = List.of();
+        Assertions.assertEquals(expectedBooksByTitle2, subject.getBooks(), "shouldDeleteBooksByTitle (#2)");
 
         System.out.println();
     }

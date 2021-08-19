@@ -9,6 +9,10 @@ class InMemoryBookRepository implements BookRepository {
     private ArrayList<Book> books = new ArrayList<>();
     private Long id = 0L;
 
+    public List<Book> getBooks() {
+        return books;
+    }
+
     @Override
     public Long save(Book book) {
         book.setId(id++);
@@ -38,7 +42,7 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public List<Book> findByAuthor(String author) {
-        List booksByAuthor = new ArrayList<>();
+        List<Book> booksByAuthor = new ArrayList<>();
         for (Book book : books) {
             if (book.getAuthor().equals(author)) {
                 booksByAuthor.add(book);
@@ -49,7 +53,7 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public List<Book> findByTitle(String title) {
-        List booksByTitle = new ArrayList<>();
+        List<Book> booksByTitle = new ArrayList<>();
         for (Book book : books) {
             if (book.getTitle().equals(title)) {
                 booksByTitle.add(book);
@@ -65,13 +69,13 @@ class InMemoryBookRepository implements BookRepository {
 
     @Override
     public void deleteByAuthor(String author) {
-       ArrayList<Book> booksDeleteByAuthor = new ArrayList<>();
+        ArrayList<Book> booksDeleteByAuthor = new ArrayList<>();
         for (Book book : books) {
             if (!book.getAuthor().equals(author)) {
                 booksDeleteByAuthor.add(book);
             }
         }
-       books = booksDeleteByAuthor;
+        books = booksDeleteByAuthor;
     }
 
     @Override
