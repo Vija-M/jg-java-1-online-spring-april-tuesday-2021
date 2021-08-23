@@ -36,19 +36,28 @@ public class Shapes {
     }
 
     double area(Shape[] shapes) {
-        double totalArea = 0;
+        double area = 0;
         for ( Shape shape : shapes ) {
-            totalArea += shape.calculateArea();
+            area += shape.calculateArea();
         }
-        return totalArea;
+        return area;
     }
 
     double perimeter(Shape[] shapes) {
-        double totalPerimeter = 0;
+        double perimeter = 0;
         for ( Shape shape : shapes ) {
-            totalPerimeter += shape.calculatePerimeter();
+            perimeter += shape.calculatePerimeter();
         }
-        return totalPerimeter;
+        return perimeter;
+    }
+
+
+    double area(Shape shape) {
+        return shape.calculateArea();
+    }
+
+    double perimeter(Shape shape) {
+        return shape.calculatePerimeter();
     }
 }
 
