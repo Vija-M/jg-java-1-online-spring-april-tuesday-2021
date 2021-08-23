@@ -13,7 +13,6 @@ class ShapesTest {
         test.trianglePerimeter();
         test.rectangleArea();
         test.rectanglePerimeter();
-
     }
 
     public void circleArea() {
