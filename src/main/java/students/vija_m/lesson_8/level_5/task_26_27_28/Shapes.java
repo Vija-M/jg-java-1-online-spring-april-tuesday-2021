@@ -2,7 +2,7 @@ package students.vija_m.lesson_8.level_5.task_26_27_28;
 
 import java.util.Random;
 
-public class Shapes {
+class Shapes {
     Random random = new Random();
 
     Circle createRandomCircle() {
