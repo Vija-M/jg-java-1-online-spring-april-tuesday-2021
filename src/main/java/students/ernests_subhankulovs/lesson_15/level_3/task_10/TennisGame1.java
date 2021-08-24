@@ -1,9 +1,9 @@
 package students.ernests_subhankulovs.lesson_15.level_3.task_10;
 
-public class TennisGame1 implements TennisGame {
+class TennisGame1 implements TennisGame {
 
-    private int mScore1 = 0;
-    private int mScore2 = 0;
+    private int score1 = 0;
+    private int score2 = 0;
     private String player1Name;
     private String player2Name;
 
@@ -13,39 +13,33 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        if (playerName == "player1")
-            mScore1 += 1;
-        else
-            mScore2 += 1;
+        if (playerName.equals("player1")) {
+            score1 += 1;
+        }
+        else {
+            score2 += 1;
+        }
     }
 
     public String getScore() {
         String score = "";
-        int tempScore = 0;
-        if (mScore1 == mScore2) {
-            switch (mScore1) {
-                case 0:
-                    score = "Love-All";
-                    break;
-                case 1:
-                    score = "Fifteen-All";
-                    break;
-                case 2:
-                    score = "Thirty-All";
-                    break;
-                default:
-                    score = "Deuce";
-                    break;
-            }
+        int tempScore;
+        if (score1 == score2) {
+            score = switch (score1) {
+                case 0  -> "Love-All";
+                case 1  -> "Fifteen-All";
+                case 2  -> "Thirty-All";
+                default -> "Deuce";
+            };
         }
 
-        else if (mScore1 >= 4 || mScore2 >= 4) {
-            int minusResult = mScore1 - mScore2;
+        else if (score1 >= 4 || score2 >= 4) {
+            int minusResult = score1 - score2;
             if (minusResult == 1) {
-                score ="Advantage player1";
+                score = "Advantage player1";
             }
             else if (minusResult == -1) {
-                score ="Advantage player2";
+                score = "Advantage player2";
             }
             else if (minusResult >= 2) {
                 score = "Win for player1";
@@ -55,26 +49,19 @@ public class TennisGame1 implements TennisGame {
         else {
             for (int i = 1; i < 3; i++) {
                 if (i == 1) {
-                    tempScore = mScore1;
+                    tempScore = score1;
                 }
                 else {
                     score += "-";
-                    tempScore = mScore2;
+                    tempScore = score2;
                 }
-                switch(tempScore) {
-                    case 0:
-                        score += "Love";
-                        break;
-                    case 1:
-                        score += "Fifteen";
-                        break;
-                    case 2:
-                        score += "Thirty";
-                        break;
-                    case 3:
-                        score += "Forty";
-                        break;
-                }
+                score = switch (tempScore) {
+                    case 0  -> score += "Love";
+                    case 1  -> score += "Fifteen";
+                    case 2  -> score += "Thirty";
+                    case 3  -> score += "Forty";
+                    default -> score;
+                };
             }
         }
         return score;
